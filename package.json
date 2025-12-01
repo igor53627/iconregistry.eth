@@ -1,0 +1,19 @@
+{
+  "name": "onchain-icons",
+  "version": "0.1.0",
+  "description": "On-chain icon registry using SSTORE2 for gas-efficient storage",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "optimize": "tsx scripts/optimize-icons.ts",
+    "deploy": "forge script scripts/Deploy.s.sol --broadcast",
+    "upload": "tsx scripts/upload-icons.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "sharp": "^0.33.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "viem": "^2.0.0"
+  }
+}
