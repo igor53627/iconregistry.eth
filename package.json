@@ -1,5 +1,5 @@
 {
-  "name": "onchain-icons",
+  "name": "icon-registry",
   "version": "0.1.0",
   "description": "On-chain icon registry using SSTORE2 for gas-efficient storage",
   "scripts": {

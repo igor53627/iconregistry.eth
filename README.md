@@ -1,4 +1,4 @@
-# On-Chain Icon Registry
+# IconRegistry
 
 A curated registry of protocol/token icons stored on Ethereum using gas-efficient storage techniques.
 
