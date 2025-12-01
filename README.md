@@ -2,6 +2,74 @@
 
 A curated registry of protocol/token icons stored on Ethereum using gas-efficient storage techniques.
 
+## Icon Sources
+
+All icons are sourced from [DefiLlama Icons](https://github.com/DefiLlama/icons) repository, processed to 32×32 PNG with lossless compression (sharp + oxipng).
+
+| Source | URL |
+|--------|-----|
+| GitHub | https://github.com/DefiLlama/icons |
+| CDN | https://icons.llama.fi/ |
+
+## Why On-Chain Icons Matter for Privacy
+
+### The Problem with External Icon CDNs
+
+When a wallet or dApp fetches token icons from external servers, it creates **privacy leaks**:
+
+```
+User opens wallet
+    → Wallet requests icon from https://icons.example.com/eth.png
+    → CDN logs: IP address, timestamp, User-Agent, token being viewed
+    → CDN knows: which tokens you hold, when you check your wallet
+```
+
+**What CDN operators can learn:**
+- Your IP address (approximate location)
+- Which tokens/protocols you interact with
+- Your portfolio composition (by analyzing icon requests)
+- When you're active (timestamps)
+- Device fingerprinting via headers
+
+This data can be:
+- Sold to analytics companies
+- Subpoenaed by governments
+- Leaked in data breaches
+- Used for targeted phishing attacks
+
+### The On-Chain Solution
+
+With on-chain icons via SSTORE2:
+
+```
+User opens wallet
+    → Wallet reads icon from Ethereum RPC (same as balance checks)
+    → No additional external requests
+    → No new privacy leaks
+```
+
+**Benefits:**
+- ✅ **No additional tracking** - icons come from same RPC as other data
+- ✅ **Censorship resistant** - icons can't be removed or blocked
+- ✅ **Permanent** - no CDN shutdown risk
+- ✅ **Verifiable** - icons are immutable and can be verified on-chain
+- ✅ **Decentralized** - no single point of failure
+
+### Privacy Comparison
+
+| Aspect | External CDN | On-Chain (SSTORE2) |
+|--------|-------------|-------------------|
+| IP logged per icon | ✗ Yes | ✓ No (RPC only) |
+| Token holdings exposed | ✗ Yes | ✓ No |
+| Activity timestamps | ✗ Yes | ✓ No |
+| Third-party dependency | ✗ Yes | ✓ No |
+| Can be censored | ✗ Yes | ✓ No |
+| Survives CDN shutdown | ✗ No | ✓ Yes |
+
+### Ideal for Privacy-Focused Wallets
+
+Wallets like Ambire, Rabby, and others that prioritize user privacy can use on-chain icons to eliminate this tracking vector entirely.
+
 ## Storage Strategy: SSTORE2 vs SSTORE3
 
 ### The Problem with Regular Storage (SSTORE)
