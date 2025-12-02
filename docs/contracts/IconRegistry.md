@@ -42,6 +42,26 @@ Icons are identified by **slugs** - human-readable strings like:
 
 On-chain, slugs are stored as their `keccak256` hash (`slugHash`) for gas efficiency.
 
+### Versioning
+
+Icons support versioning - each update creates a new version while preserving history:
+
+- **Default getters** (`getIcon`, `getIconBySlug`, `getIconByToken`) always return the **latest version**
+- **Historical versions** are accessible via `getIconVersion(slugHash, version)`
+- **Current version number** can be queried with `getCurrentVersion(slugHash)`
+
+```solidity
+// Get latest version (default)
+bytes memory icon = registry.getIconBySlug("protocols/uniswap");
+
+// Get specific historical version
+bytes memory iconV1 = registry.getIconVersion(slugHash, 1);
+bytes memory iconV2 = registry.getIconVersion(slugHash, 2);
+
+// Check current version number
+uint32 currentVersion = registry.getCurrentVersion(slugHash); // e.g., 3
+```
+
 ## Events
 
 ### IconAdded
