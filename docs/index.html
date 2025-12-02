@@ -3,23 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IconRegistry - On-Chain Icon Collection</title>
+  <title>iconregistry.eth - On-Chain Icon Collection</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --bg-secondary: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text-secondary: #8b949e;
-      --accent: #58a6ff;
+      --bg-primary: #F7FAFC;
+      --bg-secondary: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --border: #E2E8F0;
+      --text-primary: #1A202C;
+      --text-secondary: #718096;
+      --accent: #7d33b8;
+      --accent-light: #9f5dd6;
+      --accent-bg: #f5e9ff;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-hover: 0 10px 40px rgba(0,0,0,0.15);
+      --tag-bg: #EDF2F7;
+      --tag-text: #4A5568;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    [data-theme="dark"] {
+      --bg-primary: #1A202C;
+      --bg-secondary: #2D3748;
+      --bg-card: #2D3748;
+      --border: #4A5568;
+      --text-primary: rgba(255, 255, 255, 0.92);
+      --text-secondary: #A0AEC0;
+      --accent: #B794F4;
+      --accent-light: #D6BCFA;
+      --accent-bg: #44337A;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow-hover: 0 10px 40px rgba(0,0,0,0.4);
+      --tag-bg: #4A5568;
+      --tag-text: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
+    /* Header */
     header {
       background: var(--bg-secondary);
       border-bottom: 1px solid var(--border);
@@ -28,6 +66,7 @@
       top: 0;
       z-index: 100;
     }
+
     .header-content {
       max-width: 1400px;
       margin: 0 auto;
@@ -37,291 +76,1016 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    h1 { font-size: 1.5rem; font-weight: 600; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      image-rendering: pixelated;
+    }
+
+    .brand h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .brand-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .stats {
       display: flex;
       gap: 1.5rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
     }
-    .stat-value { color: var(--accent); font-weight: 600; }
-    .controls {
+
+    .stat-value {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .theme-toggle {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Search & Filters */
+    .filters {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+    }
+
+    .filters-content {
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
-      gap: 0.75rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-    input, select {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      font-size: 0.875rem;
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 250px;
     }
-    input:focus, select:focus {
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.75rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      color: var(--text-primary);
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
       outline: none;
       border-color: var(--accent);
     }
-    #search { width: 250px; }
+
+    .search-input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .filter-select {
+      padding: 0.75rem 2rem 0.75rem 1rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      min-width: 180px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23718096' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* Main Content */
     main {
+      flex: 1;
       max-width: 1400px;
       margin: 0 auto;
       padding: 2rem;
+      width: 100%;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
+
+    /* Category Sections */
+    .category-section {
+      margin-bottom: 3rem;
     }
-    .icon-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
+
+    .category-header {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      transition: border-color 0.2s, transform 0.2s;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .category-count {
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .category-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.25rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+
+    .category-link:hover {
+      color: var(--accent);
+    }
+
+    /* Icon Grid */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .icon-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all 0.3s ease;
       cursor: pointer;
     }
+
     .icon-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
       border-color: var(--accent);
-      transform: translateY(-2px);
     }
-    .icon-card img {
-      width: 48px;
-      height: 48px;
+
+    .icon-previews {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .icon-preview {
+      background: var(--bg-primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 6px 8px;
+    }
+
+    .icon-preview img {
       image-rendering: pixelated;
     }
-    .icon-name {
-      font-size: 0.75rem;
-      color: var(--text);
-      text-align: center;
-      word-break: break-word;
-      max-width: 100%;
-    }
-    .icon-category {
+
+    .icon-preview .wallet-label {
       font-size: 0.625rem;
       color: var(--text-secondary);
-      background: var(--bg);
-      padding: 0.125rem 0.375rem;
-      border-radius: 4px;
+      min-width: 50px;
     }
+
+    .icon-preview .wallet-label small {
+      opacity: 0.7;
+    }
+
+    .icon-preview.metamask img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon-preview.rabby img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .icon-preview.ambire img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .icon-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .icon-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      word-break: break-word;
+    }
+
+    .icon-meta {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .icon-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+    }
+
+    .tag.category-tag {
+      background: var(--accent-bg);
+      color: var(--accent);
+    }
+
+    /* Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 200;
+      padding: 1rem;
     }
-    .modal-overlay.active { display: flex; }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
     .modal {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 2rem;
       max-width: 500px;
-      width: 90%;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
     }
+
     .modal-header {
       display: flex;
       justify-content: space-between;
-      align-items: start;
+      align-items: flex-start;
       margin-bottom: 1.5rem;
     }
+
+    .modal-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
     .modal-close {
       background: none;
       border: none;
       color: var(--text-secondary);
       font-size: 1.5rem;
       cursor: pointer;
+      padding: 0;
+      line-height: 1;
     }
-    .modal-icon {
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .modal-icon-preview {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 1rem;
       margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: var(--bg-primary);
+      border-radius: 12px;
     }
-    .modal-icon img { width: 64px; height: 64px; }
-    .modal-details {
+
+    .modal-icon-info h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-icon-info span {
+      color: var(--text-secondary);
       font-size: 0.875rem;
+    }
+
+    .modal-main-preview {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .modal-main-preview img {
+      width: 64px;
+      height: 64px;
+      image-rendering: pixelated;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 8px;
+    }
+
+    .modal-sizes-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-wallet-previews {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .modal-wallet-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .modal-wallet-preview .wallet-size {
+      font-size: 0.625rem;
+      color: var(--text-secondary);
+    }
+
+    .modal-wallet-preview img {
+      image-rendering: pixelated;
+      border-radius: 4px;
+    }
+
+
+
+    .modal-details {
       display: grid;
+      gap: 0.75rem;
+    }
+
+    .modal-details dt {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .modal-details dd {
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      word-break: break-all;
+    }
+
+    .modal-details a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .modal-details a:hover {
+      text-decoration: underline;
+    }
+
+    .modal-contract {
+      margin-top: 1.5rem;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .modal-contract-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-contract pre {
+      margin: 0;
+      padding: 0.75rem;
+      overflow-x: auto;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      line-height: 1.5;
+    }
+
+    .modal-contract code {
+      color: var(--text-primary);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.625rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
       gap: 0.5rem;
+      transition: all 0.2s;
     }
-    .modal-details dt { color: var(--text-secondary); }
-    .modal-details dd { color: var(--text); margin-bottom: 0.5rem; }
-    .modal-details a { color: var(--accent); text-decoration: none; }
-    .modal-details a:hover { text-decoration: underline; }
-    .loading {
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-light);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 1rem 2rem;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-content a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      color: var(--accent);
+    }
+
+    .footer-sep {
+      opacity: 0.5;
+    }
+
+    /* Empty/Loading States */
+    .loading, .empty {
       text-align: center;
       padding: 4rem;
       color: var(--text-secondary);
     }
-    .empty {
-      text-align: center;
-      padding: 4rem;
-      color: var(--text-secondary);
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header, .filters, main, footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .filters-content {
+        flex-direction: column;
+      }
+
+      .filter-select {
+        width: 100%;
+      }
+
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-icon-preview {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <h1>🖼️ IconRegistry</h1>
-      <div class="stats">
-        <span><span class="stat-value" id="total-count">-</span> icons</span>
-        <span><span class="stat-value" id="total-size">-</span> total</span>
-        <span>32×32 PNG</span>
+      <div class="brand">
+        
+        <div>
+          <h1>iconregistry.eth</h1>
+          <div class="brand-subtitle">On-Chain Icon Collection</div>
+        </div>
       </div>
-      <div class="controls">
-        <input type="text" id="search" placeholder="Search icons...">
-        <select id="category-filter">
-          <option value="">All categories</option>
-        </select>
+      <div class="header-actions">
+        <div class="stats">
+          <span><span class="stat-value" id="total-count">-</span> icons</span>
+          <span><span class="stat-value" id="total-size">-</span> total</span>
+          <span>64×64 PNG</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </div>
     </div>
   </header>
 
+  <div class="filters">
+    <div class="filters-content">
+      <div class="search-wrapper">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" id="search" class="search-input" placeholder="Search icons by name...">
+      </div>
+      <select id="category-filter" class="filter-select">
+        <option value="">All Categories</option>
+      </select>
+      <select id="size-filter" class="filter-select">
+        <option value="">All Sizes</option>
+        <option value="small">&lt; 500 B</option>
+        <option value="medium">500 B - 1 KB</option>
+        <option value="large">&gt; 1 KB</option>
+      </select>
+    </div>
+  </div>
+
   <main>
-    <div id="loading" class="loading">Loading icons...</div>
-    <div id="empty" class="empty" style="display:none">No icons found</div>
-    <div id="grid" class="grid"></div>
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      Loading icons...
+    </div>
+    <div id="empty" class="empty" style="display:none">
+      <p>No icons found matching your criteria</p>
+    </div>
+    <div id="content"></div>
   </main>
 
   <div class="modal-overlay" id="modal">
     <div class="modal">
       <div class="modal-header">
-        <h2 id="modal-title">Icon Details</h2>
+        <h2 class="modal-title">Icon Details</h2>
         <button class="modal-close" onclick="closeModal()">×</button>
       </div>
-      <div class="modal-icon">
-        <img id="modal-img" src="" alt="">
-        <div>
-          <div id="modal-name" style="font-weight:600"></div>
-          <div id="modal-category" style="color:var(--text-secondary);font-size:0.875rem"></div>
+      <div class="modal-icon-preview">
+        <div class="modal-icon-info" style="text-align:center">
+          <h3 id="modal-name"></h3>
+          <span id="modal-category"></span>
+        </div>
+        <div class="modal-main-preview">
+          <img id="modal-img-main" src="" alt="">
+        </div>
+        <div class="modal-sizes-label">Wallet sizes (actual pixels)</div>
+        <div class="modal-wallet-previews">
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:40px;height:40px" src="" alt="">
+            <span class="wallet-size">40</span>
+          </div>
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:32px;height:32px" src="" alt="">
+            <span class="wallet-size">32</span>
+          </div>
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:28px;height:28px" src="" alt="">
+            <span class="wallet-size">28</span>
+          </div>
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:24px;height:24px" src="" alt="">
+            <span class="wallet-size">24</span>
+          </div>
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:20px;height:20px" src="" alt="">
+            <span class="wallet-size">20</span>
+          </div>
+          <div class="modal-wallet-preview">
+            <img class="modal-img-preview" style="width:16px;height:16px" src="" alt="">
+            <span class="wallet-size">16</span>
+          </div>
         </div>
       </div>
       <dl class="modal-details">
-        <dt>Slug</dt>
+        <dt>ID / Slug</dt>
         <dd id="modal-slug"></dd>
-        <dt>Original Size</dt>
-        <dd id="modal-original-size"></dd>
-        <dt>Processed Size</dt>
+        <dt>Size</dt>
         <dd id="modal-processed-size"></dd>
-        <dt>Original URL</dt>
-        <dd><a id="modal-original-url" href="" target="_blank"></a></dd>
+        <dt>Pipeline</dt>
+        <dd id="modal-compression" style="font-size:0.75rem"></dd>
+        <dt>Source</dt>
+        <dd><a id="modal-original-url" href="" target="_blank" rel="noopener"></a></dd>
         <dt>CDN URL</dt>
-        <dd><a id="modal-cdn-url" href="" target="_blank"></a></dd>
+        <dd><a id="modal-cdn-url" href="" target="_blank" rel="noopener"></a></dd>
+        <dt>Version</dt>
+        <dd id="modal-version"></dd>
       </dl>
+      <div class="modal-contract">
+        <div class="modal-contract-header">Get from Contract</div>
+        <pre><code id="modal-contract-code"></code></pre>
+      </div>
+      <div class="modal-actions">
+        <a id="modal-download" class="btn btn-primary" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7,10 12,15 17,10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PNG
+        </a>
+        <button class="btn btn-secondary" onclick="copyToClipboard()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Path
+        </button>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <a href="https://github.com/igor53627/icon-registry" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-sep">•</span>
+      <a href="https://github.com/DefiLlama/icons" target="_blank" rel="noopener">Source: DefiLlama</a>
+      <span class="footer-sep">•</span>
+      <span>Donate: <a href="https://app.ens.domains/iconregistry.eth" target="_blank" rel="noopener">iconregistry.eth</a></span>
+    </div>
+  </footer>
 
   <script>
     let icons = [];
     let filteredIcons = [];
+    let currentIcon = null;
 
-    async function loadManifest() {
-      try {
-        // Try ethereum manifest first, fallback to full
-        let res = await fetch('./manifest.json');
-        if (!res.ok) throw new Error('Not found');
-        const manifest = await res.json();
-        icons = manifest.icons;
-        
-        document.getElementById('total-count').textContent = manifest.stats.total.toLocaleString();
-        document.getElementById('total-size').textContent = formatBytes(manifest.stats.totalSize || manifest.stats.processedTotalSize);
-        
-        // Populate category filter
-        const categories = [...new Set(icons.map(i => i.category))].sort();
-        const categoryFilter = document.getElementById('category-filter');
-        categories.forEach(cat => {
-          const opt = document.createElement('option');
-          opt.value = cat;
-          opt.textContent = cat;
-          categoryFilter.appendChild(opt);
-        });
-        
-        filterAndRender();
-        document.getElementById('loading').style.display = 'none';
-      } catch (err) {
-        document.getElementById('loading').textContent = 'Error loading manifest: ' + err.message;
-      }
-    }
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Format bytes
     function formatBytes(bytes) {
       if (bytes < 1024) return bytes + ' B';
       if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
       return (bytes / 1024 / 1024).toFixed(2) + ' MB';
     }
 
+    // Generate placeholder SVG for icons
+    function getPlaceholder(name) {
+      const letter = (name || '?').charAt(0).toUpperCase();
+      const colors = ['#7d33b8', '#3182ce', '#38a169', '#d69e2e', '#e53e3e', '#805ad5'];
+      const color = colors[name.charCodeAt(0) % colors.length];
+      return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect fill="${color}" width="32" height="32" rx="6"/><text x="16" y="21" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14">${letter}</text></svg>`)}`;
+    }
+
+    // Get icon src - use CDN for mock data, local path for real data
+    function getIconSrc(icon) {
+      if (icon.original?.cdn) {
+        return icon.original.cdn;
+      }
+      return './' + (icon.processed?.path || icon.path);
+    }
+
+    // Mock data fallback (only used if manifest.json fails to load)
+    const MOCK_ICONS = [];
+
+    // Load manifest (tries real data first, falls back to mock)
+    async function loadManifest() {
+      try {
+        const res = await fetch('./manifest.json');
+        if (!res.ok) throw new Error('Manifest not available');
+        const manifest = await res.json();
+        icons = manifest.icons;
+        document.getElementById('total-count').textContent = manifest.stats?.total?.toLocaleString() || icons.length.toLocaleString();
+        document.getElementById('total-size').textContent = formatBytes(manifest.stats?.totalSize || manifest.stats?.processedTotalSize || 0);
+      } catch (err) {
+        console.log('Failed to load manifest:', err.message);
+        document.getElementById('loading').innerHTML = `
+          <p>Cannot load icons via file:// protocol.</p>
+          <p style="margin-top:1rem;font-size:0.875rem">Run a local server:</p>
+          <code style="display:block;margin-top:0.5rem;padding:0.5rem;background:var(--bg-secondary);border-radius:4px">
+            cd docs && python3 -m http.server 8000
+          </code>
+          <p style="margin-top:0.5rem;font-size:0.875rem">Then open <a href="http://localhost:8000" style="color:var(--accent)">http://localhost:8000</a></p>
+        `;
+        document.getElementById('loading').style.display = 'block';
+        return;
+      }
+
+      // Populate category filter
+      const categories = [...new Set(icons.map(i => i.category))].sort();
+      const categoryFilter = document.getElementById('category-filter');
+      categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        categoryFilter.appendChild(opt);
+      });
+
+      filterAndRender();
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    // Shuffle array
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Filter and render
     function filterAndRender() {
       const search = document.getElementById('search').value.toLowerCase();
       const category = document.getElementById('category-filter').value;
-      
-      filteredIcons = icons.filter(icon => {
-        const matchesSearch = !search || icon.name.includes(search) || icon.id.includes(search);
+      const sizeFilter = document.getElementById('size-filter').value;
+
+      filteredIcons = shuffle(icons.filter(icon => {
+        const matchesSearch = !search || icon.name.toLowerCase().includes(search) || icon.id.toLowerCase().includes(search);
         const matchesCategory = !category || icon.category === category;
-        return matchesSearch && matchesCategory;
-      });
-      
+        
+        let matchesSize = true;
+        if (sizeFilter) {
+          const size = icon.processed?.size || 0;
+          if (sizeFilter === 'small') matchesSize = size < 500;
+          else if (sizeFilter === 'medium') matchesSize = size >= 500 && size <= 1024;
+          else if (sizeFilter === 'large') matchesSize = size > 1024;
+        }
+        
+        return matchesSearch && matchesCategory && matchesSize;
+      }));
+
       render();
     }
 
+    // Render icons grouped by category
     function render() {
-      const grid = document.getElementById('grid');
+      const content = document.getElementById('content');
       const empty = document.getElementById('empty');
-      
+
       if (filteredIcons.length === 0) {
-        grid.innerHTML = '';
+        content.innerHTML = '';
         empty.style.display = 'block';
         return;
       }
-      
+
       empty.style.display = 'none';
+
+      // Group by category
+      const grouped = {};
+      filteredIcons.forEach(icon => {
+        if (!grouped[icon.category]) grouped[icon.category] = [];
+        grouped[icon.category].push(icon);
+      });
+
+      const categories = Object.keys(grouped).sort((a, b) => {
+        // protocols first, then chains, then alphabetical
+        if (a === 'protocols') return -1;
+        if (b === 'protocols') return 1;
+        if (a === 'chains') return -1;
+        if (b === 'chains') return 1;
+        return a.localeCompare(b);
+      });
       
-      // Render in chunks for performance
-      grid.innerHTML = filteredIcons.slice(0, 500).map((icon, i) => `
-        <div class="icon-card" onclick="showModal(${i})">
-          <img src="./${icon.processed.path}" alt="${icon.name}" loading="lazy">
-          <div class="icon-name">${icon.name}</div>
-          <div class="icon-category">${icon.category}</div>
-        </div>
+      content.innerHTML = categories.map(category => `
+        <section class="category-section" id="${category}">
+          <div class="category-header">
+            <h2 class="category-title">${category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+            <span class="category-count">${grouped[category].length}</span>
+            <a href="#${category}" class="category-link" title="Link to section">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="icon-grid">
+            ${grouped[category].slice(0, 100).map((icon, i) => `
+              <div class="icon-card" onclick="showModal('${category}', ${i})">
+                <div class="icon-previews">
+                  <div class="icon-preview metamask">
+                    <span class="wallet-label">MetaMask <small>40px</small></span>
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                  </div>
+                  <div class="icon-preview rabby">
+                    <span class="wallet-label">Rabby <small>32px</small></span>
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                  </div>
+                  <div class="icon-preview ambire">
+                    <span class="wallet-label">Ambire <small>28px</small></span>
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                  </div>
+                </div>
+                <div class="icon-info">
+                  <div class="icon-name">${icon.name}</div>
+                  <div class="icon-meta">${formatBytes(icon.processed?.size || 0)}</div>
+                  <div class="icon-tags">
+                    <span class="tag category-tag">${icon.category}</span>
+                    ${icon.original?.format ? `<span class="tag">${icon.original.format}</span>` : ''}
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+            ${grouped[category].length > 100 ? `<div class="icon-card" style="justify-content:center;align-items:center;color:var(--text-secondary)">+${grouped[category].length - 100} more</div>` : ''}
+          </div>
+        </section>
       `).join('');
-      
-      if (filteredIcons.length > 500) {
-        grid.innerHTML += `<div class="icon-card" style="justify-content:center;color:var(--text-secondary)">+${filteredIcons.length - 500} more</div>`;
-      }
     }
 
-    function showModal(index) {
-      const icon = filteredIcons[index];
-      document.getElementById('modal-img').src = './' + icon.processed.path;
+    // Modal functions
+    function showModal(category, index) {
+      const grouped = {};
+      filteredIcons.forEach(icon => {
+        if (!grouped[icon.category]) grouped[icon.category] = [];
+        grouped[icon.category].push(icon);
+      });
+      
+      const icon = grouped[category][index];
+      currentIcon = icon;
+
+      // Construct URLs from icon data
+      const iconName = icon.name;
+      const iconCategory = icon.category;
+      const githubUrl = `https://github.com/DefiLlama/icons/blob/master/${iconCategory}/${iconName}.jpg`;
+      const cdnBaseUrl = iconCategory === 'protocols' 
+        ? `https://icons.llama.fi/icons/protocols/${iconName}` 
+        : `https://icons.llama.fi/icons/chains/rsz${iconName}`;
+
+      const iconSrc = getIconSrc(icon);
+      document.getElementById('modal-img-main').src = iconSrc;
+      document.querySelectorAll('.modal-img-preview').forEach(img => img.src = iconSrc);
       document.getElementById('modal-name').textContent = icon.name;
       document.getElementById('modal-category').textContent = icon.category;
       document.getElementById('modal-slug').textContent = icon.id;
-      document.getElementById('modal-original-size').textContent = formatBytes(icon.original.size);
-      document.getElementById('modal-processed-size').textContent = formatBytes(icon.processed.size);
-      
+      document.getElementById('modal-processed-size').textContent = formatBytes(icon.processed?.size || 0);
+      document.getElementById('modal-compression').textContent = 'sharp (resize 64×64, PNG level 9) → oxipng (-o max --strip all)';
+      document.getElementById('modal-version').textContent = '1.0.0';
+
       const origUrl = document.getElementById('modal-original-url');
-      origUrl.href = icon.original.url || '#';
-      origUrl.textContent = icon.original.url ? 'View on GitHub' : 'N/A';
-      
+      origUrl.href = githubUrl;
+      origUrl.textContent = 'View on GitHub';
+
       const cdnUrl = document.getElementById('modal-cdn-url');
-      cdnUrl.href = icon.original.cdn || '#';
-      cdnUrl.textContent = icon.original.cdn || 'N/A';
-      
+      cdnUrl.href = cdnBaseUrl;
+      cdnUrl.textContent = cdnBaseUrl;
+
+      // Contract getter code
+      const iconId = icon.id.replace('/', '-');
+      document.getElementById('modal-contract-code').textContent = 
+`// Solidity
+bytes memory png = iconRegistry.getIcon("${iconId}");
+string memory uri = iconRegistry.getIconURI("${iconId}");
+
+// Ethers.js
+const png = await iconRegistry.getIcon("${iconId}");
+const uri = await iconRegistry.getIconURI("${iconId}");
+
+// Viem
+const png = await publicClient.readContract({
+  address: ICON_REGISTRY,
+  abi: iconRegistryAbi,
+  functionName: 'getIcon',
+  args: ['${iconId}']
+});`;
+
+      const downloadBtn = document.getElementById('modal-download');
+      downloadBtn.href = './' + (icon.processed?.path || icon.path);
+      downloadBtn.download = icon.name + '.png';
+
       document.getElementById('modal').classList.add('active');
     }
 
     function closeModal() {
       document.getElementById('modal').classList.remove('active');
+      currentIcon = null;
     }
 
+    function copyToClipboard() {
+      if (currentIcon) {
+        navigator.clipboard.writeText(currentIcon.processed?.path || currentIcon.path);
+        alert('Path copied to clipboard!');
+      }
+    }
+
+    // Event listeners
     document.getElementById('search').addEventListener('input', filterAndRender);
     document.getElementById('category-filter').addEventListener('change', filterAndRender);
+    document.getElementById('size-filter').addEventListener('change', filterAndRender);
     document.getElementById('modal').addEventListener('click', e => {
       if (e.target.id === 'modal') closeModal();
     });
@@ -329,6 +1093,7 @@
       if (e.key === 'Escape') closeModal();
     });
 
+    // Initialize
     loadManifest();
   </script>
 </body>

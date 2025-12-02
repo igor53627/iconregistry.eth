@@ -169,9 +169,21 @@ icons/
 ## Icon Specifications
 
 - **Format**: PNG (optimized) or SVG (hand-crafted only)
-- **Size**: 32×32 pixels
-- **Max file size**: 2 KB (target: <1 KB)
+- **Size**: 64×64 pixels (future-proof for all wallet sizes)
+- **Max file size**: 4 KB (target: <2 KB)
 - **Naming**: lowercase, kebab-case (e.g., `uniswap.png`, `ethereum.png`)
+
+### Why 64×64?
+
+Our icons are sized at 64×64 pixels to cleanly scale down to all wallet icon sizes:
+
+| Wallet | Icon Sizes Used |
+|--------|----------------|
+| MetaMask | 16, 24, 32, 40, 48px |
+| Rabby | 16, 20, 24, 28, 32px |
+| Token Lists | 32px |
+
+At 64px, icons scale down to any size without interpolation artifacts (64 → 32 → 16 are clean 2x/4x divisions). This future-proofs the registry as wallets adopt higher-resolution displays.
 
 ## Usage
 
@@ -181,6 +193,14 @@ interface IIconRegistry {
     function getIconURI(bytes32 id) external view returns (string memory);
 }
 ```
+
+## Donate
+
+Support the IconRegistry project by donating to our ENS address:
+
+**[iconregistry.eth](https://app.ens.domains/iconregistry.eth)**
+
+Donations help cover on-chain storage costs and ongoing maintenance.
 
 ## License
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.22;
 
 /// @title IIconRegistry
 /// @notice Interface for on-chain icon registry
@@ -11,6 +11,23 @@ interface IIconRegistry {
     
     /// @notice Get icon by pre-computed keccak256(slug)
     function getIcon(bytes32 slugHash) external view returns (bytes memory);
+
+    // ========== Versioning ==========
+    
+    /// @notice Get specific version of an icon
+    function getIconVersion(bytes32 slugHash, uint32 version) external view returns (bytes memory);
+    
+    /// @notice Get current version number
+    function getCurrentVersion(bytes32 slugHash) external view returns (uint32);
+    
+    /// @notice Get icon metadata including version
+    function getIconInfo(bytes32 slugHash) external view returns (
+        address pointer,
+        uint32 width,
+        uint32 height,
+        uint32 version,
+        uint8 format
+    );
 
     // ========== By Token ==========
     

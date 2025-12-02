@@ -4,22 +4,24 @@ import * as fs from "fs/promises";
 import * as path from "path";
 
 const SOURCE_DIR = "/Users/user/pse/logos/defillama-icons/assets";
-const OUTPUT_DIR = "/Users/user/pse/icons/icons-64";
+const OUTPUT_DIR = "/Users/user/pse/icon-registry/docs";
 const SIZE = 64;
-const CATEGORIES = ["chains", "protocols", "agg_icons", "pegged"];
+const CATEGORIES = ["chains", "protocols"];
 
 async function main() {
   console.log("Processing 64x64 icons: sharp → oxipng");
   
-  await fs.rm(OUTPUT_DIR, { recursive: true, force: true });
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  // Clean only category subdirs, keep index.html and manifest.json
+  for (const cat of CATEGORIES) {
+    await fs.rm(path.join(OUTPUT_DIR, cat), { recursive: true, force: true });
+    await fs.mkdir(path.join(OUTPUT_DIR, cat), { recursive: true });
+  }
 
   let total = 0, totalSize = 0;
 
   for (const category of CATEGORIES) {
     const srcDir = path.join(SOURCE_DIR, category);
     const outDir = path.join(OUTPUT_DIR, category);
-    await fs.mkdir(outDir, { recursive: true });
 
     const files = await fs.readdir(srcDir);
     const images = files.filter(f => /\.(png|jpg|jpeg|webp|svg)$/i.test(f));

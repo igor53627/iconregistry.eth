@@ -1,9 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.22;
 
 import {SSTORE2} from "solady/utils/SSTORE2.sol";
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+
+interface IERC20 {
+    function balanceOf(address) external view returns (uint256);
+    function transfer(address, uint256) external returns (bool);
+}
 
 /// @title IconRegistry
 /// @notice Upgradeable registry for on-chain icons with token address and slug lookups
@@ -14,13 +19,17 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         address pointer;     // SSTORE2 pointer
         uint32 width;
         uint32 height;
+        uint32 version;      // Version number (starts at 1)
         IconFormat format;
     }
 
     enum IconFormat { PNG, SVG, WEBP }
 
-    /// @notice slug hash => Icon
+    /// @notice slug hash => current Icon
     mapping(bytes32 => Icon) public icons;
+    
+    /// @notice slug hash => version => Icon (historical versions)
+    mapping(bytes32 => mapping(uint32 => Icon)) public iconVersions;
 
     /// @notice token address => chainId => slug hash
     mapping(address => mapping(uint256 => bytes32)) public tokenToIcon;
@@ -32,13 +41,31 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     bytes32[] public slugs;
     mapping(bytes32 => uint256) public slugIndex; // 1-indexed
 
-    event IconAdded(bytes32 indexed slugHash, string slug, address pointer);
+    event IconAdded(bytes32 indexed slugHash, string slug, address pointer, uint32 version);
+    event IconUpdated(bytes32 indexed slugHash, string slug, address pointer, uint32 version);
     event TokenMapped(address indexed token, uint256 indexed chainId, bytes32 slugHash);
     event ChainMapped(uint256 indexed chainId, bytes32 slugHash);
 
     error IconNotFound();
-    error IconAlreadyExists();
     error InvalidData();
+    error VersionNotFound();
+
+    // ========== DONATIONS ==========
+
+    /// @notice Accept ETH donations
+    receive() external payable {}
+
+    /// @notice Withdraw donated ETH
+    function withdrawETH() external onlyOwner {
+        (bool success, ) = payable(owner()).call{value: address(this).balance}("");
+        require(success, "Transfer failed");
+    }
+
+    /// @notice Withdraw donated ERC20 tokens
+    function withdrawToken(address token) external onlyOwner {
+        uint256 balance = IERC20(token).balanceOf(address(this));
+        require(IERC20(token).transfer(owner(), balance), "Transfer failed");
+    }
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
@@ -47,15 +74,15 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     function initialize(address owner_) external initializer {
         __Ownable_init(owner_);
-        __UUPSUpgradeable_init();
     }
 
     function _authorizeUpgrade(address) internal override onlyOwner {}
 
-    // ========== ADMIN: Add Icons ==========
+    // ========== ADMIN: Add/Update Icons ==========
 
-    /// @notice Add icon by slug (e.g., "protocols/uniswap")
-    function addIcon(
+    /// @notice Add or update icon by slug (e.g., "protocols/uniswap")
+    /// @dev If icon exists, creates new version. Old versions remain accessible.
+    function setIcon(
         string calldata slug,
         bytes calldata data,
         uint32 width,
@@ -63,20 +90,32 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         IconFormat format
     ) external onlyOwner {
         bytes32 slugHash = keccak256(bytes(slug));
-        if (icons[slugHash].pointer != address(0)) revert IconAlreadyExists();
         if (data.length == 0) revert InvalidData();
 
         address pointer = SSTORE2.write(data);
-        icons[slugHash] = Icon(pointer, width, height, format);
+        Icon storage current = icons[slugHash];
         
-        slugs.push(slugHash);
-        slugIndex[slugHash] = slugs.length;
+        if (current.pointer == address(0)) {
+            // New icon - version 1
+            icons[slugHash] = Icon(pointer, width, height, 1, format);
+            iconVersions[slugHash][1] = icons[slugHash];
+            
+            slugs.push(slugHash);
+            slugIndex[slugHash] = slugs.length;
 
-        emit IconAdded(slugHash, slug, pointer);
+            emit IconAdded(slugHash, slug, pointer, 1);
+        } else {
+            // Update existing - increment version
+            uint32 newVersion = current.version + 1;
+            icons[slugHash] = Icon(pointer, width, height, newVersion, format);
+            iconVersions[slugHash][newVersion] = icons[slugHash];
+
+            emit IconUpdated(slugHash, slug, pointer, newVersion);
+        }
     }
 
-    /// @notice Batch add icons
-    function addIconsBatch(
+    /// @notice Batch add/update icons
+    function setIconsBatch(
         string[] calldata slugList,
         bytes[] calldata dataList,
         uint32[] calldata widths,
@@ -86,16 +125,26 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         uint256 len = slugList.length;
         for (uint256 i = 0; i < len; i++) {
             bytes32 slugHash = keccak256(bytes(slugList[i]));
-            if (icons[slugHash].pointer != address(0)) revert IconAlreadyExists();
             if (dataList[i].length == 0) revert InvalidData();
 
             address pointer = SSTORE2.write(dataList[i]);
-            icons[slugHash] = Icon(pointer, widths[i], heights[i], formats[i]);
+            Icon storage current = icons[slugHash];
             
-            slugs.push(slugHash);
-            slugIndex[slugHash] = slugs.length;
+            if (current.pointer == address(0)) {
+                icons[slugHash] = Icon(pointer, widths[i], heights[i], 1, formats[i]);
+                iconVersions[slugHash][1] = icons[slugHash];
+                
+                slugs.push(slugHash);
+                slugIndex[slugHash] = slugs.length;
 
-            emit IconAdded(slugHash, slugList[i], pointer);
+                emit IconAdded(slugHash, slugList[i], pointer, 1);
+            } else {
+                uint32 newVersion = current.version + 1;
+                icons[slugHash] = Icon(pointer, widths[i], heights[i], newVersion, formats[i]);
+                iconVersions[slugHash][newVersion] = icons[slugHash];
+
+                emit IconUpdated(slugHash, slugList[i], pointer, newVersion);
+            }
         }
     }
 
@@ -134,15 +183,40 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     // ========== GETTERS: By Slug ==========
 
-    /// @notice Get icon by slug string
+    /// @notice Get icon by slug string (latest version)
     function getIconBySlug(string calldata slug) external view returns (bytes memory) {
         bytes32 slugHash = keccak256(bytes(slug));
         return _getIconData(slugHash);
     }
 
-    /// @notice Get icon by pre-computed slug hash
+    /// @notice Get icon by pre-computed slug hash (latest version)
     function getIcon(bytes32 slugHash) external view returns (bytes memory) {
         return _getIconData(slugHash);
+    }
+
+    /// @notice Get specific version of icon
+    function getIconVersion(bytes32 slugHash, uint32 version) external view returns (bytes memory) {
+        Icon storage icon = iconVersions[slugHash][version];
+        if (icon.pointer == address(0)) revert VersionNotFound();
+        return SSTORE2.read(icon.pointer);
+    }
+
+    /// @notice Get current version number for a slug
+    function getCurrentVersion(bytes32 slugHash) external view returns (uint32) {
+        return icons[slugHash].version;
+    }
+
+    /// @notice Get icon metadata (including version)
+    function getIconInfo(bytes32 slugHash) external view returns (
+        address pointer,
+        uint32 width,
+        uint32 height,
+        uint32 version,
+        IconFormat format
+    ) {
+        Icon storage icon = icons[slugHash];
+        if (icon.pointer == address(0)) revert IconNotFound();
+        return (icon.pointer, icon.width, icon.height, icon.version, icon.format);
     }
 
     // ========== GETTERS: By Token ==========
