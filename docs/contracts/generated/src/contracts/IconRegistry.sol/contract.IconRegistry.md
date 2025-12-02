@@ -1,8 +1,11 @@
 # IconRegistry
-[Git Source](https://github.com/igor53627/iconregistry.eth/blob/7f58fbcb8b0f16de7ee22778491d6806e1ce855f/contracts/IconRegistry.sol)
+[Git Source](https://github.com/igor53627/iconregistry.eth/blob/32c020049bea8491e0385d0073eb17d6d35abf4c/contracts/IconRegistry.sol)
 
 **Inherits:**
 OwnableUpgradeable, UUPSUpgradeable
+
+**Title:**
+IconRegistry
 
 **Author:**
 iconregistry.eth
@@ -126,6 +129,7 @@ function withdrawETH() external onlyOwner;
 Withdraw donated ERC20 tokens to owner
 
 Only callable by owner. Sends entire token balance.
+Uses SafeERC20 to handle non-standard tokens (USDT, etc.)
 
 
 ```solidity

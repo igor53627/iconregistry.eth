@@ -1,5 +1,8 @@
 # IIconRegistry
-[Git Source](https://github.com/igor53627/iconregistry.eth/blob/7f58fbcb8b0f16de7ee22778491d6806e1ce855f/contracts/IIconRegistry.sol)
+[Git Source](https://github.com/igor53627/iconregistry.eth/blob/32c020049bea8491e0385d0073eb17d6d35abf4c/contracts/IIconRegistry.sol)
+
+**Title:**
+IIconRegistry
 
 **Author:**
 iconregistry.eth
