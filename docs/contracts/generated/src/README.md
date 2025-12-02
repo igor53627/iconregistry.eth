@@ -1,52 +1,47 @@
-# IconRegistry
+# iconregistry.eth
 
-A curated registry of protocol/token icons stored on Ethereum using gas-efficient storage techniques.
+An on-chain, upgradeable repository for PNG icons, designed to provide a canonical source of visual assets for dApps and wallets.
 
-## Why On-Chain Icons Matter for Privacy
+**Demo:** https://igor53627.github.io/iconregistry.eth/
 
-### The Problem with External Icon CDNs
+## Overview
 
-When a wallet or dApp fetches token icons from external servers, it creates **privacy leaks**:
+The Icon Registry protocol utilizes the SSTORE2 library to store icon data gas-efficiently, with each icon being written as an immutable data blob.
 
-```
-User opens wallet
-    → Wallet requests icon from https://icons.example.com/eth.png
-    → CDN logs: IP address, timestamp, User-Agent, token being viewed
-    → CDN knows: which tokens you hold, when you check your wallet
-```
+Icons are identified by a human-readable slug (e.g., `protocols/uniswap`), which is hashed for on-chain operations. The registry supports versioning, allowing for icon updates while preserving access to all historical versions.
 
-**What CDN operators can learn:**
-- Your IP address (approximate location)
-- Which tokens/protocols you interact with
-- Your portfolio composition (by analyzing icon requests)
-- When you're active (timestamps)
-- Device fingerprinting via headers
+The owner can map these icons to specific token addresses on different chains or directly to chain IDs, enabling easy lookups for front-end integrations. The contract is built using the UUPS upgradeable proxy pattern, allowing for future logic changes by the owner.
 
-This data can be:
-- Sold to analytics companies
-- Subpoenaed by governments
-- Leaked in data breaches
-- Used for targeted phishing attacks
-
-### The On-Chain Solution
-
-With on-chain icons via SSTORE2:
+## Architecture
 
 ```
-User opens wallet
-    → Wallet reads icon from Ethereum RPC (same as balance checks)
-    → No additional external requests
-    → No new privacy leaks
+                    ┌─────────────────────────────────────────────────────────┐
+                    │                     IconRegistry                        │
+                    │              (UUPS Upgradeable Proxy)                   │
+                    └─────────────────────────────────────────────────────────┘
+                                            │
+              ┌─────────────────────────────┼─────────────────────────────┐
+              │                             │                             │
+              ▼                             ▼                             ▼
+    ┌─────────────────┐          ┌─────────────────┐          ┌─────────────────┐
+    │   SSTORE2       │          │   OpenZeppelin  │          │  IIconRegistry  │
+    │   (Storage)     │          │   (Ownable,     │          │   (Interface)   │
+    │                 │          │    UUPS)        │          │                 │
+    └─────────────────┘          └─────────────────┘          └─────────────────┘
+
+    Read Functions:                      Admin Functions:
+    - getIconBySlug()                    - setIcon()
+    - getIconByToken()                   - setIconsBatch()
+    - batchGetIcons()                    - mapToken()
+    - getChainIcon()                     - mapTokensBatch()
+                                         - mapChain()
+                                         - withdrawETH()
+                                         - withdrawToken()
 ```
 
-**Benefits:**
-- **No additional tracking** - icons come from same RPC as other data
-- **Censorship resistant** - icons can't be removed or blocked
-- **Permanent** - no CDN shutdown risk
-- **Verifiable** - icons are immutable and can be verified on-chain
-- **Decentralized** - no single point of failure
+## Why On-Chain Icons
 
-### Privacy Comparison
+When a wallet or dApp fetches token icons from external servers, it creates privacy leaks:
 
 | Aspect | External CDN | On-Chain (SSTORE2) |
 |--------|-------------|-------------------|
@@ -57,162 +52,71 @@ User opens wallet
 | Can be censored | Yes | No |
 | Survives CDN shutdown | No | Yes |
 
-### Ideal for Privacy-Focused Wallets
+**Benefits:**
+- No additional tracking - icons come from same RPC as other data
+- Censorship resistant - icons can't be removed or blocked
+- Permanent - no CDN shutdown risk
+- Verifiable - icons are immutable and can be verified on-chain
+- Decentralized storage - no centralized CDN or hosting dependency
 
-Wallets like Ambire, Rabby, and others that prioritize user privacy can use on-chain icons to eliminate this tracking vector entirely.
-
-## Cost Estimates
-
-Upload costs using SSTORE2 at **0.035 gwei** gas price, $2,800/ETH:
-
-| Collection | Size | Gas | ETH | USD |
-|------------|------|-----|-----|-----|
-| **32×32 (Ethereum - 1,596 icons)** | 1.9 MB | 0.40B | 0.014 | **$39** |
-| **64×64 (Ethereum - 1,596 icons)** | 5.0 MB | 1.05B | 0.037 | **$103** |
-| 32×32 (Full - 9,645 icons) | 12.9 MB | 2.70B | 0.095 | $265 |
-| 64×64 (Full - 9,645 icons) | 33.9 MB | 7.11B | 0.249 | $697 |
-
-*Does not include contract deployment (~$1-2) and transaction overhead.*
-
-## Storage Strategy: SSTORE2 vs SSTORE3
-
-### The Problem with Regular Storage (SSTORE)
-
-| Operation | Cost |
-|-----------|------|
-| Write 32 bytes | 22,100 gas (~690 gas/byte) |
-| Read 32 bytes | 2,100 gas (cold) / 100 gas (warm) |
-
-For a 1 KB icon: **~690,000 gas to write** (~$50 at 30 gwei, $2500 ETH)
-
-### SSTORE2: Store Data as Contract Bytecode
-
-Instead of using storage slots, SSTORE2 deploys data as a contract's bytecode:
-
-```solidity
-// Writing: Deploy a contract with data as bytecode
-address pointer = SSTORE2.write(iconBytes);
-
-// Reading: Use EXTCODECOPY (much cheaper than SLOAD)
-bytes memory icon = SSTORE2.read(pointer);
-```
-
-| Operation | Cost |
-|-----------|------|
-| Write | ~200 gas/byte |
-| Read | ~3 gas/byte |
-
-**3-4x cheaper writes, 30x cheaper reads!**
-
-For a 1 KB icon: **~200,000 gas to write** (~$15)
-
-### SSTORE3: Deterministic Addresses with Compact Pointers
-
-SSTORE2 returns a 20-byte address pointer. SSTORE3 improves this:
-
-- Uses CREATE2 with a salt for deterministic addresses
-- Pointer is just the salt (can be 4-8 bytes)
-- Pointers can be packed with other data
-
-```solidity
-// Writing: Store with a salt-based pointer
-bytes32 salt = bytes32(iconId);
-SSTORE3.write(iconBytes, salt);
-
-// Reading: Compute address from salt, no stored pointer needed
-bytes memory icon = SSTORE3.read(salt);
-```
-
-### Cost Comparison for 10,000 Icons (32×32 PNG, ~1KB each)
-
-| Method | Write Cost | Storage Overhead | Total |
-|--------|-----------|------------------|-------|
-| Regular SSTORE | ~$500,000 | N/A | ~$500,000 |
-| SSTORE2 | ~$150,000 | 200KB (pointers) | ~$155,000 |
-| SSTORE3 | ~$150,000 | 40KB (salts) | ~$151,000 |
-| IPFS + hash on-chain | ~$5,000 | 320KB (CIDs) | ~$5,500 |
-
-### Recommendation
-
-1. **For full on-chain**: Use SSTORE2/SSTORE3 with optimized 32×32 PNGs
-2. **For hybrid**: Store IPFS CID on-chain, icons on IPFS/Arweave
-3. **For maximum decentralization**: SSTORE2 + fallback to IPFS
-
-## Project Structure
-
-```
-icons/
-├── contracts/
-│   ├── IconRegistry.sol      # Main registry contract
-│   ├── IconStorage.sol       # SSTORE2-based storage
-│   └── interfaces/
-├── scripts/
-│   ├── optimize-icons.ts     # Resize & optimize PNGs
-│   ├── deploy.ts             # Deploy contracts
-│   └── upload-icons.ts       # Upload icons to chain
-├── icons/                    # Curated, optimized icons (32x32)
-│   ├── tokens/
-│   ├── chains/
-│   └── protocols/
-└── test/
-```
-
-## Icon Specifications
-
-- **Format**: PNG (optimized) or SVG (hand-crafted only)
-- **Size**: 64×64 pixels (future-proof for all wallet sizes)
-- **Max file size**: 4 KB (target: <2 KB)
-- **Naming**: lowercase, kebab-case (e.g., `uniswap.png`, `ethereum.png`)
-
-### Why 64×64?
-
-Our icons are sized at 64×64 pixels to cleanly scale down to all wallet icon sizes:
-
-| Wallet | Icon Sizes Used |
-|--------|----------------|
-| MetaMask | 16, 24, 32, 40, 48px |
-| Rabby | 16, 20, 24, 28, 32px |
-| Token Lists | 32px |
-
-At 64px, icons scale down to any size without interpolation artifacts (64 → 32 → 16 are clean 2x/4x divisions). This future-proofs the registry as wallets adopt higher-resolution displays.
+**Trust model:** A single privileged owner controls registry contents and upgrades. No user-submitted or permissionless data paths exist.
 
 ## Usage
 
 ```solidity
-interface IIconRegistry {
-    function getIcon(bytes32 id) external view returns (bytes memory);
-    function getIconURI(bytes32 id) external view returns (string memory);
-}
+// Get icon by slug
+bytes memory icon = registry.getIconBySlug("protocols/uniswap");
+
+// Get icon by token address
+bytes memory tokenIcon = registry.getIconByToken(0xA0b86991c..., 1); // USDC on mainnet
+
+// Get chain icon
+bytes memory ethIcon = registry.getChainIcon(1); // Ethereum
+
+// Get as data URI (for direct use in img src)
+string memory dataUri = registry.getIconDataURI(slugHash);
 ```
 
-## Donate
+## Entry Points
 
-Support the IconRegistry project by donating to our ENS address:
+All core functions that modify the registry's content are restricted to the contract owner. The only state-changing interaction available to the general public is for making donations.
 
-**[iconregistry.eth](https://app.ens.domains/iconregistry.eth)**
+| Actor | Capabilities |
+|-------|-------------|
+| Any User | Send ETH to the contract via `receive()` to support the registry |
+| Owner | Manage registry via admin functions |
 
-Donations help cover on-chain storage costs and ongoing maintenance.
+## Icon Specifications
+
+On-chain validation (enforced by the contract):
+- **Format**: PNG only - validated via the standard 8-byte PNG magic header
+
+Operational guidelines (followed by this repository):
+- **Size**: 64x64 pixels
+- **Max file size**: 4 KB (target: <2 KB)
+- **Naming**: lowercase slug (e.g., `protocols/uniswap`, `chains/ethereum`)
+
+## Security
+
+See [audits/](audits/) for security audit reports and responses.
 
 ## Alternatives
 
 | Solution | Storage | Format | Privacy | Censorship Resistant |
 |----------|---------|--------|---------|---------------------|
-| **IconRegistry (this)** | On-chain (SSTORE2) | PNG | Yes | Yes |
+| **IconRegistry** | On-chain (SSTORE2) | PNG | Yes | Yes |
 | [ERC-2569](https://eips.ethereum.org/EIPS/eip-2569) | On-chain (SSTORE) | SVG only | Yes | Yes |
 | [Token Lists](https://tokenlists.org/) | Off-chain JSON | Any | No | No |
 | [DefiLlama Icons](https://icons.llama.fi/) | CDN | PNG/SVG | No | No |
 | [Trust Wallet Assets](https://github.com/trustwallet/assets) | GitHub + CDN | PNG | No | No |
 
-ERC-2569 (2020, Stagnant) proposed on-chain SVG storage but was never widely adopted. IconRegistry is the first general-purpose on-chain PNG registry using gas-efficient SSTORE2.
-
 ## Icon Sources
 
-All icons are sourced from [DefiLlama Icons](https://github.com/DefiLlama/icons) repository, processed to 64×64 PNG with lossless compression (sharp + oxipng).
+All icons are sourced from [DefiLlama Icons](https://github.com/DefiLlama/icons) repository, processed to 64x64 PNG with lossless compression.
 
-| Source | URL |
-|--------|-----|
-| GitHub | https://github.com/DefiLlama/icons |
-| CDN | https://icons.llama.fi/ |
+## Donate
+
+Support the project by donating to: **[iconregistry.eth](https://app.ens.domains/iconregistry.eth)**
 
 ## License
 

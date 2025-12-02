@@ -1,5 +1,5 @@
 # IconRegistry
-[Git Source](https://github.com/igor53627/iconregistry.eth/blob/32c020049bea8491e0385d0073eb17d6d35abf4c/contracts/IconRegistry.sol)
+[Git Source](https://github.com/igor53627/iconregistry.eth/blob/555308373531a538b4bf6a758fd772d5a2ba9a42/contracts/IconRegistry.sol)
 
 **Inherits:**
 OwnableUpgradeable, UUPSUpgradeable
@@ -759,6 +759,37 @@ event ChainMapped(uint256 indexed chainId, bytes32 slugHash);
 |----|----|-----------|
 |`chainId`|`uint256`|Chain ID (e.g., 1 for Ethereum mainnet)|
 |`slugHash`|`bytes32`|keccak256(slug) of the mapped chain icon|
+
+### ETHWithdrawn
+Emitted when ETH is withdrawn from the contract
+
+
+```solidity
+event ETHWithdrawn(address indexed to, uint256 amount);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`to`|`address`|Recipient address (owner)|
+|`amount`|`uint256`|Amount of ETH withdrawn in wei|
+
+### TokenWithdrawn
+Emitted when ERC20 tokens are withdrawn from the contract
+
+
+```solidity
+event TokenWithdrawn(address indexed token, address indexed to, uint256 amount);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`token`|`address`|Token contract address|
+|`to`|`address`|Recipient address (owner)|
+|`amount`|`uint256`|Amount of tokens withdrawn|
 
 ## Errors
 ### IconNotFound
