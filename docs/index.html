@@ -687,9 +687,9 @@
       </div>
       <div class="header-actions">
         <div class="stats">
-          <span><span class="stat-value" id="total-count">-</span> icons</span>
+          <span><span class="stat-value" id="protocols-count">-</span> protocols</span>
+          <span><span class="stat-value" id="chains-count">-</span> chains</span>
           <span><span class="stat-value" id="total-size">-</span> total</span>
-          <span>64×64 PNG</span>
         </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </div>
@@ -870,7 +870,10 @@
         if (!res.ok) throw new Error('Manifest not available');
         const manifest = await res.json();
         icons = manifest.icons;
-        document.getElementById('total-count').textContent = manifest.stats?.total?.toLocaleString() || icons.length.toLocaleString();
+        const protocolsCount = icons.filter(i => i.category === 'protocols').length;
+        const chainsCount = icons.filter(i => i.category === 'chains').length;
+        document.getElementById('protocols-count').textContent = protocolsCount.toLocaleString();
+        document.getElementById('chains-count').textContent = chainsCount.toLocaleString();
         document.getElementById('total-size').textContent = formatBytes(manifest.stats?.totalSize || manifest.stats?.processedTotalSize || 0);
       } catch (err) {
         console.log('Failed to load manifest:', err.message);

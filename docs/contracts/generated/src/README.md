@@ -2,6 +2,15 @@
 
 A curated registry of protocol/token icons stored on Ethereum using gas-efficient storage techniques.
 
+## Icon Sources
+
+All icons are sourced from [DefiLlama Icons](https://github.com/DefiLlama/icons) repository, processed to 32×32 PNG with lossless compression (sharp + oxipng).
+
+| Source | URL |
+|--------|-----|
+| GitHub | https://github.com/DefiLlama/icons |
+| CDN | https://icons.llama.fi/ |
+
 ## Why On-Chain Icons Matter for Privacy
 
 ### The Problem with External Icon CDNs
@@ -40,22 +49,22 @@ User opens wallet
 ```
 
 **Benefits:**
-- **No additional tracking** - icons come from same RPC as other data
-- **Censorship resistant** - icons can't be removed or blocked
-- **Permanent** - no CDN shutdown risk
-- **Verifiable** - icons are immutable and can be verified on-chain
-- **Decentralized** - no single point of failure
+- ✅ **No additional tracking** - icons come from same RPC as other data
+- ✅ **Censorship resistant** - icons can't be removed or blocked
+- ✅ **Permanent** - no CDN shutdown risk
+- ✅ **Verifiable** - icons are immutable and can be verified on-chain
+- ✅ **Decentralized** - no single point of failure
 
 ### Privacy Comparison
 
 | Aspect | External CDN | On-Chain (SSTORE2) |
 |--------|-------------|-------------------|
-| IP logged per icon | Yes | No (RPC only) |
-| Token holdings exposed | Yes | No |
-| Activity timestamps | Yes | No |
-| Third-party dependency | Yes | No |
-| Can be censored | Yes | No |
-| Survives CDN shutdown | No | Yes |
+| IP logged per icon | ✗ Yes | ✓ No (RPC only) |
+| Token holdings exposed | ✗ Yes | ✓ No |
+| Activity timestamps | ✗ Yes | ✓ No |
+| Third-party dependency | ✗ Yes | ✓ No |
+| Can be censored | ✗ Yes | ✓ No |
+| Survives CDN shutdown | ✗ No | ✓ Yes |
 
 ### Ideal for Privacy-Focused Wallets
 
@@ -192,27 +201,6 @@ Support the IconRegistry project by donating to our ENS address:
 **[iconregistry.eth](https://app.ens.domains/iconregistry.eth)**
 
 Donations help cover on-chain storage costs and ongoing maintenance.
-
-## Alternatives
-
-| Solution | Storage | Format | Privacy | Censorship Resistant |
-|----------|---------|--------|---------|---------------------|
-| **IconRegistry (this)** | On-chain (SSTORE2) | PNG | Yes | Yes |
-| [ERC-2569](https://eips.ethereum.org/EIPS/eip-2569) | On-chain (SSTORE) | SVG only | Yes | Yes |
-| [Token Lists](https://tokenlists.org/) | Off-chain JSON | Any | No | No |
-| [DefiLlama Icons](https://icons.llama.fi/) | CDN | PNG/SVG | No | No |
-| [Trust Wallet Assets](https://github.com/trustwallet/assets) | GitHub + CDN | PNG | No | No |
-
-ERC-2569 (2020, Stagnant) proposed on-chain SVG storage but was never widely adopted. IconRegistry is the first general-purpose on-chain PNG registry using gas-efficient SSTORE2.
-
-## Icon Sources
-
-All icons are sourced from [DefiLlama Icons](https://github.com/DefiLlama/icons) repository, processed to 64×64 PNG with lossless compression (sharp + oxipng).
-
-| Source | URL |
-|--------|-----|
-| GitHub | https://github.com/DefiLlama/icons |
-| CDN | https://icons.llama.fi/ |
 
 ## License
 
