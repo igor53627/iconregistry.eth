@@ -70,6 +70,19 @@ User opens wallet
 
 Wallets like Ambire, Rabby, and others that prioritize user privacy can use on-chain icons to eliminate this tracking vector entirely.
 
+## Cost Estimates
+
+Upload costs using SSTORE2 at **0.035 gwei** gas price, $2,800/ETH:
+
+| Collection | Size | Gas | ETH | USD |
+|------------|------|-----|-----|-----|
+| **32×32 (Ethereum - 1,596 icons)** | 1.9 MB | 0.40B | 0.014 | **$39** |
+| **64×64 (Ethereum - 1,596 icons)** | 5.0 MB | 1.05B | 0.037 | **$103** |
+| 32×32 (Full - 9,645 icons) | 12.9 MB | 2.70B | 0.095 | $265 |
+| 64×64 (Full - 9,645 icons) | 33.9 MB | 7.11B | 0.249 | $697 |
+
+*Does not include contract deployment (~$1-2) and transaction overhead.*
+
 ## Storage Strategy: SSTORE2 vs SSTORE3
 
 ### The Problem with Regular Storage (SSTORE)
