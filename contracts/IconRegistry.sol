@@ -160,7 +160,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         uint32 width,
         uint32 height
     ) external onlyOwner {
-        bytes32 slugHash = keccak256(bytes(slug));
+        bytes32 slugHash = _hashSlug(slug);
         if (data.length == 0) revert InvalidData();
         _validatePNG(data);
 
@@ -203,7 +203,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         }
 
         for (uint256 i = 0; i < len;) {
-            bytes32 slugHash = keccak256(bytes(slugList[i]));
+            bytes32 slugHash = _hashSlug(slugList[i]);
             if (dataList[i].length == 0) revert InvalidData();
             _validatePNG(dataList[i]);
 
@@ -238,7 +238,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param chainId EVM chain ID where token is deployed (e.g., 1 for Ethereum mainnet)
     /// @param slug Icon slug that must already exist in the registry
     function mapToken(address token, uint256 chainId, string calldata slug) external onlyOwner {
-        bytes32 slugHash = keccak256(bytes(slug));
+        bytes32 slugHash = _hashSlug(slug);
         if (icons[slugHash].pointer == address(0)) revert IconNotFound();
         tokenToIcon[token][chainId] = slugHash;
         emit TokenMapped(token, chainId, slugHash);
@@ -260,7 +260,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         }
 
         for (uint256 i = 0; i < len;) {
-            bytes32 slugHash = keccak256(bytes(slugList[i]));
+            bytes32 slugHash = _hashSlug(slugList[i]);
             if (icons[slugHash].pointer == address(0)) revert IconNotFound();
             tokenToIcon[tokens[i]][chainIds[i]] = slugHash;
             emit TokenMapped(tokens[i], chainIds[i], slugHash);
@@ -274,7 +274,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param chainId EVM chain ID (e.g., 1 for Ethereum, 137 for Polygon)
     /// @param slug Icon slug that must already exist in the registry
     function mapChain(uint256 chainId, string calldata slug) external onlyOwner {
-        bytes32 slugHash = keccak256(bytes(slug));
+        bytes32 slugHash = _hashSlug(slug);
         if (icons[slugHash].pointer == address(0)) revert IconNotFound();
         chainToIcon[chainId] = slugHash;
         emit ChainMapped(chainId, slugHash);
@@ -286,7 +286,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param slug Human-readable slug (e.g., "protocols/uniswap")
     /// @return Raw PNG icon bytes
     function getIconBySlug(string calldata slug) external view returns (bytes memory) {
-        bytes32 slugHash = keccak256(bytes(slug));
+        bytes32 slugHash = _hashSlug(slug);
         return _getIconData(slugHash);
     }
 
@@ -473,6 +473,18 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     }
 
     // ========== INTERNAL ==========
+
+    /// @dev Computes keccak256 hash of a string directly from calldata using assembly.
+    ///      More gas efficient than keccak256(bytes(slug)) which copies to memory.
+    /// @param slug The string to hash
+    /// @return h The keccak256 hash
+    function _hashSlug(string calldata slug) internal pure returns (bytes32 h) {
+        assembly {
+            let ptr := mload(0x40)
+            calldatacopy(ptr, slug.offset, slug.length)
+            h := keccak256(ptr, slug.length)
+        }
+    }
 
     /// @dev Validates that icon data is a valid PNG using the 8-byte PNG signature.
     ///      PNG signature: 0x89 'P' 'N' 'G' 0x0D 0x0A 0x1A 0x0A
