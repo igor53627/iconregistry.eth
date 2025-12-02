@@ -1,0 +1,171 @@
+{
+  "report_metadata": {
+    "report_type": "Code Info Deep Scan",
+    "scan_id": 6,
+    "date": "2025-12-02",
+    "generator": "Nethermind AuditAgent",
+    "status": "beta"
+  },
+  "project": {
+    "organization": "igor53627",
+    "repository": "iconregistry.eth",
+    "branch": "main",
+    "commit_hash": "77c2e94e...461f1fcd"
+  },
+  "scope": {
+    "contracts": [
+      "contracts/IIconRegistry.sol",
+      "contracts/IconRegistry.sol"
+    ]
+  },
+  "statistics": {
+    "total_findings": 9,
+    "contracts_scanned": 2,
+    "lines_of_code": 660
+  },
+  "findings_summary": {
+    "high_risk": 0,
+    "medium_risk": 0,
+    "low_risk": 6,
+    "info": 2,
+    "best_practices": 1
+  },
+  "code_summary": "The Icon Registry protocol is an on-chain, upgradeable repository for PNG icons, designed to provide a canonical source of visual assets for dApps and wallets. It utilizes the SSTORE2 library to store icon data gas-efficiently, with each icon being written as an immutable data blob. The system is managed by a privileged owner who is solely responsible for adding, updating, and mapping icons. Icons are identified by a human-readable slug (e.g., 'protocols/uniswap'), which is hashed for on-chain operations. The registry supports versioning, allowing for icon updates while preserving access to all historical versions. The owner can map these icons to specific token addresses on different chains or directly to chain IDs, enabling easy lookups for front-end integrations. The contract is built using the UUPS upgradeable proxy pattern, allowing for future logic changes by the owner. It also includes a mechanism to accept ETH donations to support the project's maintenance.",
+  "main_entry_points": {
+    "description": "All core functions that modify the registry's content are restricted to the contract owner. The only state-changing interaction available to the general public is for making donations.",
+    "actors": {
+      "any_user": "Can send ETH to the contract via the receive() function to support the registry",
+      "owner_admin": "Manage registry via admin functions"
+    }
+  },
+  "architecture": {
+    "pattern": "UUPS Upgradeable Proxy",
+    "dependencies": [
+      "SSTORE2 Library (Data Storage)",
+      "OpenZeppelin Abstracts (Ownable, UUPS)"
+    ],
+    "interfaces": [
+      "IIconRegistry"
+    ],
+    "read_functions": [
+      "getIconBySlug()",
+      "getIconByToken()",
+      "batchGetIcons()",
+      "receive()"
+    ],
+    "admin_functions": [
+      "setIcon()",
+      "setIconsBatch()",
+      "mapToken()",
+      "mapTokensBatch()",
+      "mapChain()",
+      "withdrawETH()",
+      "withdrawToken()"
+    ]
+  },
+  "findings": [
+    {
+      "id": 1,
+      "title": "Magic Numbers Instead Of Constants",
+      "severity": "Low Risk",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The contract uses magic number literals (e.g., 3, 2) directly in the code instead of defining them as named constants. Specifically, the modulo operation len % 3 == 2 appears multiple times throughout the contract.",
+      "recommendation": "Using named constants improves code readability, maintainability, and reduces the risk of errors when these values need to be updated. Define constants such as uint256 private constant MODULO_DIVISOR = 3; and uint256 private constant MODULO_REMAINDER = 2; and reference them throughout the contract."
+    },
+    {
+      "id": 2,
+      "title": "Empty Code Block Detection",
+      "severity": "Low Risk",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The function _authorizeUpgrade(address) contains an empty code block.",
+      "recommendation": "Empty functions should be removed or replaced with meaningful implementation. If the function is required by an interface or inheritance pattern, consider adding a comment explaining why it is intentionally empty, or implement the required logic."
+    },
+    {
+      "id": 3,
+      "title": "Loop contains require / revert statements",
+      "severity": "Low Risk",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The contract contains loops with require or revert statements inside them. If any single iteration fails the require condition, the entire transaction will revert, causing all previous iterations to be rolled back. This can lead to denial of service scenarios where a single invalid item prevents processing of the entire batch.",
+      "recommendation": "Consider implementing a fail-safe approach that collects failed items and returns them for post-processing, allowing the loop to continue processing valid items."
+    },
+    {
+      "id": 4,
+      "title": "Non-Specific Solidity Pragma Version",
+      "severity": "Low Risk",
+      "contracts": [
+        "contracts/IIconRegistry.sol",
+        "contracts/IconRegistry.sol"
+      ],
+      "description": "The contracts use a wide pragma version range (pragma solidity ^0.8.22;) instead of a specific version. This can lead to unexpected behavior when compiled with different compiler versions.",
+      "recommendation": "It is recommended to use a specific Solidity version (e.g., pragma solidity 0.8.22;) to ensure consistent compilation and predictable bytecode generation across different environments."
+    },
+    {
+      "id": 5,
+      "title": "PUSH0 Opcode Compatibility Issue",
+      "severity": "Low Risk",
+      "contracts": [
+        "contracts/IIconRegistry.sol",
+        "contracts/IconRegistry.sol"
+      ],
+      "description": "The contracts use Solidity compiler version 0.8.22, which defaults to the Shanghai EVM version. This means the generated bytecode will include PUSH0 opcodes. If deployment is intended for chains other than Ethereum mainnet (such as Layer 2 solutions or other EVM-compatible chains), ensure that the target chain supports the PUSH0 opcode. Otherwise, contract deployment will fail.",
+      "recommendation": "Consider explicitly specifying the EVM version in the compiler configuration to match your deployment target."
+    },
+    {
+      "id": 6,
+      "title": "Unused Custom Error",
+      "severity": "Low Risk",
+      "contract": "contracts/IIconRegistry.sol",
+      "description": "The custom error VersionNotFound() is defined but never used anywhere in the contract.",
+      "recommendation": "Unused custom errors should be removed to reduce contract size and improve code clarity. If this error is intended for future use or external reference, consider documenting its purpose or removing it if it is no longer needed."
+    },
+    {
+      "id": 7,
+      "title": "Unprotected initializer allows ownership takeover",
+      "severity": "Info",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The initialize function is external and only guarded by OpenZeppelin's initializer modifier, but not restricted to the deploying address. If the proxy is deployed without being initialized atomically, any third party can call initialize(attackerAddress) and become the contract owner. Once the attacker is owner, they gain full privileges: they can upgrade the implementation via UUPS, manage or overwrite all icons, remap token and chain icons, and withdraw any ETH or ERC20 tokens held by the contract. A realistic attack is to monitor the transaction pool for the proxy deployment, then front-run the legitimate initialization with a higher gas price to claim ownership.",
+      "code_snippet": "function initialize(address owner_) external initializer {\n    __Ownable_init(owner_);\n}",
+      "attack_vector": "Front-running proxy deployment to claim ownership"
+    },
+    {
+      "id": 8,
+      "title": "withdrawToken function breaks invariant with fee-on-transfer tokens",
+      "severity": "Info",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The withdrawToken function violates its invariant when handling fee-on-transfer or deflationary ERC20 tokens. The invariant states that after withdrawal, the owner's balance must increase by exactly the amount that was in the contract. However, fee-on-transfer tokens deduct a percentage during transfers, causing the owner to receive less than the contract's original balance.",
+      "code_snippet": "function withdrawToken(address token) external onlyOwner {\n    uint256 balance = IERC20(token).balanceOf(address(this));\n    IERC20(token).safeTransfer(owner(), balance);\n}",
+      "scenario": [
+        "Contract holds 1000 fee-on-transfer tokens (5% fee)",
+        "withdrawToken is called, which transfers 1000 tokens",
+        "Token contract deducts 5% fee (50 tokens)",
+        "Owner receives only 950 tokens",
+        "Contract balance becomes 0 ✓",
+        "Owner balance increases by 950, not 1000 ✗"
+      ],
+      "invariant_violated": "IERC20(token).balanceOf(owner()) == balance_before_owner + balance_before_contract"
+    },
+    {
+      "id": 9,
+      "title": "Missing Events for Fund Withdrawals",
+      "severity": "Best Practices",
+      "contract": "contracts/IconRegistry.sol",
+      "description": "The withdrawETH() and withdrawToken() functions do not emit events when funds are withdrawn from the contract.",
+      "code_snippets": {
+        "withdrawETH": "function withdrawETH() external onlyOwner {\n    (bool success,) = payable(owner()).call{value: address(this).balance}(\"\");\n    if (!success) revert TransferFailed();\n    // No event emitted\n}",
+        "withdrawToken": "function withdrawToken(address token) external onlyOwner {\n    uint256 balance = IERC20(token).balanceOf(address(this));\n    IERC20(token).safeTransfer(owner(), balance);\n    // No event emitted\n}"
+      },
+      "impact": [
+        "Track fund movements on-chain",
+        "Monitor donation withdrawals",
+        "Audit the contract's financial history",
+        "Set up alerts for fund movements"
+      ]
+    }
+  ],
+  "disclaimer": {
+    "beta_notice": "The Audit Agent is currently in beta stage and no guarantee is being given as to the accuracy and/or completeness of any of the outputs the Audit Agent may generate, including without limitation this Report.",
+    "limitation": "The results set out in this Report may not be complete nor inclusive of all vulnerabilities. The Audit Agent is provided on an 'as is' basis, without warranties or conditions of any kind, either express or implied.",
+    "legal": "To the fullest extent permitted by law, Nethermind disclaims any liability in connection with this Report, its content, and any related services and products and your use thereof.",
+    "not_financial_advice": "The Report, its content, access, and/or usage thereof, including any associated services or materials, shall not be considered or relied upon as any form of financial, investment, tax, legal, regulatory, or other advice."
+  }
+}

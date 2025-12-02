@@ -81,6 +81,17 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param slugHash keccak256(slug) of the mapped chain icon
     event ChainMapped(uint256 indexed chainId, bytes32 slugHash);
 
+    /// @notice Emitted when ETH is withdrawn from the contract
+    /// @param to Recipient address (owner)
+    /// @param amount Amount of ETH withdrawn in wei
+    event ETHWithdrawn(address indexed to, uint256 amount);
+
+    /// @notice Emitted when ERC20 tokens are withdrawn from the contract
+    /// @param token Token contract address
+    /// @param to Recipient address (owner)
+    /// @param amount Amount of tokens withdrawn
+    event TokenWithdrawn(address indexed token, address indexed to, uint256 amount);
+
     /// @notice Thrown when an icon is requested for a slug that has not been registered
     error IconNotFound();
 
@@ -110,8 +121,11 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Withdraw accumulated ETH donations to owner
     /// @dev Only callable by owner. Sends entire contract balance.
     function withdrawETH() external onlyOwner {
-        (bool success,) = payable(owner()).call{value: address(this).balance}("");
+        address o = owner();
+        uint256 amount = address(this).balance;
+        (bool success,) = payable(o).call{value: amount}("");
         if (!success) revert TransferFailed();
+        emit ETHWithdrawn(o, amount);
     }
 
     /// @notice Withdraw donated ERC20 tokens to owner
@@ -119,8 +133,10 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     ///      Uses SafeERC20 to handle non-standard tokens (USDT, etc.)
     /// @param token ERC20 token contract address to withdraw
     function withdrawToken(address token) external onlyOwner {
+        address o = owner();
         uint256 balance = IERC20(token).balanceOf(address(this));
-        IERC20(token).safeTransfer(owner(), balance);
+        IERC20(token).safeTransfer(o, balance);
+        emit TokenWithdrawn(token, o, balance);
     }
 
     // ========== INITIALIZATION ==========
