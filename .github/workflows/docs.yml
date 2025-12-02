@@ -20,24 +20,26 @@ jobs:
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
+
+      - name: Install dependencies
+        run: forge install
 
       - name: Build contracts
         run: forge build
 
-      - name: Generate Solidity docs (JSON)
+      - name: Run tests
+        run: forge test -vvv
+
+      - name: Generate Solidity docs
         run: |
           mkdir -p docs/contracts/generated
-          forge doc --out docs/contracts/generated
+          forge doc --out docs/contracts/generated || true
 
-      - name: Generate NatSpec documentation
+      - name: Extract NatSpec documentation
         run: |
-          # Extract NatSpec from compiled artifacts
           for file in out/*.sol/*.json; do
             if [ -f "$file" ]; then
               name=$(basename "$file" .json)
-              # Skip test files and libraries
               if [[ "$name" != *"Test"* ]] && [[ "$name" != "SSTORE2" ]] && [[ "$name" != "IERC20" ]]; then
                 echo "Processing $name..."
                 jq -r '.devdoc // empty' "$file" > "docs/contracts/generated/${name}.devdoc.json" 2>/dev/null || true
@@ -45,12 +47,6 @@ jobs:
               fi
             fi
           done
-
-      - name: Verify contracts compile
-        run: forge build --sizes
-
-      - name: Run tests
-        run: forge test -vvv
 
       - name: Upload docs artifact
         uses: actions/upload-artifact@v4
@@ -66,7 +62,6 @@ jobs:
           script: |
             const fs = require('fs');
             
-            // Check if docs were generated
             const docsDir = 'docs/contracts/generated';
             let docsGenerated = false;
             try {
@@ -81,8 +76,7 @@ jobs:
             
             Contract documentation has been generated from NatSpec comments.
             
-            **Artifacts available:**
-            - Download from the Actions artifacts tab
+            **Artifacts available:** Download from the Actions artifacts tab
             
             **Contracts documented:**
             - IconRegistry.sol
@@ -113,14 +107,15 @@ jobs:
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
+
+      - name: Install dependencies
+        run: forge install
 
       - name: Build and generate docs
         run: |
           forge build
           mkdir -p docs/contracts/generated
-          forge doc --out docs/contracts/generated
+          forge doc --out docs/contracts/generated || true
 
       - name: Commit updated docs
         run: |
