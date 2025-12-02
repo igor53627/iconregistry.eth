@@ -101,6 +101,20 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Thrown when batch arrays have mismatched lengths
     error LengthMismatch();
 
+    /// @notice Thrown when icon data doesn't match declared format (magic byte mismatch)
+    error InvalidFormat();
+
+    /// @dev PNG magic bytes: 0x89 'P' 'N' 'G'
+    bytes4 private constant PNG_MAGIC = 0x89504E47;
+
+    /// @dev WEBP magic bytes: 'R' 'I' 'F' 'F' ... 'W' 'E' 'B' 'P'
+    bytes4 private constant RIFF_MAGIC = 0x52494646;
+    bytes4 private constant WEBP_MAGIC = 0x57454250;
+
+    /// @dev SVG must start with '<svg' or '<?xm' (for <?xml)
+    bytes4 private constant SVG_MAGIC_1 = 0x3c737667; // '<svg'
+    bytes4 private constant SVG_MAGIC_2 = 0x3c3f786d; // '<?xm'
+
     // ========== DONATIONS ==========
 
     /// @notice Accept ETH donations to support the registry
@@ -161,6 +175,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     ) external onlyOwner {
         bytes32 slugHash = keccak256(bytes(slug));
         if (data.length == 0) revert InvalidData();
+        _validateFormat(data, format);
 
         address pointer = SSTORE2.write(data);
         Icon storage current = icons[slugHash];
@@ -208,6 +223,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         for (uint256 i = 0; i < len; i++) {
             bytes32 slugHash = keccak256(bytes(slugList[i]));
             if (dataList[i].length == 0) revert InvalidData();
+            _validateFormat(dataList[i], formats[i]);
 
             address pointer = SSTORE2.write(dataList[i]);
             Icon storage current = icons[slugHash];
@@ -473,6 +489,29 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     }
 
     // ========== INTERNAL ==========
+
+    /// @dev Validates that icon data matches the declared format using magic bytes.
+    ///      Prevents uploading malicious data disguised as images.
+    /// @param data Raw icon bytes
+    /// @param format Declared image format
+    function _validateFormat(bytes calldata data, IconFormat format) internal pure {
+        if (data.length < 12) revert InvalidFormat();
+
+        bytes4 magic = bytes4(data[:4]);
+
+        if (format == IconFormat.PNG) {
+            if (magic != PNG_MAGIC) revert InvalidFormat();
+        } else if (format == IconFormat.WEBP) {
+            // WEBP: starts with "RIFF", then 4 bytes size, then "WEBP"
+            if (magic != RIFF_MAGIC) revert InvalidFormat();
+            bytes4 webpMagic = bytes4(data[8:12]);
+            if (webpMagic != WEBP_MAGIC) revert InvalidFormat();
+        } else if (format == IconFormat.SVG) {
+            // SVG: must start with '<svg' or '<?xml'
+            // Note: SVG can contain scripts - clients should sanitize!
+            if (magic != SVG_MAGIC_1 && magic != SVG_MAGIC_2) revert InvalidFormat();
+        }
+    }
 
     /// @dev Retrieves icon data from SSTORE2. Reverts if icon doesn't exist.
     /// @param slugHash keccak256(bytes(slug))

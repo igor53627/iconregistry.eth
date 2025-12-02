@@ -92,6 +92,7 @@ Emitted when a chain ID is mapped to a chain icon.
 | `VersionNotFound()` | Requested icon version does not exist |
 | `TransferFailed()` | ETH or token transfer failed |
 | `LengthMismatch()` | Batch arrays have mismatched lengths |
+| `InvalidFormat()` | Icon data doesn't match declared format (magic byte mismatch) |
 
 ---
 
@@ -497,6 +498,12 @@ IconRegistry uses the UUPS (Universal Upgradeable Proxy Standard) pattern:
 2. **Immutable Icons:** Once stored via SSTORE2, icon data cannot be modified (only versioned)
 3. **No Reentrancy Risk:** Withdrawal functions update no state after external calls
 4. **Gas Limits:** Large icons may cause view functions to run out of gas off-chain
+5. **Magic Byte Validation:** All icons are validated against their declared format:
+   - **PNG:** Must start with `0x89504E47` (‰PNG)
+   - **WEBP:** Must start with `RIFF....WEBP`
+   - **SVG:** Must start with `<svg` or `<?xm`
+
+> ⚠️ **SVG Warning:** While SVG format is validated, SVG files can contain malicious scripts. Clients MUST sanitize SVG content before rendering in DOM. Consider using `<img>` tags which block script execution.
 
 ## License
 
