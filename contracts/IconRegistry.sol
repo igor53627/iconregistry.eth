@@ -4,11 +4,8 @@ pragma solidity ^0.8.22;
 import {SSTORE2} from "solady/utils/SSTORE2.sol";
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
-
-interface IERC20 {
-    function balanceOf(address) external view returns (uint256);
-    function transfer(address, uint256) external returns (bool);
-}
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 /// @title IconRegistry
 /// @author iconregistry.eth
@@ -22,6 +19,7 @@ interface IERC20 {
 ///      Trust model: Single privileged owner controls all icon content, mappings, and upgrades.
 ///      No user-submitted or permissionless data paths exist.
 contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
+    using SafeERC20 for IERC20;
 
     /// @notice Icon data stored via SSTORE2
     /// @param pointer SSTORE2 pointer contract address where icon bytes are stored
@@ -118,10 +116,11 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Withdraw donated ERC20 tokens to owner
     /// @dev Only callable by owner. Sends entire token balance.
+    ///      Uses SafeERC20 to handle non-standard tokens (USDT, etc.)
     /// @param token ERC20 token contract address to withdraw
     function withdrawToken(address token) external onlyOwner {
         uint256 balance = IERC20(token).balanceOf(address(this));
-        if (!IERC20(token).transfer(owner(), balance)) revert TransferFailed();
+        IERC20(token).safeTransfer(owner(), balance);
     }
 
     // ========== INITIALIZATION ==========

@@ -467,16 +467,20 @@ IconRegistry uses the UUPS (Universal Upgradeable Proxy Standard) pattern:
 
 ### Storage Layout
 
+> **Note:** OpenZeppelin Contracts Upgradeable v5.x uses ERC-7201 namespaced storage. 
+> The inherited `OwnableUpgradeable` and `UUPSUpgradeable` state is stored at hashed 
+> namespace locations, not sequential slots. The table below shows IconRegistry's 
+> own storage variables which start at slot 0.
+
 | Slot | Variable |
 |------|----------|
-| 0-1 | OwnableUpgradeable |
-| 2 | icons mapping |
-| 3 | iconVersions mapping |
-| 4 | tokenToIcon mapping |
-| 5 | chainToIcon mapping |
-| 6 | slugs array |
-| 7 | slugIndex mapping |
-| 8-57 | __gap (reserved) |
+| 0 | icons mapping |
+| 1 | iconVersions mapping |
+| 2 | tokenToIcon mapping |
+| 3 | chainToIcon mapping |
+| 4 | slugs array |
+| 5 | slugIndex mapping |
+| 6-55 | __gap (reserved) |
 
 ---
 
