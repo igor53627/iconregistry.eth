@@ -28,17 +28,10 @@ struct Icon {
     uint32 width;        // Image width in pixels
     uint32 height;       // Image height in pixels
     uint32 version;      // Version number (starts at 1)
-    IconFormat format;   // Image format enum
 }
 ```
 
-### IconFormat Enum
-
-| Value | Name | MIME Type |
-|-------|------|-----------|
-| 0 | PNG | `image/png` |
-| 1 | SVG | `image/svg+xml` |
-| 2 | WEBP | `image/webp` |
+> **Note:** v1 is PNG-only for security. No format field needed.
 
 ### Slug System
 
@@ -92,7 +85,7 @@ Emitted when a chain ID is mapped to a chain icon.
 | `VersionNotFound()` | Requested icon version does not exist |
 | `TransferFailed()` | ETH or token transfer failed |
 | `LengthMismatch()` | Batch arrays have mismatched lengths |
-| `InvalidFormat()` | Icon data doesn't match declared format (magic byte mismatch) |
+| `InvalidPNG()` | Icon data is not a valid PNG (8-byte signature mismatch) |
 
 ---
 
@@ -158,8 +151,7 @@ function getIconInfo(bytes32 slugHash) external view returns (
     address pointer,
     uint32 width,
     uint32 height,
-    uint32 version,
-    IconFormat format
+    uint32 version
 )
 ```
 
@@ -173,7 +165,6 @@ Get icon metadata including version.
 - `width` - Image width in pixels
 - `height` - Image height in pixels
 - `version` - Current version number
-- `format` - Image format enum value
 
 ### getIconByToken
 
@@ -314,8 +305,7 @@ function setIcon(
     string calldata slug,
     bytes calldata data,
     uint32 width,
-    uint32 height,
-    IconFormat format
+    uint32 height
 ) external onlyOwner
 ```
 
@@ -323,10 +313,9 @@ Add or update icon by slug. If icon exists, creates new version. Old versions re
 
 **Parameters:**
 - `slug` - Human-readable identifier (e.g., "protocols/uniswap")
-- `data` - Raw image bytes (PNG, SVG, or WEBP)
+- `data` - Raw PNG image bytes (must have valid 8-byte PNG signature)
 - `width` - Image width in pixels
 - `height` - Image height in pixels
-- `format` - Image format enum value
 
 **Recommended max icon size:** 32KB for gas efficiency
 
@@ -337,12 +326,11 @@ function setIconsBatch(
     string[] calldata slugList,
     bytes[] calldata dataList,
     uint32[] calldata widths,
-    uint32[] calldata heights,
-    IconFormat[] calldata formats
+    uint32[] calldata heights
 ) external onlyOwner
 ```
 
-Batch add or update icons. All arrays must have identical lengths.
+Batch add or update PNG icons. All arrays must have identical lengths.
 
 ### mapToken
 
@@ -498,12 +486,8 @@ IconRegistry uses the UUPS (Universal Upgradeable Proxy Standard) pattern:
 2. **Immutable Icons:** Once stored via SSTORE2, icon data cannot be modified (only versioned)
 3. **No Reentrancy Risk:** Withdrawal functions update no state after external calls
 4. **Gas Limits:** Large icons may cause view functions to run out of gas off-chain
-5. **Magic Byte Validation:** All icons are validated against their declared format:
-   - **PNG:** Must start with `0x89504E47` (‰PNG)
-   - **WEBP:** Must start with `RIFF....WEBP`
-   - **SVG:** Must start with `<svg` or `<?xm`
-
-> ⚠️ **SVG Warning:** While SVG format is validated, SVG files can contain malicious scripts. Clients MUST sanitize SVG content before rendering in DOM. Consider using `<img>` tags which block script execution.
+5. **PNG-Only:** v1 only supports PNG format to eliminate SVG XSS risks
+6. **8-Byte Signature Validation:** All icons must have valid PNG signature (`0x89504E470D0A1A0A`)
 
 ## License
 

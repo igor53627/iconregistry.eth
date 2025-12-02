@@ -12,10 +12,12 @@ interface IERC20 {
 
 /// @title IconRegistry
 /// @author iconregistry.eth
-/// @notice Upgradeable registry for on-chain icons with token address and slug lookups
+/// @notice Upgradeable registry for on-chain PNG icons with token address and slug lookups
 /// @dev UUPS upgradeable contract. Must be deployed behind an ERC1967 proxy.
 ///      Icons are stored via SSTORE2 as immutable byte blobs. Each icon update creates
 ///      a new version while preserving historical versions.
+///      
+///      PNG-only in v1 for security (no SVG XSS risk).
 ///      
 ///      Trust model: Single privileged owner controls all icon content, mappings, and upgrades.
 ///      No user-submitted or permissionless data paths exist.
@@ -26,17 +28,12 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param width Image width in pixels
     /// @param height Image height in pixels
     /// @param version Version number (starts at 1, increments on each update)
-    /// @param format Image format (PNG, SVG, or WEBP)
     struct Icon {
         address pointer;
         uint32 width;
         uint32 height;
         uint32 version;
-        IconFormat format;
     }
-
-    /// @notice Supported image formats for icons
-    enum IconFormat { PNG, SVG, WEBP }
 
     /// @notice Maps slug hash to current Icon data
     /// @dev slugHash = keccak256(bytes(slug))
@@ -101,19 +98,11 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Thrown when batch arrays have mismatched lengths
     error LengthMismatch();
 
-    /// @notice Thrown when icon data doesn't match declared format (magic byte mismatch)
-    error InvalidFormat();
+    /// @notice Thrown when icon data is not a valid PNG (magic byte mismatch)
+    error InvalidPNG();
 
-    /// @dev PNG magic bytes: 0x89 'P' 'N' 'G'
-    bytes4 private constant PNG_MAGIC = 0x89504E47;
-
-    /// @dev WEBP magic bytes: 'R' 'I' 'F' 'F' ... 'W' 'E' 'B' 'P'
-    bytes4 private constant RIFF_MAGIC = 0x52494646;
-    bytes4 private constant WEBP_MAGIC = 0x57454250;
-
-    /// @dev SVG must start with '<svg' or '<?xm' (for <?xml)
-    bytes4 private constant SVG_MAGIC_1 = 0x3c737667; // '<svg'
-    bytes4 private constant SVG_MAGIC_2 = 0x3c3f786d; // '<?xm'
+    /// @dev Full 8-byte PNG signature for strict validation
+    bytes8 private constant PNG_SIGNATURE = 0x89504E470D0A1A0A;
 
     // ========== DONATIONS ==========
 
@@ -160,28 +149,26 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Add or update icon by slug
     /// @dev If icon exists, creates new version. Old versions remain accessible via getIconVersion.
-    ///      Recommended max icon size: 32KB for gas efficiency.
+    ///      Only PNG format is supported. Recommended max icon size: 32KB for gas efficiency.
     /// @param slug Human-readable identifier (e.g., "protocols/uniswap", "chains/ethereum")
-    /// @param data Raw image bytes (PNG, SVG, or WEBP)
+    /// @param data Raw PNG image bytes (must have valid PNG signature)
     /// @param width Image width in pixels
     /// @param height Image height in pixels
-    /// @param format Image format enum value
     function setIcon(
         string calldata slug,
         bytes calldata data,
         uint32 width,
-        uint32 height,
-        IconFormat format
+        uint32 height
     ) external onlyOwner {
         bytes32 slugHash = keccak256(bytes(slug));
         if (data.length == 0) revert InvalidData();
-        _validateFormat(data, format);
+        _validatePNG(data);
 
         address pointer = SSTORE2.write(data);
         Icon storage current = icons[slugHash];
 
         if (current.pointer == address(0)) {
-            icons[slugHash] = Icon(pointer, width, height, 1, format);
+            icons[slugHash] = Icon(pointer, width, height, 1);
             iconVersions[slugHash][1] = icons[slugHash];
 
             slugs.push(slugHash);
@@ -190,7 +177,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
             emit IconAdded(slugHash, slug, pointer, 1);
         } else {
             uint32 newVersion = current.version + 1;
-            icons[slugHash] = Icon(pointer, width, height, newVersion, format);
+            icons[slugHash] = Icon(pointer, width, height, newVersion);
             iconVersions[slugHash][newVersion] = icons[slugHash];
 
             emit IconUpdated(slugHash, slug, pointer, newVersion);
@@ -199,37 +186,32 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Batch add or update icons
     /// @dev For each index i, creates or updates the icon for keccak256(slugList[i]).
-    ///      All arrays must have identical lengths.
+    ///      All arrays must have identical lengths. Only PNG format is supported.
     /// @param slugList List of slugs (e.g., "protocols/uniswap")
-    /// @param dataList List of raw image byte data for each slug
+    /// @param dataList List of raw PNG image bytes for each slug
     /// @param widths List of image widths in pixels
     /// @param heights List of image heights in pixels
-    /// @param formats List of image formats for each icon
     function setIconsBatch(
         string[] calldata slugList,
         bytes[] calldata dataList,
         uint32[] calldata widths,
-        uint32[] calldata heights,
-        IconFormat[] calldata formats
+        uint32[] calldata heights
     ) external onlyOwner {
         uint256 len = slugList.length;
-        if (
-            dataList.length != len || widths.length != len || heights.length != len
-                || formats.length != len
-        ) {
+        if (dataList.length != len || widths.length != len || heights.length != len) {
             revert LengthMismatch();
         }
 
-        for (uint256 i = 0; i < len; i++) {
+        for (uint256 i = 0; i < len;) {
             bytes32 slugHash = keccak256(bytes(slugList[i]));
             if (dataList[i].length == 0) revert InvalidData();
-            _validateFormat(dataList[i], formats[i]);
+            _validatePNG(dataList[i]);
 
             address pointer = SSTORE2.write(dataList[i]);
             Icon storage current = icons[slugHash];
 
             if (current.pointer == address(0)) {
-                icons[slugHash] = Icon(pointer, widths[i], heights[i], 1, formats[i]);
+                icons[slugHash] = Icon(pointer, widths[i], heights[i], 1);
                 iconVersions[slugHash][1] = icons[slugHash];
 
                 slugs.push(slugHash);
@@ -238,11 +220,13 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
                 emit IconAdded(slugHash, slugList[i], pointer, 1);
             } else {
                 uint32 newVersion = current.version + 1;
-                icons[slugHash] = Icon(pointer, widths[i], heights[i], newVersion, formats[i]);
+                icons[slugHash] = Icon(pointer, widths[i], heights[i], newVersion);
                 iconVersions[slugHash][newVersion] = icons[slugHash];
 
                 emit IconUpdated(slugHash, slugList[i], pointer, newVersion);
             }
+
+            unchecked { ++i; }
         }
     }
 
@@ -275,11 +259,13 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
             revert LengthMismatch();
         }
 
-        for (uint256 i = 0; i < len; i++) {
+        for (uint256 i = 0; i < len;) {
             bytes32 slugHash = keccak256(bytes(slugList[i]));
             if (icons[slugHash].pointer == address(0)) revert IconNotFound();
             tokenToIcon[tokens[i]][chainIds[i]] = slugHash;
             emit TokenMapped(tokens[i], chainIds[i], slugHash);
+
+            unchecked { ++i; }
         }
     }
 
@@ -298,7 +284,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Get icon by slug string (latest version)
     /// @param slug Human-readable slug (e.g., "protocols/uniswap")
-    /// @return Raw icon bytes (PNG/SVG/WEBP data)
+    /// @return Raw PNG icon bytes
     function getIconBySlug(string calldata slug) external view returns (bytes memory) {
         bytes32 slugHash = keccak256(bytes(slug));
         return _getIconData(slugHash);
@@ -307,7 +293,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Get icon by pre-computed slug hash (latest version)
     /// @dev More gas efficient when slug hash is known
     /// @param slugHash keccak256(bytes(slug))
-    /// @return Raw icon bytes
+    /// @return Raw PNG icon bytes
     function getIcon(bytes32 slugHash) external view returns (bytes memory) {
         return _getIconData(slugHash);
     }
@@ -315,7 +301,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Get specific version of an icon
     /// @param slugHash keccak256(bytes(slug))
     /// @param version Version number (1-indexed)
-    /// @return Raw icon bytes for that version
+    /// @return Raw PNG icon bytes for that version
     function getIconVersion(bytes32 slugHash, uint32 version) external view returns (bytes memory) {
         Icon storage icon = iconVersions[slugHash][version];
         if (icon.pointer == address(0)) revert VersionNotFound();
@@ -337,15 +323,14 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @return width Image width in pixels
     /// @return height Image height in pixels
     /// @return version Current version number
-    /// @return format Image format enum value
     function getIconInfo(bytes32 slugHash)
         external
         view
-        returns (address pointer, uint32 width, uint32 height, uint32 version, IconFormat format)
+        returns (address pointer, uint32 width, uint32 height, uint32 version)
     {
         Icon storage icon = icons[slugHash];
         if (icon.pointer == address(0)) revert IconNotFound();
-        return (icon.pointer, icon.width, icon.height, icon.version, icon.format);
+        return (icon.pointer, icon.width, icon.height, icon.version);
     }
 
     // ========== GETTERS: By Token ==========
@@ -353,7 +338,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Get icon by token address and chainId
     /// @param token Token contract address
     /// @param chainId Chain ID where token is deployed
-    /// @return Raw icon bytes
+    /// @return Raw PNG icon bytes
     function getIconByToken(address token, uint256 chainId) external view returns (bytes memory) {
         bytes32 slugHash = tokenToIcon[token][chainId];
         if (slugHash == bytes32(0)) revert IconNotFound();
@@ -372,7 +357,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Get chain icon by chainId
     /// @param chainId EVM chain ID (e.g., 1 for Ethereum)
-    /// @return Raw icon bytes
+    /// @return Raw PNG icon bytes
     function getChainIcon(uint256 chainId) external view returns (bytes memory) {
         bytes32 slugHash = chainToIcon[chainId];
         if (slugHash == bytes32(0)) revert IconNotFound();
@@ -382,7 +367,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     // ========== GETTERS: Data URI ==========
 
     /// @notice Get icon as data URI (for direct use in img src)
-    /// @dev Returns base64-encoded data URI. Gas-heavy; intended for off-chain use.
+    /// @dev Returns base64-encoded PNG data URI. Gas-heavy; intended for off-chain use.
     /// @param slugHash keccak256(bytes(slug))
     /// @return Data URI string (e.g., "data:image/png;base64,...")
     function getIconDataURI(bytes32 slugHash) external view returns (string memory) {
@@ -390,13 +375,11 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         if (icon.pointer == address(0)) revert IconNotFound();
 
         bytes memory data = SSTORE2.read(icon.pointer);
-        string memory mime = _getMime(icon.format);
-
-        return string(abi.encodePacked("data:", mime, ";base64,", _base64(data)));
+        return string(abi.encodePacked("data:image/png;base64,", _base64(data)));
     }
 
     /// @notice Get token icon as data URI
-    /// @dev Returns base64-encoded data URI. Gas-heavy; intended for off-chain use.
+    /// @dev Returns base64-encoded PNG data URI. Gas-heavy; intended for off-chain use.
     /// @param token Token contract address
     /// @param chainId Chain ID where token is deployed
     /// @return Data URI string
@@ -410,9 +393,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
         Icon storage icon = icons[slugHash];
         bytes memory data = SSTORE2.read(icon.pointer);
-        string memory mime = _getMime(icon.format);
-
-        return string(abi.encodePacked("data:", mime, ";base64,", _base64(data)));
+        return string(abi.encodePacked("data:image/png;base64,", _base64(data)));
     }
 
     // ========== GETTERS: Batch ==========
@@ -420,18 +401,19 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @notice Batch get icons by slug hashes
     /// @dev Returns empty bytes for any missing icons (does not revert)
     /// @param slugHashes Array of keccak256(bytes(slug)) values
-    /// @return result Array of icon bytes (empty for missing icons)
+    /// @return result Array of PNG icon bytes (empty for missing icons)
     function batchGetIcons(bytes32[] calldata slugHashes)
         external
         view
         returns (bytes[] memory result)
     {
         result = new bytes[](slugHashes.length);
-        for (uint256 i = 0; i < slugHashes.length; i++) {
+        for (uint256 i = 0; i < slugHashes.length;) {
             Icon storage icon = icons[slugHashes[i]];
             if (icon.pointer != address(0)) {
                 result[i] = SSTORE2.read(icon.pointer);
             }
+            unchecked { ++i; }
         }
     }
 
@@ -440,7 +422,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     ///      Arrays must have identical lengths.
     /// @param tokens Array of token contract addresses
     /// @param chainIds Array of chain IDs for each token
-    /// @return result Array of icon bytes (empty for unmapped tokens)
+    /// @return result Array of PNG icon bytes (empty for unmapped tokens)
     function batchGetTokenIcons(address[] calldata tokens, uint256[] calldata chainIds)
         external
         view
@@ -450,7 +432,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         if (chainIds.length != len) revert LengthMismatch();
 
         result = new bytes[](len);
-        for (uint256 i = 0; i < len; i++) {
+        for (uint256 i = 0; i < len;) {
             bytes32 slugHash = tokenToIcon[tokens[i]][chainIds[i]];
             if (slugHash != bytes32(0)) {
                 Icon storage icon = icons[slugHash];
@@ -458,6 +440,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
                     result[i] = SSTORE2.read(icon.pointer);
                 }
             }
+            unchecked { ++i; }
         }
     }
 
@@ -483,52 +466,29 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
         uint256 end = offset + limit > total ? total : offset + limit;
         result = new bytes32[](end - offset);
-        for (uint256 i = offset; i < end; i++) {
+        for (uint256 i = offset; i < end;) {
             result[i - offset] = slugs[i];
+            unchecked { ++i; }
         }
     }
 
     // ========== INTERNAL ==========
 
-    /// @dev Validates that icon data matches the declared format using magic bytes.
-    ///      Prevents uploading malicious data disguised as images.
-    /// @param data Raw icon bytes
-    /// @param format Declared image format
-    function _validateFormat(bytes calldata data, IconFormat format) internal pure {
-        if (data.length < 12) revert InvalidFormat();
-
-        bytes4 magic = bytes4(data[:4]);
-
-        if (format == IconFormat.PNG) {
-            if (magic != PNG_MAGIC) revert InvalidFormat();
-        } else if (format == IconFormat.WEBP) {
-            // WEBP: starts with "RIFF", then 4 bytes size, then "WEBP"
-            if (magic != RIFF_MAGIC) revert InvalidFormat();
-            bytes4 webpMagic = bytes4(data[8:12]);
-            if (webpMagic != WEBP_MAGIC) revert InvalidFormat();
-        } else if (format == IconFormat.SVG) {
-            // SVG: must start with '<svg' or '<?xml'
-            // Note: SVG can contain scripts - clients should sanitize!
-            if (magic != SVG_MAGIC_1 && magic != SVG_MAGIC_2) revert InvalidFormat();
-        }
+    /// @dev Validates that icon data is a valid PNG using the 8-byte PNG signature.
+    ///      PNG signature: 0x89 'P' 'N' 'G' 0x0D 0x0A 0x1A 0x0A
+    /// @param data Raw icon bytes to validate
+    function _validatePNG(bytes calldata data) internal pure {
+        if (data.length < 8) revert InvalidPNG();
+        if (bytes8(data[:8]) != PNG_SIGNATURE) revert InvalidPNG();
     }
 
     /// @dev Retrieves icon data from SSTORE2. Reverts if icon doesn't exist.
     /// @param slugHash keccak256(bytes(slug))
-    /// @return Raw icon bytes
+    /// @return Raw PNG icon bytes
     function _getIconData(bytes32 slugHash) internal view returns (bytes memory) {
         Icon storage icon = icons[slugHash];
         if (icon.pointer == address(0)) revert IconNotFound();
         return SSTORE2.read(icon.pointer);
-    }
-
-    /// @dev Maps IconFormat enum to MIME type string
-    /// @param f Image format enum value
-    /// @return MIME type string
-    function _getMime(IconFormat f) internal pure returns (string memory) {
-        if (f == IconFormat.PNG) return "image/png";
-        if (f == IconFormat.SVG) return "image/svg+xml";
-        return "image/webp";
     }
 
     /// @dev Base64 encodes arbitrary bytes using RFC4648 with = padding
