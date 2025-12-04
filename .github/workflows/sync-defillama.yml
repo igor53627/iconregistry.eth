@@ -29,6 +29,9 @@ env:
   TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
   TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
 
+permissions:
+  contents: write
+
 jobs:
   sync-and-deploy:
     runs-on: ubuntu-latest
