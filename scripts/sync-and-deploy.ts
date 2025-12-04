@@ -199,9 +199,10 @@ async function main() {
         for (const icon of icons) {
             const baseName = path.basename(icon.relativePath, path.extname(icon.relativePath));
             const subDir = path.dirname(icon.relativePath);
-            const slug = subDir === '.' 
+            // Normalize to lowercase to avoid case-sensitive duplicates
+            const slug = (subDir === '.' 
                 ? `${prefix}/${baseName}` 
-                : `${prefix}/${subDir}/${baseName}`;
+                : `${prefix}/${subDir}/${baseName}`).toLowerCase();
             allSourceIcons.push({ fullPath: icon.fullPath, slug });
         }
     }
