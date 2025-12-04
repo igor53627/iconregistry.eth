@@ -7,13 +7,20 @@
     "test": "forge test",
     "optimize": "tsx scripts/optimize-icons.ts",
     "deploy": "forge script scripts/Deploy.s.sol --broadcast",
-    "upload": "tsx scripts/upload-icons.ts"
+    "upload": "tsx scripts/upload-icons.ts",
+    "upload:turnkey": "tsx scripts/deploy-icons-turnkey.ts",
+    "turnkey:setup": "tsx scripts/turnkey-setup.ts",
+    "sync": "tsx scripts/sync-and-deploy.ts"
   },
   "devDependencies": {
     "@types/node": "^20.19.25",
     "sharp": "^0.33.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "viem": "^2.0.0"
+    "viem": "^2.41.2"
+  },
+  "dependencies": {
+    "@turnkey/sdk-server": "^4.12.1",
+    "@turnkey/viem": "^0.14.16"
   }
 }

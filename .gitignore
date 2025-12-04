@@ -10,6 +10,7 @@ artifacts/
 # Environment
 .env
 .env.local
+.turnkey.json
 
 # IDE
 .idea/

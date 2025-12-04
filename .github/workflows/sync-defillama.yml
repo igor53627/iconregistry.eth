@@ -1,0 +1,98 @@
+name: Sync DefiLlama Icons
+
+on:
+  schedule:
+    # Run daily at 3am UTC (low gas time)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      max_gas_price:
+        description: 'Max gas price in gwei'
+        required: false
+        default: '0.1'
+      dry_run:
+        description: 'Dry run (no deployment)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      batch_size:
+        description: 'Icons per transaction'
+        required: false
+        default: '5'
+
+env:
+  TURNKEY_API_PUBLIC_KEY: ${{ secrets.TURNKEY_API_PUBLIC_KEY }}
+  TURNKEY_API_PRIVATE_KEY: ${{ secrets.TURNKEY_API_PRIVATE_KEY }}
+  TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
+  TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install oxipng
+        run: |
+          wget -q https://github.com/shssoichiro/oxipng/releases/download/v9.0.0/oxipng-9.0.0-x86_64-unknown-linux-musl.tar.gz
+          tar -xzf oxipng-9.0.0-x86_64-unknown-linux-musl.tar.gz
+          sudo mv oxipng-9.0.0-x86_64-unknown-linux-musl/oxipng /usr/local/bin/
+          oxipng --version
+
+      - name: Validate Turnkey configuration
+        run: |
+          if [ -z "$TURNKEY_API_PUBLIC_KEY" ] || [ -z "$TURNKEY_API_PRIVATE_KEY" ] || [ -z "$TURNKEY_ORGANIZATION_ID" ] || [ -z "$TURNKEY_SIGN_WITH" ]; then
+            echo "Warning: Turnkey secrets not configured. Running in dry-run mode."
+            echo "DRY_RUN=true" >> $GITHUB_ENV
+          fi
+
+      - name: Sync and deploy icons
+        env:
+          MAX_GAS_PRICE_GWEI: ${{ github.event.inputs.max_gas_price || '0.1' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || env.DRY_RUN || 'false' }}
+          BATCH_SIZE: ${{ github.event.inputs.batch_size || '5' }}
+          RPC_URL: https://ethereum-rpc.publicnode.com
+        run: npx tsx scripts/sync-and-deploy.ts
+
+      - name: Check for new icons
+        id: check-icons
+        run: |
+          git add icons-64/
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            ICON_COUNT=$(git diff --staged --name-only | grep -c "\.png$" || true)
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "icon_count=$ICON_COUNT" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit new icons
+        if: steps.check-icons.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add icons-64/
+          git commit -m "chore: sync ${{ steps.check-icons.outputs.icon_count }} icons from DefiLlama [skip ci]"
+          git push
+
+      - name: Create summary
+        run: |
+          echo "## DefiLlama Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check-icons.outputs.has_changes }}" == "true" ]; then
+            echo "✅ Synced **${{ steps.check-icons.outputs.icon_count }}** new icons" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No new icons to sync" >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,116 @@
+name: Deploy Icons to Mainnet
+
+on:
+  push:
+    paths:
+      - 'icons-64/**'
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: 'Icons per transaction'
+        required: false
+        default: '5'
+      max_gas_price:
+        description: 'Max gas price in gwei'
+        required: false
+        default: '0.1'
+      resume_from:
+        description: 'Resume from batch number'
+        required: false
+        default: '0'
+
+env:
+  TURNKEY_API_PUBLIC_KEY: ${{ secrets.TURNKEY_API_PUBLIC_KEY }}
+  TURNKEY_API_PRIVATE_KEY: ${{ secrets.TURNKEY_API_PRIVATE_KEY }}
+  TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
+  TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
+
+jobs:
+  check-new-icons:
+    runs-on: ubuntu-latest
+    outputs:
+      has_new_icons: ${{ steps.check.outputs.has_new_icons }}
+      icon_count: ${{ steps.check.outputs.icon_count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check for new icons
+        id: check
+        run: |
+          # Count new/modified icons
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual trigger - check against on-chain state (done in deploy job)
+            echo "has_new_icons=true" >> $GITHUB_OUTPUT
+            echo "icon_count=unknown" >> $GITHUB_OUTPUT
+          else
+            # Push trigger - check git diff
+            NEW_ICONS=$(git diff --name-only HEAD~1 HEAD -- 'icons-64/**/*.png' | wc -l)
+            if [ "$NEW_ICONS" -gt 0 ]; then
+              echo "has_new_icons=true" >> $GITHUB_OUTPUT
+              echo "icon_count=$NEW_ICONS" >> $GITHUB_OUTPUT
+              echo "Found $NEW_ICONS new/modified icons"
+            else
+              echo "has_new_icons=false" >> $GITHUB_OUTPUT
+              echo "icon_count=0" >> $GITHUB_OUTPUT
+              echo "No new icons to deploy"
+            fi
+          fi
+
+  deploy:
+    needs: check-new-icons
+    if: needs.check-new-icons.outputs.has_new_icons == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Validate Turnkey configuration
+        run: |
+          if [ -z "$TURNKEY_API_PUBLIC_KEY" ] || [ -z "$TURNKEY_API_PRIVATE_KEY" ] || [ -z "$TURNKEY_ORGANIZATION_ID" ] || [ -z "$TURNKEY_SIGN_WITH" ]; then
+            echo "Error: Missing Turnkey secrets. Please configure:"
+            echo "  - TURNKEY_API_PUBLIC_KEY"
+            echo "  - TURNKEY_API_PRIVATE_KEY"
+            echo "  - TURNKEY_ORGANIZATION_ID"
+            echo "  - TURNKEY_SIGN_WITH"
+            exit 1
+          fi
+          echo "Turnkey configuration validated"
+
+      - name: Deploy icons
+        env:
+          BATCH_SIZE: ${{ github.event.inputs.batch_size || '5' }}
+          MAX_GAS_PRICE_GWEI: ${{ github.event.inputs.max_gas_price || '0.1' }}
+          RESUME_FROM: ${{ github.event.inputs.resume_from || '0' }}
+          RPC_URL: https://eth.drpc.org
+        run: npx tsx scripts/deploy-icons-turnkey.ts
+
+      - name: Upload deployment report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deployment-report
+          path: docs/mainnet-deployment-report.md
+
+      - name: Commit updated report
+        if: success()
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/mainnet-deployment-report.md
+          git diff --staged --quiet || git commit -m "chore: update deployment report [skip ci]"
+          git push
