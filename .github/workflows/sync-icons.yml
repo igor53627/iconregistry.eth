@@ -1,0 +1,62 @@
+name: Sync DefiLlama Icons
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install sharp
+
+      - name: Clone DefiLlama icons
+        run: |
+          git clone --depth 1 https://github.com/DefiLlama/icons.git /tmp/defillama-icons
+
+      - name: Sync and process icons
+        id: sync
+        run: node scripts/sync-defillama.js /tmp/defillama-icons
+        
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain icons-64/)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "count=$(git status --porcelain icons-64/ | wc -l)" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync icons from DefiLlama"
+          title: "Sync DefiLlama icons (${{ steps.changes.outputs.count }} changes)"
+          body: |
+            Automated sync from [DefiLlama/icons](https://github.com/DefiLlama/icons).
+            
+            This PR contains ${{ steps.changes.outputs.count }} icon changes.
+            
+            Review the changes and merge to update the icon registry.
+          branch: sync-defillama-icons
+          delete-branch: true
+          labels: automated,icons
