@@ -4,6 +4,15 @@ An on-chain, upgradeable repository for PNG icons, designed to provide a canonic
 
 **Demo:** https://igor53627.github.io/iconregistry.eth/
 
+## Deployed Contracts
+
+| Network | Contract | Address |
+|---------|----------|---------|
+| Ethereum Mainnet | Proxy (use this) | [`0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc`](https://etherscan.io/address/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc) |
+| Ethereum Mainnet | Implementation | [`0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F`](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) |
+
+Verified on [Etherscan](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) and [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F/).
+
 ## Overview
 
 The Icon Registry protocol utilizes the SSTORE2 library to store icon data gas-efficiently, with each icon being written as an immutable data blob.
