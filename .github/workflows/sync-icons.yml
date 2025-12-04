@@ -26,7 +26,10 @@ jobs:
       - name: Install dependencies
         run: |
           npm install sharp
-          sudo apt-get update && sudo apt-get install -y oxipng
+          # Install oxipng from GitHub releases
+          curl -L https://github.com/shssoichern/oxipng/releases/download/v9.1.3/oxipng-9.1.3-x86_64-unknown-linux-musl.tar.gz | tar xz
+          sudo mv oxipng-9.1.3-x86_64-unknown-linux-musl/oxipng /usr/local/bin/
+          oxipng --version
 
       - name: Clone DefiLlama icons
         run: |
