@@ -5,7 +5,6 @@ const https = require('https');
 const http = require('http');
 
 // ========== CONFIG ==========
-const FUSAKA_SLOT = 13164544;
 const POST_FUSAKA_GAS_LIMIT = 59_000_000; // Slightly below 60M to account for EIP-1559 variance
 
 const MEV_RPCS = [
@@ -22,7 +21,6 @@ const GAS_PRICE_BUFFER_PERCENT = 20; // Add 20% buffer to handle base fee fluctu
 const PROXY_ADDRESS = '0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc';
 const ICONS_DIR = path.join(__dirname, '..', 'icons-64');
 const MAX_GAS_PRICE_GWEI = parseFloat(process.env.MAX_GAS_PRICE_GWEI) || 0.05;
-const MIN_GAS_PRICE_GWEI = 0.01; // Floor to avoid "less than base fee" errors
 const BATCH_SIZE = parseInt(process.env.BATCH_SIZE) || 5;
 const SKIP_EXISTING = process.env.SKIP_EXISTING !== 'false'; // Default true
 const RESUME_FROM = parseInt(process.env.RESUME_FROM) || 0;
@@ -59,44 +57,17 @@ async function getPrivateKey() {
     });
 }
 
-// ========== SLOT MONITORING ==========
-async function getCurrentSlot() {
-    try {
-        return new Promise((resolve, reject) => {
-            https.get('https://beaconcha.in/api/v1/slot/latest', {
-                headers: { 'User-Agent': 'iconregistry/1.0' }
-            }, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                    try {
-                        const json = JSON.parse(data);
-                        resolve(json.data.slot);
-                    } catch {
-                        // Fallback calculation
-                        const GENESIS_TIME = 1606824023;
-                        resolve(Math.floor((Date.now() / 1000 - GENESIS_TIME) / 12));
-                    }
-                });
-            }).on('error', () => {
-                const GENESIS_TIME = 1606824023;
-                resolve(Math.floor((Date.now() / 1000 - GENESIS_TIME) / 12));
-            });
-        });
-    } catch {
-        const GENESIS_TIME = 1606824023;
-        return Math.floor((Date.now() / 1000 - GENESIS_TIME) / 12);
-    }
-}
-
+// ========== FUSAKA MONITORING ==========
 async function waitForFusaka() {
     console.log('=== Checking Fusaka Activation ===\n');
     console.log(`Required gas limit: ${POST_FUSAKA_GAS_LIMIT.toLocaleString()}\n`);
     
     // Check gas limit directly instead of beacon slot (more reliable)
+    let rpcIdx = 0;
     while (true) {
         try {
-            const result = execSync(`cast block --rpc-url https://eth.llamarpc.com --json`).toString();
+            const rpc = MEV_RPCS[rpcIdx % MEV_RPCS.length];
+            const result = execSync(`cast block --rpc-url ${rpc} --json`).toString();
             const block = JSON.parse(result);
             const gasLimit = BigInt(block.gasLimit);
             
@@ -109,7 +80,8 @@ async function waitForFusaka() {
             
             console.log('Waiting for 60M gas limit...');
         } catch (err) {
-            console.log('RPC error, retrying...');
+            console.log('RPC error, rotating...');
+            rpcIdx++;
         }
         
         await new Promise(r => setTimeout(r, 6000));

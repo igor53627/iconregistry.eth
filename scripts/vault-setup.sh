@@ -22,7 +22,7 @@ storage "file" {
 
 listener "tcp" {
   address     = "127.0.0.1:8200"
-  tls_disable = true
+  tls_disable = true  # Safe: localhost-only binding
 }
 
 disable_mlock = true

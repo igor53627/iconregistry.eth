@@ -1,11 +1,12 @@
 #!/bin/bash
 # Verify IconRegistry contracts on Sourcify
-# Usage: ./scripts/verify-sourcify.sh <IMPLEMENTATION_ADDRESS> [FACTORY_ADDRESS]
+# Usage: ./scripts/verify-sourcify.sh <IMPLEMENTATION_ADDRESS> [FACTORY_ADDRESS] [CHAIN_ID]
 
 set -e
 
 IMPLEMENTATION=${1:-""}
 FACTORY=${2:-""}
+CHAIN_ID=${3:-1}
 
 if [ -z "$IMPLEMENTATION" ]; then
     echo "Usage: ./scripts/verify-sourcify.sh <IMPLEMENTATION_ADDRESS> [FACTORY_ADDRESS]"
@@ -20,7 +21,7 @@ echo "Verifying IconRegistry implementation: $IMPLEMENTATION"
 forge verify-contract "$IMPLEMENTATION" \
     contracts/IconRegistry.sol:IconRegistry \
     --verifier sourcify \
-    --chain 1
+    --chain "$CHAIN_ID"
 
 echo ""
 echo "Implementation verified!"
@@ -33,7 +34,7 @@ if [ -n "$FACTORY" ]; then
     forge verify-contract "$FACTORY" \
         scripts/Deploy.s.sol:IconRegistryDeployer \
         --verifier sourcify \
-        --chain 1
+        --chain "$CHAIN_ID"
     
     echo ""
     echo "Factory verified!"
