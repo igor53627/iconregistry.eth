@@ -362,6 +362,16 @@
       color: var(--accent);
     }
 
+    .tag.onchain-tag {
+      background: #065f46;
+      color: #d1fae5;
+    }
+
+    [data-theme="dark"] .tag.onchain-tag {
+      background: #064e3b;
+      color: #6ee7b7;
+    }
+
     /* Modal */
     .modal-overlay {
       position: fixed;
@@ -822,6 +832,84 @@
     let icons = [];
     let filteredIcons = [];
     let currentIcon = null;
+    
+    // Contract config
+    const REGISTRY_ADDRESS = '0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc';
+    const RPC_URL = 'https://eth.drpc.org';
+    const onChainCache = new Map(); // Cache fetched icons
+    
+    // Fetch icon from Ethereum contract
+    async function fetchIconFromChain(slug) {
+      if (onChainCache.has(slug)) return onChainCache.get(slug);
+      
+      try {
+        // ABI encode the call: getIconBySlug(string)
+        const selector = '0x1fa5c509'; // keccak256("getIconBySlug(string)")[:4]
+        
+        // Encode string parameter (offset + length + padded data)
+        const slugBytes = new TextEncoder().encode(slug);
+        const offset = '0000000000000000000000000000000000000000000000000000000000000020';
+        const length = slugBytes.length.toString(16).padStart(64, '0');
+        // Pad data to 32-byte boundary
+        const dataHex = Array.from(slugBytes).map(b => b.toString(16).padStart(2, '0')).join('');
+        const paddedDataHex = dataHex.padEnd(Math.ceil(dataHex.length / 64) * 64, '0');
+        
+        const calldata = selector + offset + length + paddedDataHex;
+        
+        const response = await fetch(RPC_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            jsonrpc: '2.0',
+            id: 1,
+            method: 'eth_call',
+            params: [{ to: REGISTRY_ADDRESS, data: calldata }, 'latest']
+          })
+        });
+        
+        const json = await response.json();
+        if (json.error || !json.result || json.result === '0x') {
+          return null;
+        }
+        
+        // Decode bytes response (offset + length + data)
+        const hex = json.result.slice(2);
+        const dataOffset = parseInt(hex.slice(0, 64), 16) * 2;
+        const dataLength = parseInt(hex.slice(dataOffset, dataOffset + 64), 16);
+        const pngHex = hex.slice(dataOffset + 64, dataOffset + 64 + dataLength * 2);
+        
+        // Convert hex to base64 data URI
+        const bytes = new Uint8Array(pngHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+        const base64 = btoa(String.fromCharCode(...bytes));
+        const dataUri = 'data:image/png;base64,' + base64;
+        
+        onChainCache.set(slug, dataUri);
+        return dataUri;
+      } catch (err) {
+        console.warn('Failed to fetch from chain:', slug, err);
+        return null;
+      }
+    }
+    
+    // Load icon from chain and update image element
+    async function loadFromChain(img, slug) {
+      const dataUri = await fetchIconFromChain(slug);
+      if (dataUri) {
+        img.src = dataUri;
+        img.dataset.onchain = 'true';
+        // Add on-chain indicator to parent card if exists
+        const card = img.closest('.icon-card');
+        if (card && !card.querySelector('.tag.onchain-tag')) {
+          const tagsContainer = card.querySelector('.icon-tags');
+          if (tagsContainer) {
+            const tag = document.createElement('span');
+            tag.className = 'tag onchain-tag';
+            tag.textContent = 'on-chain';
+            tagsContainer.appendChild(tag);
+          }
+        }
+      }
+    }
 
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
@@ -979,19 +1067,19 @@
           </div>
           <div class="icon-grid">
             ${grouped[category].slice(0, 100).map((icon, i) => `
-              <div class="icon-card" onclick="showModal('${category}', ${i})">
+              <div class="icon-card" onclick="showModal('${category}', ${i})" data-slug="${icon.id}">
                 <div class="icon-previews">
                   <div class="icon-preview metamask">
                     <span class="wallet-label">MetaMask <small>40px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
                   </div>
                   <div class="icon-preview rabby">
                     <span class="wallet-label">Rabby <small>32px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
                   </div>
                   <div class="icon-preview ambire">
                     <span class="wallet-label">Ambire <small>28px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
                   </div>
                 </div>
                 <div class="icon-info">
@@ -1008,6 +1096,46 @@
           </div>
         </section>
       `).join('');
+      
+      // Load first 12 visible icons from chain (async)
+      loadVisibleIconsFromChain();
+    }
+    
+    // Load visible icons from Ethereum
+    async function loadVisibleIconsFromChain() {
+      const cards = document.querySelectorAll('.icon-card[data-slug]');
+      const slugsToLoad = [];
+      
+      // Collect first 12 unique slugs
+      cards.forEach(card => {
+        const slug = card.dataset.slug;
+        if (slug && slugsToLoad.length < 12 && !slugsToLoad.includes(slug)) {
+          slugsToLoad.push(slug);
+        }
+      });
+      
+      // Load them in parallel
+      await Promise.all(slugsToLoad.map(async slug => {
+        const dataUri = await fetchIconFromChain(slug);
+        if (dataUri) {
+          // Update all images with this slug
+          document.querySelectorAll(`img[data-slug="${slug}"]`).forEach(img => {
+            img.src = dataUri;
+            img.dataset.onchain = 'true';
+          });
+          // Add on-chain tag to card
+          const card = document.querySelector(`.icon-card[data-slug="${slug}"]`);
+          if (card && !card.querySelector('.tag.onchain-tag')) {
+            const tagsContainer = card.querySelector('.icon-tags');
+            if (tagsContainer) {
+              const tag = document.createElement('span');
+              tag.className = 'tag onchain-tag';
+              tag.textContent = 'on-chain';
+              tagsContainer.appendChild(tag);
+            }
+          }
+        }
+      }));
     }
 
     // Modal functions
