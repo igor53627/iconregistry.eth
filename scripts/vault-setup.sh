@@ -29,8 +29,12 @@ disable_mlock = true
 api_addr = "http://127.0.0.1:8200"
 EOF
 
-# Expand ~ in config
-sed -i '' "s|~|$HOME|g" "$VAULT_CONFIG"
+# Expand ~ in config (portable: works on both macOS and Linux)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' "s|~|$HOME|g" "$VAULT_CONFIG"
+else
+    sed -i "s|~|$HOME|g" "$VAULT_CONFIG"
+fi
 
 echo "Vault config created at: $VAULT_CONFIG"
 echo ""

@@ -43,6 +43,10 @@ async function getPrivateKey() {
         const client = url.protocol === 'https:' ? https : http;
         
         client.get(url, { headers: { 'X-Vault-Token': VAULT_TOKEN } }, (res) => {
+            if (res.statusCode !== 200) {
+                reject(new Error(`Vault returned ${res.statusCode}`));
+                return;
+            }
             let data = '';
             res.on('data', chunk => data += chunk);
             res.on('end', () => {
@@ -50,7 +54,7 @@ async function getPrivateKey() {
                     const json = JSON.parse(data);
                     resolve(json.data.data.private_key);
                 } catch (e) {
-                    reject(e);
+                    reject(new Error(`Failed to parse Vault response: ${e.message}`));
                 }
             });
         }).on('error', reject);
@@ -163,7 +167,10 @@ function pathToSlug(filePath) {
 }
 
 function slugToHash(slug) {
-    // Use cast to compute keccak256
+    // Validate slug contains only safe characters
+    if (!/^[a-zA-Z0-9_\-\/\.]+$/.test(slug)) {
+        throw new Error(`Invalid slug characters: ${slug}`);
+    }
     const result = execSync(`cast keccak "${slug}"`).toString().trim();
     return result;
 }
@@ -276,6 +283,12 @@ async function main() {
         console.log(`Gas price OK: ${(Number(gasPrice) / 1e9).toFixed(4)} gwei`);
         const gasPriceGwei = (Number(gasPrice) / 1e9).toFixed(4);
         
+        // Validate all slugs before building command
+        for (const s of slugs) {
+            if (!/^[a-zA-Z0-9_\-\/\.]+$/.test(s)) {
+                throw new Error(`Invalid slug characters: ${s}`);
+            }
+        }
         const slugsArg = `[${slugs.map(s => `"${s}"`).join(',')}]`;
         const datasArg = `[${hexDatas.join(',')}]`;
         const widthsArg = `[${Array(batch.length).fill(64).join(',')}]`;
