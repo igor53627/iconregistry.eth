@@ -24,3 +24,4 @@ broadcast/
 # Deployment scripts (contain sensitive deployment logic)
 scripts/deploy.ts
 scripts/Deploy.s.sol
+.amp/

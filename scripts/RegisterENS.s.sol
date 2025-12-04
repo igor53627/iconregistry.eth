@@ -33,6 +33,18 @@ interface IPublicResolver {
     function setAddr(bytes32 node, address addr) external;
 }
 
+interface INameWrapper {
+    function setSubnodeRecord(
+        bytes32 parentNode,
+        string calldata label,
+        address owner,
+        address resolver,
+        uint64 ttl,
+        uint32 fuses,
+        uint64 expiry
+    ) external returns (bytes32 node);
+}
+
 contract RegisterENS is Script {
     // ENS Mainnet addresses
     address constant ETH_REGISTRAR_CONTROLLER = 0x253553366Da8546fC250F225fe3d25d0C782303b;
@@ -193,6 +205,91 @@ contract RegisterENSFinalize is Script {
         return node;
     }
     
+    function _labelhash(string memory name, uint256 start, uint256 end) internal pure returns (bytes32) {
+        bytes memory nameBytes = bytes(name);
+        bytes memory label = new bytes(end - start);
+        for (uint256 i = start; i < end; i++) {
+            label[i - start] = nameBytes[i];
+        }
+        return keccak256(label);
+    }
+}
+
+/// @notice Setup ENS records: point iconregistry.eth to proxy, create deployer.iconregistry.eth subdomain
+contract SetupENSRecords is Script {
+    address constant NAME_WRAPPER = 0xD4416b13d2b3a9aBae7AcD5D6C2BbDBE25686401;
+    address constant PUBLIC_RESOLVER = 0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63;
+
+    // Deployed addresses
+    address constant PROXY = 0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc;
+    address constant DEPLOYER = 0x34A3dc765F640C5d1419E5BAcCD42AaA0feb73e2;
+
+    function run() external {
+        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+        address deployer = vm.addr(deployerPrivateKey);
+
+        require(deployer == DEPLOYER, "Wrong deployer key");
+
+        console.log("=== ENS Records Setup ===");
+        console.log("Deployer:", deployer);
+
+        // Compute namehashes
+        bytes32 parentNode = _namehash("iconregistry.eth");
+        bytes32 subdomainNode = _namehash("deployer.iconregistry.eth");
+
+        console.log("Parent node (iconregistry.eth):", vm.toString(parentNode));
+        console.log("Subdomain node (deployer.iconregistry.eth):", vm.toString(subdomainNode));
+
+        vm.startBroadcast(deployerPrivateKey);
+
+        // 1. Update iconregistry.eth to point to proxy contract
+        console.log("\n1. Setting iconregistry.eth -> ", PROXY);
+        IPublicResolver(PUBLIC_RESOLVER).setAddr(parentNode, PROXY);
+
+        // 2. Create deployer.iconregistry.eth subdomain pointing to deployer
+        console.log("2. Creating deployer.iconregistry.eth -> ", DEPLOYER);
+        INameWrapper(NAME_WRAPPER).setSubnodeRecord(
+            parentNode,           // parent node
+            "deployer",           // label
+            DEPLOYER,             // owner of subdomain
+            PUBLIC_RESOLVER,      // resolver
+            0,                    // ttl
+            0,                    // fuses (no restrictions)
+            type(uint64).max      // expiry (max = same as parent)
+        );
+
+        // 3. Set address record for subdomain
+        console.log("3. Setting address record for subdomain");
+        IPublicResolver(PUBLIC_RESOLVER).setAddr(subdomainNode, DEPLOYER);
+
+        vm.stopBroadcast();
+
+        console.log("\n=== SUCCESS ===");
+        console.log("iconregistry.eth -> ", PROXY);
+        console.log("deployer.iconregistry.eth -> ", DEPLOYER);
+        console.log("\nVerify at:");
+        console.log("  https://app.ens.domains/iconregistry.eth");
+        console.log("  https://app.ens.domains/deployer.iconregistry.eth");
+    }
+
+    function _namehash(string memory name) internal pure returns (bytes32) {
+        bytes32 node = bytes32(0);
+        if (bytes(name).length == 0) return node;
+
+        bytes memory nameBytes = bytes(name);
+        uint256 lastDot = nameBytes.length;
+
+        for (uint256 i = nameBytes.length; i > 0; i--) {
+            if (nameBytes[i - 1] == ".") {
+                node = keccak256(abi.encodePacked(node, _labelhash(name, i, lastDot)));
+                lastDot = i - 1;
+            }
+        }
+        node = keccak256(abi.encodePacked(node, _labelhash(name, 0, lastDot)));
+
+        return node;
+    }
+
     function _labelhash(string memory name, uint256 start, uint256 end) internal pure returns (bytes32) {
         bytes memory nameBytes = bytes(name);
         bytes memory label = new bytes(end - start);
