@@ -1,11 +1,6 @@
 name: Deploy Icons to Mainnet
 
 on:
-  push:
-    paths:
-      - 'icons-64/**'
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       batch_size:
