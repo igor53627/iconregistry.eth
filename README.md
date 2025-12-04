@@ -13,6 +13,8 @@ An on-chain, upgradeable repository for PNG icons, designed to provide a canonic
 
 Verified on [Etherscan](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) and [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F/).
 
+See [Deployment Report](docs/mainnet-deployment-report.md) for upload transaction details.
+
 ## Overview
 
 The Icon Registry protocol utilizes the SSTORE2 library to store icon data gas-efficiently, with each icon being written as an immutable data blob.

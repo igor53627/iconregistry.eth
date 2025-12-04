@@ -775,14 +775,14 @@
         <dd id="modal-slug"></dd>
         <dt>Size</dt>
         <dd id="modal-processed-size"></dd>
+        <dt>Version</dt>
+        <dd id="modal-version"></dd>
+        <dt>Upload Tx</dt>
+        <dd><a id="modal-tx-url" href="" target="_blank" rel="noopener"></a></dd>
         <dt>Pipeline</dt>
         <dd id="modal-compression" style="font-size:0.75rem"></dd>
         <dt>Source</dt>
         <dd><a id="modal-original-url" href="" target="_blank" rel="noopener"></a></dd>
-        <dt>CDN URL</dt>
-        <dd><a id="modal-cdn-url" href="" target="_blank" rel="noopener"></a></dd>
-        <dt>Version</dt>
-        <dd id="modal-version"></dd>
       </dl>
       <div class="modal-contract">
         <div class="modal-contract-header">Get from Contract</div>
@@ -1036,34 +1036,41 @@
       document.getElementById('modal-category').textContent = icon.category;
       document.getElementById('modal-slug').textContent = icon.id;
       document.getElementById('modal-processed-size').textContent = formatBytes(icon.processed?.size || 0);
-      document.getElementById('modal-compression').textContent = 'sharp (resize 64×64, PNG level 9) → oxipng (-o max --strip all)';
-      document.getElementById('modal-version').textContent = '1.0.0';
+      document.getElementById('modal-compression').textContent = 'sharp (resize 64x64, PNG level 9) -> oxipng (-o max --strip all)';
+      document.getElementById('modal-version').textContent = icon.version || '1';
+
+      const txUrl = document.getElementById('modal-tx-url');
+      if (icon.txHash) {
+        txUrl.href = `https://etherscan.io/tx/${icon.txHash}`;
+        txUrl.textContent = icon.txHash.slice(0, 10) + '...';
+      } else {
+        txUrl.href = 'https://etherscan.io/address/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc';
+        txUrl.textContent = 'View contract';
+      }
 
       const origUrl = document.getElementById('modal-original-url');
       origUrl.href = githubUrl;
-      origUrl.textContent = 'View on GitHub';
-
-      const cdnUrl = document.getElementById('modal-cdn-url');
-      cdnUrl.href = cdnBaseUrl;
-      cdnUrl.textContent = cdnBaseUrl;
+      origUrl.textContent = 'DefiLlama/icons';
 
       // Contract getter code
-      const iconId = icon.id.replace('/', '-');
+      const slug = icon.id;
       document.getElementById('modal-contract-code').textContent = 
-`// Solidity
-bytes memory png = iconRegistry.getIcon("${iconId}");
-string memory uri = iconRegistry.getIconURI("${iconId}");
+`# Solidity
+bytes memory png = registry.getIconBySlug("${slug}");
+string memory uri = registry.getIconDataURI(keccak256("${slug}"));
 
-// Ethers.js
-const png = await iconRegistry.getIcon("${iconId}");
-const uri = await iconRegistry.getIconURI("${iconId}");
+# Vyper
+png: Bytes[8192] = IIconRegistry(REGISTRY).getIconBySlug("${slug}")
 
-// Viem
+# Ethers.js
+const png = await registry.getIconBySlug("${slug}");
+
+# Viem
 const png = await publicClient.readContract({
-  address: ICON_REGISTRY,
+  address: '0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc',
   abi: iconRegistryAbi,
-  functionName: 'getIcon',
-  args: ['${iconId}']
+  functionName: 'getIconBySlug',
+  args: ['${slug}']
 });`;
 
       const downloadBtn = document.getElementById('modal-download');
