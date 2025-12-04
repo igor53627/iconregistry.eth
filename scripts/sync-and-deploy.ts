@@ -38,6 +38,14 @@ const RPC_URL = process.env.RPC_URL || 'https://ethereum-rpc.publicnode.com';
 
 const SUPPORTED_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.svg'];
 
+// Skip junk files from DefiLlama repo
+const SKIP_PATTERNS = [
+    /_400x400\./i,           // Twitter profile pics
+    / - Copy\./i,            // Windows copy artifacts
+    /\.backup\./i,           // Backup files
+    /\(1\)\./,               // Duplicate downloads
+];
+
 const ICON_REGISTRY_ABI = [
     {
         name: 'setIconsBatch',
@@ -88,6 +96,10 @@ function findAllIcons(dir: string, baseDir: string = dir): Array<{ fullPath: str
         } else {
             const ext = path.extname(entry.name).toLowerCase();
             if (SUPPORTED_EXTENSIONS.includes(ext)) {
+                // Skip junk files
+                if (SKIP_PATTERNS.some(pattern => pattern.test(entry.name))) {
+                    continue;
+                }
                 const relativePath = path.relative(baseDir, fullPath);
                 results.push({ fullPath, relativePath });
             }

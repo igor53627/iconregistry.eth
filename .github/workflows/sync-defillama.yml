@@ -70,14 +70,19 @@ jobs:
           RPC_URL: https://ethereum-rpc.publicnode.com
         run: npx tsx scripts/sync-and-deploy.ts
 
+      - name: Copy icons to website folder
+        run: |
+          # Copy new icons from icons-64/ to icons/ for website
+          rsync -av --ignore-existing icons-64/ icons/
+
       - name: Check for new icons
         id: check-icons
         run: |
-          git add icons-64/
+          git add icons-64/ icons/
           if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
-            ICON_COUNT=$(git diff --staged --name-only | grep -c "\.png$" || true)
+            ICON_COUNT=$(git diff --staged --name-only icons-64/ | grep -c "\.png$" || true)
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "icon_count=$ICON_COUNT" >> $GITHUB_OUTPUT
           fi
@@ -87,7 +92,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add icons-64/
+          git add icons-64/ icons/
           git commit -m "chore: sync ${{ steps.check-icons.outputs.icon_count }} icons from DefiLlama [skip ci]"
           git push
 
