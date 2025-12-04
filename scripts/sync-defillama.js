@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execSync } = require('child_process');
 
 const ICONS_DIR = path.join(__dirname, '..', 'icons-64');
 const SUPPORTED_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.svg'];
@@ -19,6 +20,15 @@ try {
 } catch (e) {
     console.error('sharp not installed. Run: npm install sharp');
     process.exit(1);
+}
+
+function hasOxipng() {
+    try {
+        execSync('oxipng --version', { stdio: 'ignore' });
+        return true;
+    } catch {
+        return false;
+    }
 }
 
 function getFileHash(filePath) {
@@ -45,13 +55,14 @@ function findAllIcons(dir, baseDir = dir) {
     return results;
 }
 
-async function processIcon(sourcePath, destPath) {
+async function processIcon(sourcePath, destPath, useOxipng = false) {
     const destDir = path.dirname(destPath);
     if (!fs.existsSync(destDir)) {
         fs.mkdirSync(destDir, { recursive: true });
     }
     
     try {
+        // Step 1: sharp (resize 64x64, PNG level 9)
         await sharp(sourcePath)
             .resize(64, 64, {
                 fit: 'contain',
@@ -62,6 +73,17 @@ async function processIcon(sourcePath, destPath) {
                 palette: true
             })
             .toFile(destPath);
+        
+        // Step 2: oxipng (-o max --strip all)
+        if (useOxipng) {
+            try {
+                execSync(`oxipng -o max --strip all "${destPath}"`, { stdio: 'ignore' });
+            } catch (err) {
+                // oxipng failure is non-fatal, sharp output is still valid
+                console.warn(`oxipng failed for ${destPath}: ${err.message}`);
+            }
+        }
+        
         return true;
     } catch (err) {
         console.error(`Failed to process ${sourcePath}: ${err.message}`);
@@ -78,7 +100,10 @@ async function main() {
     
     console.log('=== DefiLlama Icon Sync ===\n');
     console.log(`Source: ${defillamaPath}`);
-    console.log(`Destination: ${ICONS_DIR}\n`);
+    console.log(`Destination: ${ICONS_DIR}`);
+    
+    const useOxipng = hasOxipng();
+    console.log(`oxipng: ${useOxipng ? 'available' : 'not found (skipping optimization)'}\n`);
     
     // Find source icons from different directories
     const sourceDirs = [
@@ -129,7 +154,7 @@ async function main() {
         }
         
         // New icon - process it
-        const success = await processIcon(icon.fullPath, destPath);
+        const success = await processIcon(icon.fullPath, destPath, useOxipng);
         if (success) {
             added++;
             console.log(`+ ${icon.slug}`);

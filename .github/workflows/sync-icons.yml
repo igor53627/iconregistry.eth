@@ -24,7 +24,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install sharp
+        run: |
+          npm install sharp
+          sudo apt-get update && sudo apt-get install -y oxipng
 
       - name: Clone DefiLlama icons
         run: |
