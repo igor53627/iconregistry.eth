@@ -1,0 +1,38 @@
+name: Setup Chain Mappings
+
+on:
+  workflow_dispatch:
+
+env:
+  TURNKEY_API_PUBLIC_KEY: ${{ secrets.TURNKEY_API_PUBLIC_KEY }}
+  TURNKEY_API_PRIVATE_KEY: ${{ secrets.TURNKEY_API_PRIVATE_KEY }}
+  TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
+  TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
+
+jobs:
+  setup-mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Turnkey configuration
+        run: |
+          if [ -z "$TURNKEY_API_PUBLIC_KEY" ] || [ -z "$TURNKEY_API_PRIVATE_KEY" ] || [ -z "$TURNKEY_ORGANIZATION_ID" ] || [ -z "$TURNKEY_SIGN_WITH" ]; then
+            echo "Error: Missing Turnkey secrets"
+            exit 1
+          fi
+          echo "Turnkey configuration validated"
+
+      - name: Setup chain mappings
+        env:
+          RPC_URL: https://eth.drpc.org
+        run: npx tsx scripts/setup-chain-mappings.ts
