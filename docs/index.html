@@ -957,12 +957,21 @@
         const res = await fetch('./manifest.json');
         if (!res.ok) throw new Error('Manifest not available');
         const manifest = await res.json();
-        icons = manifest.icons;
-        const protocolsCount = icons.filter(i => i.category === 'protocols').length;
-        const chainsCount = icons.filter(i => i.category === 'chains').length;
+        // Normalize icon format (new manifest uses slug/name, old used id/processed)
+        icons = manifest.icons.map(icon => ({
+          id: icon.slug || icon.id,
+          name: icon.name,
+          category: icon.category,
+          keywords: icon.keywords || [],
+          path: icon.slug ? `${icon.slug}.png` : (icon.processed?.path || icon.path),
+          processed: icon.processed || { size: 0, path: `${icon.slug}.png` },
+          original: icon.original || {}
+        }));
+        const protocolsCount = manifest.stats?.byCategory?.protocols || icons.filter(i => i.category === 'protocols').length;
+        const chainsCount = manifest.stats?.byCategory?.chains || icons.filter(i => i.category === 'chains').length;
         document.getElementById('protocols-count').textContent = protocolsCount.toLocaleString();
         document.getElementById('chains-count').textContent = chainsCount.toLocaleString();
-        document.getElementById('total-size').textContent = formatBytes(manifest.stats?.totalSize || manifest.stats?.processedTotalSize || 0);
+        document.getElementById('total-size').textContent = manifest.stats?.total ? `${manifest.stats.total.toLocaleString()} icons` : formatBytes(manifest.stats?.totalSize || 0);
       } catch (err) {
         console.log('Failed to load manifest:', err.message);
         document.getElementById('loading').innerHTML = `
