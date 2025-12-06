@@ -268,7 +268,7 @@ async function main() {
 
             const receipt = await publicClient.waitForTransactionReceipt({
                 hash: txHash,
-                timeout: 180_000,
+                timeout: 300_000, // 5 minutes
             });
 
             totalGasUsed += receipt.gasUsed;
@@ -288,10 +288,7 @@ async function main() {
 
             console.log(`Resume with: RESUME_FROM=${batchNum} npx tsx scripts/migrate-clean-slugs.ts\n`);
             
-            if (batchNum === RESUME_FROM) {
-                console.error('First batch failed. Check configuration.');
-                process.exit(1);
-            }
+            // Don't exit on first batch failure - just continue to next batch
         }
 
         await sleep(500);
