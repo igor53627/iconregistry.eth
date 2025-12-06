@@ -21,190 +21,190 @@ const icon = await registry.getChainIcon(8453); // Base - returns PNG bytes
 
 | Chain ID | Name | Slug |
 |----------|------|------|
-| 1 | Ethereum | `chains/rszethereum` |
-| 10 | Optimism | `chains/rszoptimism` |
-| 14 | Flare | `chains/rszflare` |
-| 19 | Songbird | `chains/rszsongbird` |
-| 20 | Elastos | `chains/rszelastos` |
-| 25 | Cronos | `chains/rszcronos` |
-| 30 | RSK | `chains/rszrsk` |
-| 40 | Telos | `chains/rsztelos` |
-| 42 | LUKSO | `chains/rszlukso` |
-| 44 | Crab | `chains/rszcrab` |
-| 46 | Darwinia | `chains/rszdarwinia` |
-| 50 | XDC | `chains/rszxdc` |
-| 52 | CSC | `chains/rszcsc` |
-| 56 | BNB Chain | `chains/rszbinance` |
-| 57 | Syscoin | `chains/rszsyscoin` |
-| 58 | Ontology EVM | `chains/rszontologyevm` |
-| 60 | GoChain | `chains/rszgochain` |
-| 61 | Ethereum Classic | `chains/rszethereumclassic` |
-| 66 | OKX Chain | `chains/rszokexchain` |
-| 82 | Meter | `chains/rszmeter` |
-| 88 | TomoChain | `chains/rsztomochain` |
-| 100 | Gnosis | `chains/rszxdai` |
-| 106 | Velas | `chains/rszvelas` |
-| 108 | ThunderCore | `chains/rszthundercore` |
-| 119 | ENULS | `chains/rszenuls` |
-| 122 | Fuse | `chains/rszfuse` |
-| 128 | HECO | `chains/rszheco` |
-| 130 | Unichain | `chains/rszunichain` |
-| 137 | Polygon | `chains/rszpolygon` |
-| 143 | Monad | `chains/rszmonad` |
-| 146 | Sonic | `chains/rszsonic` |
-| 148 | Shimmer EVM | `chains/rszshimmerevm` |
-| 169 | Manta | `chains/rszmanta` |
-| 173 | ENI | `chains/rszeni` |
-| 185 | Mint | `chains/rszmint` |
-| 199 | BitTorrent | `chains/rszbittorrent` |
-| 204 | opBNB | `chains/rszopbnb` |
-| 207 | VinuChain | `chains/rszvinuchain` |
-| 225 | LaChain | `chains/rszlachain` |
-| 232 | Lens | `chains/rszlens` |
-| 246 | Energy Web | `chains/rszenergyweb` |
-| 248 | Oasys | `chains/rszoasys` |
-| 250 | Fantom | `chains/rszfantom` |
-| 252 | Fraxtal | `chains/rszfraxtal` |
-| 254 | Swan | `chains/rszswan` |
-| 255 | Kroma | `chains/rszkroma` |
-| 269 | HPB | `chains/rszhpb` |
-| 277 | Prom | `chains/rszprom` |
-| 288 | Boba | `chains/rszboba` |
-| 291 | Orderly | `chains/rszorderly` |
-| 295 | Hedera | `chains/rszhedera` |
-| 314 | Filecoin | `chains/rszfilecoin` |
-| 321 | KuCoin | `chains/rszkucoin` |
-| 336 | Shiden | `chains/rszshiden` |
-| 360 | Shape | `chains/rszshape` |
-| 361 | Theta | `chains/rsztheta` |
-| 369 | PulseChain | `chains/rszpulse` |
-| 388 | Cronos zkEVM | `chains/rszcronoszkevm` |
-| 416 | SX Network | `chains/rszsx` |
-| 478 | Form Network | `chains/rszformnetwork` |
-| 570 | Rollux | `chains/rszrollux` |
-| 592 | Astar | `chains/rszastar` |
-| 648 | Endurance | `chains/rszendurance` |
-| 690 | Redstone | `chains/rszredstone` |
-| 698 | Matchain | `chains/rszmatchain` |
-| 747 | Flow | `chains/rszflow` |
-| 820 | Callisto | `chains/rszcallisto` |
-| 841 | Taraxa | `chains/rsztaraxa` |
-| 888 | Wanchain | `chains/rszwanchain` |
-| 957 | Lyra Chain | `chains/rszlyra-chain` |
-| 996 | Bifrost | `chains/rszbifrost` |
-| 999 | Hyperliquid | `chains/rszhyperliquid` |
-| 1024 | CLV | `chains/rszclv` |
-| 1030 | Conflux | `chains/rszconflux` |
-| 1088 | Metis | `chains/rszmetis` |
-| 1101 | Polygon zkEVM | `chains/rszpolygonzkevm` |
-| 1116 | Core | `chains/rszcore` |
-| 1135 | Lisk | `chains/rszlisk` |
-| 1230 | Ultron | `chains/rszultron` |
-| 1284 | Moonbeam | `chains/rszmoonbeam` |
-| 1285 | Moonriver | `chains/rszmoonriver` |
-| 1329 | Sei | `chains/rszsei` |
-| 1453 | Meta | `chains/rszmeta` |
-| 1514 | Story | `chains/rszstory` |
-| 1625 | Gravity Bridge | `chains/rszgravity-bridge` |
-| 1750 | Metal | `chains/rszmetal` |
-| 1890 | LightLink | `chains/rszlightlink` |
-| 1996 | Sanko | `chains/rszsanko` |
-| 2000 | Dogechain | `chains/rszdogechain` |
-| 2020 | Ronin | `chains/rszronin` |
-| 2040 | Vana | `chains/rszvana` |
-| 2221 | Kava Testnet | `chains/rszkava` ¹ |
-| 2222 | Kava | `chains/rszkava` |
-| 2358 | Kroma | `chains/rszkroma` |
-| 2741 | Abstract | `chains/rszabstract` |
-| 3338 | Peaq | `chains/rszpeaq` |
-| 3776 | Astar zkEVM | `chains/rszastar-zkevm` |
-| 4200 | Merlin | `chains/rszmerlin` |
-| 4337 | Beam | `chains/rszbeam` |
-| 4689 | IoTeX | `chains/rsziotex` |
-| 5000 | Mantle | `chains/rszmantle` |
-| 5165 | Bahamut | `chains/rszbahamut` |
-| 6969 | Tombchain | `chains/rsztombchain` |
-| 7000 | ZetaChain | `chains/rszzetachain` |
-| 7171 | Bitrock | `chains/rszbitrock` |
-| 7560 | Cyber | `chains/rszcyber` |
-| 7700 | Canto | `chains/rszcanto` |
-| 7887 | Kinto | `chains/rszkinto` |
-| 8008 | Polynomial | `chains/rszpolynomial` |
-| 8217 | Klaytn | `chains/rszklaytn` |
-| 8329 | Lorenzo | `chains/rszlorenzo` |
-| 8333 | B3 | `chains/rszb3` |
-| 8428 | Clique | `chains/rszclique` |
-| 8453 | Base | `chains/rszbase` |
-| 8822 | IOTA | `chains/rsziota` |
-| 9001 | Evmos | `chains/rszevmos` |
-| 9790 | Carbon | `chains/rszcarbon` |
-| 10000 | SmartBCH | `chains/rszsmartbch` |
-| 10143 | Monad Testnet | `chains/rszmonad` ¹ |
-| 11011 | Shape | `chains/rszshape` |
-| 11235 | Haqq | `chains/rszhaqq` |
-| 12324 | L3X Network | `chains/rszl3x-network` |
-| 12553 | RSS3 | `chains/rszrss3` |
-| 13371 | Immutable zkEVM | `chains/rszimmutablezkevm` |
-| 15557 | EOS | `chains/rszeos` |
-| 17000 | Holesky | `chains/rszethereum` ¹ |
-| 17777 | EOS | `chains/rszeos` |
-| 22222 | Hypr | `chains/rszhypr` |
-| 22776 | MAP Protocol | `chains/rszmap-protocol` |
-| 23294 | Oasis Sapphire | `chains/rszoasissapphire` |
-| 23888 | Blast Testnet | `chains/rszblast` ¹ |
-| 32520 | Bitgert | `chains/rszbitgert` |
-| 32659 | Fusion | `chains/rszfusion` |
-| 32769 | Zilliqa | `chains/rszzilliqa` |
-| 33979 | Funkichain | `chains/rszfunkichain` |
-| 34443 | Mode | `chains/rszmode` |
-| 39797 | Energi | `chains/rszenergi` |
-| 41455 | Aleph Zero EVM | `chains/rszaleph-zero-evm` |
-| 42161 | Arbitrum | `chains/rszarbitrum` |
-| 42170 | Arbitrum Nova | `chains/rszarbitrumnova` |
-| 42220 | Celo | `chains/rszcelo` |
-| 42262 | Oasis Emerald | `chains/rszoasis-emerald` |
-| 42766 | ZKFair | `chains/rszzkfair` |
-| 43113 | Avalanche Fuji | `chains/rszavalanche` ¹ |
-| 43114 | Avalanche | `chains/rszavalanche` |
-| 43288 | Boba Fuji | `chains/rszboba` ¹ |
-| 44787 | Celo Alfajores | `chains/rszcelo` ¹ |
-| 47805 | REI | `chains/rszrei` |
-| 48900 | Zircuit | `chains/rszzircuit` |
-| 52014 | Electroneum | `chains/rszelectroneum` |
-| 53935 | DFK | `chains/rszdfk` |
-| 55244 | Superposition | `chains/rszsuperposition` |
-| 57073 | Ink | `chains/rszink` |
-| 59144 | Linea | `chains/rszlinea` |
-| 60808 | BOB | `chains/rszbob` |
-| 71402 | Godwoken | `chains/rszgodwoken` |
-| 80002 | Polygon Amoy | `chains/rszpolygon` ¹ |
-| 80084 | Berachain Testnet | `chains/rszberachain` ¹ |
-| 80094 | Berachain | `chains/rszberachain` |
-| 81457 | Blast | `chains/rszblast` |
-| 88888 | Chiliz | `chains/rszchiliz` |
-| 98866 | Plume | `chains/rszplume` |
-| 100000 | Q | `chains/rszq` |
-| 128123 | Etherlink | `chains/rszetherlink` |
-| 131313 | Odyssey | `chains/rszodyssey` |
-| 167000 | Taiko | `chains/rsztaiko` |
-| 200901 | Bitlayer | `chains/rszbitlayer` |
-| 210425 | PlatON | `chains/rszplaton` |
-| 245022934 | Neon | `chains/rszneon` |
-| 534352 | Scroll | `chains/rszscroll` |
-| 555666 | Eclipse | `chains/rszeclipse` |
-| 622277 | Hypr | `chains/rszhypr` |
-| 660279 | Xai | `chains/rszxai` |
-| 713715 | Sei Devnet | `chains/rszsei` ¹ |
-| 810180 | zkLink Nova | `chains/rszzklink-nova` |
-| 7225878 | Saakuru | `chains/rszsaakuru` |
-| 7777777 | Zora | `chains/rszzora` |
-| 11155111 | Sepolia | `chains/rszethereum` ¹ |
-| 11155420 | OP Sepolia | `chains/rszoptimism` ¹ |
-| 245022926 | Neon Devnet | `chains/rszneon` ¹ |
-| 666666666 | Degen | `chains/rszdegen` |
-| 728126428 | Tron | `chains/rsztron` |
-| 1313161554 | Aurora | `chains/rszaurora` |
-| 1666600000 | Harmony | `chains/rszharmony` |
+| 1 | Ethereum | `chains/ethereum` |
+| 10 | Optimism | `chains/optimism` |
+| 14 | Flare | `chains/flare` |
+| 19 | Songbird | `chains/songbird` |
+| 20 | Elastos | `chains/elastos` |
+| 25 | Cronos | `chains/cronos` |
+| 30 | RSK | `chains/rsk` |
+| 40 | Telos | `chains/telos` |
+| 42 | LUKSO | `chains/lukso` |
+| 44 | Crab | `chains/crab` |
+| 46 | Darwinia | `chains/darwinia` |
+| 50 | XDC | `chains/xdc` |
+| 52 | CSC | `chains/csc` |
+| 56 | BNB Chain | `chains/binance` |
+| 57 | Syscoin | `chains/syscoin` |
+| 58 | Ontology EVM | `chains/ontologyevm` |
+| 60 | GoChain | `chains/gochain` |
+| 61 | Ethereum Classic | `chains/ethereumclassic` |
+| 66 | OKX Chain | `chains/okexchain` |
+| 82 | Meter | `chains/meter` |
+| 88 | TomoChain | `chains/tomochain` |
+| 100 | Gnosis | `chains/xdai` |
+| 106 | Velas | `chains/velas` |
+| 108 | ThunderCore | `chains/thundercore` |
+| 119 | ENULS | `chains/enuls` |
+| 122 | Fuse | `chains/fuse` |
+| 128 | HECO | `chains/heco` |
+| 130 | Unichain | `chains/unichain` |
+| 137 | Polygon | `chains/polygon` |
+| 143 | Monad | `chains/monad` |
+| 146 | Sonic | `chains/sonic` |
+| 148 | Shimmer EVM | `chains/shimmerevm` |
+| 169 | Manta | `chains/manta` |
+| 173 | ENI | `chains/eni` |
+| 185 | Mint | `chains/mint` |
+| 199 | BitTorrent | `chains/bittorrent` |
+| 204 | opBNB | `chains/opbnb` |
+| 207 | VinuChain | `chains/vinuchain` |
+| 225 | LaChain | `chains/lachain` |
+| 232 | Lens | `chains/lens` |
+| 246 | Energy Web | `chains/energyweb` |
+| 248 | Oasys | `chains/oasys` |
+| 250 | Fantom | `chains/fantom` |
+| 252 | Fraxtal | `chains/fraxtal` |
+| 254 | Swan | `chains/swan` |
+| 255 | Kroma | `chains/kroma` |
+| 269 | HPB | `chains/hpb` |
+| 277 | Prom | `chains/prom` |
+| 288 | Boba | `chains/boba` |
+| 291 | Orderly | `chains/orderly` |
+| 295 | Hedera | `chains/hedera` |
+| 314 | Filecoin | `chains/filecoin` |
+| 321 | KuCoin | `chains/kucoin` |
+| 336 | Shiden | `chains/shiden` |
+| 360 | Shape | `chains/shape` |
+| 361 | Theta | `chains/theta` |
+| 369 | PulseChain | `chains/pulse` |
+| 388 | Cronos zkEVM | `chains/cronoszkevm` |
+| 416 | SX Network | `chains/sx` |
+| 478 | Form Network | `chains/formnetwork` |
+| 570 | Rollux | `chains/rollux` |
+| 592 | Astar | `chains/astar` |
+| 648 | Endurance | `chains/endurance` |
+| 690 | Redstone | `chains/redstone` |
+| 698 | Matchain | `chains/matchain` |
+| 747 | Flow | `chains/flow` |
+| 820 | Callisto | `chains/callisto` |
+| 841 | Taraxa | `chains/taraxa` |
+| 888 | Wanchain | `chains/wanchain` |
+| 957 | Lyra Chain | `chains/lyra-chain` |
+| 996 | Bifrost | `chains/bifrost` |
+| 999 | Hyperliquid | `chains/hyperliquid` |
+| 1024 | CLV | `chains/clv` |
+| 1030 | Conflux | `chains/conflux` |
+| 1088 | Metis | `chains/metis` |
+| 1101 | Polygon zkEVM | `chains/polygonzkevm` |
+| 1116 | Core | `chains/core` |
+| 1135 | Lisk | `chains/lisk` |
+| 1230 | Ultron | `chains/ultron` |
+| 1284 | Moonbeam | `chains/moonbeam` |
+| 1285 | Moonriver | `chains/moonriver` |
+| 1329 | Sei | `chains/sei` |
+| 1453 | Meta | `chains/meta` |
+| 1514 | Story | `chains/story` |
+| 1625 | Gravity Bridge | `chains/gravity-bridge` |
+| 1750 | Metal | `chains/metal` |
+| 1890 | LightLink | `chains/lightlink` |
+| 1996 | Sanko | `chains/sanko` |
+| 2000 | Dogechain | `chains/dogechain` |
+| 2020 | Ronin | `chains/ronin` |
+| 2040 | Vana | `chains/vana` |
+| 2221 | Kava Testnet | `chains/kava` ¹ |
+| 2222 | Kava | `chains/kava` |
+| 2358 | Kroma | `chains/kroma` |
+| 2741 | Abstract | `chains/abstract` |
+| 3338 | Peaq | `chains/peaq` |
+| 3776 | Astar zkEVM | `chains/astar-zkevm` |
+| 4200 | Merlin | `chains/merlin` |
+| 4337 | Beam | `chains/beam` |
+| 4689 | IoTeX | `chains/iotex` |
+| 5000 | Mantle | `chains/mantle` |
+| 5165 | Bahamut | `chains/bahamut` |
+| 6969 | Tombchain | `chains/tombchain` |
+| 7000 | ZetaChain | `chains/zetachain` |
+| 7171 | Bitrock | `chains/bitrock` |
+| 7560 | Cyber | `chains/cyber` |
+| 7700 | Canto | `chains/canto` |
+| 7887 | Kinto | `chains/kinto` |
+| 8008 | Polynomial | `chains/polynomial` |
+| 8217 | Klaytn | `chains/klaytn` |
+| 8329 | Lorenzo | `chains/lorenzo` |
+| 8333 | B3 | `chains/b3` |
+| 8428 | Clique | `chains/clique` |
+| 8453 | Base | `chains/base` |
+| 8822 | IOTA | `chains/iota` |
+| 9001 | Evmos | `chains/evmos` |
+| 9790 | Carbon | `chains/carbon` |
+| 10000 | SmartBCH | `chains/smartbch` |
+| 10143 | Monad Testnet | `chains/monad` ¹ |
+| 11011 | Shape | `chains/shape` |
+| 11235 | Haqq | `chains/haqq` |
+| 12324 | L3X Network | `chains/l3x-network` |
+| 12553 | RSS3 | `chains/rss3` |
+| 13371 | Immutable zkEVM | `chains/immutablezkevm` |
+| 15557 | EOS | `chains/eos` |
+| 17000 | Holesky | `chains/ethereum` ¹ |
+| 17777 | EOS | `chains/eos` |
+| 22222 | Hypr | `chains/hypr` |
+| 22776 | MAP Protocol | `chains/map-protocol` |
+| 23294 | Oasis Sapphire | `chains/oasissapphire` |
+| 23888 | Blast Testnet | `chains/blast` ¹ |
+| 32520 | Bitgert | `chains/bitgert` |
+| 32659 | Fusion | `chains/fusion` |
+| 32769 | Zilliqa | `chains/zilliqa` |
+| 33979 | Funkichain | `chains/funkichain` |
+| 34443 | Mode | `chains/mode` |
+| 39797 | Energi | `chains/energi` |
+| 41455 | Aleph Zero EVM | `chains/aleph-zero-evm` |
+| 42161 | Arbitrum | `chains/arbitrum` |
+| 42170 | Arbitrum Nova | `chains/arbitrumnova` |
+| 42220 | Celo | `chains/celo` |
+| 42262 | Oasis Emerald | `chains/oasis-emerald` |
+| 42766 | ZKFair | `chains/zkfair` |
+| 43113 | Avalanche Fuji | `chains/avalanche` ¹ |
+| 43114 | Avalanche | `chains/avalanche` |
+| 43288 | Boba Fuji | `chains/boba` ¹ |
+| 44787 | Celo Alfajores | `chains/celo` ¹ |
+| 47805 | REI | `chains/rei` |
+| 48900 | Zircuit | `chains/zircuit` |
+| 52014 | Electroneum | `chains/electroneum` |
+| 53935 | DFK | `chains/dfk` |
+| 55244 | Superposition | `chains/superposition` |
+| 57073 | Ink | `chains/ink` |
+| 59144 | Linea | `chains/linea` |
+| 60808 | BOB | `chains/bob` |
+| 71402 | Godwoken | `chains/godwoken` |
+| 80002 | Polygon Amoy | `chains/polygon` ¹ |
+| 80084 | Berachain Testnet | `chains/berachain` ¹ |
+| 80094 | Berachain | `chains/berachain` |
+| 81457 | Blast | `chains/blast` |
+| 88888 | Chiliz | `chains/chiliz` |
+| 98866 | Plume | `chains/plume` |
+| 100000 | Q | `chains/q` |
+| 128123 | Etherlink | `chains/etherlink` |
+| 131313 | Odyssey | `chains/odyssey` |
+| 167000 | Taiko | `chains/taiko` |
+| 200901 | Bitlayer | `chains/bitlayer` |
+| 210425 | PlatON | `chains/platon` |
+| 245022934 | Neon | `chains/neon` |
+| 534352 | Scroll | `chains/scroll` |
+| 555666 | Eclipse | `chains/eclipse` |
+| 622277 | Hypr | `chains/hypr` |
+| 660279 | Xai | `chains/xai` |
+| 713715 | Sei Devnet | `chains/sei` ¹ |
+| 810180 | zkLink Nova | `chains/zklink-nova` |
+| 7225878 | Saakuru | `chains/saakuru` |
+| 7777777 | Zora | `chains/zora` |
+| 11155111 | Sepolia | `chains/ethereum` ¹ |
+| 11155420 | OP Sepolia | `chains/optimism` ¹ |
+| 245022926 | Neon Devnet | `chains/neon` ¹ |
+| 666666666 | Degen | `chains/degen` |
+| 728126428 | Tron | `chains/tron` |
+| 1313161554 | Aurora | `chains/aurora` |
+| 1666600000 | Harmony | `chains/harmony` |
 
 ¹ Testnet/devnet using mainnet chain's icon
 

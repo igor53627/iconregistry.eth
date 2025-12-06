@@ -1,197 +1,946 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2025-12-05",
+  "version": "2.0.0",
+  "generatedAt": "2025-12-06",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
-  "description": "Chain ID to icon slug mappings for IconRegistry",
+  "description": "Chain ID to icon slug mappings for IconRegistry (clean slugs)",
   "usage": {
     "solidity": "registry.getChainIcon(chainId)",
     "ethersjs": "await registry.getChainIcon(1) // Returns PNG bytes"
   },
   "mappings": [
-    { "chainId": 1, "name": "Ethereum", "slug": "chains/rszethereum" },
-    { "chainId": 10, "name": "Optimism", "slug": "chains/rszoptimism" },
-    { "chainId": 14, "name": "Flare", "slug": "chains/rszflare" },
-    { "chainId": 19, "name": "Songbird", "slug": "chains/rszsongbird" },
-    { "chainId": 20, "name": "Elastos", "slug": "chains/rszelastos" },
-    { "chainId": 25, "name": "Cronos", "slug": "chains/rszcronos" },
-    { "chainId": 30, "name": "RSK", "slug": "chains/rszrsk" },
-    { "chainId": 40, "name": "Telos", "slug": "chains/rsztelos" },
-    { "chainId": 42, "name": "LUKSO", "slug": "chains/rszlukso" },
-    { "chainId": 44, "name": "Crab", "slug": "chains/rszcrab" },
-    { "chainId": 46, "name": "Darwinia", "slug": "chains/rszdarwinia" },
-    { "chainId": 50, "name": "XDC", "slug": "chains/rszxdc" },
-    { "chainId": 52, "name": "CSC", "slug": "chains/rszcsc" },
-    { "chainId": 56, "name": "BNB Chain", "slug": "chains/rszbinance" },
-    { "chainId": 57, "name": "Syscoin", "slug": "chains/rszsyscoin" },
-    { "chainId": 58, "name": "Ontology EVM", "slug": "chains/rszontologyevm" },
-    { "chainId": 60, "name": "GoChain", "slug": "chains/rszgochain" },
-    { "chainId": 61, "name": "Ethereum Classic", "slug": "chains/rszethereumclassic" },
-    { "chainId": 66, "name": "OKX Chain", "slug": "chains/rszokexchain" },
-    { "chainId": 82, "name": "Meter", "slug": "chains/rszmeter" },
-    { "chainId": 88, "name": "TomoChain", "slug": "chains/rsztomochain" },
-    { "chainId": 100, "name": "Gnosis", "slug": "chains/rszxdai" },
-    { "chainId": 106, "name": "Velas", "slug": "chains/rszvelas" },
-    { "chainId": 108, "name": "ThunderCore", "slug": "chains/rszthundercore" },
-    { "chainId": 119, "name": "ENULS", "slug": "chains/rszenuls" },
-    { "chainId": 122, "name": "Fuse", "slug": "chains/rszfuse" },
-    { "chainId": 128, "name": "HECO", "slug": "chains/rszheco" },
-    { "chainId": 130, "name": "Unichain", "slug": "chains/rszunichain" },
-    { "chainId": 137, "name": "Polygon", "slug": "chains/rszpolygon" },
-    { "chainId": 143, "name": "Monad", "slug": "chains/rszmonad" },
-    { "chainId": 146, "name": "Sonic", "slug": "chains/rszsonic" },
-    { "chainId": 148, "name": "Shimmer EVM", "slug": "chains/rszshimmerevm" },
-    { "chainId": 169, "name": "Manta", "slug": "chains/rszmanta" },
-    { "chainId": 173, "name": "ENI", "slug": "chains/rszeni" },
-    { "chainId": 185, "name": "Mint", "slug": "chains/rszmint" },
-    { "chainId": 199, "name": "BitTorrent", "slug": "chains/rszbittorrent" },
-    { "chainId": 204, "name": "opBNB", "slug": "chains/rszopbnb" },
-    { "chainId": 207, "name": "VinuChain", "slug": "chains/rszvinuchain" },
-    { "chainId": 225, "name": "LaChain", "slug": "chains/rszlachain" },
-    { "chainId": 232, "name": "Lens", "slug": "chains/rszlens" },
-    { "chainId": 246, "name": "Energy Web", "slug": "chains/rszenergyweb" },
-    { "chainId": 248, "name": "Oasys", "slug": "chains/rszoasys" },
-    { "chainId": 250, "name": "Fantom", "slug": "chains/rszfantom" },
-    { "chainId": 252, "name": "Fraxtal", "slug": "chains/rszfraxtal" },
-    { "chainId": 254, "name": "Swan", "slug": "chains/rszswan" },
-    { "chainId": 255, "name": "Kroma", "slug": "chains/rszkroma" },
-    { "chainId": 269, "name": "HPB", "slug": "chains/rszhpb" },
-    { "chainId": 277, "name": "Prom", "slug": "chains/rszprom" },
-    { "chainId": 288, "name": "Boba", "slug": "chains/rszboba" },
-    { "chainId": 291, "name": "Orderly", "slug": "chains/rszorderly" },
-    { "chainId": 295, "name": "Hedera", "slug": "chains/rszhedera" },
-    { "chainId": 314, "name": "Filecoin", "slug": "chains/rszfilecoin" },
-    { "chainId": 321, "name": "KuCoin", "slug": "chains/rszkucoin" },
-    { "chainId": 336, "name": "Shiden", "slug": "chains/rszshiden" },
-    { "chainId": 360, "name": "Shape", "slug": "chains/rszshape" },
-    { "chainId": 361, "name": "Theta", "slug": "chains/rsztheta" },
-    { "chainId": 369, "name": "PulseChain", "slug": "chains/rszpulse" },
-    { "chainId": 388, "name": "Cronos zkEVM", "slug": "chains/rszcronoszkevm" },
-    { "chainId": 416, "name": "SX Network", "slug": "chains/rszsx" },
-    { "chainId": 478, "name": "Form Network", "slug": "chains/rszformnetwork" },
-    { "chainId": 570, "name": "Rollux", "slug": "chains/rszrollux" },
-    { "chainId": 592, "name": "Astar", "slug": "chains/rszastar" },
-    { "chainId": 648, "name": "Endurance", "slug": "chains/rszendurance" },
-    { "chainId": 690, "name": "Redstone", "slug": "chains/rszredstone" },
-    { "chainId": 698, "name": "Matchain", "slug": "chains/rszmatchain" },
-    { "chainId": 747, "name": "Flow", "slug": "chains/rszflow" },
-    { "chainId": 820, "name": "Callisto", "slug": "chains/rszcallisto" },
-    { "chainId": 841, "name": "Taraxa", "slug": "chains/rsztaraxa" },
-    { "chainId": 888, "name": "Wanchain", "slug": "chains/rszwanchain" },
-    { "chainId": 957, "name": "Lyra Chain", "slug": "chains/rszlyra-chain" },
-    { "chainId": 996, "name": "Bifrost", "slug": "chains/rszbifrost" },
-    { "chainId": 999, "name": "Hyperliquid", "slug": "chains/rszhyperliquid" },
-    { "chainId": 1024, "name": "CLV", "slug": "chains/rszclv" },
-    { "chainId": 1030, "name": "Conflux", "slug": "chains/rszconflux" },
-    { "chainId": 1088, "name": "Metis", "slug": "chains/rszmetis" },
-    { "chainId": 1101, "name": "Polygon zkEVM", "slug": "chains/rszpolygonzkevm" },
-    { "chainId": 1116, "name": "Core", "slug": "chains/rszcore" },
-    { "chainId": 1135, "name": "Lisk", "slug": "chains/rszlisk" },
-    { "chainId": 1230, "name": "Ultron", "slug": "chains/rszultron" },
-    { "chainId": 1284, "name": "Moonbeam", "slug": "chains/rszmoonbeam" },
-    { "chainId": 1285, "name": "Moonriver", "slug": "chains/rszmoonriver" },
-    { "chainId": 1329, "name": "Sei", "slug": "chains/rszsei" },
-    { "chainId": 1453, "name": "Meta", "slug": "chains/rszmeta" },
-    { "chainId": 1514, "name": "Story", "slug": "chains/rszstory" },
-    { "chainId": 1625, "name": "Gravity Bridge", "slug": "chains/rszgravity-bridge" },
-    { "chainId": 1750, "name": "Metal", "slug": "chains/rszmetal" },
-    { "chainId": 1890, "name": "LightLink", "slug": "chains/rszlightlink" },
-    { "chainId": 1996, "name": "Sanko", "slug": "chains/rszsanko" },
-    { "chainId": 2000, "name": "Dogechain", "slug": "chains/rszdogechain" },
-    { "chainId": 2020, "name": "Ronin", "slug": "chains/rszronin" },
-    { "chainId": 2040, "name": "Vana", "slug": "chains/rszvana" },
-    { "chainId": 2221, "name": "Kava Testnet", "slug": "chains/rszkava", "note": "Uses Kava mainnet icon" },
-    { "chainId": 2222, "name": "Kava", "slug": "chains/rszkava" },
-    { "chainId": 2358, "name": "Kroma", "slug": "chains/rszkroma" },
-    { "chainId": 2741, "name": "Abstract", "slug": "chains/rszabstract" },
-    { "chainId": 3338, "name": "Peaq", "slug": "chains/rszpeaq" },
-    { "chainId": 3776, "name": "Astar zkEVM", "slug": "chains/rszastar-zkevm" },
-    { "chainId": 4200, "name": "Merlin", "slug": "chains/rszmerlin" },
-    { "chainId": 4337, "name": "Beam", "slug": "chains/rszbeam" },
-    { "chainId": 4689, "name": "IoTeX", "slug": "chains/rsziotex" },
-    { "chainId": 5000, "name": "Mantle", "slug": "chains/rszmantle" },
-    { "chainId": 5165, "name": "Bahamut", "slug": "chains/rszbahamut" },
-    { "chainId": 6969, "name": "Tombchain", "slug": "chains/rsztombchain" },
-    { "chainId": 7000, "name": "ZetaChain", "slug": "chains/rszzetachain" },
-    { "chainId": 7171, "name": "Bitrock", "slug": "chains/rszbitrock" },
-    { "chainId": 7560, "name": "Cyber", "slug": "chains/rszcyber" },
-    { "chainId": 7700, "name": "Canto", "slug": "chains/rszcanto" },
-    { "chainId": 7887, "name": "Kinto", "slug": "chains/rszkinto" },
-    { "chainId": 8008, "name": "Polynomial", "slug": "chains/rszpolynomial" },
-    { "chainId": 8217, "name": "Klaytn", "slug": "chains/rszklaytn" },
-    { "chainId": 8329, "name": "Lorenzo", "slug": "chains/rszlorenzo" },
-    { "chainId": 8333, "name": "B3", "slug": "chains/rszb3" },
-    { "chainId": 8428, "name": "Clique", "slug": "chains/rszclique" },
-    { "chainId": 8453, "name": "Base", "slug": "chains/rszbase" },
-    { "chainId": 8822, "name": "IOTA", "slug": "chains/rsziota" },
-    { "chainId": 9001, "name": "Evmos", "slug": "chains/rszevmos" },
-    { "chainId": 9790, "name": "Carbon", "slug": "chains/rszcarbon" },
-    { "chainId": 10000, "name": "SmartBCH", "slug": "chains/rszsmartbch" },
-    { "chainId": 10143, "name": "Monad Testnet", "slug": "chains/rszmonad", "note": "Uses Monad mainnet icon" },
-    { "chainId": 11011, "name": "Shape", "slug": "chains/rszshape" },
-    { "chainId": 11235, "name": "Haqq", "slug": "chains/rszhaqq" },
-    { "chainId": 12324, "name": "L3X Network", "slug": "chains/rszl3x-network" },
-    { "chainId": 12553, "name": "RSS3", "slug": "chains/rszrss3" },
-    { "chainId": 13371, "name": "Immutable zkEVM", "slug": "chains/rszimmutablezkevm" },
-    { "chainId": 15557, "name": "EOS", "slug": "chains/rszeos" },
-    { "chainId": 17000, "name": "Holesky", "slug": "chains/rszethereum", "note": "Uses Ethereum icon" },
-    { "chainId": 17777, "name": "EOS", "slug": "chains/rszeos" },
-    { "chainId": 22222, "name": "Hypr", "slug": "chains/rszhypr" },
-    { "chainId": 22776, "name": "MAP Protocol", "slug": "chains/rszmap-protocol" },
-    { "chainId": 23294, "name": "Oasis Sapphire", "slug": "chains/rszoasissapphire" },
-    { "chainId": 23888, "name": "Blast Testnet", "slug": "chains/rszblast", "note": "Uses Blast mainnet icon" },
-    { "chainId": 32520, "name": "Bitgert", "slug": "chains/rszbitgert" },
-    { "chainId": 32659, "name": "Fusion", "slug": "chains/rszfusion" },
-    { "chainId": 32769, "name": "Zilliqa", "slug": "chains/rszzilliqa" },
-    { "chainId": 33979, "name": "Funkichain", "slug": "chains/rszfunkichain" },
-    { "chainId": 34443, "name": "Mode", "slug": "chains/rszmode" },
-    { "chainId": 39797, "name": "Energi", "slug": "chains/rszenergi" },
-    { "chainId": 41455, "name": "Aleph Zero EVM", "slug": "chains/rszaleph-zero-evm" },
-    { "chainId": 42161, "name": "Arbitrum", "slug": "chains/rszarbitrum" },
-    { "chainId": 42170, "name": "Arbitrum Nova", "slug": "chains/rszarbitrumnova" },
-    { "chainId": 42220, "name": "Celo", "slug": "chains/rszcelo" },
-    { "chainId": 42262, "name": "Oasis Emerald", "slug": "chains/rszoasis-emerald" },
-    { "chainId": 42766, "name": "ZKFair", "slug": "chains/rszzkfair" },
-    { "chainId": 43113, "name": "Avalanche Fuji", "slug": "chains/rszavalanche", "note": "Uses Avalanche icon" },
-    { "chainId": 43114, "name": "Avalanche", "slug": "chains/rszavalanche" },
-    { "chainId": 43288, "name": "Boba Fuji", "slug": "chains/rszboba", "note": "Uses Boba icon" },
-    { "chainId": 44787, "name": "Celo Alfajores", "slug": "chains/rszcelo", "note": "Uses Celo icon" },
-    { "chainId": 47805, "name": "REI", "slug": "chains/rszrei" },
-    { "chainId": 48900, "name": "Zircuit", "slug": "chains/rszzircuit" },
-    { "chainId": 52014, "name": "Electroneum", "slug": "chains/rszelectroneum" },
-    { "chainId": 53935, "name": "DFK", "slug": "chains/rszdfk" },
-    { "chainId": 55244, "name": "Superposition", "slug": "chains/rszsuperposition" },
-    { "chainId": 57073, "name": "Ink", "slug": "chains/rszink" },
-    { "chainId": 59144, "name": "Linea", "slug": "chains/rszlinea" },
-    { "chainId": 60808, "name": "BOB", "slug": "chains/rszbob" },
-    { "chainId": 71402, "name": "Godwoken", "slug": "chains/rszgodwoken" },
-    { "chainId": 80002, "name": "Polygon Amoy", "slug": "chains/rszpolygon", "note": "Uses Polygon icon" },
-    { "chainId": 80084, "name": "Berachain Testnet", "slug": "chains/rszberachain", "note": "Uses Berachain icon" },
-    { "chainId": 80094, "name": "Berachain", "slug": "chains/rszberachain" },
-    { "chainId": 81457, "name": "Blast", "slug": "chains/rszblast" },
-    { "chainId": 88888, "name": "Chiliz", "slug": "chains/rszchiliz" },
-    { "chainId": 98866, "name": "Plume", "slug": "chains/rszplume" },
-    { "chainId": 100000, "name": "Q", "slug": "chains/rszq" },
-    { "chainId": 128123, "name": "Etherlink", "slug": "chains/rszetherlink" },
-    { "chainId": 131313, "name": "Odyssey", "slug": "chains/rszodyssey" },
-    { "chainId": 167000, "name": "Taiko", "slug": "chains/rsztaiko" },
-    { "chainId": 200901, "name": "Bitlayer", "slug": "chains/rszbitlayer" },
-    { "chainId": 210425, "name": "PlatON", "slug": "chains/rszplaton" },
-    { "chainId": 245022934, "name": "Neon", "slug": "chains/rszneon" },
-    { "chainId": 534352, "name": "Scroll", "slug": "chains/rszscroll" },
-    { "chainId": 555666, "name": "Eclipse", "slug": "chains/rszeclipse" },
-    { "chainId": 622277, "name": "Hypr", "slug": "chains/rszhypr" },
-    { "chainId": 660279, "name": "Xai", "slug": "chains/rszxai" },
-    { "chainId": 713715, "name": "Sei Devnet", "slug": "chains/rszsei", "note": "Uses Sei icon" },
-    { "chainId": 810180, "name": "zkLink Nova", "slug": "chains/rszzklink-nova" },
-    { "chainId": 7225878, "name": "Saakuru", "slug": "chains/rszsaakuru" },
-    { "chainId": 7777777, "name": "Zora", "slug": "chains/rszzora" },
-    { "chainId": 11155111, "name": "Sepolia", "slug": "chains/rszethereum", "note": "Uses Ethereum icon" },
-    { "chainId": 11155420, "name": "OP Sepolia", "slug": "chains/rszoptimism", "note": "Uses Optimism icon" },
-    { "chainId": 245022926, "name": "Neon Devnet", "slug": "chains/rszneon", "note": "Uses Neon icon" },
-    { "chainId": 666666666, "name": "Degen", "slug": "chains/rszdegen" },
-    { "chainId": 728126428, "name": "Tron", "slug": "chains/rsztron" },
-    { "chainId": 1313161554, "name": "Aurora", "slug": "chains/rszaurora" },
-    { "chainId": 1666600000, "name": "Harmony", "slug": "chains/rszharmony" }
+    {
+      "chainId": 1,
+      "name": "Ethereum",
+      "slug": "chains/ethereum"
+    },
+    {
+      "chainId": 10,
+      "name": "Optimism",
+      "slug": "chains/optimism"
+    },
+    {
+      "chainId": 14,
+      "name": "Flare",
+      "slug": "chains/flare"
+    },
+    {
+      "chainId": 19,
+      "name": "Songbird",
+      "slug": "chains/songbird"
+    },
+    {
+      "chainId": 20,
+      "name": "Elastos",
+      "slug": "chains/elastos"
+    },
+    {
+      "chainId": 25,
+      "name": "Cronos",
+      "slug": "chains/cronos"
+    },
+    {
+      "chainId": 30,
+      "name": "RSK",
+      "slug": "chains/rsk"
+    },
+    {
+      "chainId": 40,
+      "name": "Telos",
+      "slug": "chains/telos"
+    },
+    {
+      "chainId": 42,
+      "name": "LUKSO",
+      "slug": "chains/lukso"
+    },
+    {
+      "chainId": 44,
+      "name": "Crab",
+      "slug": "chains/crab"
+    },
+    {
+      "chainId": 46,
+      "name": "Darwinia",
+      "slug": "chains/darwinia"
+    },
+    {
+      "chainId": 50,
+      "name": "XDC",
+      "slug": "chains/xdc"
+    },
+    {
+      "chainId": 52,
+      "name": "CSC",
+      "slug": "chains/csc"
+    },
+    {
+      "chainId": 56,
+      "name": "BNB Chain",
+      "slug": "chains/binance"
+    },
+    {
+      "chainId": 57,
+      "name": "Syscoin",
+      "slug": "chains/syscoin"
+    },
+    {
+      "chainId": 58,
+      "name": "Ontology EVM",
+      "slug": "chains/ontologyevm"
+    },
+    {
+      "chainId": 60,
+      "name": "GoChain",
+      "slug": "chains/gochain"
+    },
+    {
+      "chainId": 61,
+      "name": "Ethereum Classic",
+      "slug": "chains/ethereumclassic"
+    },
+    {
+      "chainId": 66,
+      "name": "OKX Chain",
+      "slug": "chains/okexchain"
+    },
+    {
+      "chainId": 82,
+      "name": "Meter",
+      "slug": "chains/meter"
+    },
+    {
+      "chainId": 88,
+      "name": "TomoChain",
+      "slug": "chains/tomochain"
+    },
+    {
+      "chainId": 100,
+      "name": "Gnosis",
+      "slug": "chains/xdai"
+    },
+    {
+      "chainId": 106,
+      "name": "Velas",
+      "slug": "chains/velas"
+    },
+    {
+      "chainId": 108,
+      "name": "ThunderCore",
+      "slug": "chains/thundercore"
+    },
+    {
+      "chainId": 119,
+      "name": "ENULS",
+      "slug": "chains/enuls"
+    },
+    {
+      "chainId": 122,
+      "name": "Fuse",
+      "slug": "chains/fuse"
+    },
+    {
+      "chainId": 128,
+      "name": "HECO",
+      "slug": "chains/heco"
+    },
+    {
+      "chainId": 130,
+      "name": "Unichain",
+      "slug": "chains/unichain"
+    },
+    {
+      "chainId": 137,
+      "name": "Polygon",
+      "slug": "chains/polygon"
+    },
+    {
+      "chainId": 143,
+      "name": "Monad",
+      "slug": "chains/monad"
+    },
+    {
+      "chainId": 146,
+      "name": "Sonic",
+      "slug": "chains/sonic"
+    },
+    {
+      "chainId": 148,
+      "name": "Shimmer EVM",
+      "slug": "chains/shimmerevm"
+    },
+    {
+      "chainId": 169,
+      "name": "Manta",
+      "slug": "chains/manta"
+    },
+    {
+      "chainId": 173,
+      "name": "ENI",
+      "slug": "chains/eni"
+    },
+    {
+      "chainId": 185,
+      "name": "Mint",
+      "slug": "chains/mint"
+    },
+    {
+      "chainId": 199,
+      "name": "BitTorrent",
+      "slug": "chains/bittorrent"
+    },
+    {
+      "chainId": 204,
+      "name": "opBNB",
+      "slug": "chains/opbnb"
+    },
+    {
+      "chainId": 207,
+      "name": "VinuChain",
+      "slug": "chains/vinuchain"
+    },
+    {
+      "chainId": 225,
+      "name": "LaChain",
+      "slug": "chains/lachain"
+    },
+    {
+      "chainId": 232,
+      "name": "Lens",
+      "slug": "chains/lens"
+    },
+    {
+      "chainId": 246,
+      "name": "Energy Web",
+      "slug": "chains/energyweb"
+    },
+    {
+      "chainId": 248,
+      "name": "Oasys",
+      "slug": "chains/oasys"
+    },
+    {
+      "chainId": 250,
+      "name": "Fantom",
+      "slug": "chains/fantom"
+    },
+    {
+      "chainId": 252,
+      "name": "Fraxtal",
+      "slug": "chains/fraxtal"
+    },
+    {
+      "chainId": 254,
+      "name": "Swan",
+      "slug": "chains/swan"
+    },
+    {
+      "chainId": 255,
+      "name": "Kroma",
+      "slug": "chains/kroma"
+    },
+    {
+      "chainId": 269,
+      "name": "HPB",
+      "slug": "chains/hpb"
+    },
+    {
+      "chainId": 277,
+      "name": "Prom",
+      "slug": "chains/prom"
+    },
+    {
+      "chainId": 288,
+      "name": "Boba",
+      "slug": "chains/boba"
+    },
+    {
+      "chainId": 291,
+      "name": "Orderly",
+      "slug": "chains/orderly"
+    },
+    {
+      "chainId": 295,
+      "name": "Hedera",
+      "slug": "chains/hedera"
+    },
+    {
+      "chainId": 314,
+      "name": "Filecoin",
+      "slug": "chains/filecoin"
+    },
+    {
+      "chainId": 321,
+      "name": "KuCoin",
+      "slug": "chains/kucoin"
+    },
+    {
+      "chainId": 336,
+      "name": "Shiden",
+      "slug": "chains/shiden"
+    },
+    {
+      "chainId": 360,
+      "name": "Shape",
+      "slug": "chains/shape"
+    },
+    {
+      "chainId": 361,
+      "name": "Theta",
+      "slug": "chains/theta"
+    },
+    {
+      "chainId": 369,
+      "name": "PulseChain",
+      "slug": "chains/pulse"
+    },
+    {
+      "chainId": 388,
+      "name": "Cronos zkEVM",
+      "slug": "chains/cronoszkevm"
+    },
+    {
+      "chainId": 416,
+      "name": "SX Network",
+      "slug": "chains/sx"
+    },
+    {
+      "chainId": 478,
+      "name": "Form Network",
+      "slug": "chains/formnetwork"
+    },
+    {
+      "chainId": 570,
+      "name": "Rollux",
+      "slug": "chains/rollux"
+    },
+    {
+      "chainId": 592,
+      "name": "Astar",
+      "slug": "chains/astar"
+    },
+    {
+      "chainId": 648,
+      "name": "Endurance",
+      "slug": "chains/endurance"
+    },
+    {
+      "chainId": 690,
+      "name": "Redstone",
+      "slug": "chains/redstone"
+    },
+    {
+      "chainId": 698,
+      "name": "Matchain",
+      "slug": "chains/matchain"
+    },
+    {
+      "chainId": 747,
+      "name": "Flow",
+      "slug": "chains/flow"
+    },
+    {
+      "chainId": 820,
+      "name": "Callisto",
+      "slug": "chains/callisto"
+    },
+    {
+      "chainId": 841,
+      "name": "Taraxa",
+      "slug": "chains/taraxa"
+    },
+    {
+      "chainId": 888,
+      "name": "Wanchain",
+      "slug": "chains/wanchain"
+    },
+    {
+      "chainId": 957,
+      "name": "Lyra Chain",
+      "slug": "chains/lyra-chain"
+    },
+    {
+      "chainId": 996,
+      "name": "Bifrost",
+      "slug": "chains/bifrost"
+    },
+    {
+      "chainId": 999,
+      "name": "Hyperliquid",
+      "slug": "chains/hyperliquid"
+    },
+    {
+      "chainId": 1024,
+      "name": "CLV",
+      "slug": "chains/clv"
+    },
+    {
+      "chainId": 1030,
+      "name": "Conflux",
+      "slug": "chains/conflux"
+    },
+    {
+      "chainId": 1088,
+      "name": "Metis",
+      "slug": "chains/metis"
+    },
+    {
+      "chainId": 1101,
+      "name": "Polygon zkEVM",
+      "slug": "chains/polygonzkevm"
+    },
+    {
+      "chainId": 1116,
+      "name": "Core",
+      "slug": "chains/core"
+    },
+    {
+      "chainId": 1135,
+      "name": "Lisk",
+      "slug": "chains/lisk"
+    },
+    {
+      "chainId": 1230,
+      "name": "Ultron",
+      "slug": "chains/ultron"
+    },
+    {
+      "chainId": 1284,
+      "name": "Moonbeam",
+      "slug": "chains/moonbeam"
+    },
+    {
+      "chainId": 1285,
+      "name": "Moonriver",
+      "slug": "chains/moonriver"
+    },
+    {
+      "chainId": 1329,
+      "name": "Sei",
+      "slug": "chains/sei"
+    },
+    {
+      "chainId": 1453,
+      "name": "Meta",
+      "slug": "chains/meta"
+    },
+    {
+      "chainId": 1514,
+      "name": "Story",
+      "slug": "chains/story"
+    },
+    {
+      "chainId": 1625,
+      "name": "Gravity Bridge",
+      "slug": "chains/gravity-bridge"
+    },
+    {
+      "chainId": 1750,
+      "name": "Metal",
+      "slug": "chains/metal"
+    },
+    {
+      "chainId": 1890,
+      "name": "LightLink",
+      "slug": "chains/lightlink"
+    },
+    {
+      "chainId": 1996,
+      "name": "Sanko",
+      "slug": "chains/sanko"
+    },
+    {
+      "chainId": 2000,
+      "name": "Dogechain",
+      "slug": "chains/dogechain"
+    },
+    {
+      "chainId": 2020,
+      "name": "Ronin",
+      "slug": "chains/ronin"
+    },
+    {
+      "chainId": 2040,
+      "name": "Vana",
+      "slug": "chains/vana"
+    },
+    {
+      "chainId": 2221,
+      "name": "Kava Testnet",
+      "slug": "chains/kava",
+      "note": "Uses Kava mainnet icon"
+    },
+    {
+      "chainId": 2222,
+      "name": "Kava",
+      "slug": "chains/kava"
+    },
+    {
+      "chainId": 2358,
+      "name": "Kroma",
+      "slug": "chains/kroma"
+    },
+    {
+      "chainId": 2741,
+      "name": "Abstract",
+      "slug": "chains/abstract"
+    },
+    {
+      "chainId": 3338,
+      "name": "Peaq",
+      "slug": "chains/peaq"
+    },
+    {
+      "chainId": 3776,
+      "name": "Astar zkEVM",
+      "slug": "chains/astar-zkevm"
+    },
+    {
+      "chainId": 4200,
+      "name": "Merlin",
+      "slug": "chains/merlin"
+    },
+    {
+      "chainId": 4337,
+      "name": "Beam",
+      "slug": "chains/beam"
+    },
+    {
+      "chainId": 4689,
+      "name": "IoTeX",
+      "slug": "chains/iotex"
+    },
+    {
+      "chainId": 5000,
+      "name": "Mantle",
+      "slug": "chains/mantle"
+    },
+    {
+      "chainId": 5165,
+      "name": "Bahamut",
+      "slug": "chains/bahamut"
+    },
+    {
+      "chainId": 6969,
+      "name": "Tombchain",
+      "slug": "chains/tombchain"
+    },
+    {
+      "chainId": 7000,
+      "name": "ZetaChain",
+      "slug": "chains/zetachain"
+    },
+    {
+      "chainId": 7171,
+      "name": "Bitrock",
+      "slug": "chains/bitrock"
+    },
+    {
+      "chainId": 7560,
+      "name": "Cyber",
+      "slug": "chains/cyber"
+    },
+    {
+      "chainId": 7700,
+      "name": "Canto",
+      "slug": "chains/canto"
+    },
+    {
+      "chainId": 7887,
+      "name": "Kinto",
+      "slug": "chains/kinto"
+    },
+    {
+      "chainId": 8008,
+      "name": "Polynomial",
+      "slug": "chains/polynomial"
+    },
+    {
+      "chainId": 8217,
+      "name": "Klaytn",
+      "slug": "chains/klaytn"
+    },
+    {
+      "chainId": 8329,
+      "name": "Lorenzo",
+      "slug": "chains/lorenzo"
+    },
+    {
+      "chainId": 8333,
+      "name": "B3",
+      "slug": "chains/b3"
+    },
+    {
+      "chainId": 8428,
+      "name": "Clique",
+      "slug": "chains/clique"
+    },
+    {
+      "chainId": 8453,
+      "name": "Base",
+      "slug": "chains/base"
+    },
+    {
+      "chainId": 8822,
+      "name": "IOTA",
+      "slug": "chains/iota"
+    },
+    {
+      "chainId": 9001,
+      "name": "Evmos",
+      "slug": "chains/evmos"
+    },
+    {
+      "chainId": 9790,
+      "name": "Carbon",
+      "slug": "chains/carbon"
+    },
+    {
+      "chainId": 10000,
+      "name": "SmartBCH",
+      "slug": "chains/smartbch"
+    },
+    {
+      "chainId": 10143,
+      "name": "Monad Testnet",
+      "slug": "chains/monad",
+      "note": "Uses Monad mainnet icon"
+    },
+    {
+      "chainId": 11011,
+      "name": "Shape",
+      "slug": "chains/shape"
+    },
+    {
+      "chainId": 11235,
+      "name": "Haqq",
+      "slug": "chains/haqq"
+    },
+    {
+      "chainId": 12324,
+      "name": "L3X Network",
+      "slug": "chains/l3x-network"
+    },
+    {
+      "chainId": 12553,
+      "name": "RSS3",
+      "slug": "chains/rss3"
+    },
+    {
+      "chainId": 13371,
+      "name": "Immutable zkEVM",
+      "slug": "chains/immutablezkevm"
+    },
+    {
+      "chainId": 15557,
+      "name": "EOS",
+      "slug": "chains/eos"
+    },
+    {
+      "chainId": 17000,
+      "name": "Holesky",
+      "slug": "chains/ethereum",
+      "note": "Uses Ethereum icon"
+    },
+    {
+      "chainId": 17777,
+      "name": "EOS",
+      "slug": "chains/eos"
+    },
+    {
+      "chainId": 22222,
+      "name": "Hypr",
+      "slug": "chains/hypr"
+    },
+    {
+      "chainId": 22776,
+      "name": "MAP Protocol",
+      "slug": "chains/map-protocol"
+    },
+    {
+      "chainId": 23294,
+      "name": "Oasis Sapphire",
+      "slug": "chains/oasissapphire"
+    },
+    {
+      "chainId": 23888,
+      "name": "Blast Testnet",
+      "slug": "chains/blast",
+      "note": "Uses Blast mainnet icon"
+    },
+    {
+      "chainId": 32520,
+      "name": "Bitgert",
+      "slug": "chains/bitgert"
+    },
+    {
+      "chainId": 32659,
+      "name": "Fusion",
+      "slug": "chains/fusion"
+    },
+    {
+      "chainId": 32769,
+      "name": "Zilliqa",
+      "slug": "chains/zilliqa"
+    },
+    {
+      "chainId": 33979,
+      "name": "Funkichain",
+      "slug": "chains/funkichain"
+    },
+    {
+      "chainId": 34443,
+      "name": "Mode",
+      "slug": "chains/mode"
+    },
+    {
+      "chainId": 39797,
+      "name": "Energi",
+      "slug": "chains/energi"
+    },
+    {
+      "chainId": 41455,
+      "name": "Aleph Zero EVM",
+      "slug": "chains/aleph-zero-evm"
+    },
+    {
+      "chainId": 42161,
+      "name": "Arbitrum",
+      "slug": "chains/arbitrum"
+    },
+    {
+      "chainId": 42170,
+      "name": "Arbitrum Nova",
+      "slug": "chains/arbitrumnova"
+    },
+    {
+      "chainId": 42220,
+      "name": "Celo",
+      "slug": "chains/celo"
+    },
+    {
+      "chainId": 42262,
+      "name": "Oasis Emerald",
+      "slug": "chains/oasis-emerald"
+    },
+    {
+      "chainId": 42766,
+      "name": "ZKFair",
+      "slug": "chains/zkfair"
+    },
+    {
+      "chainId": 43113,
+      "name": "Avalanche Fuji",
+      "slug": "chains/avalanche",
+      "note": "Uses Avalanche icon"
+    },
+    {
+      "chainId": 43114,
+      "name": "Avalanche",
+      "slug": "chains/avalanche"
+    },
+    {
+      "chainId": 43288,
+      "name": "Boba Fuji",
+      "slug": "chains/boba",
+      "note": "Uses Boba icon"
+    },
+    {
+      "chainId": 44787,
+      "name": "Celo Alfajores",
+      "slug": "chains/celo",
+      "note": "Uses Celo icon"
+    },
+    {
+      "chainId": 47805,
+      "name": "REI",
+      "slug": "chains/rei"
+    },
+    {
+      "chainId": 48900,
+      "name": "Zircuit",
+      "slug": "chains/zircuit"
+    },
+    {
+      "chainId": 52014,
+      "name": "Electroneum",
+      "slug": "chains/electroneum"
+    },
+    {
+      "chainId": 53935,
+      "name": "DFK",
+      "slug": "chains/dfk"
+    },
+    {
+      "chainId": 55244,
+      "name": "Superposition",
+      "slug": "chains/superposition"
+    },
+    {
+      "chainId": 57073,
+      "name": "Ink",
+      "slug": "chains/ink"
+    },
+    {
+      "chainId": 59144,
+      "name": "Linea",
+      "slug": "chains/linea"
+    },
+    {
+      "chainId": 60808,
+      "name": "BOB",
+      "slug": "chains/bob"
+    },
+    {
+      "chainId": 71402,
+      "name": "Godwoken",
+      "slug": "chains/godwoken"
+    },
+    {
+      "chainId": 80002,
+      "name": "Polygon Amoy",
+      "slug": "chains/polygon",
+      "note": "Uses Polygon icon"
+    },
+    {
+      "chainId": 80084,
+      "name": "Berachain Testnet",
+      "slug": "chains/berachain",
+      "note": "Uses Berachain icon"
+    },
+    {
+      "chainId": 80094,
+      "name": "Berachain",
+      "slug": "chains/berachain"
+    },
+    {
+      "chainId": 81457,
+      "name": "Blast",
+      "slug": "chains/blast"
+    },
+    {
+      "chainId": 88888,
+      "name": "Chiliz",
+      "slug": "chains/chiliz"
+    },
+    {
+      "chainId": 98866,
+      "name": "Plume",
+      "slug": "chains/plume"
+    },
+    {
+      "chainId": 100000,
+      "name": "Q",
+      "slug": "chains/q"
+    },
+    {
+      "chainId": 128123,
+      "name": "Etherlink",
+      "slug": "chains/etherlink"
+    },
+    {
+      "chainId": 131313,
+      "name": "Odyssey",
+      "slug": "chains/odyssey"
+    },
+    {
+      "chainId": 167000,
+      "name": "Taiko",
+      "slug": "chains/taiko"
+    },
+    {
+      "chainId": 200901,
+      "name": "Bitlayer",
+      "slug": "chains/bitlayer"
+    },
+    {
+      "chainId": 210425,
+      "name": "PlatON",
+      "slug": "chains/platon"
+    },
+    {
+      "chainId": 245022934,
+      "name": "Neon",
+      "slug": "chains/neon"
+    },
+    {
+      "chainId": 534352,
+      "name": "Scroll",
+      "slug": "chains/scroll"
+    },
+    {
+      "chainId": 555666,
+      "name": "Eclipse",
+      "slug": "chains/eclipse"
+    },
+    {
+      "chainId": 622277,
+      "name": "Hypr",
+      "slug": "chains/hypr"
+    },
+    {
+      "chainId": 660279,
+      "name": "Xai",
+      "slug": "chains/xai"
+    },
+    {
+      "chainId": 713715,
+      "name": "Sei Devnet",
+      "slug": "chains/sei",
+      "note": "Uses Sei icon"
+    },
+    {
+      "chainId": 810180,
+      "name": "zkLink Nova",
+      "slug": "chains/zklink-nova"
+    },
+    {
+      "chainId": 7225878,
+      "name": "Saakuru",
+      "slug": "chains/saakuru"
+    },
+    {
+      "chainId": 7777777,
+      "name": "Zora",
+      "slug": "chains/zora"
+    },
+    {
+      "chainId": 11155111,
+      "name": "Sepolia",
+      "slug": "chains/ethereum",
+      "note": "Uses Ethereum icon"
+    },
+    {
+      "chainId": 11155420,
+      "name": "OP Sepolia",
+      "slug": "chains/optimism",
+      "note": "Uses Optimism icon"
+    },
+    {
+      "chainId": 245022926,
+      "name": "Neon Devnet",
+      "slug": "chains/neon",
+      "note": "Uses Neon icon"
+    },
+    {
+      "chainId": 666666666,
+      "name": "Degen",
+      "slug": "chains/degen"
+    },
+    {
+      "chainId": 728126428,
+      "name": "Tron",
+      "slug": "chains/tron"
+    },
+    {
+      "chainId": 1313161554,
+      "name": "Aurora",
+      "slug": "chains/aurora"
+    },
+    {
+      "chainId": 1666600000,
+      "name": "Harmony",
+      "slug": "chains/harmony"
+    }
   ]
 }

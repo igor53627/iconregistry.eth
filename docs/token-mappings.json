@@ -1,0 +1,615 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-12-06",
+  "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
+  "network": "mainnet",
+  "description": "Token address to icon slug mappings for IconRegistry",
+  "usage": {
+    "solidity": "registry.getIconByToken(tokenAddress, chainId)",
+    "ethersjs": "await registry.getIconByToken(\"0x...\", 1) // Returns PNG bytes"
+  },
+  "mappings": [
+    {
+      "token": "0x0000000000085d4780b73119b644ae5ecd22b376",
+      "chainId": 1,
+      "slug": "pegged/true-usd",
+      "name": "TrueUSD",
+      "symbol": "TUSD"
+    },
+    {
+      "token": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "chainId": 1,
+      "slug": "pegged/agora-dollar",
+      "name": "Agora Dollar",
+      "symbol": "AUSD"
+    },
+    {
+      "token": "0x01d33fd36ec67c6ada32cf36b31e88ee190b1839",
+      "chainId": 1,
+      "slug": "pegged/brazilian-digital",
+      "name": "Brazilian Digital",
+      "symbol": "BRZ"
+    },
+    {
+      "token": "0x03ab458634910aad20ef5f1c8ee96f1d6ac54919",
+      "chainId": 1,
+      "slug": "pegged/rai-reflex-index",
+      "name": "Rai Reflex Index",
+      "symbol": "RAI"
+    },
+    {
+      "token": "0x056fd409e1d7a124bd7017459dfea2f387b6d5cd",
+      "chainId": 1,
+      "slug": "pegged/gemini-dollar",
+      "name": "Gemini Dollar",
+      "symbol": "GUSD"
+    },
+    {
+      "token": "0x0a5e677a6a24b2f1a2bf4f3bffc443231d2fdec8",
+      "chainId": 1,
+      "slug": "pegged/dforce-usd",
+      "name": "dForce USD",
+      "symbol": "USX"
+    },
+    {
+      "token": "0x0c10bf8fcb7bf5412187a595ab97a3609160b5c6",
+      "chainId": 1,
+      "slug": "pegged/usdd",
+      "name": "USDD",
+      "symbol": "USDD"
+    },
+    {
+      "token": "0x0e573ce2736dd9637a0b21058352e1667925c7a8",
+      "chainId": 1,
+      "slug": "pegged/verified-usd",
+      "name": "Verified USD",
+      "symbol": "USDV"
+    },
+    {
+      "token": "0x1456688345527be1f37e9e627da0837d6f08c925",
+      "chainId": 1,
+      "slug": "pegged/usdp-stablecoin",
+      "name": "USDP Stablecoin",
+      "symbol": "USDP"
+    },
+    {
+      "token": "0x15700b564ca08d9439c58ca5053166e8317aa138",
+      "chainId": 1,
+      "slug": "pegged/elixir-deusd",
+      "name": "Elixir deUSD",
+      "symbol": "DEUSD"
+    },
+    {
+      "token": "0x15f74458ae0bfdaa1a96ca1aa779d715cc1eefe4",
+      "chainId": 1,
+      "slug": "pegged/grai",
+      "name": "GRAI",
+      "symbol": "GRAI"
+    },
+    {
+      "token": "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+      "chainId": 1,
+      "slug": "pegged/eura",
+      "name": "EURA",
+      "symbol": "EURA"
+    },
+    {
+      "token": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "chainId": 1,
+      "slug": "pegged/eurc",
+      "name": "EURC",
+      "symbol": "EURC"
+    },
+    {
+      "token": "0x1b84765de8b7566e4ceaf4d0fd3c5af52d3dde4f",
+      "chainId": 1,
+      "slug": "pegged/nexus-usd",
+      "name": "Nexus USD",
+      "symbol": "NUSD"
+    },
+    {
+      "token": "0x1c48f86ae57291f7686349f12601910bd8d470bb",
+      "chainId": 1,
+      "slug": "pegged/usdk",
+      "name": "USDK",
+      "symbol": "USDK"
+    },
+    {
+      "token": "0x27f6c8289550fce67f6b50bed1f519966afe5287",
+      "chainId": 1,
+      "slug": "pegged/tokenised-gbp",
+      "name": "Tokenised GBP",
+      "symbol": "tGBP"
+    },
+    {
+      "token": "0x2c537e5624e4af88a7ae4060c022609376c8d0eb",
+      "chainId": 1,
+      "slug": "pegged/bilira",
+      "name": "Bilira",
+      "symbol": "TRYB"
+    },
+    {
+      "token": "0x3231cb76718cdef2155fc47b5286d82e6eda273f",
+      "chainId": 1,
+      "slug": "pegged/monerium-eur-emoney",
+      "name": "Monerium EUR emoney",
+      "symbol": "EURE"
+    },
+    {
+      "token": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+      "chainId": 1,
+      "slug": "pegged/gho",
+      "name": "GHO",
+      "symbol": "GHO"
+    },
+    {
+      "token": "0x476ef9ac6d8673e220d0e8bc0a810c2dc6a2aa84",
+      "chainId": 1,
+      "slug": "pegged/us-permissionless-dollar",
+      "name": "US Permissionless Dollar",
+      "symbol": "USPD"
+    },
+    {
+      "token": "0x4933a85b5b5466fbaf179f72d3de273c287ec2c2",
+      "chainId": 1,
+      "slug": "pegged/allunity-eur",
+      "name": "AllUnity EUR",
+      "symbol": "EURAU"
+    },
+    {
+      "token": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "chainId": 1,
+      "slug": "pegged/ethena-usde",
+      "name": "Ethena USDe",
+      "symbol": "USDe"
+    },
+    {
+      "token": "0x4f604735c1cf31399c6e711d5962b2b3e0225ad3",
+      "chainId": 1,
+      "slug": "pegged/glo-dollar",
+      "name": "Glo Dollar",
+      "symbol": "USDGLO"
+    },
+    {
+      "token": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+      "chainId": 1,
+      "slug": "pegged/binance-usd",
+      "name": "Binance USD",
+      "symbol": "BUSD"
+    },
+    {
+      "token": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+      "chainId": 1,
+      "slug": "pegged/susd",
+      "name": "sUSD",
+      "symbol": "sUSD"
+    },
+    {
+      "token": "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",
+      "chainId": 1,
+      "slug": "pegged/usdm",
+      "name": "USDM",
+      "symbol": "USDM"
+    },
+    {
+      "token": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+      "chainId": 1,
+      "slug": "pegged/liquity-usd",
+      "name": "Liquity USD",
+      "symbol": "LUSD"
+    },
+    {
+      "token": "0x605d26fbd5be761089281d5cec2ce86eea667109",
+      "chainId": 1,
+      "slug": "pegged/digital-standard-unit",
+      "name": "Digital Standard Unit",
+      "symbol": "DSU"
+    },
+    {
+      "token": "0x66a1e37c9b0eaddca17d3662d6c05f4decf3e110",
+      "chainId": 1,
+      "slug": "pegged/resolv-usd",
+      "name": "Resolv USD",
+      "symbol": "USR"
+    },
+    {
+      "token": "0x677ddbd918637e5f2c79e164d402454de7da8619",
+      "chainId": 1,
+      "slug": "pegged/vdollar-finance",
+      "name": "VDollar Finance",
+      "symbol": "VUSD"
+    },
+    {
+      "token": "0x68037790a0229e9ce6eaa8a99ea92964106c4703",
+      "chainId": 1,
+      "slug": "pegged/parallel",
+      "name": "Parallel",
+      "symbol": "PAR"
+    },
+    {
+      "token": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "chainId": 1,
+      "slug": "pegged/dai",
+      "name": "Dai",
+      "symbol": "DAI"
+    },
+    {
+      "token": "0x6bede1c6009a78c222d9bdb7974bb67847fdb68c",
+      "chainId": 1,
+      "slug": "pegged/usbd",
+      "name": "USBD",
+      "symbol": "USBD"
+    },
+    {
+      "token": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+      "chainId": 1,
+      "slug": "pegged/paypal-usd",
+      "name": "PayPal USD",
+      "symbol": "PYUSD"
+    },
+    {
+      "token": "0x70e8de73ce538da2beed35d14187f6959a8eca96",
+      "chainId": 1,
+      "slug": "pegged/xsgd",
+      "name": "XSGD",
+      "symbol": "XSGD"
+    },
+    {
+      "token": "0x7712c34205737192402172409a8f7ccef8aa2aec",
+      "chainId": 1,
+      "slug": "pegged/blackrock-usd",
+      "name": "BlackRock USD",
+      "symbol": "BUIDL"
+    },
+    {
+      "token": "0x78da5799cf427fee11e9996982f4150ece7a99a7",
+      "chainId": 1,
+      "slug": "pegged/revenue-generating-usd",
+      "name": "Revenue Generating USD",
+      "symbol": "rgUSD"
+    },
+    {
+      "token": "0x79d4f0232a66c4c91b89c76362016a1707cfbf4f",
+      "chainId": 1,
+      "slug": "pegged/vnx-swiss-franc",
+      "name": "VNX Swiss Franc",
+      "symbol": "VCHF"
+    },
+    {
+      "token": "0x7a486f809c952a6f8dec8cb0ff68173f2b8ed56c",
+      "chainId": 1,
+      "slug": "pegged/hex-trust-usdx",
+      "name": "Hex Trust USDX",
+      "symbol": "USDX"
+    },
+    {
+      "token": "0x820802fa8a99901f52e39acd21177b0be6ee2974",
+      "chainId": 1,
+      "slug": "pegged/euroe-stablecoin",
+      "name": "EUROe Stablecoin",
+      "symbol": "EUROe"
+    },
+    {
+      "token": "0x8238884ec9668ef77b90c6dff4d1a9f4f4823bfe",
+      "chainId": 1,
+      "slug": "pegged/opendollar-usdo",
+      "name": "OpenDollar USDO",
+      "symbol": "USDO"
+    },
+    {
+      "token": "0x853d955acef822db058eb8505911ed77f175b99e",
+      "chainId": 1,
+      "slug": "pegged/frax",
+      "name": "Frax",
+      "symbol": "FRAX"
+    },
+    {
+      "token": "0x865377367054516e17014ccded1e7d814edc9ce4",
+      "chainId": 1,
+      "slug": "pegged/dola-usd",
+      "name": "DOLA",
+      "symbol": "DOLA"
+    },
+    {
+      "token": "0x866a2bf4e572cbcf37d5071a7a58503bfb36be1b",
+      "chainId": 1,
+      "slug": "pegged/m-by-m0",
+      "name": "M by M0",
+      "symbol": "M"
+    },
+    {
+      "token": "0x8a60e489004ca22d775c5f2c657598278d17d9c2",
+      "chainId": 1,
+      "slug": "pegged/avalon-usda",
+      "name": "Avalon USDa",
+      "symbol": "USDA"
+    },
+    {
+      "token": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "chainId": 1,
+      "slug": "pegged/pax-dollar",
+      "name": "Pax Dollar",
+      "symbol": "USDP"
+    },
+    {
+      "token": "0x96f6ef951840721adbf46ac996b59e0235cb985c",
+      "chainId": 1,
+      "slug": "pegged/ondo-us-dollar-yield",
+      "name": "Ondo US Dollar Yield",
+      "symbol": "USDY"
+    },
+    {
+      "token": "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3",
+      "chainId": 1,
+      "slug": "pegged/magic-internet-money",
+      "name": "Magic Internet Money",
+      "symbol": "MIM"
+    },
+    {
+      "token": "0x9b3a8f7cec208e247d97dee13313690977e24459",
+      "chainId": 1,
+      "slug": "pegged/parallel-usdp",
+      "name": "Parallel USDp",
+      "symbol": "USDp"
+    },
+    {
+      "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "chainId": 1,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    {
+      "token": "0xa0d69e286b938e21cbf7e51d71f6a4c8918f482f",
+      "chainId": 1,
+      "slug": "pegged/electronic-usd",
+      "name": "Electronic USD",
+      "symbol": "EUSD"
+    },
+    {
+      "token": "0xa4335da338ec4c07c391fc1a9bf75f306adadc08",
+      "chainId": 1,
+      "slug": "pegged/aryze-eusd",
+      "name": "ARYZE eUSD",
+      "symbol": "eUSD"
+    },
+    {
+      "token": "0xa469b7ee9ee773642b3e93e842e5d9b5baa10067",
+      "chainId": 1,
+      "slug": "pegged/anzen-usdz",
+      "name": "Anzen USDz",
+      "symbol": "USDz"
+    },
+    {
+      "token": "0xab5eb14c09d416f0ac63661e57edb7aecdb9befa",
+      "chainId": 1,
+      "slug": "pegged/metronome-synth-usd",
+      "name": "Metronome Synth USD",
+      "symbol": "MSUSD"
+    },
+    {
+      "token": "0xb01dd87b29d187f3e3a4bf6cdaebfb97f3d9ab98",
+      "chainId": 1,
+      "slug": "pegged/liquity-bold",
+      "name": "Liquity BOLD",
+      "symbol": "BOLD"
+    },
+    {
+      "token": "0xb58e61c3098d85632df34eecfb899a1ed80921cb",
+      "chainId": 1,
+      "slug": "pegged/frankencoin",
+      "name": "Frankencoin",
+      "symbol": "ZCHF"
+    },
+    {
+      "token": "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9",
+      "chainId": 1,
+      "slug": "pegged/alchemix-usd",
+      "name": "Alchemix USD",
+      "symbol": "ALUSD"
+    },
+    {
+      "token": "0xc08512927d12348f6620a698105e1baac6ecd911",
+      "chainId": 1,
+      "slug": "pegged/gyen",
+      "name": "GYEN",
+      "symbol": "GYEN"
+    },
+    {
+      "token": "0xc19669a405067927865b40ea045a2baabbbe57f5",
+      "chainId": 1,
+      "slug": "pegged/star",
+      "name": "STAR",
+      "symbol": "STAR"
+    },
+    {
+      "token": "0xc56c2b7e71b54d38aab6d52e94a04cbfa8f604fa",
+      "chainId": 1,
+      "slug": "pegged/zusd",
+      "name": "ZUSD",
+      "symbol": "ZUSD"
+    },
+    {
+      "token": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+      "chainId": 1,
+      "slug": "pegged/first-digital-usd",
+      "name": "First Digital USD",
+      "symbol": "FDUSD"
+    },
+    {
+      "token": "0xcacd6fd266af91b8aed52accc382b4e165586e29",
+      "chainId": 1,
+      "slug": "pegged/frax-usd",
+      "name": "Frax USD",
+      "symbol": "FRXUSD"
+    },
+    {
+      "token": "0xcadc0acd4b445166f12d2c07eac6e2544fbe2eef",
+      "chainId": 1,
+      "slug": "pegged/cad-coin",
+      "name": "CAD Coin",
+      "symbol": "CADC"
+    },
+    {
+      "token": "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+      "chainId": 1,
+      "slug": "pegged/noon-usn",
+      "name": "Noon USN",
+      "symbol": "USN"
+    },
+    {
+      "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "chainId": 1,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0xdb25f211ab05b1c97d595516f45794528a807ad8",
+      "chainId": 1,
+      "slug": "pegged/stasis-euro",
+      "name": "Stasis Euro",
+      "symbol": "EURS"
+    },
+    {
+      "token": "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+      "chainId": 1,
+      "slug": "pegged/sky-dollar",
+      "name": "Sky Dollar",
+      "symbol": "USDS"
+    },
+    {
+      "token": "0xdd50c053c096cb04a3e3362e2b622529ec5f2e8a",
+      "chainId": 1,
+      "slug": "pegged/openeden-tbill",
+      "name": "OpenEden TBILL",
+      "symbol": "TBILL"
+    },
+    {
+      "token": "0xdf574c24545e5ffecb9a659c229253d4111d87e1",
+      "chainId": 1,
+      "slug": "pegged/husd",
+      "name": "HUSD",
+      "symbol": "HUSD"
+    },
+    {
+      "token": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
+      "chainId": 1,
+      "slug": "pegged/mstable-usd",
+      "name": "mStable USD",
+      "symbol": "MUSD"
+    },
+    {
+      "token": "0xec38621e72d86775a89c7422746de1f52bba5320",
+      "chainId": 1,
+      "slug": "pegged/davos-protocol",
+      "name": "Davos Protocol",
+      "symbol": "DUSD"
+    },
+    {
+      "token": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+      "chainId": 1,
+      "slug": "pegged/crvusd",
+      "name": "Curve USD",
+      "symbol": "crvUSD"
+    },
+    {
+      "token": "0xf9fb20b8e097904f0ab7d12e9dbee88f2dcd0f16",
+      "chainId": 1,
+      "slug": "pegged/stable-coin",
+      "name": "Stable Coin",
+      "symbol": "SBC"
+    },
+    {
+      "token": "0xfaf0cee6b20e2aaa4b80748a6af4cd89609a3d78",
+      "chainId": 1,
+      "slug": "pegged/palm-usd",
+      "name": "Palm USD",
+      "symbol": "PUSD"
+    },
+    {
+      "token": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "chainId": 10,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    {
+      "token": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58",
+      "chainId": 10,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+      "chainId": 10,
+      "slug": "pegged/dai",
+      "name": "Dai",
+      "symbol": "DAI"
+    },
+    {
+      "token": "0x55d398326f99059ff775485246999027b3197955",
+      "chainId": 56,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+      "chainId": 137,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    {
+      "token": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "chainId": 137,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "chainId": 8453,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    {
+      "token": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "chainId": 42161,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    {
+      "token": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+      "chainId": 42161,
+      "slug": "pegged/dai",
+      "name": "Dai",
+      "symbol": "DAI"
+    },
+    {
+      "token": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "chainId": 42161,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7",
+      "chainId": 43114,
+      "slug": "pegged/tether",
+      "name": "Tether",
+      "symbol": "USDT"
+    },
+    {
+      "token": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+      "chainId": 43114,
+      "slug": "pegged/usd-coin",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    }
+  ]
+}

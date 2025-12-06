@@ -142,14 +142,21 @@ async function main() {
         if (currentSlug !== cleanedSlug) {
             // Check if clean slug already exists on-chain
             const cleanHash = keccak256(toHex(cleanedSlug));
-            const existing = await publicClient.readContract({
-                address: PROXY_ADDRESS,
-                abi: ICON_REGISTRY_ABI,
-                functionName: 'icons',
-                args: [cleanHash],
-            });
+            let cleanSlugExists = false;
+            
+            try {
+                const existing = await publicClient.readContract({
+                    address: PROXY_ADDRESS,
+                    abi: ICON_REGISTRY_ABI,
+                    functionName: 'icons',
+                    args: [cleanHash],
+                });
+                cleanSlugExists = existing[0] !== '0x0000000000000000000000000000000000000000';
+            } catch {
+                cleanSlugExists = false;
+            }
 
-            if (existing[0] === '0x0000000000000000000000000000000000000000') {
+            if (!cleanSlugExists) {
                 migrations.push({
                     oldSlug: currentSlug,
                     newSlug: cleanedSlug,
