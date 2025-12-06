@@ -24,6 +24,9 @@ on:
         required: false
         default: '0'
 
+permissions:
+  contents: write
+
 jobs:
   setup-mappings:
     runs-on: ubuntu-latest
@@ -52,3 +55,16 @@ jobs:
           MAX_GAS_PRICE_GWEI: ${{ inputs.max_gas_gwei }}
           RESUME_FROM: ${{ inputs.resume_from }}
         run: npx tsx scripts/setup-token-mappings.ts
+
+      - name: Regenerate manifest
+        if: inputs.dry_run == 'false'
+        run: npx tsx scripts/generate-manifest.ts
+
+      - name: Commit updated manifest
+        if: inputs.dry_run == 'false'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/manifest.json docs/manifest-index.json
+          git diff --staged --quiet || git commit -m "chore: update manifest after token mappings [skip ci]"
+          git push || true

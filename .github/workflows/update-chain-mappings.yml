@@ -16,6 +16,9 @@ on:
         required: false
         default: '0.05'
 
+permissions:
+  contents: write
+
 jobs:
   update-mappings:
     runs-on: ubuntu-latest
@@ -42,3 +45,16 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
           MAX_GAS_PRICE_GWEI: ${{ inputs.max_gas_gwei }}
         run: npx tsx scripts/update-chain-mappings-clean.ts
+
+      - name: Regenerate manifest
+        if: inputs.dry_run == 'false'
+        run: npx tsx scripts/generate-manifest.ts
+
+      - name: Commit updated manifest
+        if: inputs.dry_run == 'false'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/manifest.json docs/manifest-index.json
+          git diff --staged --quiet || git commit -m "chore: update manifest after chain mappings [skip ci]"
+          git push || true
