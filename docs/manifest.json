@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-06T12:38:38.300Z",
+  "generatedAt": "2025-12-06T13:17:52.025Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10930,
+    "total": 10931,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1361,
-      "pegged": 345,
+      "pegged": 346,
       "protocols": 9044
     },
     "mapped": {
@@ -17,7 +17,7 @@
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10523
+    "unmapped": 10524
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -21855,6 +21855,15 @@
       "slugHash": "0xc3c74782978c2d2fb4c85053453cd11e73bbc88874c66ba0a94bd8089a834a43",
       "category": "pegged",
       "name": "Usd%2b",
+      "keywords": [
+        "usd%2b"
+      ]
+    },
+    {
+      "slug": "pegged/usd%2B",
+      "slugHash": "0x6f5330b85ae439ad7de7be8f0955bda5786761554d4850e299210b88d8c3d44e",
+      "category": "pegged",
+      "name": "Usd%2B",
       "keywords": [
         "usd%2b"
       ]
