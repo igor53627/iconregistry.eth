@@ -31,7 +31,12 @@ async function main() {
     for (const file of images) {
       try {
         const baseName = path.basename(file, path.extname(file))
-          .toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+          .replace(/^rsz_?/i, '')           // Remove rsz_ or rsz prefix
+          .toLowerCase()
+          .replace(/[_\s]+/g, "-")          // Replace underscores/spaces with hyphens
+          .replace(/[^a-z0-9-]/g, "")       // Remove special chars
+          .replace(/-+/g, "-")              // Collapse multiple hyphens
+          .replace(/^-|-$/g, "");           // Trim hyphens
         const outPath = path.join(outDir, `${baseName}.png`);
 
         await sharp(path.join(srcDir, file))

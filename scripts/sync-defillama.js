@@ -36,6 +36,19 @@ function getFileHash(filePath) {
     return crypto.createHash('md5').update(content).digest('hex');
 }
 
+/**
+ * Clean up icon name: remove rsz_ prefix, normalize to kebab-case
+ */
+function cleanIconName(name) {
+    return name
+        .replace(/^rsz_?/i, '')           // Remove rsz_ or rsz prefix
+        .toLowerCase()
+        .replace(/[_\s]+/g, '-')          // Replace underscores/spaces with hyphens
+        .replace(/[^a-z0-9-]/g, '')       // Remove special chars
+        .replace(/-+/g, '-')              // Collapse multiple hyphens
+        .replace(/^-|-$/g, '');           // Trim hyphens
+}
+
 function findAllIcons(dir, baseDir = dir) {
     const results = [];
     if (!fs.existsSync(dir)) return results;
@@ -115,10 +128,15 @@ async function main() {
     let allSourceIcons = [];
     for (const { dir, prefix } of sourceDirs) {
         const icons = findAllIcons(dir);
-        allSourceIcons.push(...icons.map(i => ({
-            ...i,
-            slug: `${prefix}/${i.relativePath.replace(/\.[^.]+$/, '')}`
-        })));
+        allSourceIcons.push(...icons.map(i => {
+            const baseName = i.relativePath.replace(/\.[^.]+$/, '');
+            const cleanName = cleanIconName(baseName);
+            return {
+                ...i,
+                slug: `${prefix}/${cleanName}`,
+                originalName: baseName
+            };
+        }));
     }
     
     console.log(`Found ${allSourceIcons.length} source icons\n`);

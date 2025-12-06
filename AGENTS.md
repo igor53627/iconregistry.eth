@@ -37,5 +37,7 @@ npx tsx scripts/setup-chain-mappings.ts
 
 ## Slug Convention
 
-- Format: `{category}/{name}` (e.g., `chains/rszethereum`, `protocols/uniswap`)
-- Prefix `rsz` indicates resized icons
+- Format: `{category}/{name}` (e.g., `chains/ethereum`, `protocols/uniswap`)
+- Names are kebab-case, lowercase, alphanumeric + hyphens only
+- Legacy slugs may have `rsz` prefix (from old DefiLlama source files)
+- New uploads use clean names (rsz prefix stripped during preprocessing)
