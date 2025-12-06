@@ -30,7 +30,8 @@ const BATCH_SIZE = parseInt(process.env.BATCH_SIZE || '20');
 const MAX_GAS_PRICE_GWEI = parseFloat(process.env.MAX_GAS_PRICE_GWEI || '0.05');
 const RESUME_FROM = parseInt(process.env.RESUME_FROM || '0');
 const CATEGORY = process.env.CATEGORY || '';
-const RPC_URL = process.env.RPC_URL || 'https://eth.drpc.org';
+const RPC_URL = process.env.RPC_URL || 'https://ethereum-rpc.publicnode.com';
+const FALLBACK_RPC_URL = 'https://eth.drpc.org';
 
 const ICON_REGISTRY_ABI = [
     {
@@ -103,19 +104,24 @@ async function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function createRpcClient(primary: string, fallback: string) {
+    const { fallback: viemFallback } = await import('viem');
+    return createPublicClient({
+        chain: mainnet,
+        transport: viemFallback([http(primary), http(fallback)]),
+    });
+}
+
 async function main() {
     console.log('=== Icon Slug Migration (rsz → clean) ===\n');
     console.log(`Mode: ${DRY_RUN ? 'DRY RUN (preview only)' : 'LIVE DEPLOYMENT'}`);
     console.log(`Batch size: ${BATCH_SIZE}`);
     console.log(`Max gas: ${MAX_GAS_PRICE_GWEI} gwei`);
-    console.log(`RPC: ${RPC_URL}`);
+    console.log(`RPC: ${RPC_URL} (fallback: ${FALLBACK_RPC_URL})`);
     if (CATEGORY) console.log(`Category filter: ${CATEGORY}`);
     console.log('');
 
-    const publicClient = createPublicClient({
-        chain: mainnet,
-        transport: http(RPC_URL),
-    });
+    const publicClient = await createRpcClient(RPC_URL, FALLBACK_RPC_URL);
 
     // Find all local icons
     const pngs = findAllPngs(ICONS_DIR);

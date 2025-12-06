@@ -15,7 +15,8 @@ import { mainnet } from 'viem/chains';
 import { createTurnkeySigner } from './turnkey-signer';
 
 const PROXY_ADDRESS = '0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc' as const;
-const RPC_URL = process.env.RPC_URL || 'https://eth.drpc.org';
+const RPC_URL = process.env.RPC_URL || 'https://ethereum-rpc.publicnode.com';
+const FALLBACK_RPC_URL = 'https://eth.drpc.org';
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_GAS_PRICE_GWEI = parseFloat(process.env.MAX_GAS_PRICE_GWEI || '0.05');
 
@@ -253,16 +254,21 @@ async function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function createRpcClient(primary: string, fallback: string) {
+    const { fallback: viemFallback } = await import('viem');
+    return createPublicClient({
+        chain: mainnet,
+        transport: viemFallback([http(primary), http(fallback)]),
+    });
+}
+
 async function main() {
     console.log('=== Update Chain Mappings to Clean Slugs ===\n');
     console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`);
     console.log(`Total mappings: ${CHAIN_MAPPINGS.length}`);
-    console.log(`RPC: ${RPC_URL}\n`);
+    console.log(`RPC: ${RPC_URL} (fallback: ${FALLBACK_RPC_URL})\n`);
 
-    const publicClient = createPublicClient({
-        chain: mainnet,
-        transport: http(RPC_URL),
-    });
+    const publicClient = await createRpcClient(RPC_URL, FALLBACK_RPC_URL);
 
     // Check which clean slugs exist and need remapping
     console.log('Checking which clean slugs are available...');
