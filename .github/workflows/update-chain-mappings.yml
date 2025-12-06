@@ -1,0 +1,44 @@
+name: Update Chain Mappings to Clean Slugs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (preview only)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      max_gas_gwei:
+        description: 'Max gas price (gwei)'
+        required: false
+        default: '0.05'
+
+jobs:
+  update-mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update chain mappings
+        env:
+          TURNKEY_API_PUBLIC_KEY: ${{ secrets.TURNKEY_API_PUBLIC_KEY }}
+          TURNKEY_API_PRIVATE_KEY: ${{ secrets.TURNKEY_API_PRIVATE_KEY }}
+          TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
+          TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
+          RPC_URL: ${{ secrets.RPC_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          MAX_GAS_PRICE_GWEI: ${{ inputs.max_gas_gwei }}
+        run: npx tsx scripts/update-chain-mappings-clean.ts

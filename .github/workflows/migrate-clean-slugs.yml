@@ -1,0 +1,73 @@
+name: Migrate Icons to Clean Slugs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (preview only)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      category:
+        description: 'Category to migrate (empty = all)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - 'chains'
+          - 'protocols'
+          - 'assets'
+      batch_size:
+        description: 'Icons per transaction'
+        required: false
+        default: '20'
+      max_gas_gwei:
+        description: 'Max gas price (gwei)'
+        required: false
+        default: '0.05'
+      resume_from:
+        description: 'Resume from batch number'
+        required: false
+        default: '0'
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run migration
+        env:
+          TURNKEY_API_PUBLIC_KEY: ${{ secrets.TURNKEY_API_PUBLIC_KEY }}
+          TURNKEY_API_PRIVATE_KEY: ${{ secrets.TURNKEY_API_PRIVATE_KEY }}
+          TURNKEY_ORGANIZATION_ID: ${{ secrets.TURNKEY_ORGANIZATION_ID }}
+          TURNKEY_SIGN_WITH: ${{ secrets.TURNKEY_SIGN_WITH }}
+          RPC_URL: ${{ secrets.RPC_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CATEGORY: ${{ inputs.category }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
+          MAX_GAS_PRICE_GWEI: ${{ inputs.max_gas_gwei }}
+          RESUME_FROM: ${{ inputs.resume_from }}
+        run: npx tsx scripts/migrate-clean-slugs.ts
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: migration-logs
+          path: docs/mainnet-deployment-report.md
+          if-no-files-found: ignore
