@@ -940,12 +940,10 @@
       return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect fill="${color}" width="32" height="32" rx="6"/><text x="16" y="21" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14">${letter}</text></svg>`)}`;
     }
 
-    // Get icon src - use CDN for mock data, local path for real data
+    // Get icon src - returns placeholder, actual icon loaded async from chain
     function getIconSrc(icon) {
-      if (icon.original?.cdn) {
-        return icon.original.cdn;
-      }
-      return './' + (icon.processed?.path || icon.path);
+      // Return placeholder initially, loadFromChain will update it
+      return getPlaceholder(icon.name);
     }
 
     // Mock data fallback (only used if manifest.json fails to load)
@@ -1115,36 +1113,39 @@
       const cards = document.querySelectorAll('.icon-card[data-slug]');
       const slugsToLoad = [];
       
-      // Collect first 12 unique slugs
+      // Collect all unique slugs (limit to 50 for performance)
       cards.forEach(card => {
         const slug = card.dataset.slug;
-        if (slug && slugsToLoad.length < 12 && !slugsToLoad.includes(slug)) {
+        if (slug && slugsToLoad.length < 50 && !slugsToLoad.includes(slug)) {
           slugsToLoad.push(slug);
         }
       });
       
-      // Load them in parallel
-      await Promise.all(slugsToLoad.map(async slug => {
-        const dataUri = await fetchIconFromChain(slug);
-        if (dataUri) {
-          // Update all images with this slug
-          document.querySelectorAll(`img[data-slug="${slug}"]`).forEach(img => {
-            img.src = dataUri;
-            img.dataset.onchain = 'true';
-          });
-          // Add on-chain tag to card
-          const card = document.querySelector(`.icon-card[data-slug="${slug}"]`);
-          if (card && !card.querySelector('.tag.onchain-tag')) {
-            const tagsContainer = card.querySelector('.icon-tags');
-            if (tagsContainer) {
-              const tag = document.createElement('span');
-              tag.className = 'tag onchain-tag';
-              tag.textContent = 'on-chain';
-              tagsContainer.appendChild(tag);
+      // Load them in parallel batches of 10
+      for (let i = 0; i < slugsToLoad.length; i += 10) {
+        const batch = slugsToLoad.slice(i, i + 10);
+        await Promise.all(batch.map(async slug => {
+          const dataUri = await fetchIconFromChain(slug);
+          if (dataUri) {
+            // Update all images with this slug
+            document.querySelectorAll(`img[data-slug="${slug}"]`).forEach(img => {
+              img.src = dataUri;
+              img.dataset.onchain = 'true';
+            });
+            // Add on-chain tag to card
+            const card = document.querySelector(`.icon-card[data-slug="${slug}"]`);
+            if (card && !card.querySelector('.tag.onchain-tag')) {
+              const tagsContainer = card.querySelector('.icon-tags');
+              if (tagsContainer) {
+                const tag = document.createElement('span');
+                tag.className = 'tag onchain-tag';
+                tag.textContent = 'on-chain';
+                tagsContainer.appendChild(tag);
+              }
             }
           }
-        }
-      }));
+        }));
+      }
     }
 
     // Modal functions
