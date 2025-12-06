@@ -97,6 +97,60 @@ All core functions that modify the registry's content are restricted to the cont
 | Any User | Send ETH to the contract via `receive()` to support the registry |
 | Owner | Manage registry via admin functions |
 
+## Icon Discovery
+
+The registry provides JSON manifests for off-chain icon discovery:
+
+| File | Size | Description |
+|------|------|-------------|
+| [`manifest.json`](docs/manifest.json) | ~3MB | Full icon data with keywords for fuzzy matching |
+| [`manifest-index.json`](docs/manifest-index.json) | ~336KB | Lightweight lookup tables |
+
+### Manifest Index
+
+The index provides direct lookup tables:
+
+```javascript
+// Load the index
+const index = await fetch('https://igor53627.github.io/iconregistry.eth/manifest-index.json').then(r => r.json());
+
+// Look up chain icon slug by chain ID
+const ethSlug = index.chainIdToSlug[1];  // "chains/ethereum"
+const arbSlug = index.chainIdToSlug[42161];  // "chains/arbitrum"
+
+// Look up token icon slug by chainId:address
+const usdcSlug = index.tokenToSlug["1:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"];  // "pegged/usd-coin"
+
+// Browse all slugs by category
+index.slugsByCategory.chains;     // ["chains/ethereum", "chains/arbitrum", ...]
+index.slugsByCategory.protocols;  // ["protocols/uniswap", "protocols/aave", ...]
+index.slugsByCategory.pegged;     // ["pegged/tether", "pegged/usd-coin", ...]
+```
+
+### Full Manifest
+
+The full manifest includes keywords for fuzzy matching:
+
+```javascript
+const manifest = await fetch('https://igor53627.github.io/iconregistry.eth/manifest.json').then(r => r.json());
+
+// Search by keyword
+const matches = manifest.icons.filter(icon => 
+  icon.keywords.some(k => k.includes('uniswap'))
+);
+// Returns: [{ slug: "protocols/uniswap", slugHash: "0x...", keywords: ["uniswap"], ... }]
+```
+
+### Current Stats
+
+| Category | Count |
+|----------|-------|
+| Chains | 1,361 |
+| Protocols | 9,044 |
+| Stablecoins | 345 |
+| Chain mappings | 333 |
+| Token mappings | 74 |
+
 ## Icon Specifications
 
 On-chain validation (enforced by the contract):
