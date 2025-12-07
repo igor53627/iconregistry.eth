@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-06T12:56:01.124Z",
+  "generatedAt": "2025-12-07T03:58:49.536Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 10930,
+    "total": 10933,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1361,
-      "pegged": 345,
-      "protocols": 9044
+      "chains": 1362,
+      "pegged": 346,
+      "protocols": 9045
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10523
+    "unmapped": 10526
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -844,6 +844,7 @@
       "chains/rsz_scorum network",
       "chains/rsz_scroll",
       "chains/rsz_secret",
+      "chains/rsz_seda",
       "chains/rsz_sei",
       "chains/rsz_sentinel",
       "chains/rsz_sge",
@@ -8598,6 +8599,7 @@
       "protocols/securedao",
       "protocols/securitize",
       "protocols/securo-finance",
+      "protocols/seda",
       "protocols/sedge",
       "protocols/seeder-finance",
       "protocols/seedfi",
@@ -10997,6 +10999,7 @@
       "pegged/usd-stable-colb",
       "pegged/usd.ai",
       "pegged/usd%2b",
+      "pegged/usd%2B",
       "pegged/usd+",
       "pegged/usd2",
       "pegged/usd2b",
