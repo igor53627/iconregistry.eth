@@ -81,7 +81,7 @@ jobs:
       - name: Check for new icons
         id: check-icons
         run: |
-          git add icons-64/ icons/ docs/manifest.json docs/manifest-index.json
+          git add icons-64/ icons/ docs/manifest.json docs/manifest-index.json pending-uploads.json
           if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
@@ -95,7 +95,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add icons-64/ icons/ docs/manifest.json docs/manifest-index.json
+          git add icons-64/ icons/ docs/manifest.json docs/manifest-index.json pending-uploads.json
           git commit -m "chore: sync ${{ steps.check-icons.outputs.icon_count }} icons from DefiLlama [skip ci]"
           git push
 

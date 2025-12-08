@@ -30,11 +30,34 @@ import { mainnet } from 'viem/chains';
 const DEFILLAMA_REPO = 'https://github.com/DefiLlama/icons.git';
 const DEFILLAMA_DIR = '/tmp/defillama-icons';
 const ICONS_DIR = path.join(__dirname, '..', 'icons-64');
+const PENDING_FILE = path.join(__dirname, '..', 'pending-uploads.json');
 const PROXY_ADDRESS = '0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc' as const;
 const MAX_GAS_PRICE_GWEI = parseFloat(process.env.MAX_GAS_PRICE_GWEI || '0.1');
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const BATCH_SIZE = parseInt(process.env.BATCH_SIZE || '5');
 const RPC_URL = process.env.RPC_URL || 'https://ethereum-rpc.publicnode.com';
+
+interface PendingUpload {
+    slug: string;
+    addedAt: string;
+}
+
+function loadPendingUploads(): PendingUpload[] {
+    try {
+        if (fs.existsSync(PENDING_FILE)) {
+            return JSON.parse(fs.readFileSync(PENDING_FILE, 'utf-8'));
+        }
+    } catch {}
+    return [];
+}
+
+function savePendingUploads(pending: PendingUpload[]): void {
+    fs.writeFileSync(PENDING_FILE, JSON.stringify(pending, null, 2));
+}
+
+function removePendingUploads(uploadedSlugs: Set<string>, pending: PendingUpload[]): PendingUpload[] {
+    return pending.filter(p => !uploadedSlugs.has(p.slug));
+}
 
 const SUPPORTED_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.svg'];
 
@@ -258,13 +281,26 @@ async function main() {
 
     console.log(`\nProcessed ${processed} new icons (${failed} failed)`);
 
+    // Step 5: Load pending uploads from previous runs
+    console.log('\nStep 5: Loading pending uploads from previous runs...');
+    const pendingUploads = loadPendingUploads();
+    console.log(`Found ${pendingUploads.length} pending uploads`);
+
+    // Add pending uploads to newIcons (if files still exist)
+    for (const pending of pendingUploads) {
+        const pendingPath = path.join(ICONS_DIR, pending.slug + '.png');
+        if (fs.existsSync(pendingPath) && !newIcons.some(i => i.slug === pending.slug)) {
+            newIcons.push({ slug: pending.slug, path: pendingPath });
+        }
+    }
+
     if (newIcons.length === 0) {
         console.log('\nNo new icons to deploy!');
         return;
     }
 
-    // Step 5: Check against on-chain state
-    console.log('\nStep 5: Checking on-chain state...');
+    // Step 6: Check against on-chain state
+    console.log('\nStep 6: Checking on-chain state...');
     const publicClient = createPublicClient({
         chain: mainnet,
         transport: http(RPC_URL),
@@ -281,11 +317,13 @@ async function main() {
 
     if (toUpload.length === 0) {
         console.log('\nAll new icons already on-chain!');
+        // Clear pending uploads since everything is on-chain
+        savePendingUploads([]);
         return;
     }
 
-    // Step 6: Check gas price
-    console.log('\nStep 6: Checking gas price...');
+    // Step 7: Check gas price
+    console.log('\nStep 7: Checking gas price...');
     const gasPrice = await publicClient.getGasPrice();
     const gasPriceGwei = parseFloat(formatGwei(gasPrice));
     console.log(`Current gas price: ${gasPriceGwei.toFixed(4)} gwei`);
@@ -293,6 +331,14 @@ async function main() {
     if (gasPriceGwei > MAX_GAS_PRICE_GWEI) {
         console.log(`\nGas price too high (${gasPriceGwei.toFixed(4)} > ${MAX_GAS_PRICE_GWEI}). Skipping deployment.`);
         console.log('Icons have been processed and saved locally. They will be deployed when gas is lower.');
+        
+        // Save pending uploads for next run
+        const newPending: PendingUpload[] = toUpload.map(icon => ({
+            slug: icon.slug,
+            addedAt: new Date().toISOString(),
+        }));
+        savePendingUploads(newPending);
+        console.log(`Saved ${newPending.length} icons to pending-uploads.json`);
         
         // Output summary for GitHub Actions
         console.log('\n=== Summary ===');
@@ -305,11 +351,17 @@ async function main() {
     if (DRY_RUN) {
         console.log('\nDry run - skipping deployment');
         console.log(`Would deploy ${toUpload.length} icons in ${Math.ceil(toUpload.length / BATCH_SIZE)} batches`);
+        // Still save pending for next run
+        const newPending: PendingUpload[] = toUpload.map(icon => ({
+            slug: icon.slug,
+            addedAt: new Date().toISOString(),
+        }));
+        savePendingUploads(newPending);
         return;
     }
 
-    // Step 7: Deploy via Turnkey
-    console.log('\nStep 7: Deploying via Turnkey...');
+    // Step 8: Deploy via Turnkey
+    console.log('\nStep 8: Deploying via Turnkey...');
     
     // Import Turnkey signer dynamically to avoid errors if env vars not set
     const { createTurnkeySigner } = await import('./turnkey-signer');
@@ -373,6 +425,23 @@ async function main() {
     console.log('\n=== Deployment Complete ===');
     console.log(`Icons deployed: ${successCount}/${toUpload.length}`);
     console.log(`Total gas used: ${totalGas.toLocaleString()}`);
+
+    // Update pending uploads - remove successfully uploaded, keep failed
+    if (successCount === toUpload.length) {
+        // All succeeded - clear pending
+        savePendingUploads([]);
+        console.log('Cleared pending uploads');
+    } else {
+        // Some failed - save the remaining ones
+        const uploadedSlugs = new Set(toUpload.slice(0, successCount).map(i => i.slug));
+        const remaining = removePendingUploads(uploadedSlugs, pendingUploads);
+        // Add any new icons that failed
+        const failedNew = toUpload.slice(successCount).filter(
+            i => !pendingUploads.some(p => p.slug === i.slug)
+        ).map(i => ({ slug: i.slug, addedAt: new Date().toISOString() }));
+        savePendingUploads([...remaining, ...failedNew]);
+        console.log(`${remaining.length + failedNew.length} icons saved to pending for retry`);
+    }
 }
 
 main().catch(err => {
