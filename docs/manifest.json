@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-08T03:57:11.443Z",
+  "generatedAt": "2025-12-09T03:53:05.649Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10933,
+    "total": 10945,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1362,
+      "chains": 1364,
       "pegged": 346,
-      "protocols": 9045
+      "protocols": 9055
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10526
+    "unmapped": 10538
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -7556,6 +7556,18 @@
       ]
     },
     {
+      "slug": "chains/rsz_opengdp",
+      "slugHash": "0xfd09f9bc47f6bc57e12eb0a4f6ea1b4d7cb8242b742098ca2dd75db49b4beb7d",
+      "category": "chains",
+      "name": "Opengdp",
+      "keywords": [
+        "rsz_opengdp",
+        "opengdp",
+        "rsz-opengdp",
+        "rsz opengdp"
+      ]
+    },
+    {
       "slug": "chains/rsz_opengpu",
       "slugHash": "0x969d0357fd3de6331fb69187b2c0a02897649b51ca85dba7c1881723fa9d9693",
       "category": "chains",
@@ -9152,6 +9164,18 @@
         "source",
         "rsz-source",
         "rsz source"
+      ]
+    },
+    {
+      "slug": "chains/rsz_stable",
+      "slugHash": "0x0c6498fef986db9d1654ab5f298b0eae1110447631f920aa77c7261fe6ef99af",
+      "category": "chains",
+      "name": "Stable",
+      "keywords": [
+        "rsz_stable",
+        "stable",
+        "rsz-stable",
+        "rsz stable"
       ]
     },
     {
@@ -42204,6 +42228,18 @@
       ]
     },
     {
+      "slug": "protocols/chains/rsz_stable",
+      "slugHash": "0x26e6205f46d072581d1567ed9612a1c86f639070caaf3b7a3fdc23a558c27dc5",
+      "category": "protocols",
+      "name": "Stable",
+      "keywords": [
+        "rsz_stable",
+        "stable",
+        "rsz-stable",
+        "rsz stable"
+      ]
+    },
+    {
       "slug": "protocols/chains/rsz_stacks",
       "slugHash": "0x40c5a6f98453225f13b355ae654f7a5fe161d14f41dfbedaf8e5e96701c4e108",
       "category": "protocols",
@@ -63606,6 +63642,15 @@
       ]
     },
     {
+      "slug": "protocols/hyperbridge",
+      "slugHash": "0x67150f969c60f07c70d9277cfc8f56143bf39c7b5ef5d7abbbe1a172ef1db91a",
+      "category": "protocols",
+      "name": "Hyperbridge",
+      "keywords": [
+        "hyperbridge"
+      ]
+    },
+    {
       "slug": "protocols/hypercat",
       "slugHash": "0xc6f340a673351ce128baf0d0487969856d22bac5e7a8775f1e4d783a163200d5",
       "category": "protocols",
@@ -67873,6 +67918,15 @@
         "kassandra dao",
         "kassandradao",
         "kd"
+      ]
+    },
+    {
+      "slug": "protocols/kasu",
+      "slugHash": "0x04da557c4d645c9ada8fd47bf722c41f7acab1a891e33a773597b5dbf6cf23fc",
+      "category": "protocols",
+      "name": "Kasu",
+      "keywords": [
+        "kasu"
       ]
     },
     {
@@ -78880,6 +78934,15 @@
       ]
     },
     {
+      "slug": "protocols/moor",
+      "slugHash": "0xce1a53d184c3528e57301da77be668d0cb5cf15344ca5c14210df703c98fd258",
+      "category": "protocols",
+      "name": "Moor",
+      "keywords": [
+        "moor"
+      ]
+    },
+    {
       "slug": "protocols/moose",
       "slugHash": "0x56611f5ccf8b3222db5724a37a10c2cf1527e466cd176da40c5b733f9ed04211",
       "category": "protocols",
@@ -80176,6 +80239,30 @@
       "name": "Nado",
       "keywords": [
         "nado"
+      ]
+    },
+    {
+      "slug": "protocols/nado-perps",
+      "slugHash": "0x7ef24d7119f321f5b9eced04eab5ec8e8706236cd6acbfa9d0b0947901b7b453",
+      "category": "protocols",
+      "name": "Nado Perps",
+      "keywords": [
+        "nado-perps",
+        "nado perps",
+        "nadoperps",
+        "np"
+      ]
+    },
+    {
+      "slug": "protocols/nado-spot",
+      "slugHash": "0x391b79faf5cc4b70a48144345df163b6e561fd0154418deea8467927be968b7d",
+      "category": "protocols",
+      "name": "Nado Spot",
+      "keywords": [
+        "nado-spot",
+        "nado spot",
+        "nadospot",
+        "ns"
       ]
     },
     {
@@ -95590,6 +95677,18 @@
       ]
     },
     {
+      "slug": "protocols/santa-browser",
+      "slugHash": "0x745b195bdcc71698bf31394f513e8f873b7f385eb3fbab18aad7cd80b6f4cb24",
+      "category": "protocols",
+      "name": "Santa Browser",
+      "keywords": [
+        "santa-browser",
+        "santa browser",
+        "santabrowser",
+        "sb"
+      ]
+    },
+    {
       "slug": "protocols/sapphire-defi",
       "slugHash": "0x3ecefda89eee0276eccad8668fce932308bff5f9fad70e50f2e257f6fcff3b32",
       "category": "protocols",
@@ -101212,6 +101311,15 @@
       ]
     },
     {
+      "slug": "protocols/stableswap",
+      "slugHash": "0xdb01f95fe1b20b23e1d0c155efdf1c2e0f5c613eddda89aa01520b7accd95a9b",
+      "category": "protocols",
+      "name": "Stableswap",
+      "keywords": [
+        "stableswap"
+      ]
+    },
+    {
       "slug": "protocols/stablfi",
       "slugHash": "0x77513ef51eeb9ec6fa33eba2477e6e5e9c4e64b737d3e93b1dd64595bcee8603",
       "category": "protocols",
@@ -101509,6 +101617,15 @@
       "name": "Stakely",
       "keywords": [
         "stakely"
+      ]
+    },
+    {
+      "slug": "protocols/stakepoint",
+      "slugHash": "0xf462082f29cc303269bee5514a14ab1609fd2600c961898ff5908bdf5891561a",
+      "category": "protocols",
+      "name": "Stakepoint",
+      "keywords": [
+        "stakepoint"
       ]
     },
     {
@@ -111185,6 +111302,15 @@
       "name": "Uswap",
       "keywords": [
         "uswap"
+      ]
+    },
+    {
+      "slug": "protocols/usx.capital",
+      "slugHash": "0x6a59f8665f4980dd626bcd99c37333292bcef59a4568e5012cb4dbac3c212211",
+      "category": "protocols",
+      "name": "Usx.Capital",
+      "keywords": [
+        "usx.capital"
       ]
     },
     {

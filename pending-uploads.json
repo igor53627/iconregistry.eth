@@ -1,10 +1,58 @@
 [
   {
+    "slug": "protocols/chains/rsz_stable",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/hyperbridge",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/kasu",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/moor",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/nado-perps",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/nado-spot",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/santa-browser",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/stableswap",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/stakepoint",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "protocols/usx.capital",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "chains/rsz_opengdp",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
+    "slug": "chains/rsz_stable",
+    "addedAt": "2025-12-09T03:53:04.180Z"
+  },
+  {
     "slug": "protocols/seda",
-    "addedAt": "2025-12-07T20:32:22.360Z"
+    "addedAt": "2025-12-09T03:53:04.180Z"
   },
   {
     "slug": "chains/rsz_seda",
-    "addedAt": "2025-12-07T20:32:22.361Z"
+    "addedAt": "2025-12-09T03:53:04.180Z"
   }
 ]
