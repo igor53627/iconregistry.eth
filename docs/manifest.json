@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-09T03:53:05.649Z",
+  "generatedAt": "2025-12-10T03:57:24.350Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10945,
+    "total": 10958,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1364,
-      "pegged": 346,
-      "protocols": 9055
+      "chains": 1365,
+      "pegged": 347,
+      "protocols": 9066
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10538
+    "unmapped": 10551
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1995,6 +1995,18 @@
         "apex",
         "rsz-apex",
         "rsz apex"
+      ]
+    },
+    {
+      "slug": "chains/rsz_appchain",
+      "slugHash": "0x1a5f798730d340fa8177b141ca1d9b941833a932577bbd6427fbf4a5bb9724c4",
+      "category": "chains",
+      "name": "Appchain",
+      "keywords": [
+        "rsz_appchain",
+        "appchain",
+        "rsz-appchain",
+        "rsz appchain"
       ]
     },
     {
@@ -20484,6 +20496,15 @@
       ]
     },
     {
+      "slug": "pegged/nectar",
+      "slugHash": "0x079bb33e45358fa7c6f367c5aa7d80abcbc434dfb73e8ef76112c4168ecc40d6",
+      "category": "pegged",
+      "name": "Nectar",
+      "keywords": [
+        "nectar"
+      ]
+    },
+    {
       "slug": "pegged/nerite-usnd",
       "slugHash": "0x371cb3f5982c4e3fe91c751e143af6c10eebb10d862b7ec59e9c4756530595f6",
       "category": "pegged",
@@ -23300,6 +23321,18 @@
         "aave chan",
         "aavechan",
         "ac"
+      ]
+    },
+    {
+      "slug": "protocols/aave-horizon-rwa",
+      "slugHash": "0x0022484220f20fa8a202b6298c882d8c2850f00c2cbf73c0353ea229866070b0",
+      "category": "protocols",
+      "name": "Aave Horizon Rwa",
+      "keywords": [
+        "aave-horizon-rwa",
+        "aave horizon rwa",
+        "aavehorizonrwa",
+        "ahr"
       ]
     },
     {
@@ -55646,6 +55679,15 @@
       ]
     },
     {
+      "slug": "protocols/firelight",
+      "slugHash": "0x27a8576df89382de5ebccb3b8582976979318f3acc9363019c655f0af738a988",
+      "category": "protocols",
+      "name": "Firelight",
+      "keywords": [
+        "firelight"
+      ]
+    },
+    {
       "slug": "protocols/firepotswap",
       "slugHash": "0xc77dc8d98fa5de004b5aadfc84280d336ea8dae0d65022dbf698de4f1e98219e",
       "category": "protocols",
@@ -61181,6 +61223,15 @@
         "hakka finance",
         "hakkafinance",
         "hf"
+      ]
+    },
+    {
+      "slug": "protocols/hako",
+      "slugHash": "0x2356526bd43fcdec3cf12e587c12cc180b2b72af872fa5c0216bb589dd21447a",
+      "category": "protocols",
+      "name": "Hako",
+      "keywords": [
+        "hako"
       ]
     },
     {
@@ -72112,6 +72163,15 @@
       ]
     },
     {
+      "slug": "protocols/liquidcore",
+      "slugHash": "0x9f51df40d3aa8c5664fd6000c44425181bf670d60f76d07ac86b4d4dd5de55d4",
+      "category": "protocols",
+      "name": "Liquidcore",
+      "keywords": [
+        "liquidcore"
+      ]
+    },
+    {
       "slug": "protocols/liquidity-finance",
       "slugHash": "0xd3126da901636294a0a74fcf10e2e3abe380902b7b425384a456bac32edbb6fd",
       "category": "protocols",
@@ -72145,6 +72205,15 @@
         "liquidity slicing protocol",
         "liquidityslicingprotocol",
         "lsp"
+      ]
+    },
+    {
+      "slug": "protocols/liquidlabs",
+      "slugHash": "0xed135e0c0bb4fa2ac18e11eee70ac0b15a6490ace5cf7b333e26678c44b524cd",
+      "category": "protocols",
+      "name": "Liquidlabs",
+      "keywords": [
+        "liquidlabs"
       ]
     },
     {
@@ -81787,6 +81856,18 @@
       ]
     },
     {
+      "slug": "protocols/noble-points-vault",
+      "slugHash": "0xab1d333b31bfb67a69e3467be2b01ab9d5c353a286e12351b5baa30f0126273a",
+      "category": "protocols",
+      "name": "Noble Points Vault",
+      "keywords": [
+        "noble-points-vault",
+        "noble points vault",
+        "noblepointsvault",
+        "npv"
+      ]
+    },
+    {
       "slug": "protocols/nocturne",
       "slugHash": "0xa85388df552d17e00b2f41d8bb523fc77631c841e2b6c0ae0c6bcc194e6855fb",
       "category": "protocols",
@@ -84138,6 +84219,18 @@
       "name": "Openfpl",
       "keywords": [
         "openfpl"
+      ]
+    },
+    {
+      "slug": "protocols/opengdp-shared-security",
+      "slugHash": "0x36adcbb5886a2558562aa05f17279fe6bbb48c60732814dedb25a1e5cb86a736",
+      "category": "protocols",
+      "name": "Opengdp Shared Security",
+      "keywords": [
+        "opengdp-shared-security",
+        "opengdp shared security",
+        "opengdpsharedsecurity",
+        "oss"
       ]
     },
     {
@@ -96952,6 +97045,39 @@
       ]
     },
     {
+      "slug": "protocols/settlex",
+      "slugHash": "0x9b458c84769db372f2c22a282a5366fae2000a203c9aab8ea396d092036e3163",
+      "category": "protocols",
+      "name": "Settlex",
+      "keywords": [
+        "settlex"
+      ]
+    },
+    {
+      "slug": "protocols/settlex-v2",
+      "slugHash": "0x58d26a6332c4d07de97091bf184f9bcd6764a930a7b305d180b2b3a5897345d9",
+      "category": "protocols",
+      "name": "Settlex V2",
+      "keywords": [
+        "settlex-v2",
+        "settlex v2",
+        "settlexv2",
+        "sv"
+      ]
+    },
+    {
+      "slug": "protocols/settlex-v3",
+      "slugHash": "0x1c84b54c79d53bbdd315219ca3f324e67b66a42436b438b7247d040379a4ff13",
+      "category": "protocols",
+      "name": "Settlex V3",
+      "keywords": [
+        "settlex-v3",
+        "settlex v3",
+        "settlexv3",
+        "sv"
+      ]
+    },
+    {
       "slug": "protocols/setwtf",
       "slugHash": "0xda884fd005ff78f1fda734334a665cbb339c6847ef9bf5952cface0e737dce03",
       "category": "protocols",
@@ -107486,6 +107612,15 @@
         "theo straddle vaults",
         "theostraddlevaults",
         "tsv"
+      ]
+    },
+    {
+      "slug": "protocols/thesauros",
+      "slugHash": "0x02e55cd488a6e2e6265da7cf9e4d328090eb9368bed2951f6e5b1cab0e035ea3",
+      "category": "protocols",
+      "name": "Thesauros",
+      "keywords": [
+        "thesauros"
       ]
     },
     {
