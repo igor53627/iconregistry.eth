@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-10T03:57:24.350Z",
+  "generatedAt": "2025-12-11T03:58:46.800Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 10958,
+    "total": 10968,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1365,
+      "chains": 1366,
       "pegged": 347,
-      "protocols": 9066
+      "protocols": 9075
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10551
+    "unmapped": 10561
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -460,6 +460,7 @@
       "chains/rsz_dfs-network",
       "chains/rsz_doge",
       "chains/rsz_dogechain",
+      "chains/rsz_doma",
       "chains/rsz_dsc",
       "chains/rsz_duckchain",
       "chains/rsz_dydx",
@@ -2054,6 +2055,8 @@
       "protocols/apollodao",
       "protocols/apollon",
       "protocols/apostro",
+      "protocols/appchain",
+      "protocols/appchain-bridge",
       "protocols/applepie",
       "protocols/apricot-finance",
       "protocols/apstation",
@@ -4240,6 +4243,7 @@
       "protocols/dolomite",
       "protocols/dolphinswap",
       "protocols/dolr-ai",
+      "protocols/doma",
       "protocols/domani-protocol",
       "protocols/domination-finance",
       "protocols/donaswap-v2",
@@ -4546,6 +4550,7 @@
       "protocols/etcswap-v3",
       "protocols/eteria",
       "protocols/eternal-finance",
+      "protocols/eternal-stake-finance",
       "protocols/eth-strategy",
       "protocols/etha-lend",
       "protocols/ethalend",
@@ -6327,6 +6332,7 @@
       "protocols/lista-dao",
       "protocols/lista-lending",
       "protocols/lista-liquid-staking",
+      "protocols/lista-rwa",
       "protocols/listapie",
       "protocols/lisusd",
       "protocols/lit.trade",
@@ -6455,6 +6461,7 @@
       "protocols/macaron",
       "protocols/macaron-amm",
       "protocols/macaron-stableswap",
+      "protocols/macaron.bid",
       "protocols/macaronswap",
       "protocols/mach",
       "protocols/machfi",
@@ -6484,6 +6491,7 @@
       "protocols/magik-finance-algostable",
       "protocols/magma",
       "protocols/magma-finance",
+      "protocols/magma-finance-almm",
       "protocols/magma-staking",
       "protocols/magnate-finance",
       "protocols/magnet-dao",
@@ -7384,6 +7392,7 @@
       "protocols/omt-finance",
       "protocols/onavax",
       "protocols/onchain-trade",
+      "protocols/onchaingm",
       "protocols/ondo-finance",
       "protocols/ondo-finance-v1",
       "protocols/ondo-finance-v2",
@@ -9069,6 +9078,7 @@
       "protocols/stablekoi",
       "protocols/stables-labs-usdx",
       "protocols/stableswap",
+      "protocols/stableswap-dex",
       "protocols/stablfi",
       "protocols/stablfi-v1",
       "protocols/stablfi-v2",

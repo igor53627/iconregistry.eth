@@ -1,110 +1,150 @@
 [
   {
+    "slug": "protocols/appchain-bridge",
+    "addedAt": "2025-12-11T03:58:45.220Z"
+  },
+  {
+    "slug": "protocols/appchain",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/doma",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/eternal-stake-finance",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/lista-rwa",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/macaron.bid",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/magma-finance-almm",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/onchaingm",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "protocols/stableswap-dex",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
+    "slug": "chains/rsz_doma",
+    "addedAt": "2025-12-11T03:58:45.221Z"
+  },
+  {
     "slug": "protocols/aave-horizon-rwa",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/firelight",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/hako",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/liquidcore",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/liquidlabs",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/noble-points-vault",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/opengdp-shared-security",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/settlex-v2",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/settlex-v3",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/settlex",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/thesauros",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "pegged/nectar",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "chains/rsz_appchain",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/chains/rsz_stable",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/hyperbridge",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/kasu",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/moor",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/nado-perps",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/nado-spot",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/santa-browser",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/stableswap",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/stakepoint",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/usx.capital",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "chains/rsz_opengdp",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "chains/rsz_stable",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "protocols/seda",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   },
   {
     "slug": "chains/rsz_seda",
-    "addedAt": "2025-12-10T03:57:22.729Z"
+    "addedAt": "2025-12-11T03:58:45.221Z"
   }
 ]

@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-10T03:57:24.350Z",
+  "generatedAt": "2025-12-11T03:58:46.800Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10958,
+    "total": 10968,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1365,
+      "chains": 1366,
       "pegged": 347,
-      "protocols": 9066
+      "protocols": 9075
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10551
+    "unmapped": 10561
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3757,6 +3757,18 @@
       ],
       "chainMappings": [
         2000
+      ]
+    },
+    {
+      "slug": "chains/rsz_doma",
+      "slugHash": "0xdeaf7d878fa9738c0477144363127d3a35b2b208811400f52fd8d77989a57eb8",
+      "category": "chains",
+      "name": "Doma",
+      "keywords": [
+        "rsz_doma",
+        "doma",
+        "rsz-doma",
+        "rsz doma"
       ]
     },
     {
@@ -26631,6 +26643,27 @@
       "name": "Apostro",
       "keywords": [
         "apostro"
+      ]
+    },
+    {
+      "slug": "protocols/appchain",
+      "slugHash": "0xf40c457a7fb880910d6f6ed78567bb638265e0d478cdd90f82c780a56d985a83",
+      "category": "protocols",
+      "name": "Appchain",
+      "keywords": [
+        "appchain"
+      ]
+    },
+    {
+      "slug": "protocols/appchain-bridge",
+      "slugHash": "0x2fb4951c66a62732736644b8ba1a2cf821904361992b2bc54ab261a7016a0a63",
+      "category": "protocols",
+      "name": "Appchain Bridge",
+      "keywords": [
+        "appchain-bridge",
+        "appchain bridge",
+        "appchainbridge",
+        "ab"
       ]
     },
     {
@@ -50420,6 +50453,15 @@
       ]
     },
     {
+      "slug": "protocols/doma",
+      "slugHash": "0xf91c98053019bd32f37c1a0cb7c348f44c8bdd3896e33921e29299423f805d4f",
+      "category": "protocols",
+      "name": "Doma",
+      "keywords": [
+        "doma"
+      ]
+    },
+    {
       "slug": "protocols/domani-protocol",
       "slugHash": "0x607f91ae0ceb7547c966a166a25716e7433f4c1aa6424086b66079773fb4b058",
       "category": "protocols",
@@ -53609,6 +53651,18 @@
         "eternal finance",
         "eternalfinance",
         "ef"
+      ]
+    },
+    {
+      "slug": "protocols/eternal-stake-finance",
+      "slugHash": "0xe32b911d2be8c0a5a94cf28e65b34ce7265f1907e913c818b51d56dc7fb97f1e",
+      "category": "protocols",
+      "name": "Eternal Stake Finance",
+      "keywords": [
+        "eternal-stake-finance",
+        "eternal stake finance",
+        "eternalstakefinance",
+        "esf"
       ]
     },
     {
@@ -72457,6 +72511,18 @@
       ]
     },
     {
+      "slug": "protocols/lista-rwa",
+      "slugHash": "0xb0828f226228a847ee315a859c15c50f6bbd48de78bae091f00ac9e4e1588e33",
+      "category": "protocols",
+      "name": "Lista Rwa",
+      "keywords": [
+        "lista-rwa",
+        "lista rwa",
+        "listarwa",
+        "lr"
+      ]
+    },
+    {
       "slug": "protocols/listapie",
       "slugHash": "0x37cd6431a7bf811d4634faabc164c60eff4c03c5a716cb3ccd08c5c4a6bcebc4",
       "category": "protocols",
@@ -73792,6 +73858,15 @@
       ]
     },
     {
+      "slug": "protocols/macaron.bid",
+      "slugHash": "0x5f97c4cae2b1365e57caab55997e6f185851dd6c3ada177b7b1d36bbd4cbf980",
+      "category": "protocols",
+      "name": "Macaron.Bid",
+      "keywords": [
+        "macaron.bid"
+      ]
+    },
+    {
       "slug": "protocols/macaronswap",
       "slugHash": "0xb98c92355cb8da9775c94fcad2edd380ae42529dcebbce71745882fa78f4d1b9",
       "category": "protocols",
@@ -74107,6 +74182,18 @@
         "magma finance",
         "magmafinance",
         "mf"
+      ]
+    },
+    {
+      "slug": "protocols/magma-finance-almm",
+      "slugHash": "0xf1fdf9f994115542fcbab6e9ba94f1ce5313cbed48ffeabf64ef94f184c99a9c",
+      "category": "protocols",
+      "name": "Magma Finance Almm",
+      "keywords": [
+        "magma-finance-almm",
+        "magma finance almm",
+        "magmafinancealmm",
+        "mfa"
       ]
     },
     {
@@ -83627,6 +83714,15 @@
         "onchain trade",
         "onchaintrade",
         "ot"
+      ]
+    },
+    {
+      "slug": "protocols/onchaingm",
+      "slugHash": "0xa6266058de5abf1c5b2b2c17263d1f6beacd40cf12ed418962d88a6a43ff7a45",
+      "category": "protocols",
+      "name": "Onchaingm",
+      "keywords": [
+        "onchaingm"
       ]
     },
     {
@@ -101443,6 +101539,18 @@
       "name": "Stableswap",
       "keywords": [
         "stableswap"
+      ]
+    },
+    {
+      "slug": "protocols/stableswap-dex",
+      "slugHash": "0xf68a528a950534cf7dca8de9fdd8cfa025808e358358f94d175fd3bb55d3420f",
+      "category": "protocols",
+      "name": "Stableswap Dex",
+      "keywords": [
+        "stableswap-dex",
+        "stableswap dex",
+        "stableswapdex",
+        "sd"
       ]
     },
     {
