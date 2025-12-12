@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-11T03:58:46.800Z",
+  "generatedAt": "2025-12-12T03:58:25.988Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10968,
+    "total": 10980,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1366,
+      "chains": 1367,
       "pegged": 347,
-      "protocols": 9075
+      "protocols": 9086
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10561
+    "unmapped": 10573
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1911,6 +1911,18 @@
         "alienx",
         "rsz-alienx",
         "rsz alienx"
+      ]
+    },
+    {
+      "slug": "chains/rsz_allora",
+      "slugHash": "0xd711b3ac8eaf1900e7040087d63b0fd844e88ab94bcfc753aaaaafc7798068f0",
+      "category": "chains",
+      "name": "Allora",
+      "keywords": [
+        "rsz_allora",
+        "allora",
+        "rsz-allora",
+        "rsz allora"
       ]
     },
     {
@@ -25187,6 +25199,18 @@
       ]
     },
     {
+      "slug": "protocols/allora-network",
+      "slugHash": "0x5ac74616081e0a53c8cbfcd7250cc0d7f057a4ddb7c5e06d16ab391110471fa2",
+      "category": "protocols",
+      "name": "Allora Network",
+      "keywords": [
+        "allora-network",
+        "allora network",
+        "alloranetwork",
+        "an"
+      ]
+    },
+    {
       "slug": "protocols/allspark",
       "slugHash": "0x998a3c3315fbad4c29d6d408255c15c768353df7dc63aad62c4788b479f05618",
       "category": "protocols",
@@ -30785,6 +30809,18 @@
       ]
     },
     {
+      "slug": "protocols/based-predict",
+      "slugHash": "0x7afcdd488efd9e9b196b8b32aff1553d60a64446fbac800ae267fbdc8f8896f5",
+      "category": "protocols",
+      "name": "Based Predict",
+      "keywords": [
+        "based-predict",
+        "based predict",
+        "basedpredict",
+        "bp"
+      ]
+    },
+    {
       "slug": "protocols/based-v1",
       "slugHash": "0x4073744c2a959adc3255d9c8e16186e3e40bfa31688dc9e8c573183c62a0715d",
       "category": "protocols",
@@ -32078,6 +32114,15 @@
       "name": "Bethash",
       "keywords": [
         "bethash"
+      ]
+    },
+    {
+      "slug": "protocols/betmoar.fun",
+      "slugHash": "0xe992d79130c24223e012495d738c9a982d1c9d44bf90bde387380cfe35bba35a",
+      "category": "protocols",
+      "name": "Betmoar.Fun",
+      "keywords": [
+        "betmoar.fun"
       ]
     },
     {
@@ -50519,6 +50564,15 @@
       ]
     },
     {
+      "slug": "protocols/donut",
+      "slugHash": "0x2144bbc7047407288cf60f8ea719fb03ea5958d534d062ceb9eb696b41041e5a",
+      "category": "protocols",
+      "name": "Donut",
+      "keywords": [
+        "donut"
+      ]
+    },
+    {
       "slug": "protocols/dooar",
       "slugHash": "0xde926570c78aaef63ff2d12f080d340cd89b00f7bccb4e9b4f2c241621be4d2e",
       "category": "protocols",
@@ -68866,6 +68920,18 @@
       ]
     },
     {
+      "slug": "protocols/kinetiq-markets",
+      "slugHash": "0x3154ea247eb08f267d61ba0bdf7cc3398b0a9739bfd7a9b3165806de6958e818",
+      "category": "protocols",
+      "name": "Kinetiq Markets",
+      "keywords": [
+        "kinetiq-markets",
+        "kinetiq markets",
+        "kinetiqmarkets",
+        "km"
+      ]
+    },
+    {
       "slug": "protocols/kinetix",
       "slugHash": "0x328d3a12f52a7c91faff7dfce99b2903abc2e2e36e20e87ef3e57fa62f532b32",
       "category": "protocols",
@@ -70648,6 +70714,18 @@
         "lair finance",
         "lairfinance",
         "lf"
+      ]
+    },
+    {
+      "slug": "protocols/lake-protocol",
+      "slugHash": "0x53bff195c01e41638231ff0775a4e340a978064ec536f13945cbb2fd0b285431",
+      "category": "protocols",
+      "name": "Lake Protocol",
+      "keywords": [
+        "lake-protocol",
+        "lake protocol",
+        "lakeprotocol",
+        "lp"
       ]
     },
     {
@@ -89296,6 +89374,15 @@
       ]
     },
     {
+      "slug": "protocols/polycule",
+      "slugHash": "0x219fdd2eb8798c3fcdc77d7cc0496c8673a8422838227e857ceb36e79c454f6a",
+      "category": "protocols",
+      "name": "Polycule",
+      "keywords": [
+        "polycule"
+      ]
+    },
+    {
       "slug": "protocols/polydex",
       "slugHash": "0x7210603e738e9d75d57f4c54139968087d5f4f618fbc84e4a0dee27f6239ae1f",
       "category": "protocols",
@@ -89533,6 +89620,15 @@
       "name": "Polytrade",
       "keywords": [
         "polytrade"
+      ]
+    },
+    {
+      "slug": "protocols/polytraderpro",
+      "slugHash": "0xe5ec0f4525179e492b42ab1e95044f2ce48616bbd644479ad26541fd40f218fc",
+      "category": "protocols",
+      "name": "Polytraderpro",
+      "keywords": [
+        "polytraderpro"
       ]
     },
     {
@@ -101989,6 +102085,15 @@
       ]
     },
     {
+      "slug": "protocols/stand",
+      "slugHash": "0x76aa99091d83ad56842d77b63f21e243fbe67cd0dd293bb4d0ff4503d120f524",
+      "category": "protocols",
+      "name": "Stand",
+      "keywords": [
+        "stand"
+      ]
+    },
+    {
       "slug": "protocols/stand-cash",
       "slugHash": "0x3b4d68f2b4dfd27b8cc4609ba2790bb26d08fe8f132e5f45f3ff9554a80d0cce",
       "category": "protocols",
@@ -104119,6 +104224,18 @@
       "name": "Superx",
       "keywords": [
         "superx"
+      ]
+    },
+    {
+      "slug": "protocols/supra-bridge",
+      "slugHash": "0x7aa24a1bacac6d1b0b301447d9691a2a60c6b019c28c98818fd496c10971b72b",
+      "category": "protocols",
+      "name": "Supra Bridge",
+      "keywords": [
+        "supra-bridge",
+        "supra bridge",
+        "suprabridge",
+        "sb"
       ]
     },
     {
@@ -108902,6 +109019,15 @@
         "tornado finance",
         "tornadofinance",
         "tf"
+      ]
+    },
+    {
+      "slug": "protocols/torodex",
+      "slugHash": "0x8cf71e95f143754cc29ff73304a0a8d3a5b6843a83101f534ff7436a995c58d5",
+      "category": "protocols",
+      "name": "Torodex",
+      "keywords": [
+        "torodex"
       ]
     },
     {
