@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-12T03:58:25.988Z",
+  "generatedAt": "2025-12-13T03:53:22.180Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 10980,
+    "total": 10990,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1367,
+      "chains": 1369,
       "pegged": 347,
-      "protocols": 9086
+      "protocols": 9094
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10573
+    "unmapped": 10583
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -308,6 +308,7 @@
       "chains/rsz_ab",
       "chains/rsz_abstract",
       "chains/rsz_acala",
+      "chains/rsz_adventure layer",
       "chains/rsz_aelf",
       "chains/rsz_aeternity",
       "chains/rsz_agoric",
@@ -519,6 +520,7 @@
       "chains/rsz_flare",
       "chains/rsz_flow",
       "chains/rsz_fluence",
+      "chains/rsz_fogo",
       "chains/rsz_form network",
       "chains/rsz_forma",
       "chains/rsz_formnetwork",
@@ -1799,6 +1801,7 @@
       "protocols/adrastea-validator",
       "protocols/adrastea-yield",
       "protocols/adrena-protocol",
+      "protocols/adventure-layer",
       "protocols/aegis",
       "protocols/aegis-markets",
       "protocols/aelin",
@@ -1904,6 +1907,7 @@
       "protocols/alien-worlds",
       "protocols/alienfi",
       "protocols/aliensfarm",
+      "protocols/alienx",
       "protocols/alita-finance",
       "protocols/alium",
       "protocols/alium-swap",
@@ -2847,6 +2851,9 @@
       "protocols/bouncebit-premium",
       "protocols/bouncebit-prime",
       "protocols/bouncebit-staking",
+      "protocols/bouncebit-swap",
+      "protocols/bouncebit-swap-v2",
+      "protocols/bouncebit-swap-v3",
       "protocols/bounceclub",
       "protocols/bountive",
       "protocols/bourbon-dao",
@@ -3250,6 +3257,7 @@
       "protocols/chains/rsz_flare",
       "protocols/chains/rsz_flow",
       "protocols/chains/rsz_fluence",
+      "protocols/chains/rsz_fogo",
       "protocols/chains/rsz_fraxtal",
       "protocols/chains/rsz_fsc",
       "protocols/chains/rsz_fuel-ignition",
@@ -9849,6 +9857,7 @@
       "protocols/trick-or-treat-farm",
       "protocols/triggerx",
       "protocols/trisolaris",
+      "protocols/tristero",
       "protocols/trojan",
       "protocols/tron",
       "protocols/tron-staking-governance",
@@ -10061,6 +10070,7 @@
       "protocols/valence",
       "protocols/valerian",
       "protocols/valhalladao",
+      "protocols/valiant-trade",
       "protocols/valkyrie",
       "protocols/valleyswap",
       "protocols/valorem",

@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-12T03:58:25.988Z",
+  "generatedAt": "2025-12-13T03:53:22.180Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10980,
+    "total": 10990,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1367,
+      "chains": 1369,
       "pegged": 347,
-      "protocols": 9086
+      "protocols": 9094
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10573
+    "unmapped": 10583
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1769,6 +1769,19 @@
         "acala",
         "rsz-acala",
         "rsz acala"
+      ]
+    },
+    {
+      "slug": "chains/rsz_adventure layer",
+      "slugHash": "0xc2eb5fc3df9ee090c894a77f9b237645288aa8d8144ca5ab4e5fb6d51edbfc90",
+      "category": "chains",
+      "name": "Adventure Layer",
+      "keywords": [
+        "rsz_adventure layer",
+        "adventure layer",
+        "rsz-adventure layer",
+        "rsz adventure layer",
+        "al"
       ]
     },
     {
@@ -4529,6 +4542,18 @@
         "fluence",
         "rsz-fluence",
         "rsz fluence"
+      ]
+    },
+    {
+      "slug": "chains/rsz_fogo",
+      "slugHash": "0xd1ae4a17769766fa669b7158952c5b6ee76a54d6718a74ea89bc10446a63c02e",
+      "category": "chains",
+      "name": "Fogo",
+      "keywords": [
+        "rsz_fogo",
+        "fogo",
+        "rsz-fogo",
+        "rsz fogo"
       ]
     },
     {
@@ -23963,6 +23988,18 @@
       ]
     },
     {
+      "slug": "protocols/adventure-layer",
+      "slugHash": "0x628a8f256129b722b9121360f1b26fccdbd07918597422efa649a0def86ba8ac",
+      "category": "protocols",
+      "name": "Adventure Layer",
+      "keywords": [
+        "adventure-layer",
+        "adventure layer",
+        "adventurelayer",
+        "al"
+      ]
+    },
+    {
       "slug": "protocols/aegis",
       "slugHash": "0x9fc58f6d9ad44817a0b5d02a551cdc8fdde42e71c8bf71d82ba6ab1027c20fa0",
       "category": "protocols",
@@ -25067,6 +25104,15 @@
       "name": "Aliensfarm",
       "keywords": [
         "aliensfarm"
+      ]
+    },
+    {
+      "slug": "protocols/alienx",
+      "slugHash": "0xc0cfd3dcf69dfb71790634f2349c36a796cac2a39dd38a537249921ff74d780a",
+      "category": "protocols",
+      "name": "Alienx",
+      "keywords": [
+        "alienx"
       ]
     },
     {
@@ -35031,6 +35077,42 @@
       ]
     },
     {
+      "slug": "protocols/bouncebit-swap",
+      "slugHash": "0x7bbfad8f4695bea59cffc8e8af0fb0963ea5dcecb718df1cb283a5139f1902cf",
+      "category": "protocols",
+      "name": "Bouncebit Swap",
+      "keywords": [
+        "bouncebit-swap",
+        "bouncebit swap",
+        "bouncebitswap",
+        "bs"
+      ]
+    },
+    {
+      "slug": "protocols/bouncebit-swap-v2",
+      "slugHash": "0x908e7ec32ca6832ce758d91fc82949f9b69c0cb5b106fcfe2f5b095bf9f14c40",
+      "category": "protocols",
+      "name": "Bouncebit Swap V2",
+      "keywords": [
+        "bouncebit-swap-v2",
+        "bouncebit swap v2",
+        "bouncebitswapv2",
+        "bsv"
+      ]
+    },
+    {
+      "slug": "protocols/bouncebit-swap-v3",
+      "slugHash": "0x873d00cd6283e59f7301e4e1f065cff02c75059aaf52fb2f668fa13c4a603d82",
+      "category": "protocols",
+      "name": "Bouncebit Swap V3",
+      "keywords": [
+        "bouncebit-swap-v3",
+        "bouncebit swap v3",
+        "bouncebitswapv3",
+        "bsv"
+      ]
+    },
+    {
       "slug": "protocols/bounceclub",
       "slugHash": "0x62effcac311926aee6da0c02dc862d66e8108ebc7df54c0cf3a310dcfb7e0aad",
       "category": "protocols",
@@ -39495,6 +39577,18 @@
         "fluence",
         "rsz-fluence",
         "rsz fluence"
+      ]
+    },
+    {
+      "slug": "protocols/chains/rsz_fogo",
+      "slugHash": "0xf16f0749f0982cefe4967b530a14a3415e047b7feb4ea856e33b2d91edeebef7",
+      "category": "protocols",
+      "name": "Fogo",
+      "keywords": [
+        "rsz_fogo",
+        "fogo",
+        "rsz-fogo",
+        "rsz fogo"
       ]
     },
     {
@@ -109676,6 +109770,15 @@
       ]
     },
     {
+      "slug": "protocols/tristero",
+      "slugHash": "0xd7cad269cc96550797e476ab02be037131cdd70a0fb011be93b8f95c58b972e3",
+      "category": "protocols",
+      "name": "Tristero",
+      "keywords": [
+        "tristero"
+      ]
+    },
+    {
       "slug": "protocols/trojan",
       "slugHash": "0xa8d41b3f58419af8bdb5211c25178fd3e531e33409b6172f268704f3d2eb0622",
       "category": "protocols",
@@ -111893,6 +111996,18 @@
       "name": "Valhalladao",
       "keywords": [
         "valhalladao"
+      ]
+    },
+    {
+      "slug": "protocols/valiant-trade",
+      "slugHash": "0x043f7df0f22d36ffeb0db52b30085b010a7e2e278ccc7e6751c99296eca59868",
+      "category": "protocols",
+      "name": "Valiant Trade",
+      "keywords": [
+        "valiant-trade",
+        "valiant trade",
+        "valianttrade",
+        "vt"
       ]
     },
     {
