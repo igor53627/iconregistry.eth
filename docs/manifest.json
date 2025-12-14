@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-13T03:53:22.180Z",
+  "generatedAt": "2025-12-14T04:02:00.778Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10990,
+    "total": 10992,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1369,
       "pegged": 347,
-      "protocols": 9094
+      "protocols": 9096
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10583
+    "unmapped": 10585
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -60783,6 +60783,15 @@
       ]
     },
     {
+      "slug": "protocols/grayscale",
+      "slugHash": "0x6140976553fdcc346c44eeb572e4142b6c9594b2623c2af55817d51f78852314",
+      "category": "protocols",
+      "name": "Grayscale",
+      "keywords": [
+        "grayscale"
+      ]
+    },
+    {
       "slug": "protocols/green-planet",
       "slugHash": "0xee1aeff4704c9649af7a7044293bae4a1fefdf0bdffdbbb66f01eae2fbfd9a86",
       "category": "protocols",
@@ -64216,6 +64225,15 @@
         "hyperstable vaults",
         "hyperstablevaults",
         "hv"
+      ]
+    },
+    {
+      "slug": "protocols/hyperstitions",
+      "slugHash": "0xdd6664b65a430a7371b111f890cd10984f4d0771f2ad1ef24a7aa72b1561989d",
+      "category": "protocols",
+      "name": "Hyperstitions",
+      "keywords": [
+        "hyperstitions"
       ]
     },
     {

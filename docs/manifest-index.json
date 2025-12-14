@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-13T03:53:22.180Z",
+  "generatedAt": "2025-12-14T04:02:00.778Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 10990,
+    "total": 10992,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1369,
       "pegged": 347,
-      "protocols": 9094
+      "protocols": 9096
     },
     "mapped": {
       "chains": 333,
       "tokens": 74,
       "total": 407
     },
-    "unmapped": 10583
+    "unmapped": 10585
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5224,6 +5224,7 @@
       "protocols/gravity-bridge",
       "protocols/gravity-by-galxe",
       "protocols/gravity-finance",
+      "protocols/grayscale",
       "protocols/green-planet",
       "protocols/greenhouse",
       "protocols/greenhouse-finance",
@@ -5550,6 +5551,7 @@
       "protocols/hyperstable",
       "protocols/hyperstable-cdp",
       "protocols/hyperstable-vaults",
+      "protocols/hyperstitions",
       "protocols/hyperswap",
       "protocols/hyperswap-on-areon-network",
       "protocols/hyperswap-v2",
