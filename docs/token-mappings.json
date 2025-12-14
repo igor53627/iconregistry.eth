@@ -610,6 +610,13 @@
       "slug": "pegged/usd-coin",
       "name": "USD Coin",
       "symbol": "USDC"
+    },
+    {
+      "token": "0x88800092ff476844f74dc2fc427974bbee2794ae",
+      "chainId": 1,
+      "slug": "protocols/ambire-wallet",
+      "name": "Ambire Wallet",
+      "symbol": "WALLET"
     }
   ]
 }
