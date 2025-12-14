@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-14T04:02:00.778Z",
+  "generatedAt": "2025-12-14T06:57:09.916Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
@@ -14,10 +14,10 @@
     },
     "mapped": {
       "chains": 333,
-      "tokens": 74,
-      "total": 407
+      "tokens": 75,
+      "total": 408
     },
-    "unmapped": 10585
+    "unmapped": 10584
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -25695,6 +25695,12 @@
         "ambire wallet",
         "ambirewallet",
         "aw"
+      ],
+      "tokenMappings": [
+        {
+          "address": "0x88800092ff476844f74dc2fc427974bbee2794ae",
+          "chainId": 1
+        }
       ]
     },
     {
