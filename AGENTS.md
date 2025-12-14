@@ -41,3 +41,11 @@ npx tsx scripts/setup-chain-mappings.ts
 - Names are kebab-case, lowercase, alphanumeric + hyphens only
 - Legacy slugs may have `rsz` prefix (from old DefiLlama source files)
 - New uploads use clean names (rsz prefix stripped during preprocessing)
+
+## Registry History
+
+- Update `docs/registry-history.md` when deploying on-chain changes:
+  - New icons deployed
+  - Token mappings added/updated
+  - Chain mappings added/updated
+- Use date headers `## [YYYY-MM-DD]` and categorize by type (Icons, Token Mappings, Chain Mappings)
