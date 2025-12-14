@@ -6,6 +6,16 @@ On-chain changes to the IconRegistry (icons, token mappings, chain mappings).
 
 ## [2025-12-14]
 
+### Contract Upgrade
+- Upgraded to implementation `0x99232b848594a149b2e68239ad4aa811abbb26cd`
+- Improved error messages with context parameters:
+  - `TokenIconNotMapped(address token, uint256 chainId)` - clear token lookup failures
+  - `ChainIconNotMapped(uint256 chainId)` - clear chain lookup failures
+  - `IconNotFound(bytes32 slugHash)` - includes slug hash
+  - `VersionNotFound(bytes32 slugHash, uint256 version)` - includes version
+  - `LengthMismatch(uint256 expected, uint256 got)` - shows array sizes
+  - `InvalidData(string slug)` - shows which slug failed
+
 ### Token Mappings
 - Added WALLET (Ambire Wallet) token mapping for mainnet
   - `0x88800092ff476844f74dc2fc427974bbee2794ae` → `protocols/ambire-wallet`
