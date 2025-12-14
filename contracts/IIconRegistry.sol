@@ -10,10 +10,27 @@ interface IIconRegistry {
     // ========== Errors ==========
 
     /// @notice Thrown when an icon is requested for a slug that has not been registered
-    error IconNotFound();
+    /// @param slugHash The keccak256 hash of the slug that was not found
+    error IconNotFound(bytes32 slugHash);
+
+    /// @notice Thrown when a token has no icon mapping for the given chainId
+    /// @param token The token address that was queried
+    /// @param chainId The chain ID that was queried
+    error TokenIconNotMapped(address token, uint256 chainId);
+
+    /// @notice Thrown when a chain has no icon mapping
+    /// @param chainId The chain ID that was queried
+    error ChainIconNotMapped(uint256 chainId);
 
     /// @notice Thrown when a requested icon version does not exist
-    error VersionNotFound();
+    /// @param slugHash The keccak256 hash of the slug
+    /// @param version The version that was requested
+    error VersionNotFound(bytes32 slugHash, uint256 version);
+
+    /// @notice Thrown when batch arrays have mismatched lengths
+    /// @param expected The expected array length
+    /// @param got The actual array length received
+    error LengthMismatch(uint256 expected, uint256 got);
 
     // ========== By Slug ==========
 

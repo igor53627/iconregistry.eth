@@ -62,7 +62,7 @@ contract IconRegistryTest is Test {
 
     function test_setIcon_revert_emptyData() public {
         vm.prank(owner);
-        vm.expectRevert(IconRegistry.InvalidData.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.InvalidData.selector, "test/empty"));
         registry.setIcon("test/empty", "", 64, 64);
     }
 
@@ -121,7 +121,7 @@ contract IconRegistryTest is Test {
         uint32[] memory heights = new uint32[](2);
 
         vm.prank(owner);
-        vm.expectRevert(IconRegistry.LengthMismatch.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.LengthMismatch.selector, 2, 1));
         registry.setIconsBatch(slugList, dataList, widths, heights);
     }
 
@@ -150,7 +150,7 @@ contract IconRegistryTest is Test {
     }
 
     function test_getIconVersion_revert_notFound() public {
-        vm.expectRevert(IconRegistry.VersionNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.VersionNotFound.selector, keccak256("missing"), 1));
         registry.getIconVersion(keccak256("missing"), 1);
     }
 
@@ -221,13 +221,13 @@ contract IconRegistryTest is Test {
 
     function test_mapToken_revert_iconNotFound() public {
         vm.prank(owner);
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("nonexistent/icon")));
         registry.mapToken(address(0x123), 1, "nonexistent/icon");
     }
 
     function test_mapChain_revert_iconNotFound() public {
         vm.prank(owner);
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("nonexistent/icon")));
         registry.mapChain(1, "nonexistent/icon");
     }
 
@@ -258,27 +258,27 @@ contract IconRegistryTest is Test {
     // ========== GETTER TESTS ==========
 
     function test_getIconBySlug_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing/icon")));
         registry.getIconBySlug("missing/icon");
     }
 
     function test_getIcon_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing/icon")));
         registry.getIcon(keccak256("missing/icon"));
     }
 
     function test_getIconByToken_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.TokenIconNotMapped.selector, address(0x999), 1));
         registry.getIconByToken(address(0x999), 1);
     }
 
     function test_getChainIcon_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.ChainIconNotMapped.selector, 999));
         registry.getChainIcon(999);
     }
 
     function test_getCurrentVersion_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing")));
         registry.getCurrentVersion(keccak256("missing"));
     }
 
@@ -339,7 +339,7 @@ contract IconRegistryTest is Test {
         address[] memory tokens = new address[](2);
         uint256[] memory chainIds = new uint256[](1); // Mismatch!
 
-        vm.expectRevert(IconRegistry.LengthMismatch.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.LengthMismatch.selector, 2, 1));
         registry.batchGetTokenIcons(tokens, chainIds);
     }
 
@@ -366,7 +366,7 @@ contract IconRegistryTest is Test {
     }
 
     function test_getIconDataURI_revert_notFound() public {
-        vm.expectRevert(IconRegistry.IconNotFound.selector);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing")));
         registry.getIconDataURI(keccak256("missing"));
     }
 

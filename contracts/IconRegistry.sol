@@ -93,19 +93,34 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     event TokenWithdrawn(address indexed token, address indexed to, uint256 amount);
 
     /// @notice Thrown when an icon is requested for a slug that has not been registered
-    error IconNotFound();
+    /// @param slugHash The keccak256 hash of the slug that was not found
+    error IconNotFound(bytes32 slugHash);
 
-    /// @notice Thrown when provided data is invalid (empty bytes, mismatched array lengths)
-    error InvalidData();
+    /// @notice Thrown when a token has no icon mapping for the given chainId
+    /// @param token The token address that was queried
+    /// @param chainId The chain ID that was queried
+    error TokenIconNotMapped(address token, uint256 chainId);
+
+    /// @notice Thrown when a chain has no icon mapping
+    /// @param chainId The chain ID that was queried
+    error ChainIconNotMapped(uint256 chainId);
+
+    /// @notice Thrown when provided data is invalid (empty bytes)
+    /// @param slug The slug for which invalid data was provided
+    error InvalidData(string slug);
 
     /// @notice Thrown when a requested icon version does not exist
-    error VersionNotFound();
+    /// @param slugHash The keccak256 hash of the slug
+    /// @param version The version that was requested
+    error VersionNotFound(bytes32 slugHash, uint256 version);
 
     /// @notice Thrown when ETH or token transfer fails
     error TransferFailed();
 
     /// @notice Thrown when batch arrays have mismatched lengths
-    error LengthMismatch();
+    /// @param expected The expected array length
+    /// @param got The actual array length received
+    error LengthMismatch(uint256 expected, uint256 got);
 
     /// @notice Thrown when icon data is not a valid PNG (magic byte mismatch)
     error InvalidPNG();
@@ -176,7 +191,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         uint32 height
     ) external onlyOwner {
         bytes32 slugHash = _hashSlug(slug);
-        if (data.length == 0) revert InvalidData();
+        if (data.length == 0) revert InvalidData(slug);
         _validatePNG(data);
 
         address pointer = SSTORE2.write(data);
@@ -213,13 +228,19 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         uint32[] calldata heights
     ) external onlyOwner {
         uint256 len = slugList.length;
-        if (dataList.length != len || widths.length != len || heights.length != len) {
-            revert LengthMismatch();
+        if (dataList.length != len) {
+            revert LengthMismatch(len, dataList.length);
+        }
+        if (widths.length != len) {
+            revert LengthMismatch(len, widths.length);
+        }
+        if (heights.length != len) {
+            revert LengthMismatch(len, heights.length);
         }
 
         for (uint256 i = 0; i < len;) {
             bytes32 slugHash = _hashSlug(slugList[i]);
-            if (dataList[i].length == 0) revert InvalidData();
+            if (dataList[i].length == 0) revert InvalidData(slugList[i]);
             _validatePNG(dataList[i]);
 
             address pointer = SSTORE2.write(dataList[i]);
@@ -254,7 +275,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param slug Icon slug that must already exist in the registry
     function mapToken(address token, uint256 chainId, string calldata slug) external onlyOwner {
         bytes32 slugHash = _hashSlug(slug);
-        if (icons[slugHash].pointer == address(0)) revert IconNotFound();
+        if (icons[slugHash].pointer == address(0)) revert IconNotFound(slugHash);
         tokenToIcon[token][chainId] = slugHash;
         emit TokenMapped(token, chainId, slugHash);
     }
@@ -270,13 +291,16 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         string[] calldata slugList
     ) external onlyOwner {
         uint256 len = tokens.length;
-        if (chainIds.length != len || slugList.length != len) {
-            revert LengthMismatch();
+        if (chainIds.length != len) {
+            revert LengthMismatch(len, chainIds.length);
+        }
+        if (slugList.length != len) {
+            revert LengthMismatch(len, slugList.length);
         }
 
         for (uint256 i = 0; i < len;) {
             bytes32 slugHash = _hashSlug(slugList[i]);
-            if (icons[slugHash].pointer == address(0)) revert IconNotFound();
+            if (icons[slugHash].pointer == address(0)) revert IconNotFound(slugHash);
             tokenToIcon[tokens[i]][chainIds[i]] = slugHash;
             emit TokenMapped(tokens[i], chainIds[i], slugHash);
 
@@ -290,7 +314,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @param slug Icon slug that must already exist in the registry
     function mapChain(uint256 chainId, string calldata slug) external onlyOwner {
         bytes32 slugHash = _hashSlug(slug);
-        if (icons[slugHash].pointer == address(0)) revert IconNotFound();
+        if (icons[slugHash].pointer == address(0)) revert IconNotFound(slugHash);
         chainToIcon[chainId] = slugHash;
         emit ChainMapped(chainId, slugHash);
     }
@@ -319,7 +343,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @return Raw PNG icon bytes for that version
     function getIconVersion(bytes32 slugHash, uint32 version) external view returns (bytes memory) {
         Icon storage icon = iconVersions[slugHash][version];
-        if (icon.pointer == address(0)) revert VersionNotFound();
+        if (icon.pointer == address(0)) revert VersionNotFound(slugHash, version);
         return SSTORE2.read(icon.pointer);
     }
 
@@ -328,7 +352,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @return Current version number (1 or higher)
     function getCurrentVersion(bytes32 slugHash) external view returns (uint32) {
         Icon storage icon = icons[slugHash];
-        if (icon.pointer == address(0)) revert IconNotFound();
+        if (icon.pointer == address(0)) revert IconNotFound(slugHash);
         return icon.version;
     }
 
@@ -344,19 +368,21 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         returns (address pointer, uint32 width, uint32 height, uint32 version)
     {
         Icon storage icon = icons[slugHash];
-        if (icon.pointer == address(0)) revert IconNotFound();
+        if (icon.pointer == address(0)) revert IconNotFound(slugHash);
         return (icon.pointer, icon.width, icon.height, icon.version);
     }
 
     // ========== GETTERS: By Token ==========
 
     /// @notice Get icon by token address and chainId
+    /// @dev Reverts with TokenIconNotMapped if no slug is mapped for (token, chainId).
+    ///      Reverts with IconNotFound if a slug is mapped but the icon record is missing.
     /// @param token Token contract address
     /// @param chainId Chain ID where token is deployed
     /// @return Raw PNG icon bytes
     function getIconByToken(address token, uint256 chainId) external view returns (bytes memory) {
         bytes32 slugHash = tokenToIcon[token][chainId];
-        if (slugHash == bytes32(0)) revert IconNotFound();
+        if (slugHash == bytes32(0)) revert TokenIconNotMapped(token, chainId);
         return _getIconData(slugHash);
     }
 
@@ -371,11 +397,13 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     // ========== GETTERS: By Chain ==========
 
     /// @notice Get chain icon by chainId
+    /// @dev Reverts with ChainIconNotMapped if no icon is mapped for chainId.
+    ///      Reverts with IconNotFound if a slug is mapped but the icon record is missing.
     /// @param chainId EVM chain ID (e.g., 1 for Ethereum)
     /// @return Raw PNG icon bytes
     function getChainIcon(uint256 chainId) external view returns (bytes memory) {
         bytes32 slugHash = chainToIcon[chainId];
-        if (slugHash == bytes32(0)) revert IconNotFound();
+        if (slugHash == bytes32(0)) revert ChainIconNotMapped(chainId);
         return _getIconData(slugHash);
     }
 
@@ -387,7 +415,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @return Data URI string (e.g., "data:image/png;base64,...")
     function getIconDataURI(bytes32 slugHash) external view returns (string memory) {
         Icon storage icon = icons[slugHash];
-        if (icon.pointer == address(0)) revert IconNotFound();
+        if (icon.pointer == address(0)) revert IconNotFound(slugHash);
 
         bytes memory data = SSTORE2.read(icon.pointer);
         return string(abi.encodePacked("data:image/png;base64,", _base64(data)));
@@ -395,6 +423,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
 
     /// @notice Get token icon as data URI
     /// @dev Returns base64-encoded PNG data URI. Gas-heavy; intended for off-chain use.
+    ///      Reverts with TokenIconNotMapped if no slug is mapped for (token, chainId).
     /// @param token Token contract address
     /// @param chainId Chain ID where token is deployed
     /// @return Data URI string
@@ -404,7 +433,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         returns (string memory)
     {
         bytes32 slugHash = tokenToIcon[token][chainId];
-        if (slugHash == bytes32(0)) revert IconNotFound();
+        if (slugHash == bytes32(0)) revert TokenIconNotMapped(token, chainId);
 
         Icon storage icon = icons[slugHash];
         bytes memory data = SSTORE2.read(icon.pointer);
@@ -444,7 +473,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
         returns (bytes[] memory result)
     {
         uint256 len = tokens.length;
-        if (chainIds.length != len) revert LengthMismatch();
+        if (chainIds.length != len) revert LengthMismatch(len, chainIds.length);
 
         result = new bytes[](len);
         for (uint256 i = 0; i < len;) {
@@ -514,7 +543,7 @@ contract IconRegistry is OwnableUpgradeable, UUPSUpgradeable {
     /// @return Raw PNG icon bytes
     function _getIconData(bytes32 slugHash) internal view returns (bytes memory) {
         Icon storage icon = icons[slugHash];
-        if (icon.pointer == address(0)) revert IconNotFound();
+        if (icon.pointer == address(0)) revert IconNotFound(slugHash);
         return SSTORE2.read(icon.pointer);
     }
 
