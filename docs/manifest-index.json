@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-15T04:06:01.146Z",
+  "generatedAt": "2025-12-16T03:59:48.064Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 10992,
+    "total": 10999,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1369,
+      "chains": 1370,
       "pegged": 347,
-      "protocols": 9096
+      "protocols": 9102
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10584
+    "unmapped": 10591
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -455,6 +455,7 @@
       "chains/rsz_defichain evm",
       "chains/rsz_defiverse",
       "chains/rsz_degen",
+      "chains/rsz_deri chain",
       "chains/rsz_derive chain",
       "chains/rsz_desmos",
       "chains/rsz_dexalot",
@@ -2012,6 +2013,7 @@
       "protocols/animoca-brands",
       "protocols/ankr",
       "protocols/annex",
+      "protocols/anome",
       "protocols/anon-social",
       "protocols/anqa",
       "protocols/antarctic",
@@ -4510,6 +4512,7 @@
       "protocols/enosys-amm-v3",
       "protocols/enosys-bridge",
       "protocols/enosys-governance",
+      "protocols/enosys-loans",
       "protocols/ens",
       "protocols/enso",
       "protocols/ensuro",
@@ -5903,6 +5906,7 @@
       "protocols/kana-labs",
       "protocols/kana-labs-aggregator",
       "protocols/kana-labs-perps",
+      "protocols/kandle-finance",
       "protocols/kandyland-finance",
       "protocols/kannagi-finance",
       "protocols/kanvas",
@@ -6082,6 +6086,7 @@
       "protocols/kokoswap",
       "protocols/kolibri",
       "protocols/kommunitas",
+      "protocols/kona-lend",
       "protocols/kona-stableswap",
       "protocols/kona-v2",
       "protocols/kongswap",
@@ -6288,6 +6293,7 @@
       "protocols/lighter",
       "protocols/lighter-bridge",
       "protocols/lighter-perps",
+      "protocols/lighter-spot",
       "protocols/lighter-v1",
       "protocols/lightning-network",
       "protocols/lil-nouns",
@@ -9129,6 +9135,7 @@
       "protocols/stakelink-index",
       "protocols/stakelink-liquid",
       "protocols/stakely",
+      "protocols/stakenova",
       "protocols/stakepoint",
       "protocols/stakerz",
       "protocols/stakesteak",

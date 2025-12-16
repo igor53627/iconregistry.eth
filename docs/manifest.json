@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-15T04:06:01.146Z",
+  "generatedAt": "2025-12-16T03:59:48.064Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10992,
+    "total": 10999,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1369,
+      "chains": 1370,
       "pegged": 347,
-      "protocols": 9096
+      "protocols": 9102
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10584
+    "unmapped": 10591
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3677,6 +3677,19 @@
       ],
       "chainMappings": [
         666666666
+      ]
+    },
+    {
+      "slug": "chains/rsz_deri chain",
+      "slugHash": "0x588858b9a14d62089e785f80ea5cc94f2b09b347099a4b2d571f4ccdd56179eb",
+      "category": "chains",
+      "name": "Deri Chain",
+      "keywords": [
+        "rsz_deri chain",
+        "deri chain",
+        "rsz-deri chain",
+        "rsz deri chain",
+        "dc"
       ]
     },
     {
@@ -26191,6 +26204,15 @@
       "name": "Annex",
       "keywords": [
         "annex"
+      ]
+    },
+    {
+      "slug": "protocols/anome",
+      "slugHash": "0xa12eb1ad4bdbae666d0e19e43accf8296012827c70dbb153c99bc8075f9e3ef7",
+      "category": "protocols",
+      "name": "Anome",
+      "keywords": [
+        "anome"
       ]
     },
     {
@@ -53244,6 +53266,18 @@
       ]
     },
     {
+      "slug": "protocols/enosys-loans",
+      "slugHash": "0x072b9769ec8a932b4b8bf23141f229ff9987baeec4505592ff84c840e3891798",
+      "category": "protocols",
+      "name": "Enosys Loans",
+      "keywords": [
+        "enosys-loans",
+        "enosys loans",
+        "enosysloans",
+        "el"
+      ]
+    },
+    {
       "slug": "protocols/ens",
       "slugHash": "0xc8e6475f8dd903b6a3e8feb7c1f052fabaf8bc965cda1ccc5be7a59d3c073ed4",
       "category": "protocols",
@@ -67961,6 +67995,18 @@
       ]
     },
     {
+      "slug": "protocols/kandle-finance",
+      "slugHash": "0xc476efe52d5bd05884950385acbf8c31b1f18d39e6313105e7128369005455e5",
+      "category": "protocols",
+      "name": "Kandle Finance",
+      "keywords": [
+        "kandle-finance",
+        "kandle finance",
+        "kandlefinance",
+        "kf"
+      ]
+    },
+    {
       "slug": "protocols/kandyland-finance",
       "slugHash": "0xc3b902344c8684746aaee73ebb09275b128e7f68bc51f1b8e3f703a0e8927204",
       "category": "protocols",
@@ -69878,6 +69924,18 @@
       "name": "Kommunitas",
       "keywords": [
         "kommunitas"
+      ]
+    },
+    {
+      "slug": "protocols/kona-lend",
+      "slugHash": "0x786ad0eab247f1312253c151a4e2bac166e75029e99a749cce26341895de1f79",
+      "category": "protocols",
+      "name": "Kona Lend",
+      "keywords": [
+        "kona-lend",
+        "kona lend",
+        "konalend",
+        "kl"
       ]
     },
     {
@@ -72035,6 +72093,18 @@
         "lighter perps",
         "lighterperps",
         "lp"
+      ]
+    },
+    {
+      "slug": "protocols/lighter-spot",
+      "slugHash": "0x6275c4ef9f6920b3b8035bca0b98f3567c3b42220734a9a46041f9434e61b977",
+      "category": "protocols",
+      "name": "Lighter Spot",
+      "keywords": [
+        "lighter-spot",
+        "lighter spot",
+        "lighterspot",
+        "ls"
       ]
     },
     {
@@ -102065,6 +102135,15 @@
       "name": "Stakely",
       "keywords": [
         "stakely"
+      ]
+    },
+    {
+      "slug": "protocols/stakenova",
+      "slugHash": "0x3912655276c22ff99c767e45124d37a1d6ba7a834af86481e3a67d641805d21d",
+      "category": "protocols",
+      "name": "Stakenova",
+      "keywords": [
+        "stakenova"
       ]
     },
     {
