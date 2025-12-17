@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-16T03:59:48.064Z",
+  "generatedAt": "2025-12-17T03:57:20.681Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 10999,
+    "total": 11010,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1370,
+      "chains": 1372,
       "pegged": 347,
-      "protocols": 9102
+      "protocols": 9111
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10591
+    "unmapped": 10602
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3475,6 +3475,18 @@
       ]
     },
     {
+      "slug": "chains/rsz_cross",
+      "slugHash": "0xecec203ab356fb87650518cc911b069b9094b5ce2901bbd0936bc99aef207762",
+      "category": "chains",
+      "name": "Cross",
+      "keywords": [
+        "rsz_cross",
+        "cross",
+        "rsz-cross",
+        "rsz cross"
+      ]
+    },
+    {
       "slug": "chains/rsz_crossfi",
       "slugHash": "0xc05934ec42e794b8824df9451ac067d28a94c0c1cd3c31398c56845910a3d139",
       "category": "chains",
@@ -3895,6 +3907,18 @@
         "rsz-e-money",
         "rsz e money",
         "em"
+      ]
+    },
+    {
+      "slug": "chains/rsz_earnm",
+      "slugHash": "0xc0848d2c4068776d43c5bed9dfb944a80b7310debcb208b6e66c93be24a25e04",
+      "category": "chains",
+      "name": "Earnm",
+      "keywords": [
+        "rsz_earnm",
+        "earnm",
+        "rsz-earnm",
+        "rsz earnm"
       ]
     },
     {
@@ -26384,6 +26408,18 @@
       ]
     },
     {
+      "slug": "protocols/ape-church",
+      "slugHash": "0xa4b2617ceb395917d6e39b788c230c7c06310fc1805f83ac7c2270a7d64eef6e",
+      "category": "protocols",
+      "name": "Ape Church",
+      "keywords": [
+        "ape-church",
+        "ape church",
+        "apechurch",
+        "ac"
+      ]
+    },
+    {
       "slug": "protocols/ape-express",
       "slugHash": "0xcf261bb0382f22cd2bd74c8a0f5e36d2011ef60722970b11458ec780930c8600",
       "category": "protocols",
@@ -37833,6 +37869,15 @@
       ]
     },
     {
+      "slug": "protocols/chainlist",
+      "slugHash": "0xc7e59d577c52a2654da5ae4ff8c28050bfba1dc36720b8d7f198eff532cbe7b3",
+      "category": "protocols",
+      "name": "Chainlist",
+      "keywords": [
+        "chainlist"
+      ]
+    },
+    {
       "slug": "protocols/chainport",
       "slugHash": "0xe9c618d4d1e801cb441207429a811f22313bdca959954d8dc85669670f1fce5c",
       "category": "protocols",
@@ -43662,6 +43707,15 @@
       ]
     },
     {
+      "slug": "protocols/cheesepad",
+      "slugHash": "0xa9774ec6af78e2574288b5c68d77b719896baaf1b2806cfc7ad0d67728feca66",
+      "category": "protocols",
+      "name": "Cheesepad",
+      "keywords": [
+        "cheesepad"
+      ]
+    },
+    {
       "slug": "protocols/cherrylend",
       "slugHash": "0xeb6c82180562c6f6c71cf5288d8dd0aed18d45d6079b4adf471b0cb94175337a",
       "category": "protocols",
@@ -46680,6 +46734,18 @@
         "cropper clmm",
         "cropperclmm",
         "cc"
+      ]
+    },
+    {
+      "slug": "protocols/cross-rewards",
+      "slugHash": "0xfb032f07db4db463824ac3394ebe4ca8be69672322c5d29a0ca5f76f6b15b27f",
+      "category": "protocols",
+      "name": "Cross Rewards",
+      "keywords": [
+        "cross-rewards",
+        "cross rewards",
+        "crossrewards",
+        "cr"
       ]
     },
     {
@@ -51805,6 +51871,15 @@
       "name": "Earnium",
       "keywords": [
         "earnium"
+      ]
+    },
+    {
+      "slug": "protocols/earnm",
+      "slugHash": "0x66a0d2635246db1d3de34e442eec0a7f1e93f73ea0fc68956b57507cbfff4245",
+      "category": "protocols",
+      "name": "Earnm",
+      "keywords": [
+        "earnm"
       ]
     },
     {
@@ -65447,6 +65522,15 @@
       ]
     },
     {
+      "slug": "protocols/infinityname",
+      "slugHash": "0x83ba52f890455303d6531721a7724d4697f45d87220ba4e43a33d5c80d47005c",
+      "category": "protocols",
+      "name": "Infinityname",
+      "keywords": [
+        "infinityname"
+      ]
+    },
+    {
       "slug": "protocols/infinitypools",
       "slugHash": "0x1f7cdefdb853cfe080c145dbb8e48ea226664649ea9069bda45978616bcb438f",
       "category": "protocols",
@@ -68217,6 +68301,15 @@
         "kaspa finance v3",
         "kaspafinancev3",
         "kfv"
+      ]
+    },
+    {
+      "slug": "protocols/kaspabridge",
+      "slugHash": "0xade73a03623504e353a3cf681349aefe75a7eb01c2fc33b942c51eef4f0e5b37",
+      "category": "protocols",
+      "name": "Kaspabridge",
+      "keywords": [
+        "kaspabridge"
       ]
     },
     {
@@ -89090,6 +89183,18 @@
       ]
     },
     {
+      "slug": "protocols/pleasing-gold",
+      "slugHash": "0x36f53ee2b712371fc04c6718c421abed6cdaa12113a1bd9d333cfee486731da2",
+      "category": "protocols",
+      "name": "Pleasing Gold",
+      "keywords": [
+        "pleasing-gold",
+        "pleasing gold",
+        "pleasinggold",
+        "pg"
+      ]
+    },
+    {
       "slug": "protocols/pleasrdao",
       "slugHash": "0x626c280d52314261bf055ea012225092ba012fc6915b8b75a622ce9f92b5a059",
       "category": "protocols",
@@ -98310,6 +98415,15 @@
       "name": "Sigmausd",
       "keywords": [
         "sigmausd"
+      ]
+    },
+    {
+      "slug": "protocols/silencio",
+      "slugHash": "0xc78aef73a03ade07d391f5a3b9a939f710f1287b62c5ccd449fabcaf56fc23bf",
+      "category": "protocols",
+      "name": "Silencio",
+      "keywords": [
+        "silencio"
       ]
     },
     {
