@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-17T03:57:20.681Z",
+  "generatedAt": "2025-12-18T03:58:11.702Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11010,
+    "total": 11018,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1372,
+      "chains": 1373,
       "pegged": 347,
-      "protocols": 9111
+      "protocols": 9118
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10602
+    "unmapped": 10610
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -322,6 +322,7 @@
       "chains/rsz_algorand",
       "chains/rsz_alienx",
       "chains/rsz_allora",
+      "chains/rsz_alphasec",
       "chains/rsz_alv",
       "chains/rsz_ancient8",
       "chains/rsz_andromeda",
@@ -1949,6 +1950,8 @@
       "protocols/alphagrowth",
       "protocols/alphalend",
       "protocols/alphaping",
+      "protocols/alphasec-bridge",
+      "protocols/alphasec-spot",
       "protocols/alphasharks",
       "protocols/alphax",
       "protocols/alphbanx",
@@ -3592,6 +3595,7 @@
       "protocols/charm-finance-v2",
       "protocols/chat",
       "protocols/chat3",
+      "protocols/chateau",
       "protocols/cheapgm",
       "protocols/chedda-finance",
       "protocols/chee-finance",
@@ -5971,6 +5975,7 @@
       "protocols/kdswap",
       "protocols/kea-credit",
       "protocols/kebab-finance",
+      "protocols/keel-finance",
       "protocols/keep-network",
       "protocols/keep3r-network",
       "protocols/keeperdao",
@@ -6967,6 +6972,7 @@
       "protocols/mooniswap",
       "protocols/moonlander",
       "protocols/moonlift",
+      "protocols/moonmace",
       "protocols/moonpie",
       "protocols/moonpot",
       "protocols/moonriver",
@@ -7296,6 +7302,7 @@
       "protocols/novaswap-v1",
       "protocols/novaswap-v2",
       "protocols/novation",
+      "protocols/novis",
       "protocols/nowswap",
       "protocols/noxa",
       "protocols/npotjqmk400x400",
@@ -9577,6 +9584,7 @@
       "protocols/tarina",
       "protocols/tarot",
       "protocols/tashi",
+      "protocols/tau-labs",
       "protocols/tbill",
       "protocols/tbtc",
       "protocols/tcv-platform",

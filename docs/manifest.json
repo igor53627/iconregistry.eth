@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-17T03:57:20.681Z",
+  "generatedAt": "2025-12-18T03:58:11.702Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11010,
+    "total": 11018,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1372,
+      "chains": 1373,
       "pegged": 347,
-      "protocols": 9111
+      "protocols": 9118
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10602
+    "unmapped": 10610
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1936,6 +1936,18 @@
         "allora",
         "rsz-allora",
         "rsz allora"
+      ]
+    },
+    {
+      "slug": "chains/rsz_alphasec",
+      "slugHash": "0x53d9f09cf861610c732cd3dfa2b1a51b753fccbf8a7132a5a1ed1cc54f0894f8",
+      "category": "chains",
+      "name": "Alphasec",
+      "keywords": [
+        "rsz_alphasec",
+        "alphasec",
+        "rsz-alphasec",
+        "rsz alphasec"
       ]
     },
     {
@@ -25531,6 +25543,30 @@
       ]
     },
     {
+      "slug": "protocols/alphasec-bridge",
+      "slugHash": "0xfd9baa255b32ede4a7497c601a56f328dff19f1ed3a6a4731ee47b374e10cc11",
+      "category": "protocols",
+      "name": "Alphasec Bridge",
+      "keywords": [
+        "alphasec-bridge",
+        "alphasec bridge",
+        "alphasecbridge",
+        "ab"
+      ]
+    },
+    {
+      "slug": "protocols/alphasec-spot",
+      "slugHash": "0x679d6e3bcf097bb400d8a94f5d9a5e70c631deb72146ae51d45b0a70a5eff0a3",
+      "category": "protocols",
+      "name": "Alphasec Spot",
+      "keywords": [
+        "alphasec-spot",
+        "alphasec spot",
+        "alphasecspot",
+        "as"
+      ]
+    },
+    {
       "slug": "protocols/alphasharks",
       "slugHash": "0x120c52a469fc078c1554e20c9a480ef89a01143db0756032163bab3834e8bb33",
       "category": "protocols",
@@ -43653,6 +43689,15 @@
       "name": "Chat3",
       "keywords": [
         "chat3"
+      ]
+    },
+    {
+      "slug": "protocols/chateau",
+      "slugHash": "0x543048f023dc7a228347694835469cd833767dd05a5b6cb462d9c82e086c3b7c",
+      "category": "protocols",
+      "name": "Chateau",
+      "keywords": [
+        "chateau"
       ]
     },
     {
@@ -68691,6 +68736,18 @@
       ]
     },
     {
+      "slug": "protocols/keel-finance",
+      "slugHash": "0x1bedccee0e296f6883160e59fb161de8d0220acf5fa7fa6425f97ab96f216f7b",
+      "category": "protocols",
+      "name": "Keel Finance",
+      "keywords": [
+        "keel-finance",
+        "keel finance",
+        "keelfinance",
+        "kf"
+      ]
+    },
+    {
       "slug": "protocols/keep-network",
       "slugHash": "0x6e5dca2ccd77b44b45c7cd644ded4e237aca31ec8cd5bcdecb3e214801c18b20",
       "category": "protocols",
@@ -79254,6 +79311,15 @@
       ]
     },
     {
+      "slug": "protocols/moonmace",
+      "slugHash": "0xe3c5f60227a69638d60ca93e2685e72337da89b5f78fc6e324be7d854e1f9200",
+      "category": "protocols",
+      "name": "Moonmace",
+      "keywords": [
+        "moonmace"
+      ]
+    },
+    {
       "slug": "protocols/moonpie",
       "slugHash": "0x116337ca4c276492102611da357da5d8380f314d58314f370f0e538cf3d32ba8",
       "category": "protocols",
@@ -82714,6 +82780,15 @@
       "name": "Novation",
       "keywords": [
         "novation"
+      ]
+    },
+    {
+      "slug": "protocols/novis",
+      "slugHash": "0xc9178260ea37676d218dfa867cb6a6245443453e4539dbc6a92a278cc90754d0",
+      "category": "protocols",
+      "name": "Novis",
+      "keywords": [
+        "novis"
       ]
     },
     {
@@ -106761,6 +106836,18 @@
       "name": "Tashi",
       "keywords": [
         "tashi"
+      ]
+    },
+    {
+      "slug": "protocols/tau-labs",
+      "slugHash": "0x01726649b838d16fa85c9ad34fb9c3a159c0701d7ba2688f4bca2568919be9ef",
+      "category": "protocols",
+      "name": "Tau Labs",
+      "keywords": [
+        "tau-labs",
+        "tau labs",
+        "taulabs",
+        "tl"
       ]
     },
     {
