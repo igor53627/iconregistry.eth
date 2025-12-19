@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-18T03:58:11.702Z",
+  "generatedAt": "2025-12-19T04:01:12.393Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11018,
+    "total": 11030,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1373,
-      "pegged": 347,
-      "protocols": 9118
+      "chains": 1374,
+      "pegged": 348,
+      "protocols": 9128
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10610
+    "unmapped": 10622
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4792,6 +4792,18 @@
         "gala",
         "rsz-gala",
         "rsz gala"
+      ]
+    },
+    {
+      "slug": "chains/rsz_ganchain",
+      "slugHash": "0xd9ed07b207d1521137976a9518654bc0fdcee6fe5c8f97fdd11ed9d1da06ef70",
+      "category": "chains",
+      "name": "Ganchain",
+      "keywords": [
+        "rsz_ganchain",
+        "ganchain",
+        "rsz-ganchain",
+        "rsz ganchain"
       ]
     },
     {
@@ -19745,6 +19757,18 @@
       ]
     },
     {
+      "slug": "pegged/gaming-xp-usd",
+      "slugHash": "0x9e29b0990d450cc08e2021951d5ca8d5ddef9bdee512503a12264044b8b3ac6a",
+      "category": "pegged",
+      "name": "Gaming Xp Usd",
+      "keywords": [
+        "gaming-xp-usd",
+        "gaming xp usd",
+        "gamingxpusd",
+        "gxu"
+      ]
+    },
+    {
       "slug": "pegged/gate-usd",
       "slugHash": "0x1cc7f847896ae23f756ec647a62bdb54fc7be62a7717b8d0da69c15f03027806",
       "category": "pegged",
@@ -30120,6 +30144,18 @@
       "name": "Backpack",
       "keywords": [
         "backpack"
+      ]
+    },
+    {
+      "slug": "protocols/backpack-sol",
+      "slugHash": "0xc6c80e8649eae2cec8e1a30864b5565bf253808109c2241ef218188f7708e5be",
+      "category": "protocols",
+      "name": "Backpack Sol",
+      "keywords": [
+        "backpack-sol",
+        "backpack sol",
+        "backpacksol",
+        "bs"
       ]
     },
     {
@@ -43701,6 +43737,18 @@
       ]
     },
     {
+      "slug": "protocols/chatter-shield",
+      "slugHash": "0xb14cbe2ff2e665029510f6c0c653a37a0e8c794aec1fae539b7b0e2321a7e441",
+      "category": "protocols",
+      "name": "Chatter Shield",
+      "keywords": [
+        "chatter-shield",
+        "chatter shield",
+        "chattershield",
+        "cs"
+      ]
+    },
+    {
       "slug": "protocols/cheapgm",
       "slugHash": "0x2438cf179196b78092898609bcbee45a7d899a2ccbb22ae3367e97239045d2d1",
       "category": "protocols",
@@ -49794,6 +49842,15 @@
         "dfdv staked sol",
         "dfdvstakedsol",
         "dss"
+      ]
+    },
+    {
+      "slug": "protocols/dfdvsol",
+      "slugHash": "0x0ee2108c52f74827367b1074c6ad203bbc1642715e8d8d1a6c7373670b376da1",
+      "category": "protocols",
+      "name": "Dfdvsol",
+      "keywords": [
+        "dfdvsol"
       ]
     },
     {
@@ -57451,6 +57508,18 @@
       ]
     },
     {
+      "slug": "protocols/forward-industries-sol",
+      "slugHash": "0x15bc7f29194f4325cdcda11965ea436892a82907f85439549aabccd331e51e2d",
+      "category": "protocols",
+      "name": "Forward Industries Sol",
+      "keywords": [
+        "forward-industries-sol",
+        "forward industries sol",
+        "forwardindustriessol",
+        "fis"
+      ]
+    },
+    {
       "slug": "protocols/foundation",
       "slugHash": "0x43fd917450aeedf262c2366f5010fc9d374f57aa7e9fbd0f48f90ea84ce1158e",
       "category": "protocols",
@@ -59249,6 +59318,18 @@
         "gate perp dex",
         "gateperpdex",
         "gpd"
+      ]
+    },
+    {
+      "slug": "protocols/gate-sol",
+      "slugHash": "0x63754a0c47d2d1343ae081da391c99ed3755f5965b5dd557d34b52a326a00a53",
+      "category": "protocols",
+      "name": "Gate Sol",
+      "keywords": [
+        "gate-sol",
+        "gate sol",
+        "gatesol",
+        "gs"
       ]
     },
     {
@@ -61210,6 +61291,15 @@
       ]
     },
     {
+      "slug": "protocols/gtac",
+      "slugHash": "0xc65e302d0a105a58406ea90b5beeb62ec6dba7a038fa8e0174ef9f7a328ea2d5",
+      "category": "protocols",
+      "name": "Gtac",
+      "keywords": [
+        "gtac"
+      ]
+    },
+    {
       "slug": "protocols/gtbtc",
       "slugHash": "0x64ba568c890eb10558f553722a1749e2c3e707da56e7a0ce0c15ca3cd5f8c174",
       "category": "protocols",
@@ -61375,6 +61465,15 @@
         "guru network dao",
         "gurunetworkdao",
         "gnd"
+      ]
+    },
+    {
+      "slug": "protocols/gvex",
+      "slugHash": "0x9adb438d3b07b2a4f3ae8cb5fe53bce32bea9ca12adc9a7f48cc5efac406ab34",
+      "category": "protocols",
+      "name": "Gvex",
+      "keywords": [
+        "gvex"
       ]
     },
     {
@@ -62489,6 +62588,18 @@
         "helium network",
         "heliumnetwork",
         "hn"
+      ]
+    },
+    {
+      "slug": "protocols/helius-sol",
+      "slugHash": "0xd74ec633d20eca096c9c5cd831d236c55345313f168923260cb75a75ee8eebf1",
+      "category": "protocols",
+      "name": "Helius Sol",
+      "keywords": [
+        "helius-sol",
+        "helius sol",
+        "heliussol",
+        "hs"
       ]
     },
     {
@@ -63989,6 +64100,30 @@
         "hylo protocol",
         "hyloprotocol",
         "hp"
+      ]
+    },
+    {
+      "slug": "protocols/hylo-sol",
+      "slugHash": "0x8ffc729e59069db81564654317d9ddcf35bf8fe5ae32e6c87d9b8e6799e1f821",
+      "category": "protocols",
+      "name": "Hylo Sol",
+      "keywords": [
+        "hylo-sol",
+        "hylo sol",
+        "hylosol",
+        "hs"
+      ]
+    },
+    {
+      "slug": "protocols/hylo-sol-plus",
+      "slugHash": "0xd1696abac287b78ea02cc431f93ee4226c2ccaec964cef527704818e138c9611",
+      "category": "protocols",
+      "name": "Hylo Sol Plus",
+      "keywords": [
+        "hylo-sol-plus",
+        "hylo sol plus",
+        "hylosolplus",
+        "hsp"
       ]
     },
     {
