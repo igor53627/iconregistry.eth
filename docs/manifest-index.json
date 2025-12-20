@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-19T04:01:12.393Z",
+  "generatedAt": "2025-12-20T03:51:43.292Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11030,
+    "total": 11037,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1374,
+      "chains": 1375,
       "pegged": 348,
-      "protocols": 9128
+      "protocols": 9134
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10622
+    "unmapped": 10629
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -610,6 +610,7 @@
       "chains/rsz_iris",
       "chains/rsz_jackal",
       "chains/rsz_jbc",
+      "chains/rsz_joc",
       "chains/rsz_joltify",
       "chains/rsz_juno",
       "chains/rsz_k2",
@@ -2354,6 +2355,7 @@
       "protocols/ayin",
       "protocols/azex",
       "protocols/aztec",
+      "protocols/aztec-connect",
       "protocols/azuro",
       "protocols/b-lucky",
       "protocols/b.protocol",
@@ -3930,6 +3932,7 @@
       "protocols/cryptopunks",
       "protocols/cryptoswap",
       "protocols/cryptoyieldfocus",
+      "protocols/crystal-exchange",
       "protocols/crystalvale",
       "protocols/crystl-finance",
       "protocols/csc",
@@ -4665,6 +4668,7 @@
       "protocols/exittech",
       "protocols/exmo",
       "protocols/exodia",
+      "protocols/exotic-finance",
       "protocols/exotic-markets",
       "protocols/exponent",
       "protocols/exsat-bridge",
@@ -4687,6 +4691,7 @@
       "protocols/fairyswap",
       "protocols/fairyswap-v1",
       "protocols/fairyswap-v2",
+      "protocols/faith-protocol",
       "protocols/falcon",
       "protocols/falcon-bot",
       "protocols/falcon-finance",
@@ -5840,6 +5845,7 @@
       "protocols/jito-mev-tips",
       "protocols/jito-restaking",
       "protocols/jlswap",
+      "protocols/joc-dex",
       "protocols/joe-dex",
       "protocols/joe-lend",
       "protocols/joe-stek",
@@ -9936,6 +9942,7 @@
       "protocols/twin-finance",
       "protocols/twindex",
       "protocols/twtstake",
+      "protocols/tydeshift",
       "protocols/tydro",
       "protocols/tymio",
       "protocols/typhoon-cash",

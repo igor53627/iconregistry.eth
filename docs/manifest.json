@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-19T04:01:12.393Z",
+  "generatedAt": "2025-12-20T03:51:43.292Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11030,
+    "total": 11037,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1374,
+      "chains": 1375,
       "pegged": 348,
-      "protocols": 9128
+      "protocols": 9134
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10622
+    "unmapped": 10629
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5698,6 +5698,18 @@
         "jbc",
         "rsz-jbc",
         "rsz jbc"
+      ]
+    },
+    {
+      "slug": "chains/rsz_joc",
+      "slugHash": "0x23d25db1de6633a611d610c6aece948ea17aae82f1c19097fcb03d4b68c014d9",
+      "category": "chains",
+      "name": "Joc",
+      "keywords": [
+        "rsz_joc",
+        "joc",
+        "rsz-joc",
+        "rsz joc"
       ]
     },
     {
@@ -29874,6 +29886,18 @@
       ]
     },
     {
+      "slug": "protocols/aztec-connect",
+      "slugHash": "0x03b2d530df6403086b32b0744c82a8df87ef86cdad7c6e5ef13481b61fce97a9",
+      "category": "protocols",
+      "name": "Aztec Connect",
+      "keywords": [
+        "aztec-connect",
+        "aztec connect",
+        "aztecconnect",
+        "ac"
+      ]
+    },
+    {
       "slug": "protocols/azuro",
       "slugHash": "0x45e72dda544d8c3967547285a194126f6ef7fcf6143aa7700b6367b508ad6da3",
       "category": "protocols",
@@ -47256,6 +47280,18 @@
       ]
     },
     {
+      "slug": "protocols/crystal-exchange",
+      "slugHash": "0x44618610058627f61a6a9e0fd6f65c223b10c9116b39cfb219e3fb31eb6cde73",
+      "category": "protocols",
+      "name": "Crystal Exchange",
+      "keywords": [
+        "crystal-exchange",
+        "crystal exchange",
+        "crystalexchange",
+        "ce"
+      ]
+    },
+    {
       "slug": "protocols/crystalvale",
       "slugHash": "0x6d3109b7078e063cadadd1ccee17289602bd9e59ffb41e54748ddb2ed72adb7f",
       "category": "protocols",
@@ -54880,6 +54916,18 @@
       ]
     },
     {
+      "slug": "protocols/exotic-finance",
+      "slugHash": "0x18d90dd67a227bb6d1f7643a317998deeba5ed99828a83a80c3e24faeaab81fc",
+      "category": "protocols",
+      "name": "Exotic Finance",
+      "keywords": [
+        "exotic-finance",
+        "exotic finance",
+        "exoticfinance",
+        "ef"
+      ]
+    },
+    {
       "slug": "protocols/exotic-markets",
       "slugHash": "0x41fe0e89f2e13c07796bd6ca11b1b364fd7e6be9506ea2989868de7d44039350",
       "category": "protocols",
@@ -55111,6 +55159,18 @@
         "fairyswap v2",
         "fairyswapv2",
         "fv"
+      ]
+    },
+    {
+      "slug": "protocols/faith-protocol",
+      "slugHash": "0x6a7eae67056b042ffeeae1bb250e1873e6b2b7e2486d7e68d2fa37a9e1a08ff1",
+      "category": "protocols",
+      "name": "Faith Protocol",
+      "keywords": [
+        "faith-protocol",
+        "faith protocol",
+        "faithprotocol",
+        "fp"
       ]
     },
     {
@@ -67314,6 +67374,18 @@
       "name": "Jlswap",
       "keywords": [
         "jlswap"
+      ]
+    },
+    {
+      "slug": "protocols/joc-dex",
+      "slugHash": "0xe0be996e7b24b5be6b46fb524f3e4a93fc7adb7450ce9adf55902ff1680f1ead",
+      "category": "protocols",
+      "name": "Joc Dex",
+      "keywords": [
+        "joc-dex",
+        "joc dex",
+        "jocdex",
+        "jd"
       ]
     },
     {
@@ -110605,6 +110677,15 @@
       "name": "Twtstake",
       "keywords": [
         "twtstake"
+      ]
+    },
+    {
+      "slug": "protocols/tydeshift",
+      "slugHash": "0x71f1049921252b6be95a90a719e8e74aee472b58671417d8b6bfd64bbbf6c148",
+      "category": "protocols",
+      "name": "Tydeshift",
+      "keywords": [
+        "tydeshift"
       ]
     },
     {
