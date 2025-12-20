@@ -1167,9 +1167,21 @@
         ? `https://icons.llama.fi/icons/protocols/${iconName}` 
         : `https://icons.llama.fi/icons/chains/rsz${iconName}`;
 
-      const iconSrc = getIconSrc(icon);
+      // Check if we already have this icon cached from chain
+      const cachedUri = onChainCache.get(icon.id);
+      const iconSrc = cachedUri || getIconSrc(icon);
       document.getElementById('modal-img-main').src = iconSrc;
       document.querySelectorAll('.modal-img-preview').forEach(img => img.src = iconSrc);
+      
+      // If not cached, fetch from chain and update modal images
+      if (!cachedUri) {
+        fetchIconFromChain(icon.id).then(dataUri => {
+          if (dataUri && currentIcon && currentIcon.id === icon.id) {
+            document.getElementById('modal-img-main').src = dataUri;
+            document.querySelectorAll('.modal-img-preview').forEach(img => img.src = dataUri);
+          }
+        });
+      }
       document.getElementById('modal-name').textContent = icon.name;
       document.getElementById('modal-category').textContent = icon.category;
       document.getElementById('modal-slug').textContent = icon.id;

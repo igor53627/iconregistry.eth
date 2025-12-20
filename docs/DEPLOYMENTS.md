@@ -5,7 +5,7 @@
 | Contract | Address | Verified |
 |----------|---------|----------|
 | **Proxy** | [`0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc`](https://etherscan.io/address/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc) | [Etherscan](https://etherscan.io/address/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc#code), [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc/) |
-| **Implementation** | [`0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F`](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) | [Etherscan](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code), [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F/) |
+| **Implementation** | [`0x99232b848594a149b2e68239ad4aa811abbb26cd`](https://etherscan.io/address/0x99232b848594a149b2e68239ad4aa811abbb26cd#code) | [Etherscan](https://etherscan.io/address/0x99232b848594a149b2e68239ad4aa811abbb26cd#code), [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0x99232b848594a149b2e68239ad4aa811abbb26cd/) |
 | Factory | [`0x05C4ba7b498251708A97437d7a70BEe3F45a9779`](https://etherscan.io/address/0x05C4ba7b498251708A97437d7a70BEe3F45a9779) | [Etherscan](https://etherscan.io/address/0x05C4ba7b498251708A97437d7a70BEe3F45a9779#code) |
 
 ### Deployment Details

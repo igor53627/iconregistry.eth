@@ -1,0 +1,57 @@
+name: Verify Demo Icons
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/verify-demo-icons.ts'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'scripts/verify-demo-icons.ts'
+  schedule:
+    # Run daily at 6am UTC to catch any on-chain issues
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify on-chain icons load correctly
+        env:
+          RPC_URL: https://eth.drpc.org
+          SAMPLE_SIZE: '30'
+        run: npx tsx scripts/verify-demo-icons.ts
+
+      - name: Comment on PR (failure)
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## [WARN] Demo Icon Verification Failed
+              
+              Some on-chain icons failed to load correctly. This may cause broken images on the demo page.
+              
+              Check the [workflow run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.`
+            });

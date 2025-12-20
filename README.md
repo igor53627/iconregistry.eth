@@ -9,9 +9,9 @@ An on-chain, upgradeable repository for PNG icons, designed to provide a canonic
 | Network | Contract | Address |
 |---------|----------|---------|
 | Ethereum Mainnet | Proxy (use this) | [`0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc`](https://etherscan.io/address/0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc) |
-| Ethereum Mainnet | Implementation | [`0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F`](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) |
+| Ethereum Mainnet | Implementation | [`0x99232b848594a149b2e68239ad4aa811abbb26cd`](https://etherscan.io/address/0x99232b848594a149b2e68239ad4aa811abbb26cd#code) |
 
-Verified on [Etherscan](https://etherscan.io/address/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F#code) and [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0xC194a4108Bd803dfB1DDcBACfB47BeBd49b6404F/).
+Verified on [Etherscan](https://etherscan.io/address/0x99232b848594a149b2e68239ad4aa811abbb26cd#code) and [Sourcify](https://repo.sourcify.dev/contracts/full_match/1/0x99232b848594a149b2e68239ad4aa811abbb26cd/).
 
 See [Deployment Report](docs/mainnet-deployment-report.md) for upload transaction details.
 
