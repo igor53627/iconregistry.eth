@@ -940,10 +940,11 @@
       return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect fill="${color}" width="32" height="32" rx="6"/><text x="16" y="21" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14">${letter}</text></svg>`)}`;
     }
 
-    // Get icon src - returns placeholder, actual icon loaded async from chain
+    // Get icon src - returns local file path (on-chain icons loaded async)
     function getIconSrc(icon) {
-      // Return placeholder initially, loadFromChain will update it
-      return getPlaceholder(icon.name);
+      // Use local PNG file from docs folder
+      const slug = icon.id || icon.slug;
+      return `./${slug}.png`;
     }
 
     // Mock data fallback (only used if manifest.json fails to load)
@@ -1078,15 +1079,15 @@
                 <div class="icon-previews">
                   <div class="icon-preview metamask">
                     <span class="wallet-label">MetaMask <small>40px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}" onerror="this.onerror=null;this.src='${getPlaceholder(icon.name)}'">
                   </div>
                   <div class="icon-preview rabby">
                     <span class="wallet-label">Rabby <small>32px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}" onerror="this.onerror=null;this.src='${getPlaceholder(icon.name)}'">
                   </div>
                   <div class="icon-preview ambire">
                     <span class="wallet-label">Ambire <small>28px</small></span>
-                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}">
+                    <img src="${getIconSrc(icon)}" alt="${icon.name}" loading="lazy" data-slug="${icon.id}" onerror="this.onerror=null;this.src='${getPlaceholder(icon.name)}'">
                   </div>
                 </div>
                 <div class="icon-info">
