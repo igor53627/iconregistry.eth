@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-20T03:51:43.292Z",
+  "generatedAt": "2025-12-21T04:02:30.705Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11037,
+    "total": 11039,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1375,
+      "chains": 1377,
       "pegged": 348,
       "protocols": 9134
     },
@@ -17,7 +17,7 @@
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10629
+    "unmapped": 10631
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4594,6 +4594,18 @@
       ]
     },
     {
+      "slug": "chains/rsz_flynet",
+      "slugHash": "0x7474d3b32232d4d365e97cbf251a43035f401d0bb14c3ad82fbda8a93c52e128",
+      "category": "chains",
+      "name": "Flynet",
+      "keywords": [
+        "rsz_flynet",
+        "flynet",
+        "rsz-flynet",
+        "rsz flynet"
+      ]
+    },
+    {
       "slug": "chains/rsz_fogo",
       "slugHash": "0xd1ae4a17769766fa669b7158952c5b6ee76a54d6718a74ea89bc10446a63c02e",
       "category": "chains",
@@ -6541,6 +6553,18 @@
         "mantra",
         "rsz-mantra",
         "rsz mantra"
+      ]
+    },
+    {
+      "slug": "chains/rsz_mantrachain",
+      "slugHash": "0x953378f12a4b60e8d9f577e63bb10fdd5821e0e9ca403eb4706104b4d57a01c4",
+      "category": "chains",
+      "name": "Mantrachain",
+      "keywords": [
+        "rsz_mantrachain",
+        "mantrachain",
+        "rsz-mantrachain",
+        "rsz mantrachain"
       ]
     },
     {
