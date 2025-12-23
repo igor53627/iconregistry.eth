@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-22T04:06:39.085Z",
+  "generatedAt": "2025-12-23T04:02:35.787Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11039,
+    "total": 11054,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1377,
+      "chains": 1378,
       "pegged": 348,
-      "protocols": 9134
+      "protocols": 9148
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10631
+    "unmapped": 10646
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5072,6 +5072,19 @@
         "grvt",
         "rsz-grvt",
         "rsz grvt"
+      ]
+    },
+    {
+      "slug": "chains/rsz_grx chain",
+      "slugHash": "0x6a6a36c9fe84e667be90c6ce17357bd8c0b416072372a1e7925ee6623d4bdabb",
+      "category": "chains",
+      "name": "Grx Chain",
+      "keywords": [
+        "rsz_grx chain",
+        "grx chain",
+        "rsz-grx chain",
+        "rsz grx chain",
+        "gc"
       ]
     },
     {
@@ -24928,6 +24941,15 @@
       ]
     },
     {
+      "slug": "protocols/alcum",
+      "slugHash": "0xc27686f5c64087a48bea54b7b92c769656e8d58f60d5bb0ddcbe90b196b8446f",
+      "category": "protocols",
+      "name": "Alcum",
+      "keywords": [
+        "alcum"
+      ]
+    },
+    {
       "slug": "protocols/aldrin",
       "slugHash": "0x2b58f0c9db9bb2cc36a3a14b2eb73bdcb8ec08a41c9570f19d8c3a3dbdd503c8",
       "category": "protocols",
@@ -29202,6 +29224,18 @@
         "augury finance",
         "auguryfinance",
         "af"
+      ]
+    },
+    {
+      "slug": "protocols/aur-protocol",
+      "slugHash": "0x89079c0237b23db165960bf5b9753981feabf936b4ce9b9900ef6f35d9266db9",
+      "category": "protocols",
+      "name": "Aur Protocol",
+      "keywords": [
+        "aur-protocol",
+        "aur protocol",
+        "aurprotocol",
+        "ap"
       ]
     },
     {
@@ -49320,6 +49354,18 @@
       ]
     },
     {
+      "slug": "protocols/deri-chain",
+      "slugHash": "0x25b6f42c8f58be154c2f32563fd1690e380d66195797ce677b07d5fb9099a1b3",
+      "category": "protocols",
+      "name": "Deri Chain",
+      "keywords": [
+        "deri-chain",
+        "deri chain",
+        "derichain",
+        "dc"
+      ]
+    },
+    {
       "slug": "protocols/deri-protocol",
       "slugHash": "0xc1fdc448b1e3b8248a76efe0b23510cd712c655a6b4ad583a0793c0381331c8b",
       "category": "protocols",
@@ -50431,6 +50477,15 @@
         "direct exchange",
         "directexchange",
         "de"
+      ]
+    },
+    {
+      "slug": "protocols/dirol",
+      "slugHash": "0x0871a14e699ea7d1e0b0682efedc800e9b39f5f7bf73f5c8730ca9e9daa408fe",
+      "category": "protocols",
+      "name": "Dirol",
+      "keywords": [
+        "dirol"
       ]
     },
     {
@@ -61072,6 +61127,15 @@
       ]
     },
     {
+      "slug": "protocols/gravity",
+      "slugHash": "0x57547ea54f3b7a255cae5a8e510d4514a7a5841c532a48c61b822ec8c2d2346a",
+      "category": "protocols",
+      "name": "Gravity",
+      "keywords": [
+        "gravity"
+      ]
+    },
+    {
       "slug": "protocols/gravity-bridge",
       "slugHash": "0x1676bfcf3a2164ec4523cc23f99166b8354198ce6e4b4058406dca1ae75a219c",
       "category": "protocols",
@@ -61327,6 +61391,15 @@
         "grvt perps",
         "grvtperps",
         "gp"
+      ]
+    },
+    {
+      "slug": "protocols/grxswap",
+      "slugHash": "0xa4a3b074b3e9dead713c752a9e015f9bc3f3c67bf6ccf4ce2933d4d815ae470b",
+      "category": "protocols",
+      "name": "Grxswap",
+      "keywords": [
+        "grxswap"
       ]
     },
     {
@@ -73890,6 +73963,39 @@
       ]
     },
     {
+      "slug": "protocols/lotusdex",
+      "slugHash": "0x182d6345a7fac0539ce71240f5e4fcf81388f58af4e1ad6cd3c8c289dcc6865f",
+      "category": "protocols",
+      "name": "Lotusdex",
+      "keywords": [
+        "lotusdex"
+      ]
+    },
+    {
+      "slug": "protocols/lotusdex-v2",
+      "slugHash": "0xe611671371df274a16e6b915bec9f4a1982227b094555bc1da17b535094a3383",
+      "category": "protocols",
+      "name": "Lotusdex V2",
+      "keywords": [
+        "lotusdex-v2",
+        "lotusdex v2",
+        "lotusdexv2",
+        "lv"
+      ]
+    },
+    {
+      "slug": "protocols/lotusdex-v3",
+      "slugHash": "0x2c06ea26ada25a13a96c7fcd72700831d88327efd096ba58f878ee5c00d840e2",
+      "category": "protocols",
+      "name": "Lotusdex V3",
+      "keywords": [
+        "lotusdex-v3",
+        "lotusdex v3",
+        "lotusdexv3",
+        "lv"
+      ]
+    },
+    {
       "slug": "protocols/louverture",
       "slugHash": "0x14d5502190d1c923d32d502d808edbc20c92940df5b2001ee530482ade1fc950",
       "category": "protocols",
@@ -82284,6 +82390,15 @@
         "ngmi zone",
         "ngmizone",
         "nz"
+      ]
+    },
+    {
+      "slug": "protocols/nickel",
+      "slugHash": "0x4e236d924a0d21777d517970ac0a4d2cc61c4b253eecc12f150b7f7c2d13fed5",
+      "category": "protocols",
+      "name": "Nickel",
+      "keywords": [
+        "nickel"
       ]
     },
     {
@@ -92694,6 +92809,15 @@
       ]
     },
     {
+      "slug": "protocols/raac",
+      "slugHash": "0x017349c30c53d6a959ac261090c0f9e345ef8b4d0a1aea3d9cbc1f4c77fb546e",
+      "category": "protocols",
+      "name": "Raac",
+      "keywords": [
+        "raac"
+      ]
+    },
+    {
       "slug": "protocols/rabbit-finance",
       "slugHash": "0xe89f4dd82f88ffad903cb761f828d298165671ee2bab0220e2e46c8b53ee8cba",
       "category": "protocols",
@@ -93447,6 +93571,15 @@
       "name": "Rcpswap",
       "keywords": [
         "rcpswap"
+      ]
+    },
+    {
+      "slug": "protocols/re",
+      "slugHash": "0xb113712192e5f692846158cc20c9828acabb3ff8122eefd68a347561bc554a83",
+      "category": "protocols",
+      "name": "Re",
+      "keywords": [
+        "re"
       ]
     },
     {
@@ -110914,6 +111047,18 @@
       ]
     },
     {
+      "slug": "protocols/udonfi-lending",
+      "slugHash": "0x2c203b59e92e1bd26dbd65043a9a5c833342622a60a669483a20e5a365e610cb",
+      "category": "protocols",
+      "name": "Udonfi Lending",
+      "keywords": [
+        "udonfi-lending",
+        "udonfi lending",
+        "udonfilending",
+        "ul"
+      ]
+    },
+    {
       "slug": "protocols/udonswap",
       "slugHash": "0x9a0e138ad3b9df08c55b3ffc5e1f0bba83672ce28d9e21e6ee18c247d9af1aaa",
       "category": "protocols",
@@ -118233,6 +118378,15 @@
       "name": "Yupana",
       "keywords": [
         "yupana"
+      ]
+    },
+    {
+      "slug": "protocols/yusan",
+      "slugHash": "0x2e53482bfeafa22e60c618ef4fd52f4eacf4c5cec690b3a8455cfcea4f7cb22a",
+      "category": "protocols",
+      "name": "Yusan",
+      "keywords": [
+        "yusan"
       ]
     },
     {
