@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-23T04:02:35.787Z",
+  "generatedAt": "2025-12-24T03:59:31.411Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11054,
+    "total": 11058,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1378,
       "pegged": 348,
-      "protocols": 9148
+      "protocols": 9152
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10646
+    "unmapped": 10650
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -7456,6 +7456,7 @@
       "protocols/omnidex-perpetuals",
       "protocols/omnidex-swap",
       "protocols/omnidrome",
+      "protocols/omnihub",
       "protocols/omnipool",
       "protocols/omniswap",
       "protocols/omniyield",
@@ -7648,6 +7649,7 @@
       "protocols/owlto",
       "protocols/owna",
       "protocols/oxbull",
+      "protocols/oxedium",
       "protocols/oxiswap",
       "protocols/oxium",
       "protocols/oxygen",
@@ -8109,6 +8111,7 @@
       "protocols/probit-global",
       "protocols/procyon",
       "protocols/produs",
+      "protocols/project-0",
       "protocols/project-x",
       "protocols/projectx",
       "protocols/promethium",
@@ -10449,6 +10452,7 @@
       "protocols/wild-base",
       "protocols/wild-credit",
       "protocols/wildcat-protocol",
+      "protocols/wind-swap",
       "protocols/windfall",
       "protocols/wineryswap",
       "protocols/wing-finance",

@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-23T04:02:35.787Z",
+  "generatedAt": "2025-12-24T03:59:31.411Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11054,
+    "total": 11058,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1378,
       "pegged": 348,
-      "protocols": 9148
+      "protocols": 9152
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10646
+    "unmapped": 10650
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -84437,6 +84437,15 @@
       ]
     },
     {
+      "slug": "protocols/omnihub",
+      "slugHash": "0x5fbd3bfdf39f8c58d7ec3cca0a1087b0b8152d09a7899ba8d335f8ec236b4db2",
+      "category": "protocols",
+      "name": "Omnihub",
+      "keywords": [
+        "omnihub"
+      ]
+    },
+    {
       "slug": "protocols/omnipool",
       "slugHash": "0x7c983dc3f209dbd0cf0821f2259b45cbc55924f8c084eb01b0199d6831b47e74",
       "category": "protocols",
@@ -86472,6 +86481,15 @@
       "name": "Oxbull",
       "keywords": [
         "oxbull"
+      ]
+    },
+    {
+      "slug": "protocols/oxedium",
+      "slugHash": "0x66f5cbfb7a0cbc042997c56217709277df4ff9a69c947063e249c52fab36b311",
+      "category": "protocols",
+      "name": "Oxedium",
+      "keywords": [
+        "oxedium"
       ]
     },
     {
@@ -91381,6 +91399,18 @@
       "name": "Produs",
       "keywords": [
         "produs"
+      ]
+    },
+    {
+      "slug": "protocols/project-0",
+      "slugHash": "0x34dd3f5c14b979358e3a22521632319a22ade4caffb91d217c8ece77bb64143d",
+      "category": "protocols",
+      "name": "Project 0",
+      "keywords": [
+        "project-0",
+        "project 0",
+        "project0",
+        "p0"
       ]
     },
     {
@@ -116021,6 +116051,18 @@
         "wildcat protocol",
         "wildcatprotocol",
         "wp"
+      ]
+    },
+    {
+      "slug": "protocols/wind-swap",
+      "slugHash": "0xfd18b6dc2831a290f3a02e177566f93737d76fc2ac3fde0add7c5fcbc2d716de",
+      "category": "protocols",
+      "name": "Wind Swap",
+      "keywords": [
+        "wind-swap",
+        "wind swap",
+        "windswap",
+        "ws"
       ]
     },
     {
