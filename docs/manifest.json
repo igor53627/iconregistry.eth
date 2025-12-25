@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-24T03:59:31.411Z",
+  "generatedAt": "2025-12-25T04:02:23.706Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11058,
+    "total": 11060,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1378,
       "pegged": 348,
-      "protocols": 9152
+      "protocols": 9154
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10650
+    "unmapped": 10652
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -36891,6 +36891,18 @@
         "cap finance v1 v3",
         "capfinancev1v3",
         "cfvv"
+      ]
+    },
+    {
+      "slug": "protocols/cap-finance-v4",
+      "slugHash": "0x1d8e0db50999c54967edf88de197853c2d21bc40b51c7f7647e6d49018b07749",
+      "category": "protocols",
+      "name": "Cap Finance V4",
+      "keywords": [
+        "cap-finance-v4",
+        "cap finance v4",
+        "capfinancev4",
+        "cfv"
       ]
     },
     {
@@ -90742,6 +90754,15 @@
         "possum labs",
         "possumlabs",
         "pl"
+      ]
+    },
+    {
+      "slug": "protocols/possumlabs",
+      "slugHash": "0xd20b6026cbfaae04ff73b79acb115cb81d1cecb5fcad6f813c5f26b6b025f0ec",
+      "category": "protocols",
+      "name": "Possumlabs",
+      "keywords": [
+        "possumlabs"
       ]
     },
     {

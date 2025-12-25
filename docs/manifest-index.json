@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-24T03:59:31.411Z",
+  "generatedAt": "2025-12-25T04:02:23.706Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11058,
+    "total": 11060,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1378,
       "pegged": 348,
-      "protocols": 9152
+      "protocols": 9154
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10650
+    "unmapped": 10652
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3024,6 +3024,7 @@
       "protocols/cap",
       "protocols/cap-finance",
       "protocols/cap-finance-v1-v3",
+      "protocols/cap-finance-v4",
       "protocols/cap-v4",
       "protocols/capital-dao",
       "protocols/capitaldex",
@@ -8048,6 +8049,7 @@
       "protocols/position-exchange",
       "protocols/positionexchange",
       "protocols/possum-labs",
+      "protocols/possumlabs",
       "protocols/posttechsofi",
       "protocols/potatoswap",
       "protocols/potatoswap-v2",
