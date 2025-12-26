@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-25T04:02:23.706Z",
+  "generatedAt": "2025-12-26T03:59:49.260Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11060,
+    "total": 11064,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1378,
+      "chains": 1381,
       "pegged": 348,
-      "protocols": 9154
+      "protocols": 9155
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10652
+    "unmapped": 10656
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5288,6 +5288,18 @@
       ]
     },
     {
+      "slug": "chains/rsz_hpp",
+      "slugHash": "0x61591842874f715fd7e907871bc57c0de24c26d2d283f3cfdaab5057fdd94ee7",
+      "category": "chains",
+      "name": "Hpp",
+      "keywords": [
+        "rsz_hpp",
+        "hpp",
+        "rsz-hpp",
+        "rsz hpp"
+      ]
+    },
+    {
       "slug": "chains/rsz_hychain",
       "slugHash": "0x2dd1a74b19607423b4809fb2ab107c408d569486d1c1b20281c46a55808b1a0d",
       "category": "chains",
@@ -6888,6 +6900,19 @@
       ],
       "chainMappings": [
         34443
+      ]
+    },
+    {
+      "slug": "chains/rsz_molten network",
+      "slugHash": "0x970ba9364b48a58d0d225e874b34afb9fd685bad3ee8a749f78128a905c5aaee",
+      "category": "chains",
+      "name": "Molten Network",
+      "keywords": [
+        "rsz_molten network",
+        "molten network",
+        "rsz-molten network",
+        "rsz molten network",
+        "mn"
       ]
     },
     {
@@ -9677,6 +9702,18 @@
         "rsz-sx-rollup",
         "rsz sx rollup",
         "sr"
+      ]
+    },
+    {
+      "slug": "chains/rsz_syndicate",
+      "slugHash": "0x52bc7dc35e3e154f9bd934fd5a8939b9696ccc530506b4aa8478dc352b8eb53a",
+      "category": "chains",
+      "name": "Syndicate",
+      "keywords": [
+        "rsz_syndicate",
+        "syndicate",
+        "rsz-syndicate",
+        "rsz syndicate"
       ]
     },
     {
@@ -64698,6 +64735,15 @@
       "name": "Hyperstitions",
       "keywords": [
         "hyperstitions"
+      ]
+    },
+    {
+      "slug": "protocols/hypersurface",
+      "slugHash": "0x8bbf8dd6c9674fba737848da113bc9969c40021a4e2d9d2fdb52ec8e9c9e85a3",
+      "category": "protocols",
+      "name": "Hypersurface",
+      "keywords": [
+        "hypersurface"
       ]
     },
     {

@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-25T04:02:23.706Z",
+  "generatedAt": "2025-12-26T03:59:49.260Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11060,
+    "total": 11064,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1378,
+      "chains": 1381,
       "pegged": 348,
-      "protocols": 9154
+      "protocols": 9155
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10652
+    "unmapped": 10656
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -578,6 +578,7 @@
       "chains/rsz_hoo",
       "chains/rsz_horizen eon",
       "chains/rsz_hpb",
+      "chains/rsz_hpp",
       "chains/rsz_hychain",
       "chains/rsz_hydra",
       "chains/rsz_hydra chain",
@@ -700,6 +701,7 @@
       "chains/rsz_mint",
       "chains/rsz_mixin",
       "chains/rsz_mode",
+      "chains/rsz_molten network",
       "chains/rsz_monad",
       "chains/rsz_moonbeam",
       "chains/rsz_moonchain",
@@ -917,6 +919,7 @@
       "chains/rsz_sx rollup",
       "chains/rsz_sx-network",
       "chains/rsz_sx-rollup",
+      "chains/rsz_syndicate",
       "chains/rsz_syndicate-farm",
       "chains/rsz_syndicate-frame",
       "chains/rsz_syscoin",
@@ -5593,6 +5596,7 @@
       "protocols/hyperstable-cdp",
       "protocols/hyperstable-vaults",
       "protocols/hyperstitions",
+      "protocols/hypersurface",
       "protocols/hyperswap",
       "protocols/hyperswap-on-areon-network",
       "protocols/hyperswap-v2",
