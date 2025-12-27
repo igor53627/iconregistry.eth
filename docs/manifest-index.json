@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-26T03:59:49.260Z",
+  "generatedAt": "2025-12-27T03:57:47.402Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11064,
+    "total": 11070,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1381,
-      "pegged": 348,
-      "protocols": 9155
+      "chains": 1382,
+      "pegged": 349,
+      "protocols": 9159
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10656
+    "unmapped": 10662
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -962,6 +962,7 @@
       "chains/rsz_viction",
       "chains/rsz_vidulum",
       "chains/rsz_vinuchain",
+      "chains/rsz_virbicoin",
       "chains/rsz_vision",
       "chains/rsz_vite",
       "chains/rsz_vizing",
@@ -7466,6 +7467,7 @@
       "protocols/omniswap",
       "protocols/omniyield",
       "protocols/omt-finance",
+      "protocols/on-chain-check-in",
       "protocols/onavax",
       "protocols/onchain-trade",
       "protocols/onchaingm",
@@ -8075,6 +8077,7 @@
       "protocols/powsea",
       "protocols/powswap",
       "protocols/prdt",
+      "protocols/precog-market",
       "protocols/predict-fun",
       "protocols/predictcoin",
       "protocols/predx-ai",
@@ -8896,6 +8899,7 @@
       "protocols/smilee-finance-arbitrum",
       "protocols/smilee-finance-gbera",
       "protocols/smithii",
+      "protocols/smolrefuel",
       "protocols/smolswap",
       "protocols/smoothy",
       "protocols/smrt",
@@ -10288,6 +10292,7 @@
       "protocols/vinunft",
       "protocols/vinuswap",
       "protocols/viperswap",
+      "protocols/virbicoin-dex",
       "protocols/vires-finance",
       "protocols/viridian-exchange",
       "protocols/virtuals-protocol",
@@ -11160,6 +11165,7 @@
       "pegged/usdx-money-usdx",
       "pegged/usk",
       "pegged/usn",
+      "pegged/usp",
       "pegged/usp-stablecoin",
       "pegged/usual-usd",
       "pegged/uxd-stablecoin",

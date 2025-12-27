@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-26T03:59:49.260Z",
+  "generatedAt": "2025-12-27T03:57:47.402Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11064,
+    "total": 11070,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1381,
-      "pegged": 348,
-      "protocols": 9155
+      "chains": 1382,
+      "pegged": 349,
+      "protocols": 9159
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10656
+    "unmapped": 10662
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -10268,6 +10268,18 @@
       ],
       "chainMappings": [
         207
+      ]
+    },
+    {
+      "slug": "chains/rsz_virbicoin",
+      "slugHash": "0x34fa10d92e741a2437b8f7326d5fccf82ee7ffc27b2ff0ad61527c4832391ec8",
+      "category": "chains",
+      "name": "Virbicoin",
+      "keywords": [
+        "rsz_virbicoin",
+        "virbicoin",
+        "rsz-virbicoin",
+        "rsz virbicoin"
       ]
     },
     {
@@ -22422,6 +22434,15 @@
       "name": "Usn",
       "keywords": [
         "usn"
+      ]
+    },
+    {
+      "slug": "pegged/usp",
+      "slugHash": "0xef3287057c0d16904c6924d40eaabcfb19740418f96e8b8f06cb73e24aff8eca",
+      "category": "pegged",
+      "name": "Usp",
+      "keywords": [
+        "usp"
       ]
     },
     {
@@ -84543,6 +84564,18 @@
       ]
     },
     {
+      "slug": "protocols/on-chain-check-in",
+      "slugHash": "0x73ed334dde0ab1f10c7ece68174d716cc1e39102b422fdc417cb529d161acc03",
+      "category": "protocols",
+      "name": "On Chain Check In",
+      "keywords": [
+        "on-chain-check-in",
+        "on chain check in",
+        "onchaincheckin",
+        "occi"
+      ]
+    },
+    {
       "slug": "protocols/onavax",
       "slugHash": "0xf1a1d34c07d85e9c031e03fdbeb8b9ef0325c8a4ff1b2006aa23d5adf3a3f057",
       "category": "protocols",
@@ -91025,6 +91058,18 @@
       "name": "Prdt",
       "keywords": [
         "prdt"
+      ]
+    },
+    {
+      "slug": "protocols/precog-market",
+      "slugHash": "0x32061d18bcb18c36ad0bea9d036c33bcba48da8411538f6c5849af90151830f3",
+      "category": "protocols",
+      "name": "Precog Market",
+      "keywords": [
+        "precog-market",
+        "precog market",
+        "precogmarket",
+        "pm"
       ]
     },
     {
@@ -99641,6 +99686,15 @@
       "name": "Smithii",
       "keywords": [
         "smithii"
+      ]
+    },
+    {
+      "slug": "protocols/smolrefuel",
+      "slugHash": "0xf9ac9fafb693bd6af9531c1eb5a7d101b5d2895addfa76c7c60dd04f0a6661a5",
+      "category": "protocols",
+      "name": "Smolrefuel",
+      "keywords": [
+        "smolrefuel"
       ]
     },
     {
@@ -114307,6 +114361,18 @@
       "name": "Viperswap",
       "keywords": [
         "viperswap"
+      ]
+    },
+    {
+      "slug": "protocols/virbicoin-dex",
+      "slugHash": "0x71704249ae794185d0b70c8c8aa5ee12816b38b07ed4abe91ab89ba635c5f0ca",
+      "category": "protocols",
+      "name": "Virbicoin Dex",
+      "keywords": [
+        "virbicoin-dex",
+        "virbicoin dex",
+        "virbicoindex",
+        "vd"
       ]
     },
     {
