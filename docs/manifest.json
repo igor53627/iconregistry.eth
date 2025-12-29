@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-28T04:10:29.106Z",
+  "generatedAt": "2025-12-29T04:13:35.512Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11070,
+    "total": 11072,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1382,
-      "pegged": 349,
+      "pegged": 351,
       "protocols": 9159
     },
     "mapped": {
@@ -17,7 +17,7 @@
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10662
+    "unmapped": 10664
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -20506,6 +20506,15 @@
       ]
     },
     {
+      "slug": "pegged/mantrausd",
+      "slugHash": "0xb531a7ffff956a502754e95e3f101dcb1d5b533bcd920f7cb23ca13cf7d988e0",
+      "category": "pegged",
+      "name": "Mantrausd",
+      "keywords": [
+        "mantrausd"
+      ]
+    },
+    {
       "slug": "pegged/mead",
       "slugHash": "0x2f3e4815eaa08110371b53decd8680a11b40f3d5a5708969af0fd250beba8085",
       "category": "pegged",
@@ -21151,6 +21160,15 @@
         "plume usd",
         "plumeusd",
         "pu"
+      ]
+    },
+    {
+      "slug": "pegged/pmusd",
+      "slugHash": "0x2dd1f2785fd3e28337828c4b4a616cbefabac4d50406a449aec36582930a1e49",
+      "category": "pegged",
+      "name": "Pmusd",
+      "keywords": [
+        "pmusd"
       ]
     },
     {

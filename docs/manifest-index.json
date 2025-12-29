@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-28T04:10:29.106Z",
+  "generatedAt": "2025-12-29T04:13:35.512Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11070,
+    "total": 11072,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1382,
-      "pegged": 349,
+      "pegged": 351,
       "protocols": 9159
     },
     "mapped": {
@@ -16,7 +16,7 @@
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10662
+    "unmapped": 10664
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -11008,6 +11008,7 @@
       "pegged/magma-wen",
       "pegged/mai",
       "pegged/main-street-usd",
+      "pegged/mantrausd",
       "pegged/mead",
       "pegged/meme-dollar",
       "pegged/metamask-usd",
@@ -11058,6 +11059,7 @@
       "pegged/pht-stablecoin",
       "pegged/pinto",
       "pegged/plume-usd",
+      "pegged/pmusd",
       "pegged/prismalrt-ultra",
       "pegged/psy",
       "pegged/pusd",
