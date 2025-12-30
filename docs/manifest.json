@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-29T04:13:35.512Z",
+  "generatedAt": "2025-12-30T04:03:07.220Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11072,
+    "total": 11075,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1382,
+      "chains": 1383,
       "pegged": 351,
-      "protocols": 9159
+      "protocols": 9161
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10664
+    "unmapped": 10667
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -8275,6 +8275,18 @@
         "polyhedra",
         "rsz-polyhedra",
         "rsz polyhedra"
+      ]
+    },
+    {
+      "slug": "chains/rsz_polymesh",
+      "slugHash": "0xf1ea589fc4c3ff5d6941cf0dfb0698639b1427f6990ec6a6627add3ecea152ef",
+      "category": "chains",
+      "name": "Polymesh",
+      "keywords": [
+        "rsz_polymesh",
+        "polymesh",
+        "rsz-polymesh",
+        "rsz polymesh"
       ]
     },
     {
@@ -59251,6 +59263,15 @@
       ]
     },
     {
+      "slug": "protocols/game7",
+      "slugHash": "0x82d3a7d0dd674a7def378adae6f869df9c9d4b2fa3fbafe31d96a74389193dba",
+      "category": "protocols",
+      "name": "Game7",
+      "keywords": [
+        "game7"
+      ]
+    },
+    {
       "slug": "protocols/gaming-dex",
       "slugHash": "0x0f59400d310e6c0e05f917d868bb0ba690319e0904e22f13ab8bb44758dfda6d",
       "category": "protocols",
@@ -90323,6 +90344,18 @@
       "name": "Polymarket",
       "keywords": [
         "polymarket"
+      ]
+    },
+    {
+      "slug": "protocols/polymesh-staking",
+      "slugHash": "0xe65177e42ef1f0df4b3c947f92834a89aff9c334a299c1347967ba4be824ba33",
+      "category": "protocols",
+      "name": "Polymesh Staking",
+      "keywords": [
+        "polymesh-staking",
+        "polymesh staking",
+        "polymeshstaking",
+        "ps"
       ]
     },
     {

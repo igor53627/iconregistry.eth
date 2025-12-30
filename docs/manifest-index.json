@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-29T04:13:35.512Z",
+  "generatedAt": "2025-12-30T04:03:07.220Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11072,
+    "total": 11075,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1382,
+      "chains": 1383,
       "pegged": 351,
-      "protocols": 9159
+      "protocols": 9161
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10664
+    "unmapped": 10667
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -808,6 +808,7 @@
       "chains/rsz_polygon_zkevm",
       "chains/rsz_polygon-zkevm",
       "chains/rsz_polyhedra",
+      "chains/rsz_polymesh",
       "chains/rsz_polynetwork",
       "chains/rsz_polynomial",
       "chains/rsz_posichain",
@@ -5074,6 +5075,7 @@
       "protocols/gambit-trade",
       "protocols/gamblefi",
       "protocols/game-theory",
+      "protocols/game7",
       "protocols/gaming-dex",
       "protocols/gamma",
       "protocols/gammaswap-classic",
@@ -8005,6 +8007,7 @@
       "protocols/polyhedra-network",
       "protocols/polylend",
       "protocols/polymarket",
+      "protocols/polymesh-staking",
       "protocols/polynetwork",
       "protocols/polynomial-bridge",
       "protocols/polynomial-earn",
