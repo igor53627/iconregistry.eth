@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-30T04:03:07.220Z",
+  "generatedAt": "2025-12-31T04:02:45.444Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11075,
+    "total": 11088,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1383,
+      "chains": 1384,
       "pegged": 351,
-      "protocols": 9161
+      "protocols": 9173
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10667
+    "unmapped": 10680
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -685,6 +685,7 @@
       "chains/rsz_mayachain",
       "chains/rsz_medibloc",
       "chains/rsz_meer",
+      "chains/rsz_megaeth",
       "chains/rsz_merlin",
       "chains/rsz_meta",
       "chains/rsz_metal",
@@ -5605,6 +5606,9 @@
       "protocols/hyperswap-v2",
       "protocols/hyperswap-v3",
       "protocols/hypertek",
+      "protocols/hypertrade",
+      "protocols/hypertrade-v2",
+      "protocols/hypertrade-v3",
       "protocols/hypervault",
       "protocols/hyperwave",
       "protocols/hyperyield",
@@ -6182,6 +6186,7 @@
       "protocols/kuma-perpetuals-dex",
       "protocols/kuma-protocol",
       "protocols/kuma-v2",
+      "protocols/kumbaya",
       "protocols/kumu-finance",
       "protocols/kungfuu",
       "protocols/kuraswap",
@@ -6700,6 +6705,7 @@
       "protocols/mean-finance",
       "protocols/mechanism-capital",
       "protocols/meeds-finance",
+      "protocols/megaeth-bridge",
       "protocols/megalon",
       "protocols/megamoon",
       "protocols/megaton-finance",
@@ -7531,6 +7537,7 @@
       "protocols/openfpl",
       "protocols/opengdp-shared-security",
       "protocols/opengpu",
+      "protocols/openledger",
       "protocols/openleverage",
       "protocols/openocean",
       "protocols/opensea",
@@ -7845,6 +7852,9 @@
       "protocols/percent-finance",
       "protocols/percentme",
       "protocols/perena",
+      "protocols/perena-dex",
+      "protocols/perena-vaults",
+      "protocols/perena-yield",
       "protocols/perennial",
       "protocols/perennial-v1",
       "protocols/perennial-v2",
@@ -7940,6 +7950,7 @@
       "protocols/pixelswap(pix)",
       "protocols/pixelswappix",
       "protocols/pizza",
+      "protocols/pizza-city",
       "protocols/pizzax",
       "protocols/planet",
       "protocols/planet-farm",
@@ -8714,6 +8725,7 @@
       "protocols/secured-finance-lending",
       "protocols/securedao",
       "protocols/securitize",
+      "protocols/securitize-tokenized-aaa-clo-fund",
       "protocols/securo-finance",
       "protocols/seda",
       "protocols/sedge",
@@ -9395,6 +9407,7 @@
       "protocols/supercexy",
       "protocols/superchain",
       "protocols/superdapp",
+      "protocols/superearn",
       "protocols/superfarm",
       "protocols/superfluid",
       "protocols/superform",

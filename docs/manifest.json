@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-30T04:03:07.220Z",
+  "generatedAt": "2025-12-31T04:02:45.444Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11075,
+    "total": 11088,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1383,
+      "chains": 1384,
       "pegged": 351,
-      "protocols": 9161
+      "protocols": 9173
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10667
+    "unmapped": 10680
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -6681,6 +6681,18 @@
         "meer",
         "rsz-meer",
         "rsz meer"
+      ]
+    },
+    {
+      "slug": "chains/rsz_megaeth",
+      "slugHash": "0xb61b9cf18db76967f59f32e8d195652905752c1002e74f519d51a7fca4a50649",
+      "category": "chains",
+      "name": "Megaeth",
+      "keywords": [
+        "rsz_megaeth",
+        "megaeth",
+        "rsz-megaeth",
+        "rsz megaeth"
       ]
     },
     {
@@ -64861,6 +64873,39 @@
       ]
     },
     {
+      "slug": "protocols/hypertrade",
+      "slugHash": "0x495d5b7c5019e2f92ad933206f11a64901729a71cbd8159fb6b53c83f8b92c74",
+      "category": "protocols",
+      "name": "Hypertrade",
+      "keywords": [
+        "hypertrade"
+      ]
+    },
+    {
+      "slug": "protocols/hypertrade-v2",
+      "slugHash": "0xcca59b346cbb51225c5e2fb7ca762c664fccbe45ac4aa990798419672038317d",
+      "category": "protocols",
+      "name": "Hypertrade V2",
+      "keywords": [
+        "hypertrade-v2",
+        "hypertrade v2",
+        "hypertradev2",
+        "hv"
+      ]
+    },
+    {
+      "slug": "protocols/hypertrade-v3",
+      "slugHash": "0x06de1d30e3d42bbf84f719559d27a9459bb71ee527e3239bf15930e6b0dd5dc1",
+      "category": "protocols",
+      "name": "Hypertrade V3",
+      "keywords": [
+        "hypertrade-v3",
+        "hypertrade v3",
+        "hypertradev3",
+        "hv"
+      ]
+    },
+    {
       "slug": "protocols/hypervault",
       "slugHash": "0xd0c47dcd31e8db922d72dd7051a6caab0f54ab2f962a2756a79b2081cca1748f",
       "category": "protocols",
@@ -70997,6 +71042,15 @@
       ]
     },
     {
+      "slug": "protocols/kumbaya",
+      "slugHash": "0x84388dcbb191e74622c64a9dd42d01a490ebf9d3d83e1d2ffda1c5fa59431695",
+      "category": "protocols",
+      "name": "Kumbaya",
+      "keywords": [
+        "kumbaya"
+      ]
+    },
+    {
       "slug": "protocols/kumu-finance",
       "slugHash": "0xed963d664b98a22f198ff815b496f7897eded80ada839e409d0ead048f4968b6",
       "category": "protocols",
@@ -76475,6 +76529,18 @@
         "meeds finance",
         "meedsfinance",
         "mf"
+      ]
+    },
+    {
+      "slug": "protocols/megaeth-bridge",
+      "slugHash": "0xd64de38459463ac0c0928f3ec874a4129ef31c4cf7d9c0db36f2fe915154f934",
+      "category": "protocols",
+      "name": "Megaeth Bridge",
+      "keywords": [
+        "megaeth-bridge",
+        "megaeth bridge",
+        "megaethbridge",
+        "mb"
       ]
     },
     {
@@ -85258,6 +85324,15 @@
       ]
     },
     {
+      "slug": "protocols/openledger",
+      "slugHash": "0x24db87d95472c9ed108d957a70803c3488b641be424c83d222bf1ecead5be6d8",
+      "category": "protocols",
+      "name": "Openledger",
+      "keywords": [
+        "openledger"
+      ]
+    },
+    {
       "slug": "protocols/openleverage",
       "slugHash": "0x465813da93c9a92d8b0456afb219b1fdd23e8a2c341d13db4bf0a4db4bbb2db3",
       "category": "protocols",
@@ -88636,6 +88711,42 @@
       ]
     },
     {
+      "slug": "protocols/perena-dex",
+      "slugHash": "0x4ce6d7b48669c55d231a432b64c52b827c62ac50c04374c9ea32f0ee95429c5a",
+      "category": "protocols",
+      "name": "Perena Dex",
+      "keywords": [
+        "perena-dex",
+        "perena dex",
+        "perenadex",
+        "pd"
+      ]
+    },
+    {
+      "slug": "protocols/perena-vaults",
+      "slugHash": "0xd3918ac657629b871b9c14f150f84da2178d177059ae20c50f19bbf9289f8b97",
+      "category": "protocols",
+      "name": "Perena Vaults",
+      "keywords": [
+        "perena-vaults",
+        "perena vaults",
+        "perenavaults",
+        "pv"
+      ]
+    },
+    {
+      "slug": "protocols/perena-yield",
+      "slugHash": "0x52cea9161277f2d64d5eb580ce4e03aeec1ba19eb82050911b35410b27b34378",
+      "category": "protocols",
+      "name": "Perena Yield",
+      "keywords": [
+        "perena-yield",
+        "perena yield",
+        "perenayield",
+        "py"
+      ]
+    },
+    {
       "slug": "protocols/perennial",
       "slugHash": "0xf7bfd5112cd5f88d89b8f1570920a95a792c8dc97fb0da9dc1532e8fa2b13d12",
       "category": "protocols",
@@ -89641,6 +89752,18 @@
       "name": "Pizza",
       "keywords": [
         "pizza"
+      ]
+    },
+    {
+      "slug": "protocols/pizza-city",
+      "slugHash": "0xb0a325cbe36c0c8d6d81244bbb94762ef2da8a65002fa3c7d18fe00b3e77e084",
+      "category": "protocols",
+      "name": "Pizza City",
+      "keywords": [
+        "pizza-city",
+        "pizza city",
+        "pizzacity",
+        "pc"
       ]
     },
     {
@@ -97808,6 +97931,18 @@
       ]
     },
     {
+      "slug": "protocols/securitize-tokenized-aaa-clo-fund",
+      "slugHash": "0x7034584f42fafa2dab56fec027b6b127a5341615710018d52a90a5b28fe49720",
+      "category": "protocols",
+      "name": "Securitize Tokenized Aaa Clo Fund",
+      "keywords": [
+        "securitize-tokenized-aaa-clo-fund",
+        "securitize tokenized aaa clo fund",
+        "securitizetokenizedaaaclofund",
+        "stacf"
+      ]
+    },
+    {
       "slug": "protocols/securo-finance",
       "slugHash": "0x57b772996199bd982bf48240fcc6d7b35263651d1b764f1cfcd88732289f4ab3",
       "category": "protocols",
@@ -104909,6 +105044,15 @@
       "name": "Superdapp",
       "keywords": [
         "superdapp"
+      ]
+    },
+    {
+      "slug": "protocols/superearn",
+      "slugHash": "0x2b01bb8aac269694e3f9262991c60b87958a378763f7edabeeef815b711a361d",
+      "category": "protocols",
+      "name": "Superearn",
+      "keywords": [
+        "superearn"
       ]
     },
     {
