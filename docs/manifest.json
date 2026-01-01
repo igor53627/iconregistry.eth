@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-31T04:02:45.444Z",
+  "generatedAt": "2026-01-01T04:12:48.734Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11088,
+    "total": 11091,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1384,
       "pegged": 351,
-      "protocols": 9173
+      "protocols": 9176
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10680
+    "unmapped": 10683
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -59530,6 +59530,15 @@
       ]
     },
     {
+      "slug": "protocols/gassss",
+      "slugHash": "0xc39d8fd84fa7eb312f66547d1c93abc5b2df26db4d02b8ea00c5bbf51a0addf5",
+      "category": "protocols",
+      "name": "Gassss",
+      "keywords": [
+        "gassss"
+      ]
+    },
+    {
       "slug": "protocols/gasswap",
       "slugHash": "0x9d5a8a6a2a9d0470c6d43151209307caeeccf75b55ab82f74f2491aed486c32f",
       "category": "protocols",
@@ -88831,6 +88840,18 @@
       ]
     },
     {
+      "slug": "protocols/perma-pod",
+      "slugHash": "0x734ec85f3e14ab1f3222bcb94eb30a25d2e82cb222001af5e3713644bc4fe7a4",
+      "category": "protocols",
+      "name": "Perma Pod",
+      "keywords": [
+        "perma-pod",
+        "perma pod",
+        "permapod",
+        "pp"
+      ]
+    },
+    {
       "slug": "protocols/permute",
       "slugHash": "0x2c02b78bf9129e1d47a8d38bc9bbbc668e7c67c63400a29abdf31d61292034cb",
       "category": "protocols",
@@ -113815,6 +113836,18 @@
       "name": "Velora",
       "keywords": [
         "velora"
+      ]
+    },
+    {
+      "slug": "protocols/velvet-capital-staking",
+      "slugHash": "0x66d0b6f7f535c7ac1180c50a172f48ccce84e6a5a1a41b8db9eac73b8fb0fe38",
+      "category": "protocols",
+      "name": "Velvet Capital Staking",
+      "keywords": [
+        "velvet-capital-staking",
+        "velvet capital staking",
+        "velvetcapitalstaking",
+        "vcs"
       ]
     },
     {

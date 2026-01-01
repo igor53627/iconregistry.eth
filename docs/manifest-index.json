@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-31T04:02:45.444Z",
+  "generatedAt": "2026-01-01T04:12:48.734Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11088,
+    "total": 11091,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1384,
       "pegged": 351,
-      "protocols": 9173
+      "protocols": 9176
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10680
+    "unmapped": 10683
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5101,6 +5101,7 @@
       "protocols/gasline-protocol",
       "protocols/gasp",
       "protocols/gaspump",
+      "protocols/gassss",
       "protocols/gasswap",
       "protocols/gast",
       "protocols/gate",
@@ -7863,6 +7864,7 @@
       "protocols/peri-finance",
       "protocols/perion",
       "protocols/perlin",
+      "protocols/perma-pod",
       "protocols/permute",
       "protocols/perpetual-protocol",
       "protocols/perpie",
@@ -10237,6 +10239,7 @@
       "protocols/velodrome-v2",
       "protocols/velodrome-v3",
       "protocols/velora",
+      "protocols/velvet-capital-staking",
       "protocols/velvet-v1",
       "protocols/velvet-v2",
       "protocols/velvet-v3",
