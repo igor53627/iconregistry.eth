@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-02T04:06:21.919Z",
+  "generatedAt": "2026-01-03T03:57:47.528Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11092,
+    "total": 11096,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
       "pegged": 351,
-      "protocols": 9176
+      "protocols": 9180
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10684
+    "unmapped": 10688
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -48911,6 +48911,18 @@
       ]
     },
     {
+      "slug": "protocols/definity-staked-sol",
+      "slugHash": "0x9a107512e4efcfe00e930efdb2e9bb9ee6d644ada67f20026606d9d76f0c109f",
+      "category": "protocols",
+      "name": "Definity Staked Sol",
+      "keywords": [
+        "definity-staked-sol",
+        "definity staked sol",
+        "definitystakedsol",
+        "dss"
+      ]
+    },
+    {
       "slug": "protocols/definix",
       "slugHash": "0xeabd595c26c95b1dd6a7edd5dd2cb2b306815f81d34ff7ffae3402985b232dcf",
       "category": "protocols",
@@ -82058,6 +82070,15 @@
       ]
     },
     {
+      "slug": "protocols/nest",
+      "slugHash": "0x8390cd92d7ef8c32ee757ba07018fe8ccd75b86d3b7a6e80424196b88356419f",
+      "category": "protocols",
+      "name": "Nest",
+      "keywords": [
+        "nest"
+      ]
+    },
+    {
       "slug": "protocols/nest-credit",
       "slugHash": "0x1288920310dfe7c4ed1eb342af2bd2348a36a31c7d895bdda07624d69e808fe9",
       "category": "protocols",
@@ -101378,6 +101399,18 @@
       ]
     },
     {
+      "slug": "protocols/space-and-time",
+      "slugHash": "0x8ce91e70ac087bccf80cec9a80d75ae1640078a020a8982babe7818fb9728fd5",
+      "category": "protocols",
+      "name": "Space And Time",
+      "keywords": [
+        "space-and-time",
+        "space and time",
+        "spaceandtime",
+        "sat"
+      ]
+    },
+    {
       "slug": "protocols/spacebar",
       "slugHash": "0x7f3b6ae397b31d8c197907630e871cee664cd7105fd1cce89954ce2e58e89a36",
       "category": "protocols",
@@ -120209,6 +120242,15 @@
         "zora protocol",
         "zoraprotocol",
         "zp"
+      ]
+    },
+    {
+      "slug": "protocols/zorb",
+      "slugHash": "0x969f970bbe6b76b222b76d29c78998f033115a4eb9c8e44f5cd20c7bc745953f",
+      "category": "protocols",
+      "name": "Zorb",
+      "keywords": [
+        "zorb"
       ]
     },
     {

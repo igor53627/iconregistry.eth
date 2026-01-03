@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-02T04:06:21.919Z",
+  "generatedAt": "2026-01-03T03:57:47.528Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11092,
+    "total": 11096,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
       "pegged": 351,
-      "protocols": 9176
+      "protocols": 9180
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10684
+    "unmapped": 10688
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4085,6 +4085,7 @@
       "protocols/definitely",
       "protocols/definitive",
       "protocols/definitive-yield-vaults",
+      "protocols/definity-staked-sol",
       "protocols/definix",
       "protocols/defiplaza",
       "protocols/defirex",
@@ -7226,6 +7227,7 @@
       "protocols/nervebridge",
       "protocols/nerveswap",
       "protocols/nervos",
+      "protocols/nest",
       "protocols/nest-credit",
       "protocols/nest-protocol",
       "protocols/nest-protocol-staking",
@@ -9056,6 +9058,7 @@
       "protocols/sovryn-zero",
       "protocols/soy-finance",
       "protocols/spaace",
+      "protocols/space-and-time",
       "protocols/spacebar",
       "protocols/spacedex",
       "protocols/spacefi",
@@ -10845,6 +10848,7 @@
       "protocols/zora-coins",
       "protocols/zora-marketplace",
       "protocols/zora-protocol",
+      "protocols/zorb",
       "protocols/zoro-protocol",
       "protocols/zoth",
       "protocols/zoth-zeusd",
