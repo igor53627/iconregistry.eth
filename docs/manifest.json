@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-03T03:57:47.528Z",
+  "generatedAt": "2026-01-04T04:13:56.631Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11096,
+    "total": 11100,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
       "pegged": 351,
-      "protocols": 9180
+      "protocols": 9184
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10688
+    "unmapped": 10692
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -48842,6 +48842,15 @@
       ]
     },
     {
+      "slug": "protocols/defillama",
+      "slugHash": "0x410cb0e69f03d5e1fc49439b61185a56ae9e8a2986c10fc6ff8cd8584b927725",
+      "category": "protocols",
+      "name": "Defillama",
+      "keywords": [
+        "defillama"
+      ]
+    },
+    {
       "slug": "protocols/defily",
       "slugHash": "0x3f663f2341d0cd382dbd29576cfbc22935c4f48e5d4ce03a8e1f2578944f183c",
       "category": "protocols",
@@ -57285,6 +57294,18 @@
       "name": "Fluxbeam",
       "keywords": [
         "fluxbeam"
+      ]
+    },
+    {
+      "slug": "protocols/fluxion-network",
+      "slugHash": "0x726ccb8f0c0478b67e4815c5b8d04bc8a5566b53cd819eb7d1ec6d035536bc6e",
+      "category": "protocols",
+      "name": "Fluxion Network",
+      "keywords": [
+        "fluxion-network",
+        "fluxion network",
+        "fluxionnetwork",
+        "fn"
       ]
     },
     {
@@ -88885,6 +88906,15 @@
       ]
     },
     {
+      "slug": "protocols/permapod",
+      "slugHash": "0x52b6db739c57047541d15bfe44ae366b57d8b9c246077e42c547ec4686f63ad5",
+      "category": "protocols",
+      "name": "Permapod",
+      "keywords": [
+        "permapod"
+      ]
+    },
+    {
       "slug": "protocols/permute",
       "slugHash": "0x2c02b78bf9129e1d47a8d38bc9bbbc668e7c67c63400a29abdf31d61292034cb",
       "category": "protocols",
@@ -91700,6 +91730,15 @@
       "name": "Prixmswap",
       "keywords": [
         "prixmswap"
+      ]
+    },
+    {
+      "slug": "protocols/probable",
+      "slugHash": "0x7fe57a7d2023d0324d8d3d785289943d2d4c7fe9d2b70adf1dabe6dab68c84af",
+      "category": "protocols",
+      "name": "Probable",
+      "keywords": [
+        "probable"
       ]
     },
     {

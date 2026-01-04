@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-03T03:57:47.528Z",
+  "generatedAt": "2026-01-04T04:13:56.631Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11096,
+    "total": 11100,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
       "pegged": 351,
-      "protocols": 9180
+      "protocols": 9184
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10688
+    "unmapped": 10692
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4078,6 +4078,7 @@
       "protocols/defidollar-dao",
       "protocols/defiedge",
       "protocols/defil",
+      "protocols/defillama",
       "protocols/defily",
       "protocols/defily-dex",
       "protocols/defimoney",
@@ -4888,6 +4889,7 @@
       "protocols/flux-protocol",
       "protocols/fluxa",
       "protocols/fluxbeam",
+      "protocols/fluxion-network",
       "protocols/fluxtra",
       "protocols/fluxusfi",
       "protocols/fly",
@@ -7868,6 +7870,7 @@
       "protocols/perion",
       "protocols/perlin",
       "protocols/perma-pod",
+      "protocols/permapod",
       "protocols/permute",
       "protocols/perpetual-protocol",
       "protocols/perpie",
@@ -8135,6 +8138,7 @@
       "protocols/privcash",
       "protocols/privex",
       "protocols/prixmswap",
+      "protocols/probable",
       "protocols/probit",
       "protocols/probit-global",
       "protocols/procyon",
