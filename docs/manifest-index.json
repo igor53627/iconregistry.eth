@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-04T04:13:56.631Z",
+  "generatedAt": "2026-01-05T04:19:51.259Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11100,
+    "total": 11101,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
       "pegged": 351,
-      "protocols": 9184
+      "protocols": 9185
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10692
+    "unmapped": 10693
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -7381,6 +7381,7 @@
       "protocols/nxfi-protocol",
       "protocols/nyke-finance",
       "protocols/o.lab",
+      "protocols/o1.exchange",
       "protocols/o2-dao",
       "protocols/o2-exchange",
       "protocols/o3-swap",
