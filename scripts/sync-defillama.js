@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 /**
  * Sync icons from DefiLlama/icons repository
- * Processes new/changed icons to 64x64 PNG format
+ * Processes new AND changed icons to 64x64 PNG format
  * 
  * Usage: node scripts/sync-defillama.js <defillama-icons-path>
+ * 
+ * Options:
+ *   --force    Force reprocess all icons (ignore cache)
+ *   --check    Check for updates without processing
  */
 
 const fs = require('fs');
@@ -12,6 +16,7 @@ const crypto = require('crypto');
 const { execSync } = require('child_process');
 
 const ICONS_DIR = path.join(__dirname, '..', 'icons-64');
+const CACHE_FILE = path.join(__dirname, '..', '.sync-cache.json');
 const SUPPORTED_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.svg'];
 
 let sharp;
@@ -34,6 +39,25 @@ function hasOxipng() {
 function getFileHash(filePath) {
     const content = fs.readFileSync(filePath);
     return crypto.createHash('md5').update(content).digest('hex');
+}
+
+/**
+ * Load sync cache (tracks source file hashes to detect changes)
+ */
+function loadCache() {
+    try {
+        if (fs.existsSync(CACHE_FILE)) {
+            return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+        }
+    } catch {}
+    return { sourceHashes: {} };
+}
+
+/**
+ * Save sync cache
+ */
+function saveCache(cache) {
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
 }
 
 /**
@@ -105,18 +129,30 @@ async function processIcon(sourcePath, destPath, useOxipng = false) {
 }
 
 async function main() {
-    const defillamaPath = process.argv[2];
+    const args = process.argv.slice(2);
+    const forceMode = args.includes('--force');
+    const checkMode = args.includes('--check');
+    const defillamaPath = args.find(a => !a.startsWith('--'));
+    
     if (!defillamaPath) {
-        console.error('Usage: node sync-defillama.js <defillama-icons-path>');
+        console.error('Usage: node sync-defillama.js <defillama-icons-path> [--force] [--check]');
+        console.error('  --force  Force reprocess all icons (ignore cache)');
+        console.error('  --check  Check for updates without processing');
         process.exit(1);
     }
     
     console.log('=== DefiLlama Icon Sync ===\n');
     console.log(`Source: ${defillamaPath}`);
     console.log(`Destination: ${ICONS_DIR}`);
+    if (forceMode) console.log('Mode: FORCE (reprocessing all icons)');
+    if (checkMode) console.log('Mode: CHECK (dry run)');
     
     const useOxipng = hasOxipng();
     console.log(`oxipng: ${useOxipng ? 'available' : 'not found (skipping optimization)'}\n`);
+    
+    // Load cache of previously processed source hashes
+    const cache = forceMode ? { sourceHashes: {} } : loadCache();
+    const newCache = { sourceHashes: {} };
     
     // Find source icons from different directories
     const sourceDirs = [
@@ -146,7 +182,7 @@ async function main() {
     const existingFiles = findAllIcons(ICONS_DIR);
     for (const { fullPath, relativePath } of existingFiles) {
         const slug = relativePath.replace(/\.png$/, '');
-        existingIcons.set(slug, { fullPath, hash: getFileHash(fullPath) });
+        existingIcons.set(slug, { fullPath });
     }
     
     console.log(`Found ${existingIcons.size} existing icons\n`);
@@ -159,35 +195,69 @@ async function main() {
     for (const icon of allSourceIcons) {
         const destPath = path.join(ICONS_DIR, icon.slug + '.png');
         const existing = existingIcons.get(icon.slug);
-        
-        // Check if source has changed
         const sourceHash = getFileHash(icon.fullPath);
+        const cachedHash = cache.sourceHashes[icon.slug];
+        
+        // Store hash for new cache
+        newCache.sourceHashes[icon.slug] = sourceHash;
         
         if (existing) {
-            // Compare by processing and checking output
-            // For simplicity, we'll reprocess if source hash differs from a cached value
-            // In practice, we just reprocess everything and let git detect changes
-            skipped++;
-            continue;
-        }
-        
-        // New icon - process it
-        const success = await processIcon(icon.fullPath, destPath, useOxipng);
-        if (success) {
-            added++;
-            console.log(`+ ${icon.slug}`);
+            // Check if source has changed since last sync
+            if (cachedHash === sourceHash) {
+                // Source unchanged - skip
+                skipped++;
+                continue;
+            }
+            
+            // Source changed - need to update
+            if (checkMode) {
+                console.log(`~ ${icon.slug} (would update)`);
+                updated++;
+                continue;
+            }
+            
+            const success = await processIcon(icon.fullPath, destPath, useOxipng);
+            if (success) {
+                updated++;
+                console.log(`~ ${icon.slug} (updated)`);
+            } else {
+                failed++;
+            }
         } else {
-            failed++;
+            // New icon - process it
+            if (checkMode) {
+                console.log(`+ ${icon.slug} (would add)`);
+                added++;
+                continue;
+            }
+            
+            const success = await processIcon(icon.fullPath, destPath, useOxipng);
+            if (success) {
+                added++;
+                console.log(`+ ${icon.slug}`);
+            } else {
+                failed++;
+            }
         }
+    }
+    
+    // Save updated cache (unless in check mode)
+    if (!checkMode) {
+        saveCache(newCache);
     }
     
     console.log('\n=== Summary ===');
     console.log(`Added: ${added}`);
-    console.log(`Skipped (existing): ${skipped}`);
+    console.log(`Updated: ${updated}`);
+    console.log(`Skipped (unchanged): ${skipped}`);
     console.log(`Failed: ${failed}`);
     
-    if (added > 0) {
-        console.log('\nNew icons added. Create PR to update registry.');
+    if (added > 0 || updated > 0) {
+        if (checkMode) {
+            console.log('\nRun without --check to apply changes.');
+        } else {
+            console.log('\nIcons synced. Create PR to update registry.');
+        }
     }
 }
 

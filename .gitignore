@@ -26,3 +26,6 @@ broadcast/
 scripts/deploy.ts
 scripts/Deploy.s.sol
 .amp/
+
+# Sync cache
+.sync-cache.json
