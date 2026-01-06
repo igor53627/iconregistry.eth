@@ -221,13 +221,13 @@ contract IconRegistryTest is Test {
 
     function test_mapToken_revert_iconNotFound() public {
         vm.prank(owner);
-        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("nonexistent/icon")));
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.NoIconAvailable.selector, keccak256("nonexistent/icon")));
         registry.mapToken(address(0x123), 1, "nonexistent/icon");
     }
 
     function test_mapChain_revert_iconNotFound() public {
         vm.prank(owner);
-        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("nonexistent/icon")));
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.NoIconAvailable.selector, keccak256("nonexistent/icon")));
         registry.mapChain(1, "nonexistent/icon");
     }
 
@@ -433,6 +433,325 @@ contract IconRegistryTest is Test {
         vm.prank(user);
         vm.expectRevert();
         registry.withdrawETH();
+    }
+
+    // ========== SVG VALIDATION TESTS (V2) ==========
+
+    // Valid SVG: minimal SVG document
+    bytes public constant VALID_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg>';
+
+    // Second valid SVG for versioning tests
+    bytes public constant VALID_SVG_V2 = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="2" y="2" width="60" height="60"/></svg>';
+
+    // Invalid SVG (no <svg tag)
+    bytes public constant INVALID_SVG = '<?xml version="1.0"?><html><body>Not an SVG</body></html>';
+
+    function test_setSvgIcon_validSVG() public {
+        vm.prank(owner);
+        registry.setSvgIcon("test/svg", VALID_SVG, 64, 64);
+
+        bytes memory retrieved = registry.getSvgIconBySlug("test/svg");
+        assertEq(retrieved, VALID_SVG);
+    }
+
+    function test_setSvgIcon_revert_invalidSVG() public {
+        vm.prank(owner);
+        vm.expectRevert(IconRegistry.InvalidSVG.selector);
+        registry.setSvgIcon("test/fake", INVALID_SVG, 64, 64);
+    }
+
+    function test_setSvgIcon_revert_emptyData() public {
+        vm.prank(owner);
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.InvalidData.selector, "test/empty"));
+        registry.setSvgIcon("test/empty", "", 64, 64);
+    }
+
+    function test_setSvgIcon_revert_notOwner() public {
+        vm.prank(user);
+        vm.expectRevert();
+        registry.setSvgIcon("test/svg", VALID_SVG, 64, 64);
+    }
+
+    function test_setSvgIcon_versioning() public {
+        vm.startPrank(owner);
+
+        // Version 1
+        registry.setSvgIcon("test/versioned-svg", VALID_SVG, 64, 64);
+        bytes32 slugHash = keccak256("test/versioned-svg");
+        (,,, uint32 version1) = registry.svgIcons(slugHash);
+        assertEq(version1, 1);
+
+        // Version 2
+        registry.setSvgIcon("test/versioned-svg", VALID_SVG_V2, 64, 64);
+        (,,, uint32 version2) = registry.svgIcons(slugHash);
+        assertEq(version2, 2);
+
+        // Verify both versions accessible
+        assertEq(registry.getSvgIconVersion(slugHash, 1), VALID_SVG);
+        assertEq(registry.getSvgIconVersion(slugHash, 2), VALID_SVG_V2);
+
+        // Latest returns v2
+        assertEq(registry.getSvgIcon(slugHash), VALID_SVG_V2);
+
+        vm.stopPrank();
+    }
+
+    // ========== SVG BATCH TESTS (V2) ==========
+
+    function test_setSvgIconsBatch_validSVGs() public {
+        string[] memory slugList = new string[](2);
+        slugList[0] = "batch/svg1";
+        slugList[1] = "batch/svg2";
+
+        bytes[] memory dataList = new bytes[](2);
+        dataList[0] = VALID_SVG;
+        dataList[1] = VALID_SVG_V2;
+
+        uint32[] memory widths = new uint32[](2);
+        widths[0] = 64;
+        widths[1] = 64;
+
+        uint32[] memory heights = new uint32[](2);
+        heights[0] = 64;
+        heights[1] = 64;
+
+        vm.prank(owner);
+        registry.setSvgIconsBatch(slugList, dataList, widths, heights);
+
+        assertEq(registry.getSvgIconBySlug("batch/svg1"), VALID_SVG);
+        assertEq(registry.getSvgIconBySlug("batch/svg2"), VALID_SVG_V2);
+    }
+
+    function test_setSvgIconsBatch_revert_invalidSVG() public {
+        string[] memory slugList = new string[](2);
+        slugList[0] = "batch/valid";
+        slugList[1] = "batch/invalid";
+
+        bytes[] memory dataList = new bytes[](2);
+        dataList[0] = VALID_SVG;
+        dataList[1] = INVALID_SVG;
+
+        uint32[] memory widths = new uint32[](2);
+        widths[0] = 64;
+        widths[1] = 64;
+
+        uint32[] memory heights = new uint32[](2);
+        heights[0] = 64;
+        heights[1] = 64;
+
+        vm.prank(owner);
+        vm.expectRevert(IconRegistry.InvalidSVG.selector);
+        registry.setSvgIconsBatch(slugList, dataList, widths, heights);
+    }
+
+    // ========== SVG GETTER TESTS (V2) ==========
+
+    function test_getSvgIcon_revert_notFound() public {
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing/svg")));
+        registry.getSvgIcon(keccak256("missing/svg"));
+    }
+
+    function test_getSvgIconBySlug_revert_notFound() public {
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.IconNotFound.selector, keccak256("missing/svg")));
+        registry.getSvgIconBySlug("missing/svg");
+    }
+
+    function test_getSvgIconDataURI() public {
+        vm.prank(owner);
+        registry.setSvgIcon("test/svg-uri", VALID_SVG, 64, 64);
+
+        string memory uri = registry.getSvgIconDataURI(keccak256("test/svg-uri"));
+        assertTrue(bytes(uri).length > 0);
+        // Should start with data:image/svg+xml;base64,
+        assertEq(_substring(uri, 0, 26), "data:image/svg+xml;base64,");
+    }
+
+    function test_batchGetSvgIcons() public {
+        vm.startPrank(owner);
+        registry.setSvgIcon("svg1", VALID_SVG, 64, 64);
+        registry.setSvgIcon("svg2", VALID_SVG_V2, 64, 64);
+        vm.stopPrank();
+
+        bytes32[] memory slugHashes = new bytes32[](3);
+        slugHashes[0] = keccak256("svg1");
+        slugHashes[1] = keccak256("svg2");
+        slugHashes[2] = keccak256("missing");
+
+        bytes[] memory result = registry.batchGetSvgIcons(slugHashes);
+
+        assertEq(result[0], VALID_SVG);
+        assertEq(result[1], VALID_SVG_V2);
+        assertEq(result[2].length, 0); // Missing returns empty
+    }
+
+    // ========== MAPPING WITH SVG TESTS (V2) ==========
+
+    function test_mapToken_withSvgIcon() public {
+        vm.startPrank(owner);
+
+        // Only SVG icon exists
+        registry.setSvgIcon("tokens/svg-only", VALID_SVG, 64, 64);
+        registry.mapToken(address(0x456), 1, "tokens/svg-only");
+
+        // Should be able to get SVG icon
+        bytes memory svg = registry.getSvgIconByToken(address(0x456), 1);
+        assertEq(svg, VALID_SVG);
+
+        vm.stopPrank();
+    }
+
+    function test_mapChain_withSvgIcon() public {
+        vm.startPrank(owner);
+
+        // Only SVG icon exists
+        registry.setSvgIcon("chains/svg-chain", VALID_SVG, 64, 64);
+        registry.mapChain(42, "chains/svg-chain");
+
+        // Should be able to get SVG chain icon
+        bytes memory svg = registry.getSvgChainIcon(42);
+        assertEq(svg, VALID_SVG);
+
+        vm.stopPrank();
+    }
+
+    // ========== BEST ICON TESTS (V2) ==========
+
+    function test_getBestIcon_svgPreferred() public {
+        vm.startPrank(owner);
+        registry.setIcon("test/both", VALID_PNG, 64, 64);
+        registry.setSvgIcon("test/both", VALID_SVG, 64, 64);
+        vm.stopPrank();
+
+        bytes32 slugHash = keccak256("test/both");
+        (bytes memory data, IconRegistry.IconFormat format) = registry.getBestIcon(slugHash);
+
+        assertEq(data, VALID_SVG);
+        assertEq(uint8(format), uint8(IconRegistry.IconFormat.SVG));
+    }
+
+    function test_getBestIcon_pngFallback() public {
+        vm.prank(owner);
+        registry.setIcon("test/png-only", VALID_PNG, 64, 64);
+
+        bytes32 slugHash = keccak256("test/png-only");
+        (bytes memory data, IconRegistry.IconFormat format) = registry.getBestIcon(slugHash);
+
+        assertEq(data, VALID_PNG);
+        assertEq(uint8(format), uint8(IconRegistry.IconFormat.PNG));
+    }
+
+    function test_getBestIcon_svgOnly() public {
+        vm.prank(owner);
+        registry.setSvgIcon("test/svg-only", VALID_SVG, 64, 64);
+
+        bytes32 slugHash = keccak256("test/svg-only");
+        (bytes memory data, IconRegistry.IconFormat format) = registry.getBestIcon(slugHash);
+
+        assertEq(data, VALID_SVG);
+        assertEq(uint8(format), uint8(IconRegistry.IconFormat.SVG));
+    }
+
+    function test_getBestIcon_revert_noIcon() public {
+        vm.expectRevert(abi.encodeWithSelector(IconRegistry.NoIconAvailable.selector, keccak256("missing")));
+        registry.getBestIcon(keccak256("missing"));
+    }
+
+    function test_getBestIconDataURI_svg() public {
+        vm.prank(owner);
+        registry.setSvgIcon("test/uri-svg", VALID_SVG, 64, 64);
+
+        string memory uri = registry.getBestIconDataURI(keccak256("test/uri-svg"));
+        assertEq(_substring(uri, 0, 26), "data:image/svg+xml;base64,");
+    }
+
+    function test_getBestIconDataURI_png() public {
+        vm.prank(owner);
+        registry.setIcon("test/uri-png", VALID_PNG, 64, 64);
+
+        string memory uri = registry.getBestIconDataURI(keccak256("test/uri-png"));
+        assertEq(_substring(uri, 0, 22), "data:image/png;base64,");
+    }
+
+    function test_getBestIconByToken() public {
+        vm.startPrank(owner);
+        registry.setIcon("tokens/best", VALID_PNG, 64, 64);
+        registry.setSvgIcon("tokens/best", VALID_SVG, 64, 64);
+        registry.mapToken(address(0x789), 1, "tokens/best");
+        vm.stopPrank();
+
+        (bytes memory data, IconRegistry.IconFormat format) = registry.getBestIconByToken(address(0x789), 1);
+
+        assertEq(data, VALID_SVG);
+        assertEq(uint8(format), uint8(IconRegistry.IconFormat.SVG));
+    }
+
+    function test_getBestChainIcon() public {
+        vm.startPrank(owner);
+        registry.setIcon("chains/best", VALID_PNG, 64, 64);
+        registry.setSvgIcon("chains/best", VALID_SVG, 64, 64);
+        registry.mapChain(100, "chains/best");
+        vm.stopPrank();
+
+        (bytes memory data, IconRegistry.IconFormat format) = registry.getBestChainIcon(100);
+
+        assertEq(data, VALID_SVG);
+        assertEq(uint8(format), uint8(IconRegistry.IconFormat.SVG));
+    }
+
+    // ========== AVAILABLE FORMATS TESTS (V2) ==========
+
+    function test_getAvailableFormats_both() public {
+        vm.startPrank(owner);
+        registry.setIcon("test/formats", VALID_PNG, 64, 64);
+        registry.setSvgIcon("test/formats", VALID_SVG, 64, 64);
+        vm.stopPrank();
+
+        (bool hasPng, bool hasSvg) = registry.getAvailableFormats(keccak256("test/formats"));
+        assertTrue(hasPng);
+        assertTrue(hasSvg);
+    }
+
+    function test_getAvailableFormats_pngOnly() public {
+        vm.prank(owner);
+        registry.setIcon("test/png-only", VALID_PNG, 64, 64);
+
+        (bool hasPng, bool hasSvg) = registry.getAvailableFormats(keccak256("test/png-only"));
+        assertTrue(hasPng);
+        assertFalse(hasSvg);
+    }
+
+    function test_getAvailableFormats_svgOnly() public {
+        vm.prank(owner);
+        registry.setSvgIcon("test/svg-only", VALID_SVG, 64, 64);
+
+        (bool hasPng, bool hasSvg) = registry.getAvailableFormats(keccak256("test/svg-only"));
+        assertFalse(hasPng);
+        assertTrue(hasSvg);
+    }
+
+    function test_getAvailableFormats_none() public {
+        (bool hasPng, bool hasSvg) = registry.getAvailableFormats(keccak256("missing"));
+        assertFalse(hasPng);
+        assertFalse(hasSvg);
+    }
+
+    // ========== SVG SLUG ENUMERATION TESTS (V2) ==========
+
+    function test_totalIcons_includesSvg() public {
+        assertEq(registry.totalIcons(), 0);
+
+        vm.startPrank(owner);
+        registry.setIcon("png1", VALID_PNG, 64, 64);
+        assertEq(registry.totalIcons(), 1);
+
+        registry.setSvgIcon("svg1", VALID_SVG, 64, 64);
+        assertEq(registry.totalIcons(), 2);
+
+        // Adding SVG to existing PNG slug should not increase count
+        registry.setSvgIcon("png1", VALID_SVG, 64, 64);
+        assertEq(registry.totalIcons(), 2);
+
+        vm.stopPrank();
     }
 
     // ========== HELPER FUNCTIONS ==========
