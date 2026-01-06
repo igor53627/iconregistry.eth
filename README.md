@@ -1,5 +1,7 @@
 # iconregistry.eth
 
+> **Beta / Proof of Concept** - This project is experimental and under active development. The contract is deployed on mainnet but should be considered beta software. APIs and mappings may change.
+
 An on-chain, upgradeable repository for PNG icons, designed to provide a canonical source of visual assets for dApps and wallets.
 
 **Demo:** https://igor53627.github.io/iconregistry.eth/
@@ -164,6 +166,18 @@ Operational guidelines (followed by this repository):
 ## Security
 
 See [audits/](audits/) for security audit reports and responses.
+
+### Ownership & Key Custody
+
+The IconRegistry contract uses a single-owner model with the following characteristics:
+
+**Owner Address Type:** The contract owner is an Externally Owned Account (EOA), not a multisig. This means a single private key controls all administrative functions including icon uploads, token/chain mappings, and contract upgrades.
+
+**Key Custody:** The owner key is secured via [Turnkey](https://www.turnkey.com/), a secure key management infrastructure. Turnkey provides hardware-backed key storage with policy controls, reducing the risk of key compromise compared to traditional hot wallets. Deployment and administrative transactions are executed through GitHub Actions workflows that integrate with Turnkey's signing API.
+
+**Trust Implications:** Users should understand that this is a centralized registry where the owner has full control over content and upgrades. There is no timelock, multisig, or governance mechanism. The registry is designed for convenience and privacy benefits, not trustlessness. If the owner key were compromised, an attacker could upload arbitrary content, modify mappings, or upgrade the contract to malicious logic.
+
+**Future Considerations:** As the project matures beyond beta, governance improvements such as timelocks, multisig ownership, or on-chain governance may be considered to reduce single-point-of-failure risks.
 
 ## Alternatives
 
