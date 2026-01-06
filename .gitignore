@@ -26,3 +26,7 @@ broadcast/
 scripts/deploy.ts
 scripts/Deploy.s.sol
 .amp/
+
+# Web3icons sync output (large, regeneratable)
+icons-svg/
+web3icons-manifest.json
