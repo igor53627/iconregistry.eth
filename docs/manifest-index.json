@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-05T04:19:51.259Z",
+  "generatedAt": "2026-01-06T04:04:25.174Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11101,
+    "total": 11110,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
-      "pegged": 351,
-      "protocols": 9185
+      "pegged": 352,
+      "protocols": 9193
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10693
+    "unmapped": 10702
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1963,6 +1963,7 @@
       "protocols/alphagrowth",
       "protocols/alphalend",
       "protocols/alphaping",
+      "protocols/alphaq",
       "protocols/alphasec-bridge",
       "protocols/alphasec-spot",
       "protocols/alphasharks",
@@ -2650,6 +2651,7 @@
       "protocols/biokript",
       "protocols/biquid",
       "protocols/bishares",
+      "protocols/bisonfi",
       "protocols/bisq",
       "protocols/biswap",
       "protocols/biswap-v2",
@@ -3052,6 +3054,7 @@
       "protocols/cardano",
       "protocols/cardstarter",
       "protocols/caribou-finance",
+      "protocols/carina",
       "protocols/carina-aggregator",
       "protocols/carmine-options",
       "protocols/carrot",
@@ -5915,6 +5918,7 @@
       "protocols/jupiter-staked-sol",
       "protocols/jupiter-studio",
       "protocols/jupiter-swap",
+      "protocols/jupusd",
       "protocols/juris-protocol",
       "protocols/just-yield",
       "protocols/justbet",
@@ -8974,6 +8978,8 @@
       "protocols/solend",
       "protocols/solera",
       "protocols/solfi",
+      "protocols/solfi-v1",
+      "protocols/solfi-v2",
       "protocols/solfire",
       "protocols/solhero",
       "protocols/solid",
@@ -10414,6 +10420,7 @@
       "protocols/warp-finance",
       "protocols/warp-protocol",
       "protocols/warpgate",
+      "protocols/warpx",
       "protocols/wasabee",
       "protocols/wasabi",
       "protocols/wasabix",
@@ -10450,6 +10457,7 @@
       "protocols/weero",
       "protocols/weero-v2",
       "protocols/weero-v3",
+      "protocols/weex",
       "protocols/wefi",
       "protocols/weft-finance",
       "protocols/weft-v1",
@@ -11017,6 +11025,7 @@
       "pegged/iron-bank-euro",
       "pegged/iusd",
       "pegged/jigsaw-usd",
+      "pegged/jupusd",
       "pegged/just-stablecoin",
       "pegged/kei-stablecoin",
       "pegged/knox-dollar",

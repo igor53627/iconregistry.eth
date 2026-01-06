@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-05T04:19:51.259Z",
+  "generatedAt": "2026-01-06T04:04:25.174Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11101,
+    "total": 11110,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1385,
-      "pegged": 351,
-      "protocols": 9185
+      "pegged": 352,
+      "protocols": 9193
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10693
+    "unmapped": 10702
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -20287,6 +20287,15 @@
       ]
     },
     {
+      "slug": "pegged/jupusd",
+      "slugHash": "0xdc8d04ebd39c0b15a03c409207eee4565ecbf7142c073e04fc3ad95695cef553",
+      "category": "pegged",
+      "name": "Jupusd",
+      "keywords": [
+        "jupusd"
+      ]
+    },
+    {
       "slug": "pegged/just-stablecoin",
       "slugHash": "0xf8149a72d5d42f060671f7273d0b0f0c09f9c80f56d68b610030aed17ba079bd",
       "category": "pegged",
@@ -25734,6 +25743,15 @@
       "name": "Alphaping",
       "keywords": [
         "alphaping"
+      ]
+    },
+    {
+      "slug": "protocols/alphaq",
+      "slugHash": "0x07621be5ebd6503ae261940d87d6266fad3ac8da7f53926ff977f7d3cc02d12b",
+      "category": "protocols",
+      "name": "Alphaq",
+      "keywords": [
+        "alphaq"
       ]
     },
     {
@@ -33039,6 +33057,15 @@
       ]
     },
     {
+      "slug": "protocols/bisonfi",
+      "slugHash": "0x5dbd8516a325dea191ae1d4187b53c300818472b9f7db738350c4568e71acb03",
+      "category": "protocols",
+      "name": "Bisonfi",
+      "keywords": [
+        "bisonfi"
+      ]
+    },
+    {
       "slug": "protocols/bisq",
       "slugHash": "0x79f76c302c7666b6f5c3a259ae449e53b48dc3c8e7b46339d474285b823c754c",
       "category": "protocols",
@@ -37228,6 +37255,15 @@
         "caribou finance",
         "cariboufinance",
         "cf"
+      ]
+    },
+    {
+      "slug": "protocols/carina",
+      "slugHash": "0xcb88941beb490679652a89b58bd2b8e46a39428f5ba01d5722b8e38bcc2e9efe",
+      "category": "protocols",
+      "name": "Carina",
+      "keywords": [
+        "carina"
       ]
     },
     {
@@ -68174,6 +68210,15 @@
         "jupiter swap",
         "jupiterswap",
         "js"
+      ]
+    },
+    {
+      "slug": "protocols/jupusd",
+      "slugHash": "0x97b27675b0d35e48755b21c0585d62e646f10b2bca26a2feb8a6e5ddad98a552",
+      "category": "protocols",
+      "name": "Jupusd",
+      "keywords": [
+        "jupusd"
       ]
     },
     {
@@ -100481,6 +100526,30 @@
       ]
     },
     {
+      "slug": "protocols/solfi-v1",
+      "slugHash": "0x79751d0fd99d9c2dfe949d8874b4035a0ca2413ed3419612f0d820b2c8f6d169",
+      "category": "protocols",
+      "name": "Solfi V1",
+      "keywords": [
+        "solfi-v1",
+        "solfi v1",
+        "solfiv1",
+        "sv"
+      ]
+    },
+    {
+      "slug": "protocols/solfi-v2",
+      "slugHash": "0xe6e7b6b05468a41006fbd88d65d716ee6393f6e39084f73fe275cd759b8d34ac",
+      "category": "protocols",
+      "name": "Solfi V2",
+      "keywords": [
+        "solfi-v2",
+        "solfi v2",
+        "solfiv2",
+        "sv"
+      ]
+    },
+    {
       "slug": "protocols/solfire",
       "slugHash": "0x445973c0abe589548294a7eabceaa0673e7d6eab513e7cb7474a623c37a60051",
       "category": "protocols",
@@ -115691,6 +115760,15 @@
       ]
     },
     {
+      "slug": "protocols/warpx",
+      "slugHash": "0x7f7ab905b160fa4e709b2797dae4b9ec40ab992a8ac55aba27a03e0da4acb6fa",
+      "category": "protocols",
+      "name": "Warpx",
+      "keywords": [
+        "warpx"
+      ]
+    },
+    {
       "slug": "protocols/wasabee",
       "slugHash": "0xd82d2268fbb8d294355a367308b3e25be56e37e8bc9b237532dbad6c73811272",
       "category": "protocols",
@@ -116051,6 +116129,15 @@
         "weero v3",
         "weerov3",
         "wv"
+      ]
+    },
+    {
+      "slug": "protocols/weex",
+      "slugHash": "0x3df1305e14082ad6745a369650817670cc251204df056c896013fb4a79451534",
+      "category": "protocols",
+      "name": "Weex",
+      "keywords": [
+        "weex"
       ]
     },
     {
