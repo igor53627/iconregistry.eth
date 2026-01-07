@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-06T04:04:25.174Z",
+  "generatedAt": "2026-01-07T04:06:08.503Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11110,
+    "total": 11116,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1385,
-      "pegged": 352,
-      "protocols": 9193
+      "chains": 1386,
+      "pegged": 353,
+      "protocols": 9197
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10702
+    "unmapped": 10708
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -899,6 +899,7 @@
       "chains/rsz_stack",
       "chains/rsz_stacks",
       "chains/rsz_stafi",
+      "chains/rsz_standx",
       "chains/rsz_starcoin",
       "chains/rsz_stargaze",
       "chains/rsz_starknet",
@@ -5717,6 +5718,8 @@
       "protocols/inertia-bridge",
       "protocols/inferno-swap",
       "protocols/infinex",
+      "protocols/infinex-perp",
+      "protocols/infinex-spot",
       "protocols/infinifi",
       "protocols/infinit",
       "protocols/infinite-trading-protocol",
@@ -8081,6 +8084,7 @@
       "protocols/posichain",
       "protocols/position-exchange",
       "protocols/positionexchange",
+      "protocols/possum-finance",
       "protocols/possum-labs",
       "protocols/possumlabs",
       "protocols/posttechsofi",
@@ -9252,6 +9256,7 @@
       "protocols/standard-protocol-somnia",
       "protocols/standard-spot-clob",
       "protocols/standcash",
+      "protocols/standx-perp",
       "protocols/staq",
       "protocols/star-shares",
       "protocols/starbank",
@@ -11042,6 +11047,7 @@
       "pegged/litusd",
       "pegged/lugh",
       "pegged/m-by-m0",
+      "pegged/macropod",
       "pegged/magic-internet-money",
       "pegged/magma-wen",
       "pegged/mai",

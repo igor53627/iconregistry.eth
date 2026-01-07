@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-06T04:04:25.174Z",
+  "generatedAt": "2026-01-07T04:06:08.503Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11110,
+    "total": 11116,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1385,
-      "pegged": 352,
-      "protocols": 9193
+      "chains": 1386,
+      "pegged": 353,
+      "protocols": 9197
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10702
+    "unmapped": 10708
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -9444,6 +9444,18 @@
         "stafi",
         "rsz-stafi",
         "rsz stafi"
+      ]
+    },
+    {
+      "slug": "chains/rsz_standx",
+      "slugHash": "0x03eafbec2427aca872278fffa2d28f6fa6eaabb6077fa41aa88ec9084fc1d7bc",
+      "category": "chains",
+      "name": "Standx",
+      "keywords": [
+        "rsz_standx",
+        "standx",
+        "rsz-standx",
+        "rsz standx"
       ]
     },
     {
@@ -20497,6 +20509,15 @@
           "address": "0x866a2bf4e572cbcf37d5071a7a58503bfb36be1b",
           "chainId": 1
         }
+      ]
+    },
+    {
+      "slug": "pegged/macropod",
+      "slugHash": "0x0207be190cdeb00e9aefce318de02be4f7dad57908f5c54ded002cc7c10f2140",
+      "category": "pegged",
+      "name": "Macropod",
+      "keywords": [
+        "macropod"
       ]
     },
     {
@@ -66049,6 +66070,30 @@
       ]
     },
     {
+      "slug": "protocols/infinex-perp",
+      "slugHash": "0x355c0f1d8ad8dbde4e9f5ea5b26cf65752568c1de6d2076bced0996b92a0ce02",
+      "category": "protocols",
+      "name": "Infinex Perp",
+      "keywords": [
+        "infinex-perp",
+        "infinex perp",
+        "infinexperp",
+        "ip"
+      ]
+    },
+    {
+      "slug": "protocols/infinex-spot",
+      "slugHash": "0x7877adfadab258a9166adbd79c2ec0529c70e75aec32a13cb441e06538247f03",
+      "category": "protocols",
+      "name": "Infinex Spot",
+      "keywords": [
+        "infinex-spot",
+        "infinex spot",
+        "infinexspot",
+        "is"
+      ]
+    },
+    {
       "slug": "protocols/infinifi",
       "slugHash": "0x8142aaba6c9f8c4326c67ef361efe76c44c85df456eeda72a4c26a2803de17b1",
       "category": "protocols",
@@ -91136,6 +91181,18 @@
       ]
     },
     {
+      "slug": "protocols/possum-finance",
+      "slugHash": "0x17ffc656f3990885a7aae368729e451174d3bd622e3d60e95d77767ed2dbd359",
+      "category": "protocols",
+      "name": "Possum Finance",
+      "keywords": [
+        "possum-finance",
+        "possum finance",
+        "possumfinance",
+        "pf"
+      ]
+    },
+    {
       "slug": "protocols/possum-labs",
       "slugHash": "0x664f9a32f9d17170923e63823b951dc296085a0b9b200a9d4b1b81cb8daa06d5",
       "category": "protocols",
@@ -103442,6 +103499,18 @@
       "name": "Standcash",
       "keywords": [
         "standcash"
+      ]
+    },
+    {
+      "slug": "protocols/standx-perp",
+      "slugHash": "0xe65a38372da9afa2e868650dc0dcea15df0c5ac9684232d51d973a4b995035b6",
+      "category": "protocols",
+      "name": "Standx Perp",
+      "keywords": [
+        "standx-perp",
+        "standx perp",
+        "standxperp",
+        "sp"
       ]
     },
     {
