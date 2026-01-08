@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-07T04:06:08.503Z",
+  "generatedAt": "2026-01-08T04:05:37.468Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11116,
+    "total": 11123,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1386,
+      "chains": 1387,
       "pegged": 353,
-      "protocols": 9197
+      "protocols": 9203
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10708
+    "unmapped": 10715
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -7852,6 +7852,19 @@
       ],
       "chainMappings": [
         291
+      ]
+    },
+    {
+      "slug": "chains/rsz_orderly network",
+      "slugHash": "0x9825699bb0bb76279345cab82903b954ce121ba9c98b71b9b104484c4aa59d4a",
+      "category": "chains",
+      "name": "Orderly Network",
+      "keywords": [
+        "rsz_orderly network",
+        "orderly network",
+        "rsz-orderly network",
+        "rsz orderly network",
+        "on"
       ]
     },
     {
@@ -36655,6 +36668,15 @@
       ]
     },
     {
+      "slug": "protocols/bydfi",
+      "slugHash": "0x81037ba1e6af83444dc46660df17cc3c31ce8969f3443f83c0a7fa6c5ad022c3",
+      "category": "protocols",
+      "name": "Bydfi",
+      "keywords": [
+        "bydfi"
+      ]
+    },
+    {
       "slug": "protocols/byreal",
       "slugHash": "0xe4cb792dc61a0148a849ebbb444f878d431aa693b757df374ed9c213fb4902ee",
       "category": "protocols",
@@ -61590,6 +61612,15 @@
         "growth defi",
         "growthdefi",
         "gd"
+      ]
+    },
+    {
+      "slug": "protocols/groypfi",
+      "slugHash": "0xbc04bf1de8cdf05eaef20386e4f80832d680215c3ea311594b05cc52cc7a3307",
+      "category": "protocols",
+      "name": "Groypfi",
+      "keywords": [
+        "groypfi"
       ]
     },
     {
@@ -88975,6 +89006,15 @@
       ]
     },
     {
+      "slug": "protocols/peridot",
+      "slugHash": "0x0e193905031a164d10d155ec430b507c9c8813aad956966681197bdd35b4f584",
+      "category": "protocols",
+      "name": "Peridot",
+      "keywords": [
+        "peridot"
+      ]
+    },
+    {
       "slug": "protocols/perion",
       "slugHash": "0x75a4d89ad0168507567507bbec4bd9035901968db609887f8be7ee61fe3e0e8d",
       "category": "protocols",
@@ -97043,6 +97083,39 @@
       "name": "Sakeperp",
       "keywords": [
         "sakeperp"
+      ]
+    },
+    {
+      "slug": "protocols/sakuraswap",
+      "slugHash": "0x601bfbbdf09a3cd897f043fa15e1f78fa2f21e5c98556f030dd9ed38cd55cf07",
+      "category": "protocols",
+      "name": "Sakuraswap",
+      "keywords": [
+        "sakuraswap"
+      ]
+    },
+    {
+      "slug": "protocols/sakuraswap-amm",
+      "slugHash": "0x53ac93274988be70ea99d0758c1e48969be22a0f3eaa86d19cdef4406bfd78d6",
+      "category": "protocols",
+      "name": "Sakuraswap Amm",
+      "keywords": [
+        "sakuraswap-amm",
+        "sakuraswap amm",
+        "sakuraswapamm",
+        "sa"
+      ]
+    },
+    {
+      "slug": "protocols/sakuraswap-clmm",
+      "slugHash": "0x22228adce9a2106403ece62192b14f6f772ef7e1552851aca6a53d40709e9d04",
+      "category": "protocols",
+      "name": "Sakuraswap Clmm",
+      "keywords": [
+        "sakuraswap-clmm",
+        "sakuraswap clmm",
+        "sakuraswapclmm",
+        "sc"
       ]
     },
     {

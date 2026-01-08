@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-07T04:06:08.503Z",
+  "generatedAt": "2026-01-08T04:05:37.468Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11116,
+    "total": 11123,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1386,
+      "chains": 1387,
       "pegged": 353,
-      "protocols": 9197
+      "protocols": 9203
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10708
+    "unmapped": 10715
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -775,6 +775,7 @@
       "chains/rsz_optopia",
       "chains/rsz_oraichain",
       "chains/rsz_orderly",
+      "chains/rsz_orderly network",
       "chains/rsz_ore",
       "chains/rsz_osmosis",
       "chains/rsz_ox-chain",
@@ -2994,6 +2995,7 @@
       "protocols/bxh",
       "protocols/bybit",
       "protocols/bybit-staked-sol",
+      "protocols/bydfi",
       "protocols/byreal",
       "protocols/bytom",
       "protocols/bytomsidechain",
@@ -5293,6 +5295,7 @@
       "protocols/grovecoin",
       "protocols/growihf",
       "protocols/growth-defi",
+      "protocols/groypfi",
       "protocols/grvt",
       "protocols/grvt-bridge",
       "protocols/grvt-perps",
@@ -7875,6 +7878,7 @@
       "protocols/perfect-pool",
       "protocols/perfectswap",
       "protocols/peri-finance",
+      "protocols/peridot",
       "protocols/perion",
       "protocols/perlin",
       "protocols/perma-pod",
@@ -8639,6 +8643,9 @@
       "protocols/sakai-vault",
       "protocols/sakefinance",
       "protocols/sakeperp",
+      "protocols/sakuraswap",
+      "protocols/sakuraswap-amm",
+      "protocols/sakuraswap-clmm",
       "protocols/salem-finance",
       "protocols/salsa",
       "protocols/salsadex",
