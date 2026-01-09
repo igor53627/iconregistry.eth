@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-08T04:05:37.468Z",
+  "generatedAt": "2026-01-09T04:04:48.603Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11123,
+    "total": 11127,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1387,
       "pegged": 353,
-      "protocols": 9203
+      "protocols": 9207
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10715
+    "unmapped": 10719
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -44352,6 +44352,15 @@
       ]
     },
     {
+      "slug": "protocols/chopcorp",
+      "slugHash": "0x6db05062e732a2ef410c292f091ddb0858db38a3c5158e627b4505a1d40c955e",
+      "category": "protocols",
+      "name": "Chopcorp",
+      "keywords": [
+        "chopcorp"
+      ]
+    },
+    {
       "slug": "protocols/chromatic-protocol",
       "slugHash": "0x6a71ccbaeab98fe6239f4ee2592970e21e29c01d71a9694898b8238574011ef4",
       "category": "protocols",
@@ -47727,6 +47736,15 @@
       "name": "Curio",
       "keywords": [
         "curio"
+      ]
+    },
+    {
+      "slug": "protocols/currentx",
+      "slugHash": "0xc59de9d3d0a211939613aa746e6f1cbcb90e70b71cce49af0226e85ccb1ed824",
+      "category": "protocols",
+      "name": "Currentx",
+      "keywords": [
+        "currentx"
       ]
     },
     {
@@ -79920,6 +79938,15 @@
       ]
     },
     {
+      "slug": "protocols/mooncake",
+      "slugHash": "0x1b08f44b795deb24d939d226260c81cce42e3f8d03d93a2521fada54b14e58cb",
+      "category": "protocols",
+      "name": "Mooncake",
+      "keywords": [
+        "mooncake"
+      ]
+    },
+    {
       "slug": "protocols/mooncake-finance",
       "slugHash": "0x1965feed3f2c44379c2d38824959c439a295c5e17d32033cb6aba62485838960",
       "category": "protocols",
@@ -100449,6 +100476,15 @@
         "soda protocol",
         "sodaprotocol",
         "sp"
+      ]
+    },
+    {
+      "slug": "protocols/sodex",
+      "slugHash": "0x68992112ca47a54aafce293cbc1fb6ccd0873eed1afc0382991cad0373650510",
+      "category": "protocols",
+      "name": "Sodex",
+      "keywords": [
+        "sodex"
       ]
     },
     {

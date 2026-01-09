@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-08T04:05:37.468Z",
+  "generatedAt": "2026-01-09T04:04:48.603Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11123,
+    "total": 11127,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1387,
       "pegged": 353,
-      "protocols": 9203
+      "protocols": 9207
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10715
+    "unmapped": 10719
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3651,6 +3651,7 @@
       "protocols/chocoinu",
       "protocols/chocoinu-avax",
       "protocols/choice-exchange",
+      "protocols/chopcorp",
       "protocols/chromatic-protocol",
       "protocols/chronicle",
       "protocols/chronos",
@@ -3970,6 +3971,7 @@
       "protocols/cubo",
       "protocols/cupid-farm",
       "protocols/curio",
+      "protocols/currentx",
       "protocols/curvance",
       "protocols/curve",
       "protocols/curve-dex",
@@ -7021,6 +7023,7 @@
       "protocols/moonbase-alpha",
       "protocols/moonbeam",
       "protocols/moonbeam-foundation",
+      "protocols/mooncake",
       "protocols/mooncake-finance",
       "protocols/moonchain",
       "protocols/moonchain-swap",
@@ -8969,6 +8972,7 @@
       "protocols/sociogram",
       "protocols/socket-protocol",
       "protocols/soda-protocol",
+      "protocols/sodex",
       "protocols/sofa.org",
       "protocols/sofaorg",
       "protocols/sohei",
