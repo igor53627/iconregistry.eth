@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-09T04:04:48.603Z",
+  "generatedAt": "2026-01-10T03:58:36.952Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11127,
+    "total": 11131,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1387,
       "pegged": 353,
-      "protocols": 9207
+      "protocols": 9211
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10719
+    "unmapped": 10723
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -2464,6 +2464,7 @@
       "protocols/baptswap-v21",
       "protocols/barnbridge",
       "protocols/barnswap",
+      "protocols/barterswap",
       "protocols/baryon-network",
       "protocols/bas3d",
       "protocols/base-app",
@@ -3839,6 +3840,7 @@
       "protocols/corepound",
       "protocols/coresky",
       "protocols/coreswap",
+      "protocols/corex-markets",
       "protocols/corex-network",
       "protocols/corgi-finance",
       "protocols/corgiswap",
@@ -8357,6 +8359,7 @@
       "protocols/rarible",
       "protocols/rarify",
       "protocols/ratex",
+      "protocols/ratex-dex",
       "protocols/ratio-finance",
       "protocols/ravcube-finance",
       "protocols/raven",
@@ -10116,6 +10119,7 @@
       "protocols/unit-protocol",
       "protocols/unitas",
       "protocols/unite-finance",
+      "protocols/united-stables",
       "protocols/unitrade",
       "protocols/unitus",
       "protocols/universal-bridge",

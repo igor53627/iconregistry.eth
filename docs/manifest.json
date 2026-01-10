@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-09T04:04:48.603Z",
+  "generatedAt": "2026-01-10T03:58:36.952Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11127,
+    "total": 11131,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1387,
       "pegged": 353,
-      "protocols": 9207
+      "protocols": 9211
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10719
+    "unmapped": 10723
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -31095,6 +31095,15 @@
       ]
     },
     {
+      "slug": "protocols/barterswap",
+      "slugHash": "0xc75ff09f15acf83a66f998364622e528719493d7aa610a0932eae8e68cc25d84",
+      "category": "protocols",
+      "name": "Barterswap",
+      "keywords": [
+        "barterswap"
+      ]
+    },
+    {
       "slug": "protocols/baryon-network",
       "slugHash": "0xcf0a9fb42bf0839c984acf527119396eb6a39fd5852133aeeacc17ee102cf3a8",
       "category": "protocols",
@@ -46325,6 +46334,18 @@
       "name": "Coreswap",
       "keywords": [
         "coreswap"
+      ]
+    },
+    {
+      "slug": "protocols/corex-markets",
+      "slugHash": "0xd6ed5d2ebae03eef7c3f7a26b96497e41c58c213be111ae06175eb32d8b5a2ed",
+      "category": "protocols",
+      "name": "Corex Markets",
+      "keywords": [
+        "corex-markets",
+        "corex markets",
+        "corexmarkets",
+        "cm"
       ]
     },
     {
@@ -94035,6 +94056,18 @@
       ]
     },
     {
+      "slug": "protocols/ratex-dex",
+      "slugHash": "0x96f661fbd4d38c30d9e51929bd358870ca406b98aee0ae45c0f4197d6e8d3527",
+      "category": "protocols",
+      "name": "Ratex Dex",
+      "keywords": [
+        "ratex-dex",
+        "ratex dex",
+        "ratexdex",
+        "rd"
+      ]
+    },
+    {
       "slug": "protocols/ratio-finance",
       "slugHash": "0x47f19ef3d240924abfa9d2a6c8db1547a89afd457a61b76b79152d7dcef7f808",
       "category": "protocols",
@@ -112573,6 +112606,18 @@
         "unite finance",
         "unitefinance",
         "uf"
+      ]
+    },
+    {
+      "slug": "protocols/united-stables",
+      "slugHash": "0x1fee93057daf6a43e0e0a2f087cf3385186904a202b73b577bf62678ebb4d408",
+      "category": "protocols",
+      "name": "United Stables",
+      "keywords": [
+        "united-stables",
+        "united stables",
+        "unitedstables",
+        "us"
       ]
     },
     {
