@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-10T03:58:36.952Z",
+  "generatedAt": "2026-01-11T04:13:48.781Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11131,
+    "total": 11132,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1387,
-      "pegged": 353,
+      "pegged": 354,
       "protocols": 9211
     },
     "mapped": {
@@ -17,7 +17,7 @@
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10723
+    "unmapped": 10724
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -22513,6 +22513,15 @@
         "usdx money usdx",
         "usdxmoneyusdx",
         "umu"
+      ]
+    },
+    {
+      "slug": "pegged/use",
+      "slugHash": "0x106c1636758dfbc0819e3523271da1bb83ba0c6f7a80e549f9ef2a5d3856aa32",
+      "category": "pegged",
+      "name": "Use",
+      "keywords": [
+        "use"
       ]
     },
     {
