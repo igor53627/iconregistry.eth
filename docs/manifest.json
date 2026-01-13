@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-12T04:13:25.184Z",
+  "generatedAt": "2026-01-13T04:06:08.162Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11132,
+    "total": 11152,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1387,
+      "chains": 1388,
       "pegged": 354,
-      "protocols": 9211
+      "protocols": 9230
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10724
+    "unmapped": 10744
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1948,6 +1948,18 @@
         "alphasec",
         "rsz-alphasec",
         "rsz alphasec"
+      ]
+    },
+    {
+      "slug": "chains/rsz_althea",
+      "slugHash": "0x124762b40dccb90a0dbce057ecbeb4428bbd0a1773c74105da4380a04da12ca9",
+      "category": "chains",
+      "name": "Althea",
+      "keywords": [
+        "rsz_althea",
+        "althea",
+        "rsz-althea",
+        "rsz althea"
       ]
     },
     {
@@ -25900,6 +25912,18 @@
       ]
     },
     {
+      "slug": "protocols/althea-dex",
+      "slugHash": "0x45a52c30e80a18708d014dc78b171482926f265eb74113f88e62c129bcaa3448",
+      "category": "protocols",
+      "name": "Althea Dex",
+      "keywords": [
+        "althea-dex",
+        "althea dex",
+        "altheadex",
+        "ad"
+      ]
+    },
+    {
       "slug": "protocols/altitude",
       "slugHash": "0xf80128c548407950e3d2bbd1e36bc7569f03418619961a3c7c415f17418b4886",
       "category": "protocols",
@@ -30249,6 +30273,18 @@
       ]
     },
     {
+      "slug": "protocols/babydoge-bridge",
+      "slugHash": "0xcf80f91b1e1f1303d5300efa1744738c708fda8cd304ecf40b0b2fcee4f720ce",
+      "category": "protocols",
+      "name": "Babydoge Bridge",
+      "keywords": [
+        "babydoge-bridge",
+        "babydoge bridge",
+        "babydogebridge",
+        "bb"
+      ]
+    },
+    {
       "slug": "protocols/babydoge-perps",
       "slugHash": "0x239cb490e423827bcc39776a95f9d3560693f30d463d4c810dc05ca482269ec4",
       "category": "protocols",
@@ -34500,6 +34536,18 @@
         "blue-planet",
         "blue planet",
         "blueplanet",
+        "bp"
+      ]
+    },
+    {
+      "slug": "protocols/blue-protocol",
+      "slugHash": "0xb05fe69e28a8853992b916865f8078dc672dad4a2fc86434a350a7a47c631b45",
+      "category": "protocols",
+      "name": "Blue Protocol",
+      "keywords": [
+        "blue-protocol",
+        "blue protocol",
+        "blueprotocol",
         "bp"
       ]
     },
@@ -44280,6 +44328,18 @@
       ]
     },
     {
+      "slug": "protocols/chimpions-sol",
+      "slugHash": "0xc9c2ff06e040c20403e55ecaa657b16e274655a07c6f523749b0e91cc9695df1",
+      "category": "protocols",
+      "name": "Chimpions Sol",
+      "keywords": [
+        "chimpions-sol",
+        "chimpions sol",
+        "chimpionssol",
+        "cs"
+      ]
+    },
+    {
       "slug": "protocols/chimpx-ai",
       "slugHash": "0x23cacce06afb8a2b9439f38cf276513df2d1d707dd49dd24b81a48da48c18976",
       "category": "protocols",
@@ -49395,6 +49455,18 @@
       ]
     },
     {
+      "slug": "protocols/deli-swap",
+      "slugHash": "0x607d051480401c55cf95c5aafb248ead8df418487dc6b4d7ec6646f2ab00d037",
+      "category": "protocols",
+      "name": "Deli Swap",
+      "keywords": [
+        "deli-swap",
+        "deli swap",
+        "deliswap",
+        "ds"
+      ]
+    },
+    {
       "slug": "protocols/delphi-digital",
       "slugHash": "0xf651f0b58a82929f38a15a719ad5410b6990cf015f04bf0441a468753d50c285",
       "category": "protocols",
@@ -50259,6 +50331,30 @@
       "name": "Dflow",
       "keywords": [
         "dflow"
+      ]
+    },
+    {
+      "slug": "protocols/dflow-aggregator",
+      "slugHash": "0x7b62b4a65b11d6ef52443898d98807976d120fb57bc56f7479fcec80228d2ed9",
+      "category": "protocols",
+      "name": "Dflow Aggregator",
+      "keywords": [
+        "dflow-aggregator",
+        "dflow aggregator",
+        "dflowaggregator",
+        "da"
+      ]
+    },
+    {
+      "slug": "protocols/dflow-prediction-market",
+      "slugHash": "0xd543140759320a0908a53012a25c20d62935202563c310e57e6325cf8f30ee2c",
+      "category": "protocols",
+      "name": "Dflow Prediction Market",
+      "keywords": [
+        "dflow-prediction-market",
+        "dflow prediction market",
+        "dflowpredictionmarket",
+        "dpm"
       ]
     },
     {
@@ -60092,6 +60188,18 @@
       ]
     },
     {
+      "slug": "protocols/ghost-protocol",
+      "slugHash": "0xd9758134a19b90562eb2648a75347b1e73904f561638e7b24cd209cdf25ad39f",
+      "category": "protocols",
+      "name": "Ghost Protocol",
+      "keywords": [
+        "ghost-protocol",
+        "ghost protocol",
+        "ghostprotocol",
+        "gp"
+      ]
+    },
+    {
       "slug": "protocols/ghostex",
       "slugHash": "0x896c625b26e16a6b1d428e1ed8ef2d0cb8c3e7d26c1a58dc2d892f3633aa66c2",
       "category": "protocols",
@@ -60570,6 +60678,15 @@
         "go ethereum",
         "goethereum",
         "ge"
+      ]
+    },
+    {
+      "slug": "protocols/goapt",
+      "slugHash": "0xd4f010bacafd6a0130158d0085fd40bb16c32cc119b3031adb427dcf385f5ef1",
+      "category": "protocols",
+      "name": "Goapt",
+      "keywords": [
+        "goapt"
       ]
     },
     {
@@ -62408,6 +62525,15 @@
         "hanji protocol",
         "hanjiprotocol",
         "hp"
+      ]
+    },
+    {
+      "slug": "protocols/harbor",
+      "slugHash": "0x9ae94dd514f86990079c3c464de70dec47ef72f4bf9788e13f20b64ec5b091a9",
+      "category": "protocols",
+      "name": "Harbor",
+      "keywords": [
+        "harbor"
       ]
     },
     {
@@ -76620,6 +76746,15 @@
       ]
     },
     {
+      "slug": "protocols/maxbid",
+      "slugHash": "0x0e273a3cf64c42314621fa0a56d7fb89c673118a6514a440c8c20097d584a06c",
+      "category": "protocols",
+      "name": "Maxbid",
+      "keywords": [
+        "maxbid"
+      ]
+    },
+    {
       "slug": "protocols/maximizer",
       "slugHash": "0x7349a5bda1916203e28d47bd3ba0e963e7413cf736e6f86d911a0eb9f663c1e8",
       "category": "protocols",
@@ -84475,6 +84610,15 @@
         "okieswap v3",
         "okieswapv3",
         "ov"
+      ]
+    },
+    {
+      "slug": "protocols/oklong",
+      "slugHash": "0x6e4c75facb24d2679d11c23edcd9fa1d1285b81c64057ec22f7f40f394ccede9",
+      "category": "protocols",
+      "name": "Oklong",
+      "keywords": [
+        "oklong"
       ]
     },
     {
@@ -92562,6 +92706,15 @@
       ]
     },
     {
+      "slug": "protocols/pumex",
+      "slugHash": "0xac74ee0131416fc1a59d8e8c124f603fffc72a4c8b57666d61fc52f4d28e636b",
+      "category": "protocols",
+      "name": "Pumex",
+      "keywords": [
+        "pumex"
+      ]
+    },
+    {
       "slug": "protocols/pump",
       "slugHash": "0x58219531ca06ac39a165ece87af41890a66b260e349a8daeab2bc1ace121ced3",
       "category": "protocols",
@@ -100281,6 +100434,39 @@
       ]
     },
     {
+      "slug": "protocols/snap",
+      "slugHash": "0xe519d0356438fe65840f546cfa783076c44d6b787fa753031abe16a070ff25e4",
+      "category": "protocols",
+      "name": "Snap",
+      "keywords": [
+        "snap"
+      ]
+    },
+    {
+      "slug": "protocols/snap-v2",
+      "slugHash": "0x58cb8d7e597818a22032c4245ca4e0a24ae8f84b392860b312cbf47cfb4b763f",
+      "category": "protocols",
+      "name": "Snap V2",
+      "keywords": [
+        "snap-v2",
+        "snap v2",
+        "snapv2",
+        "sv"
+      ]
+    },
+    {
+      "slug": "protocols/snap-v3",
+      "slugHash": "0x1b5e61b0a17debbd2401e9c7fc0456bc99c329c52928c9c6f89b4fde180155c3",
+      "category": "protocols",
+      "name": "Snap V3",
+      "keywords": [
+        "snap-v3",
+        "snap v3",
+        "snapv3",
+        "sv"
+      ]
+    },
+    {
       "slug": "protocols/snapshot",
       "slugHash": "0xa6917fefb81eb01cf4a1b518d8c21282c078d7fb8214844238cd8b0f8e2b23f7",
       "category": "protocols",
@@ -103650,6 +103836,18 @@
       "name": "Standcash",
       "keywords": [
         "standcash"
+      ]
+    },
+    {
+      "slug": "protocols/standx-bridge",
+      "slugHash": "0x2c5efe45100aa4d388f2dd4911093afc9745414db67c098f7d78693ae20d8ed4",
+      "category": "protocols",
+      "name": "Standx Bridge",
+      "keywords": [
+        "standx-bridge",
+        "standx bridge",
+        "standxbridge",
+        "sb"
       ]
     },
     {
@@ -107433,6 +107631,18 @@
       ]
     },
     {
+      "slug": "protocols/syscall-sdk",
+      "slugHash": "0xfdbc69e6327a7506287d20d415bd5b30772557ce1570facdf9ad1487b4cfa8c2",
+      "category": "protocols",
+      "name": "Syscall Sdk",
+      "keywords": [
+        "syscall-sdk",
+        "syscall sdk",
+        "syscallsdk",
+        "ss"
+      ]
+    },
+    {
       "slug": "protocols/syscoin",
       "slugHash": "0x1e22d3683520766e4093e43802b3a39914c78dcb55b2743eb97415fc62da0c83",
       "category": "protocols",
@@ -108486,6 +108696,15 @@
       "name": "Tenx",
       "keywords": [
         "tenx"
+      ]
+    },
+    {
+      "slug": "protocols/tephra",
+      "slugHash": "0x1d91d63678a7baa2266904b5c545acf7fe15a577a8736ed1fe6418802ab40144",
+      "category": "protocols",
+      "name": "Tephra",
+      "keywords": [
+        "tephra"
       ]
     },
     {
