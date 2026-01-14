@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-13T04:06:08.162Z",
+  "generatedAt": "2026-01-14T04:12:05.575Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11152,
+    "total": 11157,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1388,
-      "pegged": 354,
-      "protocols": 9230
+      "chains": 1389,
+      "pegged": 355,
+      "protocols": 9233
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10744
+    "unmapped": 10749
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -8050,6 +8050,18 @@
         "penumbra",
         "rsz-penumbra",
         "rsz penumbra"
+      ]
+    },
+    {
+      "slug": "chains/rsz_pepu",
+      "slugHash": "0x7940e6f07b66b87b23d5de60f521cf5488b260bd33a12ae34512e18af7943941",
+      "category": "chains",
+      "name": "Pepu",
+      "keywords": [
+        "rsz_pepu",
+        "pepu",
+        "rsz-pepu",
+        "rsz pepu"
       ]
     },
     {
@@ -19904,6 +19916,18 @@
           "address": "0xcacd6fd266af91b8aed52accc382b4e165586e29",
           "chainId": 1
         }
+      ]
+    },
+    {
+      "slug": "pegged/fuse-dollar-v3",
+      "slugHash": "0x81a536af2a79f04ef4d046f6b830cd6d91b43b3dac099888b9386fa0f251710d",
+      "category": "pegged",
+      "name": "Fuse Dollar V3",
+      "keywords": [
+        "fuse-dollar-v3",
+        "fuse dollar v3",
+        "fusedollarv3",
+        "fdv"
       ]
     },
     {
@@ -72351,6 +72375,15 @@
       ]
     },
     {
+      "slug": "protocols/lendao",
+      "slugHash": "0x50a085feef370d76ee96dfa328b05d505b38bf03f1599a6a76fb5bf345da5c40",
+      "category": "protocols",
+      "name": "Lendao",
+      "keywords": [
+        "lendao"
+      ]
+    },
+    {
       "slug": "protocols/lendexe-finance",
       "slugHash": "0xb6c6d803aab7404e43075e15ce1e53a5fe5829a101833207cac9a8d3f6effa86",
       "category": "protocols",
@@ -82542,6 +82575,18 @@
       ]
     },
     {
+      "slug": "protocols/neura-vaults",
+      "slugHash": "0xc5feacd89ce876b277398aad53ef03a5db2da15ba49eccb24bc59efae00b2aa5",
+      "category": "protocols",
+      "name": "Neura Vaults",
+      "keywords": [
+        "neura-vaults",
+        "neura vaults",
+        "neuravaults",
+        "nv"
+      ]
+    },
+    {
       "slug": "protocols/neuralai",
       "slugHash": "0x489169186e90952c7c38460b56faf1cfbcdf92ef636a4d9359540106aab7a869",
       "category": "protocols",
@@ -86792,6 +86837,18 @@
       "name": "Osl",
       "keywords": [
         "osl"
+      ]
+    },
+    {
+      "slug": "protocols/osl-hk",
+      "slugHash": "0x5e9d2b12e43dd4801593078f7464d92ad94a19bb9e4d8a6f88086d0386572e00",
+      "category": "protocols",
+      "name": "Osl Hk",
+      "keywords": [
+        "osl-hk",
+        "osl hk",
+        "oslhk",
+        "oh"
       ]
     },
     {

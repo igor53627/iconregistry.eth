@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-13T04:06:08.162Z",
+  "generatedAt": "2026-01-14T04:12:05.575Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11152,
+    "total": 11157,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1388,
-      "pegged": 354,
-      "protocols": 9230
+      "chains": 1389,
+      "pegged": 355,
+      "protocols": 9233
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10744
+    "unmapped": 10749
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -791,6 +791,7 @@
       "chains/rsz_peaq",
       "chains/rsz_pego",
       "chains/rsz_penumbra",
+      "chains/rsz_pepu",
       "chains/rsz_perennial",
       "chains/rsz_persistence one",
       "chains/rsz_persistence-one",
@@ -6309,6 +6310,7 @@
       "protocols/lemonswap",
       "protocols/lemonx",
       "protocols/lemuria-finance",
+      "protocols/lendao",
       "protocols/lendexe-finance",
       "protocols/lendflare",
       "protocols/lendhub",
@@ -7269,6 +7271,7 @@
       "protocols/netweave-lending",
       "protocols/netweave-vaults",
       "protocols/network-nervous-system",
+      "protocols/neura-vaults",
       "protocols/neuralai",
       "protocols/neuron",
       "protocols/neurons-fund",
@@ -7673,6 +7676,7 @@
       "protocols/oro-finance",
       "protocols/oroswap",
       "protocols/osl",
+      "protocols/osl-hk",
       "protocols/osmosis-dex",
       "protocols/ostable",
       "protocols/ostium",
@@ -11031,6 +11035,7 @@
       "pegged/frax",
       "pegged/frax-price-index",
       "pegged/frax-usd",
+      "pegged/fuse-dollar-v3",
       "pegged/fxusd",
       "pegged/gai-stablecoin",
       "pegged/gaming-xp-usd",
