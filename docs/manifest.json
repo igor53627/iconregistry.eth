@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-14T04:12:05.575Z",
+  "generatedAt": "2026-01-15T04:07:31.575Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11157,
+    "total": 11163,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 355,
-      "protocols": 9233
+      "protocols": 9239
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10749
+    "unmapped": 10755
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -52447,6 +52447,18 @@
       ]
     },
     {
+      "slug": "protocols/ea-finance",
+      "slugHash": "0xaaf7b8595f971791830abb6af1b5d29701337bf2d27409511e9c41ae608b11b1",
+      "category": "protocols",
+      "name": "Ea Finance",
+      "keywords": [
+        "ea-finance",
+        "ea finance",
+        "eafinance",
+        "ef"
+      ]
+    },
+    {
       "slug": "protocols/eaglefi",
       "slugHash": "0x1235dc67c11f43b55897a8ef78b0b80c5d69714225fa5cc68386888e1a49bf2d",
       "category": "protocols",
@@ -82482,6 +82494,30 @@
       ]
     },
     {
+      "slug": "protocols/nest-v1",
+      "slugHash": "0x973df486a6836767efc9044a90ec96c5a20777f405153720e07e832d01e400d1",
+      "category": "protocols",
+      "name": "Nest V1",
+      "keywords": [
+        "nest-v1",
+        "nest v1",
+        "nestv1",
+        "nv"
+      ]
+    },
+    {
+      "slug": "protocols/nest-v2",
+      "slugHash": "0x6971632c27affe5e7b854c8d4ad6c59d0ce6ff40e8b90e9c7224d6479e0e9520",
+      "category": "protocols",
+      "name": "Nest V2",
+      "keywords": [
+        "nest-v2",
+        "nest v2",
+        "nestv2",
+        "nv"
+      ]
+    },
+    {
       "slug": "protocols/nested",
       "slugHash": "0xa8eda62ec4132284418b47ea73441ba211cdedda0e8b627d42acf6b0e72fc973",
       "category": "protocols",
@@ -94422,6 +94458,18 @@
       ]
     },
     {
+      "slug": "protocols/re-protocol-reusd",
+      "slugHash": "0xfdcfdce9c29f9f892e7c334210203cae8bde9eab95c5efe38c1dbfe76c23355f",
+      "category": "protocols",
+      "name": "Re Protocol Reusd",
+      "keywords": [
+        "re-protocol-reusd",
+        "re protocol reusd",
+        "reprotocolreusd",
+        "rpr"
+      ]
+    },
+    {
       "slug": "protocols/re.al-protocol",
       "slugHash": "0x92458066333be68d44773032be544b083a39416cfd69f855f474f3990b40ef06",
       "category": "protocols",
@@ -103920,6 +103968,18 @@
       ]
     },
     {
+      "slug": "protocols/standx-perps",
+      "slugHash": "0x5c67b65be11d37abb2807694c077d3b7598829e4f636d576acbfe5eb20e9d998",
+      "category": "protocols",
+      "name": "Standx Perps",
+      "keywords": [
+        "standx-perps",
+        "standx perps",
+        "standxperps",
+        "sp"
+      ]
+    },
+    {
       "slug": "protocols/staq",
       "slugHash": "0x56a5470733b4f65af2f64bc309cce6fb0974b1f8073d4f44886c8e604c1da4b5",
       "category": "protocols",
@@ -105645,6 +105705,18 @@
       "name": "Sunx",
       "keywords": [
         "sunx"
+      ]
+    },
+    {
+      "slug": "protocols/sunx-bridge",
+      "slugHash": "0x1598d325559f3520bb11a0569ae3233820e10149eb5e8901546802d0baad1147",
+      "category": "protocols",
+      "name": "Sunx Bridge",
+      "keywords": [
+        "sunx-bridge",
+        "sunx bridge",
+        "sunxbridge",
+        "sb"
       ]
     },
     {

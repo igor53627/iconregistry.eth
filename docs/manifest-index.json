@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-14T04:12:05.575Z",
+  "generatedAt": "2026-01-15T04:07:31.575Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11157,
+    "total": 11163,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 355,
-      "protocols": 9233
+      "protocols": 9239
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10749
+    "unmapped": 10755
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4421,6 +4421,7 @@
       "protocols/dystopia",
       "protocols/dzap",
       "protocols/e3",
+      "protocols/ea-finance",
       "protocols/eaglefi",
       "protocols/earlyfans",
       "protocols/earnifty",
@@ -7262,6 +7263,8 @@
       "protocols/nest-credit",
       "protocols/nest-protocol",
       "protocols/nest-protocol-staking",
+      "protocols/nest-v1",
+      "protocols/nest-v2",
       "protocols/nested",
       "protocols/nestfi",
       "protocols/nether.fi",
@@ -8391,6 +8394,7 @@
       "protocols/rbx",
       "protocols/rcpswap",
       "protocols/re",
+      "protocols/re-protocol-reusd",
       "protocols/re.al-protocol",
       "protocols/re7-labs",
       "protocols/reachme",
@@ -9293,6 +9297,7 @@
       "protocols/standcash",
       "protocols/standx-bridge",
       "protocols/standx-perp",
+      "protocols/standx-perps",
       "protocols/staq",
       "protocols/star-shares",
       "protocols/starbank",
@@ -9459,6 +9464,7 @@
       "protocols/sunswap-v2",
       "protocols/sunswap-v3",
       "protocols/sunx",
+      "protocols/sunx-bridge",
       "protocols/super-dca",
       "protocols/superboring",
       "protocols/superbots",
