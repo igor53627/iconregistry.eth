@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-15T04:07:31.575Z",
+  "generatedAt": "2026-01-16T04:05:21.792Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11163,
+    "total": 11169,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
-      "pegged": 355,
-      "protocols": 9239
+      "pegged": 357,
+      "protocols": 9243
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10755
+    "unmapped": 10761
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -21578,6 +21578,15 @@
       ]
     },
     {
+      "slug": "pegged/rwausdi",
+      "slugHash": "0xc5d55b1d02f253138ae999b7820cf53287d778ab4f75e0edc3f096d1d7a1cdc9",
+      "category": "pegged",
+      "name": "Rwausdi",
+      "keywords": [
+        "rwausdi"
+      ]
+    },
+    {
       "slug": "pegged/sable-coin",
       "slugHash": "0x2d9545e49c111b730fb2eb4c5a9230f1e261a1e56dfb82adace17b857fb374b5",
       "category": "pegged",
@@ -22111,6 +22120,18 @@
       "name": "Unitas",
       "keywords": [
         "unitas"
+      ]
+    },
+    {
+      "slug": "pegged/united-stables",
+      "slugHash": "0x945c6a6949082a8b79b556f51c5b43d0d95ad319f21cf5c3974c6ba0bb3acdc0",
+      "category": "pegged",
+      "name": "United Stables",
+      "keywords": [
+        "united-stables",
+        "united stables",
+        "unitedstables",
+        "us"
       ]
     },
     {
@@ -63467,6 +63488,18 @@
       ]
     },
     {
+      "slug": "protocols/hermes-v1",
+      "slugHash": "0xca6c19848ec1f60a0b18dccda3cac9d4bfeb560ed4cdb2fb63b98d5ae5404922",
+      "category": "protocols",
+      "name": "Hermes V1",
+      "keywords": [
+        "hermes-v1",
+        "hermes v1",
+        "hermesv1",
+        "hv"
+      ]
+    },
+    {
       "slug": "protocols/hermes-v2",
       "slugHash": "0x8d7c58331cddfb4fff717f77b48526f2fe6aacf7b28d5da387a28d5591b0c2f7",
       "category": "protocols",
@@ -72177,6 +72210,15 @@
       ]
     },
     {
+      "slug": "protocols/lazy",
+      "slugHash": "0x87a71ff4660565e5ca3657066827e7d050beec43d4f4c4903f9de9210a52ba11",
+      "category": "protocols",
+      "name": "Lazy",
+      "keywords": [
+        "lazy"
+      ]
+    },
+    {
       "slug": "protocols/lazy-summer-protocol",
       "slugHash": "0xcdcd410ea7b8e77ee95df0ec22a2a6cd146846589f686db042bf50f5b52e164b",
       "category": "protocols",
@@ -75675,6 +75717,18 @@
       "name": "Mahaxyz",
       "keywords": [
         "mahaxyz"
+      ]
+    },
+    {
+      "slug": "protocols/maia-cl",
+      "slugHash": "0x45d5f24ac000d1134399884d85422a79d8f5ac21004a3c4fca1f992a7be19161",
+      "category": "protocols",
+      "name": "Maia Cl",
+      "keywords": [
+        "maia-cl",
+        "maia cl",
+        "maiacl",
+        "mc"
       ]
     },
     {
@@ -84244,6 +84298,18 @@
       "name": "Obyte",
       "keywords": [
         "obyte"
+      ]
+    },
+    {
+      "slug": "protocols/obyte-friends",
+      "slugHash": "0xa280dbfa7f921ee8abcdb62fa945dab4dd1693d32b9338016213e1a28160ed06",
+      "category": "protocols",
+      "name": "Obyte Friends",
+      "keywords": [
+        "obyte-friends",
+        "obyte friends",
+        "obytefriends",
+        "of"
       ]
     },
     {

@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-15T04:07:31.575Z",
+  "generatedAt": "2026-01-16T04:05:21.792Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11163,
+    "total": 11169,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
-      "pegged": 355,
-      "protocols": 9239
+      "pegged": 357,
+      "protocols": 9243
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10755
+    "unmapped": 10761
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5467,6 +5467,7 @@
       "protocols/hermes-defi",
       "protocols/hermes-finance",
       "protocols/hermes-protocol",
+      "protocols/hermes-v1",
       "protocols/hermes-v2",
       "protocols/hermetica-usdh",
       "protocols/hero-blaze",
@@ -6291,6 +6292,7 @@
       "protocols/layerbank",
       "protocols/layerswap",
       "protocols/layerzero",
+      "protocols/lazy",
       "protocols/lazy-summer-protocol",
       "protocols/lazyfi",
       "protocols/lazyotter-finance",
@@ -6620,6 +6622,7 @@
       "protocols/mahadao-arth",
       "protocols/mahalend",
       "protocols/mahaxyz",
+      "protocols/maia-cl",
       "protocols/maia-dao",
       "protocols/maia-dao-ecosystem",
       "protocols/maia-v3",
@@ -7432,6 +7435,7 @@
       "protocols/obsidian",
       "protocols/obswap",
       "protocols/obyte",
+      "protocols/obyte-friends",
       "protocols/occamx",
       "protocols/ocean-one",
       "protocols/ocean-point",
@@ -11174,6 +11178,7 @@
       "pegged/river-stablecoin",
       "pegged/rocky-usdr",
       "pegged/rusd",
+      "pegged/rwausdi",
       "pegged/sable-coin",
       "pegged/saga-dollar",
       "pegged/satoshi-stablecoin",
@@ -11217,6 +11222,7 @@
       "pegged/trueusd",
       "pegged/uaht",
       "pegged/unitas",
+      "pegged/united-stables",
       "pegged/uno",
       "pegged/us-permissionless-dollar",
       "pegged/usbd",
