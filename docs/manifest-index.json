@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-16T04:05:21.792Z",
+  "generatedAt": "2026-01-17T03:57:45.004Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11169,
+    "total": 11172,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9243
+      "protocols": 9246
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10761
+    "unmapped": 10764
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3750,6 +3750,7 @@
       "protocols/coffinmeme",
       "protocols/cofix",
       "protocols/cog",
+      "protocols/coin360-perps",
       "protocols/coin8",
       "protocols/coin98",
       "protocols/coin98-ventures",
@@ -5172,6 +5173,7 @@
       "protocols/gin-finance",
       "protocols/ginseng-swap",
       "protocols/gitcoin",
+      "protocols/gitcoin-passport",
       "protocols/giveth",
       "protocols/giza",
       "protocols/giza-dao",
@@ -8494,6 +8496,7 @@
       "protocols/rfx-exchange",
       "protocols/rfx-exchange-v1",
       "protocols/rfx-exchange-v2",
+      "protocols/rhea-cross-chain",
       "protocols/rhea-dao",
       "protocols/rhea-dex",
       "protocols/rhea-finance",

@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-16T04:05:21.792Z",
+  "generatedAt": "2026-01-17T03:57:45.004Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11169,
+    "total": 11172,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9243
+      "protocols": 9246
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10761
+    "unmapped": 10764
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -45451,6 +45451,18 @@
       ]
     },
     {
+      "slug": "protocols/coin360-perps",
+      "slugHash": "0xcb6d4307a0664b18a9cef2285c87688698013695f90e00200e32217b28789149",
+      "category": "protocols",
+      "name": "Coin360 Perps",
+      "keywords": [
+        "coin360-perps",
+        "coin360 perps",
+        "coin360perps",
+        "cp"
+      ]
+    },
+    {
       "slug": "protocols/coin8",
       "slugHash": "0xdafe04fce3535992cdcf2802e999d621213f191fed51fd0d4cf14969978c6279",
       "category": "protocols",
@@ -60332,6 +60344,18 @@
       "name": "Gitcoin",
       "keywords": [
         "gitcoin"
+      ]
+    },
+    {
+      "slug": "protocols/gitcoin-passport",
+      "slugHash": "0x9088c3b6f95e5a3a9405fb243d20e4b1ae080fe9236461457f69a8c54b0568b4",
+      "category": "protocols",
+      "name": "Gitcoin Passport",
+      "keywords": [
+        "gitcoin-passport",
+        "gitcoin passport",
+        "gitcoinpassport",
+        "gp"
       ]
     },
     {
@@ -95541,6 +95565,18 @@
         "rfx exchange v2",
         "rfxexchangev2",
         "rev"
+      ]
+    },
+    {
+      "slug": "protocols/rhea-cross-chain",
+      "slugHash": "0xf474ab71721b3bb6c21579fd666116593798ac371fabe60b82c5561fda974cb6",
+      "category": "protocols",
+      "name": "Rhea Cross Chain",
+      "keywords": [
+        "rhea-cross-chain",
+        "rhea cross chain",
+        "rheacrosschain",
+        "rcc"
       ]
     },
     {
