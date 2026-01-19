@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-18T04:08:32.360Z",
+  "generatedAt": "2026-01-19T04:15:07.491Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11172,
+    "total": 11174,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9246
+      "protocols": 9248
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10764
+    "unmapped": 10766
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -53428,6 +53428,15 @@
       ]
     },
     {
+      "slug": "protocols/elfomofi",
+      "slugHash": "0x1a0de795a8d1f9d1a5e95b3e18c5ecaf5084ec2eff53b13d367d0cf66ac5194b",
+      "category": "protocols",
+      "name": "Elfomofi",
+      "keywords": [
+        "elfomofi"
+      ]
+    },
+    {
       "slug": "protocols/elix.fi",
       "slugHash": "0x939916017938bdb2493a5a52b964e246d460b1e4835eb2be8971b68a6f0ce1f8",
       "category": "protocols",
@@ -86954,6 +86963,15 @@
       "name": "Oroswap",
       "keywords": [
         "oroswap"
+      ]
+    },
+    {
+      "slug": "protocols/orynth",
+      "slugHash": "0x204b9541f20e73c2d34342d64ecc0824a5e263bd2d29ac8ecddee24bf77e29ef",
+      "category": "protocols",
+      "name": "Orynth",
+      "keywords": [
+        "orynth"
       ]
     },
     {
