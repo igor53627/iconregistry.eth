@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-19T04:15:07.491Z",
+  "generatedAt": "2026-01-20T04:09:42.150Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11174,
+    "total": 11181,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9248
+      "protocols": 9255
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10766
+    "unmapped": 10773
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4226,6 +4226,7 @@
       "protocols/dflow-aggregator",
       "protocols/dflow-prediction-market",
       "protocols/dforce",
+      "protocols/dforce-lending",
       "protocols/dfs-network",
       "protocols/dfs-v2",
       "protocols/dfs-v3",
@@ -5406,6 +5407,7 @@
       "protocols/hashnote",
       "protocols/hashport",
       "protocols/hashstack",
+      "protocols/hastra",
       "protocols/hatom-booster",
       "protocols/hatom-lending",
       "protocols/hatom-liquid-staking",
@@ -5583,6 +5585,7 @@
       "protocols/hydrex-v3",
       "protocols/hydrex-v4",
       "protocols/hydro",
+      "protocols/hydro-inflow",
       "protocols/hydro-lending",
       "protocols/hydro-lsd-fi",
       "protocols/hydro-lst",
@@ -6748,6 +6751,7 @@
       "protocols/megaeth-bridge",
       "protocols/megalon",
       "protocols/megamoon",
+      "protocols/megaswap",
       "protocols/megaton-finance",
       "protocols/melania-meme",
       "protocols/meld",
@@ -8175,6 +8179,7 @@
       "protocols/printer-financial",
       "protocols/printyfinance",
       "protocols/prism",
+      "protocols/prism-dex",
       "protocols/prism-protocol",
       "protocols/prisma-finance",
       "protocols/prismalrt",
@@ -9076,6 +9081,7 @@
       "protocols/solvbtc",
       "protocols/solvbtc-lsts",
       "protocols/solyard",
+      "protocols/someswap",
       "protocols/sommelier",
       "protocols/somnex",
       "protocols/somnex-dex",
@@ -9412,6 +9418,7 @@
       "protocols/strkfarm",
       "protocols/stronghands",
       "protocols/stronghold-staked-sol",
+      "protocols/stroom",
       "protocols/struct-finance",
       "protocols/structured-lsd",
       "protocols/strudel-finance",

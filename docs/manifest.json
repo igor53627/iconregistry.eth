@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-19T04:15:07.491Z",
+  "generatedAt": "2026-01-20T04:09:42.150Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11174,
+    "total": 11181,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9248
+      "protocols": 9255
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10766
+    "unmapped": 10773
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -50424,6 +50424,18 @@
       ]
     },
     {
+      "slug": "protocols/dforce-lending",
+      "slugHash": "0x1d934306731ead164d98ce113f85d0ec6d1055ca70e0b423bd196107f8d3c767",
+      "category": "protocols",
+      "name": "Dforce Lending",
+      "keywords": [
+        "dforce-lending",
+        "dforce lending",
+        "dforcelending",
+        "dl"
+      ]
+    },
+    {
       "slug": "protocols/dfs-network",
       "slugHash": "0x231601cbd395d17403e037a26e5727b29c30792e06fca49a5995019ea375c4ed",
       "category": "protocols",
@@ -62846,6 +62858,15 @@
       ]
     },
     {
+      "slug": "protocols/hastra",
+      "slugHash": "0xa1099038573a03b9a45f39acc969315ed10973159cfaddc5dd98442a344d69e0",
+      "category": "protocols",
+      "name": "Hastra",
+      "keywords": [
+        "hastra"
+      ]
+    },
+    {
       "slug": "protocols/hatom-booster",
       "slugHash": "0x3087c619f6cc0fc4565a6075bfa847cebad488ac60bbbf6031ef8d93a5b3f966",
       "category": "protocols",
@@ -64694,6 +64715,18 @@
       "name": "Hydro",
       "keywords": [
         "hydro"
+      ]
+    },
+    {
+      "slug": "protocols/hydro-inflow",
+      "slugHash": "0x4fa34b3997cdb039b7104597890fe4faefe191bf7364acf8d7ee601ab24d707b",
+      "category": "protocols",
+      "name": "Hydro Inflow",
+      "keywords": [
+        "hydro-inflow",
+        "hydro inflow",
+        "hydroinflow",
+        "hi"
       ]
     },
     {
@@ -77049,6 +77082,15 @@
       "name": "Megamoon",
       "keywords": [
         "megamoon"
+      ]
+    },
+    {
+      "slug": "protocols/megaswap",
+      "slugHash": "0xafb9ae6f1b76d34441320e64c5fceba5dfcc75adc888e19ee3383419805ed95d",
+      "category": "protocols",
+      "name": "Megaswap",
+      "keywords": [
+        "megaswap"
       ]
     },
     {
@@ -92193,6 +92235,18 @@
       ]
     },
     {
+      "slug": "protocols/prism-dex",
+      "slugHash": "0xa091b5586e0af321b7c2066e669fd44cf0b31b393dcdb50917ccf33aa384b5d7",
+      "category": "protocols",
+      "name": "Prism Dex",
+      "keywords": [
+        "prism-dex",
+        "prism dex",
+        "prismdex",
+        "pd"
+      ]
+    },
+    {
       "slug": "protocols/prism-protocol",
       "slugHash": "0xda602762fa85836bd10a8147ba2fc57403cb69495178611020bd1eb61e25662f",
       "category": "protocols",
@@ -101649,6 +101703,15 @@
       ]
     },
     {
+      "slug": "protocols/someswap",
+      "slugHash": "0x153e9108db1ebcda5cd2b4468510d9872aec4b1dbcdc228a27641f3bd7836b9e",
+      "category": "protocols",
+      "name": "Someswap",
+      "keywords": [
+        "someswap"
+      ]
+    },
+    {
       "slug": "protocols/sommelier",
       "slugHash": "0x17e4d41cd9040aa357fafab28ef02228c7526528a9461966789409bacf1cbef0",
       "category": "protocols",
@@ -105183,6 +105246,15 @@
         "stronghold staked sol",
         "strongholdstakedsol",
         "sss"
+      ]
+    },
+    {
+      "slug": "protocols/stroom",
+      "slugHash": "0x32fb50ba7911a2a5610479016c8a4f8cd06fa6362c92d00904ee0402dc1faea1",
+      "category": "protocols",
+      "name": "Stroom",
+      "keywords": [
+        "stroom"
       ]
     },
     {
