@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T04:09:42.150Z",
+  "generatedAt": "2026-01-21T04:09:44.480Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11181,
+    "total": 11193,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9255
+      "protocols": 9267
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10773
+    "unmapped": 10785
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -35810,6 +35810,18 @@
       ]
     },
     {
+      "slug": "protocols/brasa-finance",
+      "slugHash": "0x6b4592e9badef609e12473c5fc23636cf6122b51c0b9dbe211a8c8cf72ea6f3b",
+      "category": "protocols",
+      "name": "Brasa Finance",
+      "keywords": [
+        "brasa-finance",
+        "brasa finance",
+        "brasafinance",
+        "bf"
+      ]
+    },
+    {
       "slug": "protocols/breadchain",
       "slugHash": "0xb48d9e670bd2d2be99fb2fb4c2b29e223fd2735d659da1ca393e5e66a4bd3b32",
       "category": "protocols",
@@ -45631,6 +45643,15 @@
       ]
     },
     {
+      "slug": "protocols/coinpilot",
+      "slugHash": "0x2317baf7e45577595a3bf8f055d87b492d9728977e2f3d3bc972d9ecf0f15deb",
+      "category": "protocols",
+      "name": "Coinpilot",
+      "keywords": [
+        "coinpilot"
+      ]
+    },
+    {
       "slug": "protocols/coinscope",
       "slugHash": "0xb90cd3aa5b1b9a260728fb75f5b597ca61a73629fb89b0ff2224eae1562cc623",
       "category": "protocols",
@@ -50890,6 +50911,18 @@
         "dipcoin spot",
         "dipcoinspot",
         "ds"
+      ]
+    },
+    {
+      "slug": "protocols/dipcoin-vault",
+      "slugHash": "0x115d65f6507ec77454d5cc7d1f6fa20dd946b0cdb377886cc8b9b122762b55ef",
+      "category": "protocols",
+      "name": "Dipcoin Vault",
+      "keywords": [
+        "dipcoin-vault",
+        "dipcoin vault",
+        "dipcoinvault",
+        "dv"
       ]
     },
     {
@@ -60041,6 +60074,18 @@
       "name": "Gem",
       "keywords": [
         "gem"
+      ]
+    },
+    {
+      "slug": "protocols/gem-wallet-perps",
+      "slugHash": "0xf90d6bec23eed379ffa3c222d7b7e9a4383a6f2c07bb938270d4948eba7b6b6d",
+      "category": "protocols",
+      "name": "Gem Wallet Perps",
+      "keywords": [
+        "gem-wallet-perps",
+        "gem wallet perps",
+        "gemwalletperps",
+        "gwp"
       ]
     },
     {
@@ -69408,6 +69453,18 @@
       ]
     },
     {
+      "slug": "protocols/katoshi-perps",
+      "slugHash": "0x0bb1d94ae1d07a0cfbc2f861955b3adb89c05d72bcc658dd2fcad8b955224fc4",
+      "category": "protocols",
+      "name": "Katoshi Perps",
+      "keywords": [
+        "katoshi-perps",
+        "katoshi perps",
+        "katoshiperps",
+        "kp"
+      ]
+    },
+    {
       "slug": "protocols/kava",
       "slugHash": "0xf8b4153898e362ec2e18825cfd5c425cdf538bc53f01cdb8fc343fd4e64b5a37",
       "category": "protocols",
@@ -78070,6 +78127,18 @@
       ]
     },
     {
+      "slug": "protocols/metascalp-perps",
+      "slugHash": "0x8d55d1faa4ccdd2a00a706740c8d945c0d0e0387821fa09040c0a678acad358b",
+      "category": "protocols",
+      "name": "Metascalp Perps",
+      "keywords": [
+        "metascalp-perps",
+        "metascalp perps",
+        "metascalpperps",
+        "mp"
+      ]
+    },
+    {
       "slug": "protocols/metastable",
       "slugHash": "0x370587c77d794a33e9e675b3693e924eec3f6c82c6599ab080a16c1c06dc1b61",
       "category": "protocols",
@@ -78625,6 +78694,30 @@
       "name": "Mexc",
       "keywords": [
         "mexc"
+      ]
+    },
+    {
+      "slug": "protocols/mezo-borrow",
+      "slugHash": "0xc66516a811bf0393c8967a65d0f93d39da5ffbe2f61984b671acb061db314b38",
+      "category": "protocols",
+      "name": "Mezo Borrow",
+      "keywords": [
+        "mezo-borrow",
+        "mezo borrow",
+        "mezoborrow",
+        "mb"
+      ]
+    },
+    {
+      "slug": "protocols/mezo-bridge",
+      "slugHash": "0x054413e69132da483345ef1a5d83b1aaf661bfc7da15c3cb32ab32b3df72d31f",
+      "category": "protocols",
+      "name": "Mezo Bridge",
+      "keywords": [
+        "mezo-bridge",
+        "mezo bridge",
+        "mezobridge",
+        "mb"
       ]
     },
     {
@@ -85474,6 +85567,18 @@
       "name": "Onedollardcae",
       "keywords": [
         "onedollardcae"
+      ]
+    },
+    {
+      "slug": "protocols/onekey-perps",
+      "slugHash": "0x62965a5a32fb37a19c1e81433172e49eea70b54d3782a79e1d78ac01fa2cba77",
+      "category": "protocols",
+      "name": "Onekey Perps",
+      "keywords": [
+        "onekey-perps",
+        "onekey perps",
+        "onekeyperps",
+        "op"
       ]
     },
     {
@@ -103005,6 +103110,18 @@
       ]
     },
     {
+      "slug": "protocols/splash-wallet-perps",
+      "slugHash": "0xe782783021d108aacb7c6be24c582aaafcce5354c0bb747078f269cd653f6ef3",
+      "category": "protocols",
+      "name": "Splash Wallet Perps",
+      "keywords": [
+        "splash-wallet-perps",
+        "splash wallet perps",
+        "splashwalletperps",
+        "swp"
+      ]
+    },
+    {
       "slug": "protocols/splashing-stake",
       "slugHash": "0x2c9b08cdb462fbc91e6dd13de8fb5b0bb8de2b83b972911fdb573eb4c965acab",
       "category": "protocols",
@@ -104124,6 +104241,15 @@
       "name": "Standcash",
       "keywords": [
         "standcash"
+      ]
+    },
+    {
+      "slug": "protocols/standx",
+      "slugHash": "0x814806b1db2527ed4c90bdaeb32c3ff778c2b65d969f755956bda763bd93dd69",
+      "category": "protocols",
+      "name": "Standx",
+      "keywords": [
+        "standx"
       ]
     },
     {
@@ -111523,6 +111649,18 @@
       "name": "Trax",
       "keywords": [
         "trax"
+      ]
+    },
+    {
+      "slug": "protocols/tread.fi-perps",
+      "slugHash": "0xbc114400d33337fd776a067a79d9fc539e68faed5c34ecab6f23312d295b05f7",
+      "category": "protocols",
+      "name": "Tread.Fi Perps",
+      "keywords": [
+        "tread.fi-perps",
+        "tread.fi perps",
+        "tread.fiperps",
+        "tp"
       ]
     },
     {
