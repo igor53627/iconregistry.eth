@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-22T04:12:21.454Z",
+  "generatedAt": "2026-01-23T04:08:28.305Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11194,
+    "total": 11213,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9268
+      "protocols": 9287
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10786
+    "unmapped": 10805
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -27071,6 +27071,18 @@
       ]
     },
     {
+      "slug": "protocols/apexliquid-perps",
+      "slugHash": "0xa2351dbdb21db6f14fb77c0c3311c4a49fcb7c8d75367a1fbaaae352f794d7d9",
+      "category": "protocols",
+      "name": "Apexliquid Perps",
+      "keywords": [
+        "apexliquid-perps",
+        "apexliquid perps",
+        "apexliquidperps",
+        "ap"
+      ]
+    },
+    {
       "slug": "protocols/apexswap",
       "slugHash": "0xce2d6b94addf8782db73ced76a8528a284333d3361b3a98cd7f5b214c5638945",
       "category": "protocols",
@@ -36809,6 +36821,18 @@
       ]
     },
     {
+      "slug": "protocols/byte-exchange",
+      "slugHash": "0x7b326d1b59122c9fceadf6c794bc1bc13750e7ce37ce1c367e245123432f458d",
+      "category": "protocols",
+      "name": "Byte Exchange",
+      "keywords": [
+        "byte-exchange",
+        "byte exchange",
+        "byteexchange",
+        "be"
+      ]
+    },
+    {
       "slug": "protocols/bytom",
       "slugHash": "0x6695ab84d0cc6a577d3c39fc281ed102146e440b69d97cc25715763ab715a0c1",
       "category": "protocols",
@@ -37010,6 +37034,15 @@
       "name": "Calc",
       "keywords": [
         "calc"
+      ]
+    },
+    {
+      "slug": "protocols/calculus",
+      "slugHash": "0xb00a68ab9ac7929f0ea88275508cf469cfe6479910efcd80836fd2579dea4f88",
+      "category": "protocols",
+      "name": "Calculus",
+      "keywords": [
+        "calculus"
       ]
     },
     {
@@ -45493,6 +45526,18 @@
       ]
     },
     {
+      "slug": "protocols/coin98-perps",
+      "slugHash": "0x3ce4ae8f8c7a67a8bf444b85e12bd54d283f8feca570f4725a69485522e907fb",
+      "category": "protocols",
+      "name": "Coin98 Perps",
+      "keywords": [
+        "coin98-perps",
+        "coin98 perps",
+        "coin98perps",
+        "cp"
+      ]
+    },
+    {
       "slug": "protocols/coin98-ventures",
       "slugHash": "0xc5173fa2069ee6915f69679a937d8e36bfba396b7236f8bf9fe264340cc99361",
       "category": "protocols",
@@ -52873,6 +52918,18 @@
       ]
     },
     {
+      "slug": "protocols/echosync-perps",
+      "slugHash": "0xfbebb84876463ce35a76a66484db99946b195414a0dad9795aaab4e869847fdd",
+      "category": "protocols",
+      "name": "Echosync Perps",
+      "keywords": [
+        "echosync-perps",
+        "echosync perps",
+        "echosyncperps",
+        "ep"
+      ]
+    },
+    {
       "slug": "protocols/echoxyz",
       "slugHash": "0x8833aa16963689cf2268c0a00174304a824afd15f580e07572b8329228a1842e",
       "category": "protocols",
@@ -55354,6 +55411,15 @@
       ]
     },
     {
+      "slug": "protocols/evo",
+      "slugHash": "0x7be0ff9c2ff30db89542c32c61cfe238b06fd98da9c3998b5b48af471e2f6b3e",
+      "category": "protocols",
+      "name": "Evo",
+      "keywords": [
+        "evo"
+      ]
+    },
+    {
       "slug": "protocols/evolutionland",
       "slugHash": "0x1d8767dc678e51da3c6c30d7314aa480b3233baea3542c96df672fac5afa9d33",
       "category": "protocols",
@@ -57802,6 +57868,18 @@
       "name": "Fomo",
       "keywords": [
         "fomo"
+      ]
+    },
+    {
+      "slug": "protocols/fomo-perps",
+      "slugHash": "0x0b672b874c58b65d5170e3821e735dd6e00dad6fb5f11be6a84f5d200bff7725",
+      "category": "protocols",
+      "name": "Fomo Perps",
+      "keywords": [
+        "fomo-perps",
+        "fomo perps",
+        "fomoperps",
+        "fp"
       ]
     },
     {
@@ -61906,6 +61984,15 @@
       ]
     },
     {
+      "slug": "protocols/grovex",
+      "slugHash": "0x20812ee73b37984d30eb9437888ff5686d40ebb2f07ca90532e6e7aa970f0ca6",
+      "category": "protocols",
+      "name": "Grovex",
+      "keywords": [
+        "grovex"
+      ]
+    },
+    {
       "slug": "protocols/growihf",
       "slugHash": "0x8fedfd12a703025c058092481e5083bd6d7e69b02f4c86a2270142bc284e7894",
       "category": "protocols",
@@ -62050,6 +62137,18 @@
         "gton capital",
         "gtoncapital",
         "gc"
+      ]
+    },
+    {
+      "slug": "protocols/gtr.trade-perps",
+      "slugHash": "0xa596e16d3eecbc99ec6b2855d11d0320750420001d55de4a5385c7e87e662262",
+      "category": "protocols",
+      "name": "Gtr.Trade Perps",
+      "keywords": [
+        "gtr.trade-perps",
+        "gtr.trade perps",
+        "gtr.tradeperps",
+        "gp"
       ]
     },
     {
@@ -65444,6 +65543,18 @@
       "name": "Hyphen",
       "keywords": [
         "hyphen"
+      ]
+    },
+    {
+      "slug": "protocols/hyprearn-perps",
+      "slugHash": "0xb24c0031d2c1b58a933be0a1a52a8b77035de7721e2156dabc9ad60491cf25b9",
+      "category": "protocols",
+      "name": "Hyprearn Perps",
+      "keywords": [
+        "hyprearn-perps",
+        "hyprearn perps",
+        "hyprearnperps",
+        "hp"
       ]
     },
     {
@@ -80568,6 +80679,18 @@
       ]
     },
     {
+      "slug": "protocols/moontrader-perps",
+      "slugHash": "0xd6125f07d12768ff18b3fcdafc5160cc8edcf8f531e890efa4a774685441582a",
+      "category": "protocols",
+      "name": "Moontrader Perps",
+      "keywords": [
+        "moontrader-perps",
+        "moontrader perps",
+        "moontraderperps",
+        "mp"
+      ]
+    },
+    {
       "slug": "protocols/moonwell",
       "slugHash": "0xc3a8486d1a62833e3313b9cebd3f38f97342b07a81d9974529bb07f51b3ea043",
       "category": "protocols",
@@ -94494,6 +94617,18 @@
       ]
     },
     {
+      "slug": "protocols/ranger-finance-perps",
+      "slugHash": "0x5718409a4e0c9ff234fc92982b8914bad832b6940b502e84d28675d7de8cfbbf",
+      "category": "protocols",
+      "name": "Ranger Finance Perps",
+      "keywords": [
+        "ranger-finance-perps",
+        "ranger finance perps",
+        "rangerfinanceperps",
+        "rfp"
+      ]
+    },
+    {
       "slug": "protocols/rangers-bridge",
       "slugHash": "0x982d3eee165ebd56e31b60aa01fee7d7d282e2b745fb604c7cdeb0293dd4033a",
       "category": "protocols",
@@ -99039,6 +99174,18 @@
       ]
     },
     {
+      "slug": "protocols/senpi-perps",
+      "slugHash": "0xdaecd67d4f59b420b3c164676995b910c646e807042f962c9e93c85190a32993",
+      "category": "protocols",
+      "name": "Senpi Perps",
+      "keywords": [
+        "senpi-perps",
+        "senpi perps",
+        "senpiperps",
+        "sp"
+      ]
+    },
+    {
       "slug": "protocols/sensay",
       "slugHash": "0x2d3c8e293e00abe4d1cee7399e2123b59c0a498f8f7b1bd4b442bf7bfa1612aa",
       "category": "protocols",
@@ -103497,6 +103644,30 @@
       ]
     },
     {
+      "slug": "protocols/stabble-clmm",
+      "slugHash": "0x70ba11769e445df921e46840bf4c8e62572cc5690481611a1d734a135f69a50b",
+      "category": "protocols",
+      "name": "Stabble Clmm",
+      "keywords": [
+        "stabble-clmm",
+        "stabble clmm",
+        "stabbleclmm",
+        "sc"
+      ]
+    },
+    {
+      "slug": "protocols/stabble-stableswap",
+      "slugHash": "0x5ea7cb3ba3bdd9c44cc3bc0df035f0f01c0b0f37ab8bc5997258ba51ac5478ab",
+      "category": "protocols",
+      "name": "Stabble Stableswap",
+      "keywords": [
+        "stabble-stableswap",
+        "stabble stableswap",
+        "stabblestableswap",
+        "ss"
+      ]
+    },
+    {
       "slug": "protocols/stabil-finance",
       "slugHash": "0x82ade283220a863ef80adbc48289d1b09f07a7268d8ccb8d84c309183a180364",
       "category": "protocols",
@@ -106446,6 +106617,18 @@
         "supswap v3",
         "supswapv3",
         "sv"
+      ]
+    },
+    {
+      "slug": "protocols/supurr.app-perps",
+      "slugHash": "0xff9175dfb21dce832cf3ce5efc68c8ad0e57907272e57e009801b35e414033c4",
+      "category": "protocols",
+      "name": "Supurr.App Perps",
+      "keywords": [
+        "supurr.app-perps",
+        "supurr.app perps",
+        "supurr.appperps",
+        "sp"
       ]
     },
     {
@@ -113080,6 +113263,18 @@
       ]
     },
     {
+      "slug": "protocols/unigox-perps",
+      "slugHash": "0x5275efee08f4f3a7e462a7f5dd435866199d373a93c9851e07d8c4985da76193",
+      "category": "protocols",
+      "name": "Unigox Perps",
+      "keywords": [
+        "unigox-perps",
+        "unigox perps",
+        "unigoxperps",
+        "up"
+      ]
+    },
+    {
       "slug": "protocols/unihedge",
       "slugHash": "0x16ad7d137aa6974ea333069d1e9b4302d9f96f46f5b47a8aec6ada212068a51f",
       "category": "protocols",
@@ -114001,6 +114196,18 @@
       "name": "Uxlink",
       "keywords": [
         "uxlink"
+      ]
+    },
+    {
+      "slug": "protocols/uxuy-perps",
+      "slugHash": "0xd9eea3df40166f555c423e70e4f8e08d5e9a7eb480affc23337375ead39d40bf",
+      "category": "protocols",
+      "name": "Uxuy Perps",
+      "keywords": [
+        "uxuy-perps",
+        "uxuy perps",
+        "uxuyperps",
+        "up"
       ]
     },
     {
@@ -118136,6 +118343,18 @@
       "name": "Wtfdoge",
       "keywords": [
         "wtfdoge"
+      ]
+    },
+    {
+      "slug": "protocols/wundertrading-perps",
+      "slugHash": "0x01172e150494e805c525b9b28d2784e565fed477d53c5625b436b67fe6eecc10",
+      "category": "protocols",
+      "name": "Wundertrading Perps",
+      "keywords": [
+        "wundertrading-perps",
+        "wundertrading perps",
+        "wundertradingperps",
+        "wp"
       ]
     },
     {
