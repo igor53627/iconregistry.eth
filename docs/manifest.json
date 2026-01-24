@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-23T04:08:28.305Z",
+  "generatedAt": "2026-01-24T04:02:09.725Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11213,
+    "total": 11220,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9287
+      "protocols": 9294
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10805
+    "unmapped": 10812
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -26017,6 +26017,15 @@
       ]
     },
     {
+      "slug": "protocols/altura",
+      "slugHash": "0xb90b20a58af1e5f5a08311f9548195638d9e2bca491b3c975ca62667a1810243",
+      "category": "protocols",
+      "name": "Altura",
+      "keywords": [
+        "altura"
+      ]
+    },
+    {
       "slug": "protocols/alvey-dex",
       "slugHash": "0xfd56b5cee0dac59c3e68247dd65f18b6e420b60426e5d1e2c72fed8c233fea89",
       "category": "protocols",
@@ -45331,6 +45340,18 @@
       ]
     },
     {
+      "slug": "protocols/coal-works",
+      "slugHash": "0x32c7c7000b07c48b7274bc7ff6eb67d579b1913956bba02a9bac231b793d026d",
+      "category": "protocols",
+      "name": "Coal Works",
+      "keywords": [
+        "coal-works",
+        "coal works",
+        "coalworks",
+        "cw"
+      ]
+    },
+    {
       "slug": "protocols/cobaltx",
       "slugHash": "0x1a017130a4ca52bce465b8ab9023f980640a5b3921cd856913de6474c58af28a",
       "category": "protocols",
@@ -50755,6 +50776,18 @@
         "digital currency group",
         "digitalcurrencygroup",
         "dcg"
+      ]
+    },
+    {
+      "slug": "protocols/digital-gold",
+      "slugHash": "0x0f4215e58adcfc71ad3ffa974d1b2cf21e25ac15b9cb19c126e99de0b1eaf221",
+      "category": "protocols",
+      "name": "Digital Gold",
+      "keywords": [
+        "digital-gold",
+        "digital gold",
+        "digitalgold",
+        "dg"
       ]
     },
     {
@@ -60767,6 +60800,15 @@
         "gms vaults",
         "gmsvaults",
         "gv"
+      ]
+    },
+    {
+      "slug": "protocols/gmtrade",
+      "slugHash": "0xcce3a0a0cdec9bc06fb08dfc615af2e0070c1a7855e5654c4250c47981bfda83",
+      "category": "protocols",
+      "name": "Gmtrade",
+      "keywords": [
+        "gmtrade"
       ]
     },
     {
@@ -78745,6 +78787,18 @@
       ]
     },
     {
+      "slug": "protocols/metropolis-dlmm-vaults",
+      "slugHash": "0xa1beecef967719c085b70ed15a4a3799eccd9096a814af18325ec2da241d54e4",
+      "category": "protocols",
+      "name": "Metropolis Dlmm Vaults",
+      "keywords": [
+        "metropolis-dlmm-vaults",
+        "metropolis dlmm vaults",
+        "metropolisdlmmvaults",
+        "mdv"
+      ]
+    },
+    {
       "slug": "protocols/metropolis-exchange",
       "slugHash": "0x10fc07ca021e946906c74e1472dc41f031010658497065181bff4fde339d3eaf",
       "category": "protocols",
@@ -91031,6 +91085,18 @@
         "poison finance",
         "poisonfinance",
         "pf"
+      ]
+    },
+    {
+      "slug": "protocols/pok-vault",
+      "slugHash": "0xb0c04795962730420f197ec05adee1efc299736c3b944a5038a4b1827e109297",
+      "category": "protocols",
+      "name": "Pok Vault",
+      "keywords": [
+        "pok-vault",
+        "pok vault",
+        "pokvault",
+        "pv"
       ]
     },
     {
@@ -105183,6 +105249,18 @@
         "stkd scrt",
         "stkdscrt",
         "ss"
+      ]
+    },
+    {
+      "slug": "protocols/stkesol-by-sol-strategies",
+      "slugHash": "0x9da2c612e37d7d9ea308107328158cfeaf726075e18b7d4015901e0e4198aa6a",
+      "category": "protocols",
+      "name": "Stkesol By Sol Strategies",
+      "keywords": [
+        "stkesol-by-sol-strategies",
+        "stkesol by sol strategies",
+        "stkesolbysolstrategies",
+        "sbss"
       ]
     },
     {

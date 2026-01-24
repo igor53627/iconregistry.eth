@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-23T04:08:28.305Z",
+  "generatedAt": "2026-01-24T04:02:09.725Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11213,
+    "total": 11220,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9287
+      "protocols": 9294
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10805
+    "unmapped": 10812
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -1984,6 +1984,7 @@
       "protocols/altitudefi",
       "protocols/altlayer",
       "protocols/altr-lend",
+      "protocols/altura",
       "protocols/alvey-dex",
       "protocols/alyx-finance",
       "protocols/amana",
@@ -3738,6 +3739,7 @@
       "protocols/clutch-markets",
       "protocols/clv",
       "protocols/cmswap",
+      "protocols/coal-works",
       "protocols/cobaltx",
       "protocols/cobraswap",
       "protocols/cochilli",
@@ -4256,6 +4258,7 @@
       "protocols/digift",
       "protocols/digital standard unit",
       "protocols/digital-currency-group",
+      "protocols/digital-gold",
       "protocols/digital-standard-unit",
       "protocols/dinari",
       "protocols/dinero",
@@ -5212,6 +5215,7 @@
       "protocols/gmd-protocol",
       "protocols/gmgn",
       "protocols/gms-vaults",
+      "protocols/gmtrade",
       "protocols/gmx",
       "protocols/gmx-v1-amm",
       "protocols/gmx-v1-perps",
@@ -6906,6 +6910,7 @@
       "protocols/metropolis",
       "protocols/metropolis-amm",
       "protocols/metropolis-dlmm",
+      "protocols/metropolis-dlmm-vaults",
       "protocols/metropolis-exchange",
       "protocols/mev-capital",
       "protocols/mev-protocol",
@@ -8063,6 +8068,7 @@
       "protocols/pods-yield",
       "protocols/podsfinance",
       "protocols/poison-finance",
+      "protocols/pok-vault",
       "protocols/polar-bear-finance",
       "protocols/polaris-finance",
       "protocols/pole-aggregator",
@@ -9409,6 +9415,7 @@
       "protocols/stip-flip",
       "protocols/stipend",
       "protocols/stkd-scrt",
+      "protocols/stkesol-by-sol-strategies",
       "protocols/stlos-liquid-staking",
       "protocols/stobix",
       "protocols/stobox",
