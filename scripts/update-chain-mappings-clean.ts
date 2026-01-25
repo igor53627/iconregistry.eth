@@ -42,9 +42,9 @@ const ICON_REGISTRY_ABI = [
         inputs: [{ name: 'slugHash', type: 'bytes32' }],
         outputs: [
             { name: 'pointer', type: 'address' },
-            { name: 'size', type: 'uint32' },
             { name: 'width', type: 'uint32' },
             { name: 'height', type: 'uint32' },
+            { name: 'version', type: 'uint32' },
         ],
     },
 ] as const;
