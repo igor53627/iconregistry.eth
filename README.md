@@ -1,6 +1,6 @@
 # iconregistry.eth
 
-An on-chain, upgradeable repository for PNG icons, designed to provide a canonical source of visual assets for dApps and wallets.
+An on-chain, upgradeable repository for PNG and SVG icons, designed to provide a canonical source of visual assets for dApps and wallets.
 
 **Demo:** https://igor53627.github.io/iconregistry.eth/
 
@@ -75,8 +75,11 @@ When a wallet or dApp fetches token icons from external servers, it creates priv
 ## Usage
 
 ```solidity
-// Get icon by slug
+// Get PNG icon by slug
 bytes memory icon = registry.getIconBySlug("protocols/uniswap");
+
+// Get SVG icon by slug (V2)
+bytes memory svgIcon = registry.getSvgIconBySlug("tokens/aave");
 
 // Get icon by token address
 bytes memory tokenIcon = registry.getIconByToken(0xA0b86991c..., 1); // USDC on mainnet
@@ -86,6 +89,13 @@ bytes memory ethIcon = registry.getChainIcon(1); // Ethereum
 
 // Get as data URI (for direct use in img src)
 string memory dataUri = registry.getIconDataURI(slugHash);
+
+// Get best available icon (SVG preferred, PNG fallback) - V2
+(bytes memory data, IconFormat format) = registry.getBestIcon(slugHash);
+string memory bestUri = registry.getBestIconDataURI(slugHash);
+
+// Check available formats for a slug - V2
+(bool hasPng, bool hasSvg) = registry.getAvailableFormats(slugHash);
 ```
 
 ## Entry Points
@@ -153,13 +163,31 @@ const matches = manifest.icons.filter(icon =>
 
 ## Icon Specifications
 
+### PNG Icons
+
 On-chain validation (enforced by the contract):
-- **Format**: PNG only - validated via the standard 8-byte PNG magic header
+- **Format**: PNG - validated via the standard 8-byte PNG magic header
 
 Operational guidelines (followed by this repository):
 - **Size**: 64x64 pixels
 - **Max file size**: 4 KB (target: <2 KB)
 - **Naming**: lowercase slug (e.g., `protocols/uniswap`, `chains/ethereum`)
+
+### SVG Icons (V2)
+
+On-chain validation (enforced by the contract):
+- **Format**: SVG - validated via `<svg` tag presence check
+- **Max file size**: 32 KB
+
+**SVG Security Model:**
+- On-chain validation is minimal (shape checking only)
+- Off-chain sanitization via SVGO is required before upload
+- Safe rendering: Always use `<img src="data:image/svg+xml;base64,...">`, never `innerHTML`
+- SVGs are sourced from [web3icons](https://github.com/0xa3k5/web3icons)
+
+Operational guidelines:
+- **Variant**: `branded` (default)
+- **Naming**: lowercase slug with category prefix (e.g., `tokens/aave`, `networks/ethereum`, `wallets/metamask`)
 
 ## Security
 
