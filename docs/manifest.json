@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-24T04:02:09.725Z",
+  "generatedAt": "2026-01-25T04:17:12.382Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11220,
+    "total": 11224,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9294
+      "protocols": 9298
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10812
+    "unmapped": 10816
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -97797,6 +97797,15 @@
       ]
     },
     {
+      "slug": "protocols/sai",
+      "slugHash": "0x603d275fbda68ddd5a957f843a977d46723a92c9d95786ec41e42bd41eab02d4",
+      "category": "protocols",
+      "name": "Sai",
+      "keywords": [
+        "sai"
+      ]
+    },
+    {
       "slug": "protocols/sailfish-finance",
       "slugHash": "0x535d314539d01bf78670f449d69a32923a2996075bead434a4d4f5809e32b293",
       "category": "protocols",
@@ -98970,6 +98979,39 @@
         "sector finance",
         "sectorfinance",
         "sf"
+      ]
+    },
+    {
+      "slug": "protocols/sectorone",
+      "slugHash": "0xcaf0add3392cbcdc3efc3dbb90f9e1cf54ab94feb0702a1b66ea3b20067479e0",
+      "category": "protocols",
+      "name": "Sectorone",
+      "keywords": [
+        "sectorone"
+      ]
+    },
+    {
+      "slug": "protocols/sectorone-dlmm",
+      "slugHash": "0x67958005c91a58248c48f3a7f595ca53647361aa1c552a2d373667d0c6b695f3",
+      "category": "protocols",
+      "name": "Sectorone Dlmm",
+      "keywords": [
+        "sectorone-dlmm",
+        "sectorone dlmm",
+        "sectoronedlmm",
+        "sd"
+      ]
+    },
+    {
+      "slug": "protocols/sectorone-dlmm-vaults",
+      "slugHash": "0x782b57145926d9d3c9ac5aa6e9264ee51b5968af54301bd06697aa67a0e69be0",
+      "category": "protocols",
+      "name": "Sectorone Dlmm Vaults",
+      "keywords": [
+        "sectorone-dlmm-vaults",
+        "sectorone dlmm vaults",
+        "sectoronedlmmvaults",
+        "sdv"
       ]
     },
     {

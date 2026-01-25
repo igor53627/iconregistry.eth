@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-24T04:02:09.725Z",
+  "generatedAt": "2026-01-25T04:17:12.382Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11220,
+    "total": 11224,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9294
+      "protocols": 9298
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10812
+    "unmapped": 10816
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -8703,6 +8703,7 @@
       "protocols/sagebet",
       "protocols/sahara-exchange",
       "protocols/saharadao",
+      "protocols/sai",
       "protocols/sailfish-finance",
       "protocols/sailfish-finannce",
       "protocols/sailing-portfolios",
@@ -8815,6 +8816,9 @@
       "protocols/secta-finance-v2",
       "protocols/secta-finance-v3",
       "protocols/sector-finance",
+      "protocols/sectorone",
+      "protocols/sectorone-dlmm",
+      "protocols/sectorone-dlmm-vaults",
       "protocols/secured-finance",
       "protocols/secured-finance-lending",
       "protocols/securedao",
