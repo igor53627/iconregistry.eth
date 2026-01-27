@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T04:18:54.955Z",
+  "generatedAt": "2026-01-27T04:11:45.129Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11224,
+    "total": 11241,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1389,
       "pegged": 357,
-      "protocols": 9298
+      "protocols": 9315
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10816
+    "unmapped": 10833
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -45340,6 +45340,15 @@
       ]
     },
     {
+      "slug": "protocols/coal",
+      "slugHash": "0xf9fcdde3674c9e778616dc3c1bdfaba3ee5967fcc0f38da752de2b1d05a5c881",
+      "category": "protocols",
+      "name": "Coal",
+      "keywords": [
+        "coal"
+      ]
+    },
+    {
       "slug": "protocols/coal-works",
       "slugHash": "0x32c7c7000b07c48b7274bc7ff6eb67d579b1913956bba02a9bac231b793d026d",
       "category": "protocols",
@@ -51985,6 +51994,30 @@
       ]
     },
     {
+      "slug": "protocols/dreamcash-interface",
+      "slugHash": "0x4ae4702b6fb7d5c3dd6730333b8c45bca2ca9e301fa8fc2ce1119d71ca520022",
+      "category": "protocols",
+      "name": "Dreamcash Interface",
+      "keywords": [
+        "dreamcash-interface",
+        "dreamcash interface",
+        "dreamcashinterface",
+        "di"
+      ]
+    },
+    {
+      "slug": "protocols/dreamcash-markets",
+      "slugHash": "0x369557d3c7594d7473316205c8b1195066b808694ddcbfe87c06504ff7bba352",
+      "category": "protocols",
+      "name": "Dreamcash Markets",
+      "keywords": [
+        "dreamcash-markets",
+        "dreamcash markets",
+        "dreamcashmarkets",
+        "dm"
+      ]
+    },
+    {
       "slug": "protocols/drift",
       "slugHash": "0x1814ce2a7a3f5ac606d3f8345a13f0252121117dd513ec842466cd451f746434",
       "category": "protocols",
@@ -57799,6 +57832,18 @@
       "name": "Fly.Trade",
       "keywords": [
         "fly.trade"
+      ]
+    },
+    {
+      "slug": "protocols/flying-tulip",
+      "slugHash": "0x264c4012ecde7d380065be81ae894162921c0d49539da66b7fe674b10c7eee15",
+      "category": "protocols",
+      "name": "Flying Tulip",
+      "keywords": [
+        "flying-tulip",
+        "flying tulip",
+        "flyingtulip",
+        "ft"
       ]
     },
     {
@@ -66085,6 +66130,18 @@
       ]
     },
     {
+      "slug": "protocols/ignition-lst",
+      "slugHash": "0xc63d58420acc5296d5e51764cdb6d94d35cde4b8db0d115570d3ef2cb6e86a29",
+      "category": "protocols",
+      "name": "Ignition Lst",
+      "keywords": [
+        "ignition-lst",
+        "ignition lst",
+        "ignitionlst",
+        "il"
+      ]
+    },
+    {
       "slug": "protocols/ignore-fud",
       "slugHash": "0xccca2cb1ae9f2236d45f283ee1c5a24e44aadfa4bd18dc8de297c5593fa62b4f",
       "category": "protocols",
@@ -67866,6 +67923,18 @@
       "name": "Jadeswap",
       "keywords": [
         "jadeswap"
+      ]
+    },
+    {
+      "slug": "protocols/jagpool-staked-sol",
+      "slugHash": "0xdb9976e3eaf96b7ecdb367bb0438fb70c1cb72e7388bacb8c9f38684669e480f",
+      "category": "protocols",
+      "name": "Jagpool Staked Sol",
+      "keywords": [
+        "jagpool-staked-sol",
+        "jagpool staked sol",
+        "jagpoolstakedsol",
+        "jss"
       ]
     },
     {
@@ -72285,6 +72354,18 @@
       ]
     },
     {
+      "slug": "protocols/lantern-staked-sol",
+      "slugHash": "0x00b5d03300ca8e517c580b5bf0da036b703a904cd02281ed1b15224da3200ff6",
+      "category": "protocols",
+      "name": "Lantern Staked Sol",
+      "keywords": [
+        "lantern-staked-sol",
+        "lantern staked sol",
+        "lanternstakedsol",
+        "lss"
+      ]
+    },
+    {
       "slug": "protocols/lanternswap",
       "slugHash": "0x8c222a236e499a53ce2c02422da37158177de67dbd54526120df4c62abd15874",
       "category": "protocols",
@@ -72663,6 +72744,15 @@
       "name": "Lemma",
       "keywords": [
         "lemma"
+      ]
+    },
+    {
+      "slug": "protocols/lemonad",
+      "slugHash": "0x17790d38a9c5b76c3059daf3bd49b14fbd2b2b6f6862170d198933f9e06ff251",
+      "category": "protocols",
+      "name": "Lemonad",
+      "keywords": [
+        "lemonad"
       ]
     },
     {
@@ -79713,6 +79803,15 @@
       ]
     },
     {
+      "slug": "protocols/mixoor",
+      "slugHash": "0x69f2a51fd5bc4bc4fc2f93007b034f02b26ecab1df9e7db2647383a499a8dd1d",
+      "category": "protocols",
+      "name": "Mixoor",
+      "keywords": [
+        "mixoor"
+      ]
+    },
+    {
       "slug": "protocols/mixswap-finance",
       "slugHash": "0xacae3adb0f9a89b86a72dbb8ab908642073bb5d81ec458033d675ce91c27d618",
       "category": "protocols",
@@ -80205,6 +80304,18 @@
         "mon protocol",
         "monprotocol",
         "mp"
+      ]
+    },
+    {
+      "slug": "protocols/monad-grid",
+      "slugHash": "0x9816a1e2a20abdc204b5de6e7fd499b77afd66b68af270ccca70a3b0c300be53",
+      "category": "protocols",
+      "name": "Monad Grid",
+      "keywords": [
+        "monad-grid",
+        "monad grid",
+        "monadgrid",
+        "mg"
       ]
     },
     {
@@ -83220,6 +83331,30 @@
       "name": "Nexion",
       "keywords": [
         "nexion"
+      ]
+    },
+    {
+      "slug": "protocols/nexion-lending",
+      "slugHash": "0x447ceced5cf2297cff43ebef04db004a55003d399dd100cc903e2c604567f821",
+      "category": "protocols",
+      "name": "Nexion Lending",
+      "keywords": [
+        "nexion-lending",
+        "nexion lending",
+        "nexionlending",
+        "nl"
+      ]
+    },
+    {
+      "slug": "protocols/nexion-yield",
+      "slugHash": "0x87dfab1edcde33440d7a51e2155d39d073629142c7eed0dd9c30223a7f172b78",
+      "category": "protocols",
+      "name": "Nexion Yield",
+      "keywords": [
+        "nexion-yield",
+        "nexion yield",
+        "nexionyield",
+        "ny"
       ]
     },
     {
@@ -89597,6 +89732,30 @@
       "name": "Peppercoin",
       "keywords": [
         "peppercoin"
+      ]
+    },
+    {
+      "slug": "protocols/pepu-bridge",
+      "slugHash": "0x272e5080e6ed2e8d9d048a8bcb3bb5250f0c520d901a87cb54a54390bf9b2523",
+      "category": "protocols",
+      "name": "Pepu Bridge",
+      "keywords": [
+        "pepu-bridge",
+        "pepu bridge",
+        "pepubridge",
+        "pb"
+      ]
+    },
+    {
+      "slug": "protocols/pepu-v3",
+      "slugHash": "0xb816266a814d3d1329bb8b5a34a240cdd5e3a26be2feafc369f77db43bdc6b49",
+      "category": "protocols",
+      "name": "Pepu V3",
+      "keywords": [
+        "pepu-v3",
+        "pepu v3",
+        "pepuv3",
+        "pv"
       ]
     },
     {
@@ -104064,6 +104223,15 @@
       ]
     },
     {
+      "slug": "protocols/stackfi",
+      "slugHash": "0x398e24f012d9dc80c188172fa3020fd21b65878df26d76184d3bf469817b88e2",
+      "category": "protocols",
+      "name": "Stackfi",
+      "keywords": [
+        "stackfi"
+      ]
+    },
+    {
       "slug": "protocols/stackingdao",
       "slugHash": "0x362b7a3401ef989f84dc7e6d33e856f30eb51630f1105d581d71790f429c3c9e",
       "category": "protocols",
@@ -104742,6 +104910,18 @@
       "name": "Starkdefi",
       "keywords": [
         "starkdefi"
+      ]
+    },
+    {
+      "slug": "protocols/starke-staked-sol",
+      "slugHash": "0xd79ad1182216b542d128c9c168fc98268d566244c16f6a517e7eb0c984bc1251",
+      "category": "protocols",
+      "name": "Starke Staked Sol",
+      "keywords": [
+        "starke-staked-sol",
+        "starke staked sol",
+        "starkestakedsol",
+        "sss"
       ]
     },
     {
@@ -105429,6 +105609,18 @@
       "name": "Strata",
       "keywords": [
         "strata"
+      ]
+    },
+    {
+      "slug": "protocols/strata-markets",
+      "slugHash": "0x6157f60d02764b5c2d013db2c46b7e35fe6f0c15928e3959413e6f5149406408",
+      "category": "protocols",
+      "name": "Strata Markets",
+      "keywords": [
+        "strata-markets",
+        "strata markets",
+        "stratamarkets",
+        "sm"
       ]
     },
     {
