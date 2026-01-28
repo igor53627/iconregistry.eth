@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-27T04:11:45.129Z",
+  "generatedAt": "2026-01-28T04:09:54.788Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11241,
+    "total": 11255,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1389,
-      "pegged": 357,
-      "protocols": 9315
+      "chains": 1390,
+      "pegged": 358,
+      "protocols": 9327
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10833
+    "unmapped": 10847
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -10236,6 +10236,18 @@
         "rsz-ux chain",
         "rsz ux chain",
         "uc"
+      ]
+    },
+    {
+      "slug": "chains/rsz_valuechain",
+      "slugHash": "0xe37ca514ea640bf56772333c08cf6581a30ef63ee9140fb1aaeaad40ca022a0e",
+      "category": "chains",
+      "name": "Valuechain",
+      "keywords": [
+        "rsz_valuechain",
+        "valuechain",
+        "rsz-valuechain",
+        "rsz valuechain"
       ]
     },
     {
@@ -21266,6 +21278,18 @@
       ]
     },
     {
+      "slug": "pegged/pleasing-usd",
+      "slugHash": "0xdd0eb156b7cddf4291d4cdb81ef2d62b7a52ccd01cbadfb73e4b5743db7fefcd",
+      "category": "pegged",
+      "name": "Pleasing Usd",
+      "keywords": [
+        "pleasing-usd",
+        "pleasing usd",
+        "pleasingusd",
+        "pu"
+      ]
+    },
+    {
       "slug": "pegged/plume-usd",
       "slugHash": "0xe4d5b901c37f03d977127f921d28c6cd1b1785689dcf0ef8c068b49ed3a89532",
       "category": "pegged",
@@ -30003,6 +30027,18 @@
       ]
     },
     {
+      "slug": "protocols/axc-gift",
+      "slugHash": "0xdbf4f1cae1e169310df5de5a1adea1e08d84a278e4f72f47017e10a39ffa695f",
+      "category": "protocols",
+      "name": "Axc Gift",
+      "keywords": [
+        "axc-gift",
+        "axc gift",
+        "axcgift",
+        "ag"
+      ]
+    },
+    {
       "slug": "protocols/axedao",
       "slugHash": "0x1cda620933e628024eb9568eb5644490b7593422c7e31482008576dffc88b7da",
       "category": "protocols",
@@ -34669,6 +34705,15 @@
       "name": "Bluebit",
       "keywords": [
         "bluebit"
+      ]
+    },
+    {
+      "slug": "protocols/blueboxspace",
+      "slugHash": "0xd0356ea2da0bb583ebd10123d8ca9f7fcbc5debecd30eea0eb6e3f771d1045e8",
+      "category": "protocols",
+      "name": "Blueboxspace",
+      "keywords": [
+        "blueboxspace"
       ]
     },
     {
@@ -56812,6 +56857,15 @@
       ]
     },
     {
+      "slug": "protocols/fira",
+      "slugHash": "0x70f66492034b7a739a6c8bbf64bf3f0f0b8695d22e97e490bfe6458305ce2c73",
+      "category": "protocols",
+      "name": "Fira",
+      "keywords": [
+        "fira"
+      ]
+    },
+    {
       "slug": "protocols/firebird",
       "slugHash": "0xb65300097bc719c5c9a082dabe90a8376b41aa948a875329a576b9f0c1e30d43",
       "category": "protocols",
@@ -57415,6 +57469,15 @@
       ]
     },
     {
+      "slug": "protocols/flock.io",
+      "slugHash": "0x7fd9c6abb0818e18efc21c306a88c416d387a882cf70736f7504e3c15527aba8",
+      "category": "protocols",
+      "name": "Flock.Io",
+      "keywords": [
+        "flock.io"
+      ]
+    },
+    {
       "slug": "protocols/flokifi-locker",
       "slugHash": "0xcc7d9c199b7f18d5c93496302b5ac348312f9073dfafc4ca6e103481f0f3e41a",
       "category": "protocols",
@@ -57478,6 +57541,39 @@
       "name": "Flow",
       "keywords": [
         "flow"
+      ]
+    },
+    {
+      "slug": "protocols/flowbot",
+      "slugHash": "0xba0189c061dfe69e950fd2b1020d3e4cb54a73c6c0c675efd34f504cfd35982b",
+      "category": "protocols",
+      "name": "Flowbot",
+      "keywords": [
+        "flowbot"
+      ]
+    },
+    {
+      "slug": "protocols/flowbot-perps",
+      "slugHash": "0x275ba47d745eca0814e77137446b609e25855dda5f49a0e016396d6aa597adc2",
+      "category": "protocols",
+      "name": "Flowbot Perps",
+      "keywords": [
+        "flowbot-perps",
+        "flowbot perps",
+        "flowbotperps",
+        "fp"
+      ]
+    },
+    {
+      "slug": "protocols/flowbot-prediction",
+      "slugHash": "0xea410fca5f979878cd86091a7b590c5c2440f8ef8617ed759379e6da169cef5c",
+      "category": "protocols",
+      "name": "Flowbot Prediction",
+      "keywords": [
+        "flowbot-prediction",
+        "flowbot prediction",
+        "flowbotprediction",
+        "fp"
       ]
     },
     {
@@ -90971,6 +91067,15 @@
       ]
     },
     {
+      "slug": "protocols/playground",
+      "slugHash": "0xf2f664b50ca19fcd70eae64239c21a0e24f00c774a02cdb172f66d3bd54934ae",
+      "category": "protocols",
+      "name": "Playground",
+      "keywords": [
+        "playground"
+      ]
+    },
+    {
       "slug": "protocols/plaza-finance",
       "slugHash": "0x70e15bbc4e7d01a351db4771fa30e9c11353af81d2875e1423b223eb336d3bfc",
       "category": "protocols",
@@ -101514,6 +101619,42 @@
       ]
     },
     {
+      "slug": "protocols/sodex-bridge",
+      "slugHash": "0x736b756c9f6ff4dfac3b6419e8b49a539db2ca2897a2c49d51a72f7122ba825d",
+      "category": "protocols",
+      "name": "Sodex Bridge",
+      "keywords": [
+        "sodex-bridge",
+        "sodex bridge",
+        "sodexbridge",
+        "sb"
+      ]
+    },
+    {
+      "slug": "protocols/sodex-perps",
+      "slugHash": "0xd876e692c5fb07f74f7ca919e61b0cc1ada2574a5dcea7eaae15116259cbb6a1",
+      "category": "protocols",
+      "name": "Sodex Perps",
+      "keywords": [
+        "sodex-perps",
+        "sodex perps",
+        "sodexperps",
+        "sp"
+      ]
+    },
+    {
+      "slug": "protocols/sodex-spot",
+      "slugHash": "0x11f863e1e530f2af9710f546d21c7ee42af76b2aeb908a4cda7805bc51bdaf0c",
+      "category": "protocols",
+      "name": "Sodex Spot",
+      "keywords": [
+        "sodex-spot",
+        "sodex spot",
+        "sodexspot",
+        "ss"
+      ]
+    },
+    {
       "slug": "protocols/sofa.org",
       "slugHash": "0xe866c7eba500936a40a5dc8e9728e76686916a53f6976ea206ddcc1f67f6ecfc",
       "category": "protocols",
@@ -103557,6 +103698,15 @@
         "splice finance",
         "splicefinance",
         "sf"
+      ]
+    },
+    {
+      "slug": "protocols/splitswap",
+      "slugHash": "0x4140d26d7737bf81d5f4ff9082331c12fd4bced517c9a85d97c1d463bb0af1e7",
+      "category": "protocols",
+      "name": "Splitswap",
+      "keywords": [
+        "splitswap"
       ]
     },
     {
