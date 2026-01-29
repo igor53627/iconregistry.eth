@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-28T04:09:54.788Z",
+  "generatedAt": "2026-01-29T04:42:59.063Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11255,
+    "total": 11269,
     "byCategory": {
       "agg_icons": 180,
-      "chains": 1390,
-      "pegged": 358,
-      "protocols": 9327
+      "chains": 1391,
+      "pegged": 360,
+      "protocols": 9338
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10847
+    "unmapped": 10861
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3148,6 +3148,18 @@
         "chromia",
         "rsz-chromia",
         "rsz chromia"
+      ]
+    },
+    {
+      "slug": "chains/rsz_citrea",
+      "slugHash": "0x81f2fe115d2720743e71fac345903299d4962c3191f68b5f4ad7278809afab63",
+      "category": "chains",
+      "name": "Citrea",
+      "keywords": [
+        "rsz_citrea",
+        "citrea",
+        "rsz-citrea",
+        "rsz citrea"
       ]
     },
     {
@@ -20651,6 +20663,15 @@
       ]
     },
     {
+      "slug": "pegged/megausd",
+      "slugHash": "0x615ad822abd3543c264c62355cdc8c985ed2e5afa8fc063e5171715f745b457b",
+      "category": "pegged",
+      "name": "Megausd",
+      "keywords": [
+        "megausd"
+      ]
+    },
+    {
       "slug": "pegged/meme-dollar",
       "slugHash": "0xe79afcb35ab8f1f9804e3768b732ea4f96db11b8e679add4aade696b6a620007",
       "category": "pegged",
@@ -22183,6 +22204,15 @@
           "address": "0x476ef9ac6d8673e220d0e8bc0a810c2dc6a2aa84",
           "chainId": 1
         }
+      ]
+    },
+    {
+      "slug": "pegged/usat",
+      "slugHash": "0x448c19bcddf7724049f241bf1365d77b1fc46ebddba24717ca4dacf5e565d9c6",
+      "category": "pegged",
+      "name": "Usat",
+      "keywords": [
+        "usat"
       ]
     },
     {
@@ -67989,6 +68019,18 @@
       ]
     },
     {
+      "slug": "protocols/jade-currency",
+      "slugHash": "0x9a4f0ec6f6db29f70ada960e6cf510071893777b70ac7d458caf5ee052f88293",
+      "category": "protocols",
+      "name": "Jade Currency",
+      "keywords": [
+        "jade-currency",
+        "jade currency",
+        "jadecurrency",
+        "jc"
+      ]
+    },
+    {
       "slug": "protocols/jade-money",
       "slugHash": "0xd84fa8c5bb34bd02dcbb087edb7a01262dfb8127c5c8753b600166a7a9c08a42",
       "category": "protocols",
@@ -68751,6 +68793,15 @@
         "juicebox v3",
         "juiceboxv3",
         "jv"
+      ]
+    },
+    {
+      "slug": "protocols/juiceswap",
+      "slugHash": "0xa2709f9518b5935270dc5582b96496c8e238a6bcfe521229897b367fc5d5a082",
+      "category": "protocols",
+      "name": "Juiceswap",
+      "keywords": [
+        "juiceswap"
       ]
     },
     {
@@ -77553,6 +77604,18 @@
       ]
     },
     {
+      "slug": "protocols/mellow-core",
+      "slugHash": "0xd3239c454a20878d4b55e53ae0af17e049729beb68ead8237ea1d724a1d6c20f",
+      "category": "protocols",
+      "name": "Mellow Core",
+      "keywords": [
+        "mellow-core",
+        "mellow core",
+        "mellowcore",
+        "mc"
+      ]
+    },
+    {
       "slug": "protocols/mellow-lrt",
       "slugHash": "0xb5828b18d4122a118ef7edd9ed4ae88294e1cf8f8514fb4bef2c98a6ab751859",
       "category": "protocols",
@@ -77574,6 +77637,18 @@
         "mellow protocol",
         "mellowprotocol",
         "mp"
+      ]
+    },
+    {
+      "slug": "protocols/mellow-restaking",
+      "slugHash": "0xe4d0ab716433c5834e7b74f2d4c5245f9a7f5683ef23e1dc61cfd06fbcdd4e27",
+      "category": "protocols",
+      "name": "Mellow Restaking",
+      "keywords": [
+        "mellow-restaking",
+        "mellow restaking",
+        "mellowrestaking",
+        "mr"
       ]
     },
     {
@@ -84258,6 +84333,18 @@
       ]
     },
     {
+      "slug": "protocols/notional-exponent",
+      "slugHash": "0x651e2b275717618c6c72e2603cdb61055f65c5808277119ac6704552083b4100",
+      "category": "protocols",
+      "name": "Notional Exponent",
+      "keywords": [
+        "notional-exponent",
+        "notional exponent",
+        "notionalexponent",
+        "ne"
+      ]
+    },
+    {
       "slug": "protocols/notional-finance",
       "slugHash": "0xaa0ce9ad29894a3a496d413f8f1f599d5d8a6d4811f0db4afe0ffda8c61413e5",
       "category": "protocols",
@@ -90671,6 +90758,30 @@
       "name": "Pike",
       "keywords": [
         "pike"
+      ]
+    },
+    {
+      "slug": "protocols/pike-v1",
+      "slugHash": "0x9dd22fd80828032e5260de7a7cc72ca60c6728080d604a9b6470700a9cd8a2c0",
+      "category": "protocols",
+      "name": "Pike V1",
+      "keywords": [
+        "pike-v1",
+        "pike v1",
+        "pikev1",
+        "pv"
+      ]
+    },
+    {
+      "slug": "protocols/pike-v2",
+      "slugHash": "0xf8fa0840b5f6e00eebfc59f2c7b119f2e3528cebc053bf142b2423a0b027732e",
+      "category": "protocols",
+      "name": "Pike V2",
+      "keywords": [
+        "pike-v2",
+        "pike v2",
+        "pikev2",
+        "pv"
       ]
     },
     {
@@ -98376,6 +98487,39 @@
         "santa browser",
         "santabrowser",
         "sb"
+      ]
+    },
+    {
+      "slug": "protocols/saphyre",
+      "slugHash": "0x842c67724bd3244f10b3c05182bc43e993419c50a49a64bcbe626fa640496265",
+      "category": "protocols",
+      "name": "Saphyre",
+      "keywords": [
+        "saphyre"
+      ]
+    },
+    {
+      "slug": "protocols/saphyre-v2",
+      "slugHash": "0xad1da53db7882daced01a92293604c8cc72d06a0a0140793053278620375ac16",
+      "category": "protocols",
+      "name": "Saphyre V2",
+      "keywords": [
+        "saphyre-v2",
+        "saphyre v2",
+        "saphyrev2",
+        "sv"
+      ]
+    },
+    {
+      "slug": "protocols/saphyre-v3",
+      "slugHash": "0x8a89d7bd01847d9200a1f7cf93cf6c9a3e5bb710060aafcdd9405288f13f8f3a",
+      "category": "protocols",
+      "name": "Saphyre V3",
+      "keywords": [
+        "saphyre-v3",
+        "saphyre v3",
+        "saphyrev3",
+        "sv"
       ]
     },
     {
@@ -107046,6 +107190,15 @@
       "name": "Suprafi",
       "keywords": [
         "suprafi"
+      ]
+    },
+    {
+      "slug": "protocols/supralend",
+      "slugHash": "0xfa8244d43840fe0464631fb21545f819ed366c518fa78fa3201811bea94f85c6",
+      "category": "protocols",
+      "name": "Supralend",
+      "keywords": [
+        "supralend"
       ]
     },
     {
