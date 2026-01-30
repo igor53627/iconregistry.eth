@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-29T04:42:59.063Z",
+  "generatedAt": "2026-01-30T04:48:00.547Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11269,
+    "total": 11271,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9338
+      "protocols": 9340
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10861
+    "unmapped": 10863
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -44187,6 +44187,15 @@
         "chaotic finance",
         "chaoticfinance",
         "cf"
+      ]
+    },
+    {
+      "slug": "protocols/chapool",
+      "slugHash": "0x252ed1888c2322cd14813f72f896262a3b5c58f40656e1182298cb7a32c44ed0",
+      "category": "protocols",
+      "name": "Chapool",
+      "keywords": [
+        "chapool"
       ]
     },
     {
@@ -98727,6 +98736,15 @@
       "name": "Satsat",
       "keywords": [
         "satsat"
+      ]
+    },
+    {
+      "slug": "protocols/satsuma",
+      "slugHash": "0x5acde5ecea6dba9261e5fbadebc9c0d56c51a30ce0cdd7b70064d4fcf220e430",
+      "category": "protocols",
+      "name": "Satsuma",
+      "keywords": [
+        "satsuma"
       ]
     },
     {

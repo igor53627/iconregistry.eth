@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-29T04:42:59.063Z",
+  "generatedAt": "2026-01-30T04:48:00.547Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11269,
+    "total": 11271,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9338
+      "protocols": 9340
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10861
+    "unmapped": 10863
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3627,6 +3627,7 @@
       "protocols/changex",
       "protocols/channels-finance",
       "protocols/chaotic-finance",
+      "protocols/chapool",
       "protocols/chargedefi",
       "protocols/charm-finance",
       "protocols/charm-finance-v1",
@@ -8787,6 +8788,7 @@
       "protocols/satoshi-protocol",
       "protocols/satoshicoreswap",
       "protocols/satsat",
+      "protocols/satsuma",
       "protocols/saturn-swap",
       "protocols/saucerswap",
       "protocols/saucerswap-v1",
