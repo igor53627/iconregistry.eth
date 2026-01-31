@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T04:48:00.547Z",
+  "generatedAt": "2026-01-31T04:28:07.817Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11271,
+    "total": 11273,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9340
+      "protocols": 9342
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10863
+    "unmapped": 10865
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -49878,6 +49878,15 @@
       ]
     },
     {
+      "slug": "protocols/denaria",
+      "slugHash": "0x5da3a825a53c9ff4312f7e2ed000691a6c811edf8a97daaa8e04ff5996c0e07a",
+      "category": "protocols",
+      "name": "Denaria",
+      "keywords": [
+        "denaria"
+      ]
+    },
+    {
       "slug": "protocols/denario",
       "slugHash": "0xa15bf9f2dd4a48a03be56e12cf8225e138a2628747686f35ffe4cddc43ae5d33",
       "category": "protocols",
@@ -75279,6 +75288,18 @@
         "lst optimizer",
         "lstoptimizer",
         "lo"
+      ]
+    },
+    {
+      "slug": "protocols/ltv-protocol",
+      "slugHash": "0x42de7bbfdf076325ebe32095c17c28ad9b53463fa2fd45cf3995f56ff1a5edb5",
+      "category": "protocols",
+      "name": "Ltv Protocol",
+      "keywords": [
+        "ltv-protocol",
+        "ltv protocol",
+        "ltvprotocol",
+        "lp"
       ]
     },
     {

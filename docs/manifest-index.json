@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T04:48:00.547Z",
+  "generatedAt": "2026-01-31T04:28:07.817Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11271,
+    "total": 11273,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9340
+      "protocols": 9342
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10863
+    "unmapped": 10865
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -4170,6 +4170,7 @@
       "protocols/demex-amm",
       "protocols/demex-perp",
       "protocols/demodyfi",
+      "protocols/denaria",
       "protocols/denario",
       "protocols/denet-file-token",
       "protocols/dengendex",
@@ -6577,6 +6578,7 @@
       "protocols/lsp.finance",
       "protocols/lspfinance",
       "protocols/lst-optimizer",
+      "protocols/ltv-protocol",
       "protocols/luaswap",
       "protocols/luchadores",
       "protocols/lucidly-finance",
