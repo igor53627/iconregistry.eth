@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-31T04:28:07.817Z",
+  "generatedAt": "2026-02-01T05:05:29.915Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11273,
+    "total": 11274,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9342
+      "protocols": 9343
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10865
+    "unmapped": 10866
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -31101,6 +31101,15 @@
       "name": "Bankless",
       "keywords": [
         "bankless"
+      ]
+    },
+    {
+      "slug": "protocols/bankr",
+      "slugHash": "0xbaa4716bfe47ff0e6406c5b449defd1e2bd4c5a4b58adf79cedefcda1328649b",
+      "category": "protocols",
+      "name": "Bankr",
+      "keywords": [
+        "bankr"
       ]
     },
     {
