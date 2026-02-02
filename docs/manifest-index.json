@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-01T05:05:29.915Z",
+  "generatedAt": "2026-02-02T05:02:31.763Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11274,
+    "total": 11276,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9343
+      "protocols": 9345
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10866
+    "unmapped": 10868
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3845,6 +3845,7 @@
       "protocols/contrax-finance",
       "protocols/convergence",
       "protocols/convergence-fi",
+      "protocols/convertibles",
       "protocols/convex-finance",
       "protocols/conveyor",
       "protocols/cook-finance",
@@ -5256,6 +5257,7 @@
       "protocols/goblin",
       "protocols/goblin-amm",
       "protocols/goblin-ftm",
+      "protocols/goblin-protocols",
       "protocols/goblingold",
       "protocols/goblins-amm",
       "protocols/goblins-cash",

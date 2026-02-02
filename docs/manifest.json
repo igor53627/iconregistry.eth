@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-01T05:05:29.915Z",
+  "generatedAt": "2026-02-02T05:02:31.763Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11274,
+    "total": 11276,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9343
+      "protocols": 9345
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10866
+    "unmapped": 10868
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -46469,6 +46469,15 @@
       ]
     },
     {
+      "slug": "protocols/convertibles",
+      "slugHash": "0xa1a911704d4ff7d16e8efa067624b5400e071b1326eb3b7f5a8cecdae71bd53a",
+      "category": "protocols",
+      "name": "Convertibles",
+      "keywords": [
+        "convertibles"
+      ]
+    },
+    {
       "slug": "protocols/convex-finance",
       "slugHash": "0x72d1c592bb57fd5beb658be42566e48a3d03bc198aa683666e31deb707650029",
       "category": "protocols",
@@ -61269,6 +61278,18 @@
         "goblin ftm",
         "goblinftm",
         "gf"
+      ]
+    },
+    {
+      "slug": "protocols/goblin-protocols",
+      "slugHash": "0x56cff914816cf47dff50f66d6d8732c35cf540963bc8c3c996b8f990f7c4fdf3",
+      "category": "protocols",
+      "name": "Goblin Protocols",
+      "keywords": [
+        "goblin-protocols",
+        "goblin protocols",
+        "goblinprotocols",
+        "gp"
       ]
     },
     {
