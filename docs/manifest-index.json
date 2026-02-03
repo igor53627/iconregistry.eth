@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-02T05:02:31.763Z",
+  "generatedAt": "2026-02-03T04:51:35.766Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11276,
+    "total": 11280,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9345
+      "protocols": 9349
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10868
+    "unmapped": 10872
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -3695,6 +3695,7 @@
       "protocols/citadao",
       "protocols/citadel-vaults",
       "protocols/citadelswap",
+      "protocols/citrea-bridge",
       "protocols/citrex-markets",
       "protocols/citrus",
       "protocols/city",
@@ -8580,6 +8581,7 @@
       "protocols/rho-markets",
       "protocols/rho-protocol",
       "protocols/rho-vaults",
+      "protocols/rho-vaults-v1",
       "protocols/rho-x",
       "protocols/rhombus-protocol",
       "protocols/ribbon",
@@ -8601,6 +8603,7 @@
       "protocols/ringswap",
       "protocols/rip.fun",
       "protocols/ripae",
+      "protocols/ripe-protocol",
       "protocols/ripfun",
       "protocols/ripple",
       "protocols/ripple copy",
@@ -10031,6 +10034,7 @@
       "protocols/ton-locker",
       "protocols/ton-pump",
       "protocols/ton-swap",
+      "protocols/ton4you",
       "protocols/tonco",
       "protocols/tonic",
       "protocols/tonic-cash",

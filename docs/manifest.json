@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-02T05:02:31.763Z",
+  "generatedAt": "2026-02-03T04:51:35.766Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11276,
+    "total": 11280,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9345
+      "protocols": 9349
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10868
+    "unmapped": 10872
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -44899,6 +44899,18 @@
       "name": "Citadelswap",
       "keywords": [
         "citadelswap"
+      ]
+    },
+    {
+      "slug": "protocols/citrea-bridge",
+      "slugHash": "0xbabbb8d572ec778f4bbe38dc98f8fdbb0d14907b6de051ac7eb9ab8447381c16",
+      "category": "protocols",
+      "name": "Citrea Bridge",
+      "keywords": [
+        "citrea-bridge",
+        "citrea bridge",
+        "citreabridge",
+        "cb"
       ]
     },
     {
@@ -96525,6 +96537,18 @@
       ]
     },
     {
+      "slug": "protocols/rho-vaults-v1",
+      "slugHash": "0xbba36ab6d02b0adb136addd58c6e217f96520ef85f837e731c43ae88eb58c0c6",
+      "category": "protocols",
+      "name": "Rho Vaults V1",
+      "keywords": [
+        "rho-vaults-v1",
+        "rho vaults v1",
+        "rhovaultsv1",
+        "rvv"
+      ]
+    },
+    {
       "slug": "protocols/rho-x",
       "slugHash": "0x2aaeda8b089ac913147b5cb47b490f8419a8e8ade0227f46c772295ba622c5e7",
       "category": "protocols",
@@ -96747,6 +96771,18 @@
       "name": "Ripae",
       "keywords": [
         "ripae"
+      ]
+    },
+    {
+      "slug": "protocols/ripe-protocol",
+      "slugHash": "0x467aa500a285072e1d7dd5e13d65c21428e10b38812b3bceafeb5a6643187091",
+      "category": "protocols",
+      "name": "Ripe Protocol",
+      "keywords": [
+        "ripe-protocol",
+        "ripe protocol",
+        "ripeprotocol",
+        "rp"
       ]
     },
     {
@@ -111838,6 +111874,15 @@
         "ton swap",
         "tonswap",
         "ts"
+      ]
+    },
+    {
+      "slug": "protocols/ton4you",
+      "slugHash": "0x574adcce4f89d8aeba262d080cca18291e5426f03b402690d1edd7d682e1886b",
+      "category": "protocols",
+      "name": "Ton4you",
+      "keywords": [
+        "ton4you"
       ]
     },
     {
