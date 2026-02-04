@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "slug": "protocols/basevol",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/chutes",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/clawloan",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/generic.money",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/rho-x-lp-vault",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/secondswap",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/sierra-protocol",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/stoneusd",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/trueo",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/warpx-v2",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/warpx-v3",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  },
+  {
+    "slug": "protocols/xeleb-protocol",
+    "addedAt": "2026-02-04T04:44:25.825Z"
+  }
+]

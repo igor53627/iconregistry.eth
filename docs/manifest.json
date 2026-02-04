@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-03T04:51:35.766Z",
+  "generatedAt": "2026-02-04T04:44:27.446Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11280,
+    "total": 11292,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
       "pegged": 360,
-      "protocols": 9349
+      "protocols": 9361
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10872
+    "unmapped": 10884
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -31555,6 +31555,15 @@
       ]
     },
     {
+      "slug": "protocols/basevol",
+      "slugHash": "0x8862eb486ceb5701d66dfdad7f493c5fae5c5066098ef0f835af8569cc261918",
+      "category": "protocols",
+      "name": "Basevol",
+      "keywords": [
+        "basevol"
+      ]
+    },
+    {
       "slug": "protocols/basex",
       "slugHash": "0x75f2e3195d4f919e9b37199650cdeb70aa914ffde049daf99b052b983fdf0453",
       "category": "protocols",
@@ -44694,6 +44703,15 @@
       ]
     },
     {
+      "slug": "protocols/chutes",
+      "slugHash": "0x2199f6ce05ad51768a05e2c5af727a269092e06ad7a22b85b85ca9b8374a998b",
+      "category": "protocols",
+      "name": "Chutes",
+      "keywords": [
+        "chutes"
+      ]
+    },
+    {
       "slug": "protocols/cian",
       "slugHash": "0x2bab70bf7d8260355026fe817226ff65005d8f47145dc1fe949e5c2cd266b823",
       "category": "protocols",
@@ -45049,6 +45067,15 @@
       "name": "Clave",
       "keywords": [
         "clave"
+      ]
+    },
+    {
+      "slug": "protocols/clawloan",
+      "slugHash": "0x4bbc735efafdcfdc52edb68ca4ed81eeb5049c72ef1fcee7fbfbf6310e63a71e",
+      "category": "protocols",
+      "name": "Clawloan",
+      "keywords": [
+        "clawloan"
       ]
     },
     {
@@ -60464,6 +60491,15 @@
         "gemswap by golden swan solutions",
         "gemswapbygoldenswansolutions",
         "gbgss"
+      ]
+    },
+    {
+      "slug": "protocols/generic.money",
+      "slugHash": "0x0744f3e2f3c443e6d93115e2fd90bc86ddd7aacb1cfc3d0ee5036c04345afce2",
+      "category": "protocols",
+      "name": "Generic.Money",
+      "keywords": [
+        "generic.money"
       ]
     },
     {
@@ -96561,6 +96597,18 @@
       ]
     },
     {
+      "slug": "protocols/rho-x-lp-vault",
+      "slugHash": "0xc1f1885d0d48786410b7362d11eb0118aedc881d776a096a5d65bf0d0f90094d",
+      "category": "protocols",
+      "name": "Rho X Lp Vault",
+      "keywords": [
+        "rho-x-lp-vault",
+        "rho x lp vault",
+        "rhoxlpvault",
+        "rxlv"
+      ]
+    },
+    {
       "slug": "protocols/rhombus-protocol",
       "slugHash": "0xfc2208123937fbb31c2088a5c353c04bdf366997ee65351e7825aacb6a8b12b0",
       "category": "protocols",
@@ -99417,6 +99465,15 @@
       ]
     },
     {
+      "slug": "protocols/secondswap",
+      "slugHash": "0x6330e5ea2da3e5acb29ed844c4b6c48d78a4bf51521a1ba3d9b079700c4da14d",
+      "category": "protocols",
+      "name": "Secondswap",
+      "keywords": [
+        "secondswap"
+      ]
+    },
+    {
       "slug": "protocols/secret",
       "slugHash": "0x389cc1009a116cc33d0b2b882b2cdc3d613a5ed3e20a8dbdfdd9e665f20c2e05",
       "category": "protocols",
@@ -100776,6 +100833,18 @@
       "name": "Sierra",
       "keywords": [
         "sierra"
+      ]
+    },
+    {
+      "slug": "protocols/sierra-protocol",
+      "slugHash": "0x090e11f31fc6ebe0fc3047dbd6f7701db637d1a817d6d9f444b5db8ecf2baab8",
+      "category": "protocols",
+      "name": "Sierra Protocol",
+      "keywords": [
+        "sierra-protocol",
+        "sierra protocol",
+        "sierraprotocol",
+        "sp"
       ]
     },
     {
@@ -105939,6 +106008,15 @@
       "name": "Stonedefi",
       "keywords": [
         "stonedefi"
+      ]
+    },
+    {
+      "slug": "protocols/stoneusd",
+      "slugHash": "0x35c0ba11510462dab583fb8f2f22fefd9e5461b620f9d5c1cc2afeeba426c9a5",
+      "category": "protocols",
+      "name": "Stoneusd",
+      "keywords": [
+        "stoneusd"
       ]
     },
     {
@@ -112948,6 +113026,15 @@
       ]
     },
     {
+      "slug": "protocols/trueo",
+      "slugHash": "0x746dd58f3cdefdc629769b3dfd4f498cdd6b0928b9ab5869eb7309a9fe7349a7",
+      "category": "protocols",
+      "name": "Trueo",
+      "keywords": [
+        "trueo"
+      ]
+    },
+    {
       "slug": "protocols/trufin-legacy-vaults",
       "slugHash": "0x7d61f6a0b25afe89dec093e47c7781da1a27c91ac367bf4454199aeed856db2b",
       "category": "protocols",
@@ -117627,6 +117714,30 @@
       ]
     },
     {
+      "slug": "protocols/warpx-v2",
+      "slugHash": "0x8eda6bf22fd7c2d007cbcba7bf3791a3712b94328e0d828a691c44269b37ace2",
+      "category": "protocols",
+      "name": "Warpx V2",
+      "keywords": [
+        "warpx-v2",
+        "warpx v2",
+        "warpxv2",
+        "wv"
+      ]
+    },
+    {
+      "slug": "protocols/warpx-v3",
+      "slugHash": "0xdb93ab11f05492840d02144c6f6bee7de7abf952a6bdb35220184facd8defee6",
+      "category": "protocols",
+      "name": "Warpx V3",
+      "keywords": [
+        "warpx-v3",
+        "warpx v3",
+        "warpxv3",
+        "wv"
+      ]
+    },
+    {
       "slug": "protocols/wasabee",
       "slugHash": "0xd82d2268fbb8d294355a367308b3e25be56e37e8bc9b237532dbad6c73811272",
       "category": "protocols",
@@ -119411,6 +119522,18 @@
         "xei finance",
         "xeifinance",
         "xf"
+      ]
+    },
+    {
+      "slug": "protocols/xeleb-protocol",
+      "slugHash": "0x14b245145425b29d471262ff960bf99d0eee1354929069da1ee8fb5490945a47",
+      "category": "protocols",
+      "name": "Xeleb Protocol",
+      "keywords": [
+        "xeleb-protocol",
+        "xeleb protocol",
+        "xelebprotocol",
+        "xp"
       ]
     },
     {
