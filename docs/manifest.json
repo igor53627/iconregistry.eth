@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-04T04:44:27.446Z",
+  "generatedAt": "2026-02-05T04:52:21.897Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "description": "Comprehensive index of all IconRegistry icons for discovery and heuristic matching",
   "stats": {
-    "total": 11292,
+    "total": 11298,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
-      "pegged": 360,
-      "protocols": 9361
+      "pegged": 363,
+      "protocols": 9364
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10884
+    "unmapped": 10890
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -20906,6 +20906,18 @@
       ]
     },
     {
+      "slug": "pegged/neutrl-usd",
+      "slugHash": "0xee443dd17f0429d6dc4df985328d776840a05cccea84e3bb80b6c1b59d7d7a86",
+      "category": "pegged",
+      "name": "Neutrl Usd",
+      "keywords": [
+        "neutrl-usd",
+        "neutrl usd",
+        "neutrlusd",
+        "nu"
+      ]
+    },
+    {
       "slug": "pegged/nexus",
       "slugHash": "0xe07b23b2b6c19007e787e45b2e49f1ff9ce148cdf6020f0cf31d0b27db7b1605",
       "category": "pegged",
@@ -22159,6 +22171,18 @@
       ]
     },
     {
+      "slug": "pegged/uncap-usd",
+      "slugHash": "0x32365fc141f538363207a41afec28944f38e6fcc6d1c1d02583c751757f61b76",
+      "category": "pegged",
+      "name": "Uncap Usd",
+      "keywords": [
+        "uncap-usd",
+        "uncap usd",
+        "uncapusd",
+        "uu"
+      ]
+    },
+    {
       "slug": "pegged/unitas",
       "slugHash": "0x0f3b65c516f06e9e148fcd7b4d4886dc31b8fa6ce33a9493bad563ea2ff3a8e3",
       "category": "pegged",
@@ -22963,6 +22987,18 @@
         "yusd stablecoin",
         "yusdstablecoin",
         "ys"
+      ]
+    },
+    {
+      "slug": "pegged/yuzu-usd",
+      "slugHash": "0x536a87c0d22e69956a179371e5cfeca99032eaca0102985f5a866158cbe4c444",
+      "category": "pegged",
+      "name": "Yuzu Usd",
+      "keywords": [
+        "yuzu-usd",
+        "yuzu usd",
+        "yuzuusd",
+        "yu"
       ]
     },
     {
@@ -59603,6 +59639,18 @@
       ]
     },
     {
+      "slug": "protocols/futarchy-amm",
+      "slugHash": "0xc797eca3b97d45810a9ce12e6eaddfd44a9a05cbe221807a1a09b3f1c822a915",
+      "category": "protocols",
+      "name": "Futarchy Amm",
+      "keywords": [
+        "futarchy-amm",
+        "futarchy amm",
+        "futarchyamm",
+        "fa"
+      ]
+    },
+    {
       "slug": "protocols/future-swap",
       "slugHash": "0x5a4ab5b756160d310fba6e1b3b1b8578070f37a83943ec6a902aa3152d6e565b",
       "category": "protocols",
@@ -78469,6 +78517,18 @@
       "name": "Metadao",
       "keywords": [
         "metadao"
+      ]
+    },
+    {
+      "slug": "protocols/metadao-treasuries",
+      "slugHash": "0xe3173c662d62ea1de3f706a0b980fd82261ba6a23a881e2a2c6928b1a7d8ba2c",
+      "category": "protocols",
+      "name": "Metadao Treasuries",
+      "keywords": [
+        "metadao-treasuries",
+        "metadao treasuries",
+        "metadaotreasuries",
+        "mt"
       ]
     },
     {
@@ -119747,6 +119807,15 @@
         "xoxno nft marketplace",
         "xoxnonftmarketplace",
         "xnm"
+      ]
+    },
+    {
+      "slug": "protocols/xpanse",
+      "slugHash": "0xef1c4a14e139fe890d9b3d123a782ae3b3d1fe9aea91d94456cabebe8ba8f2c1",
+      "category": "protocols",
+      "name": "Xpanse",
+      "keywords": [
+        "xpanse"
       ]
     },
     {

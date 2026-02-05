@@ -1,22 +1,22 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-04T04:44:27.446Z",
+  "generatedAt": "2026-02-05T04:52:21.897Z",
   "contract": "0x342e808c40D8E00656fEd124CA11aEcBB96c61Fc",
   "network": "mainnet",
   "stats": {
-    "total": 11292,
+    "total": 11298,
     "byCategory": {
       "agg_icons": 180,
       "chains": 1391,
-      "pegged": 360,
-      "protocols": 9361
+      "pegged": 363,
+      "protocols": 9364
     },
     "mapped": {
       "chains": 333,
       "tokens": 75,
       "total": 408
     },
-    "unmapped": 10884
+    "unmapped": 10890
   },
   "usage": {
     "bySlug": "registry.getIconBySlug(slug)",
@@ -5098,6 +5098,7 @@
       "protocols/fusionx-finance",
       "protocols/fusionx-v2",
       "protocols/fusionx-v3",
+      "protocols/futarchy-amm",
       "protocols/future-swap",
       "protocols/futureswap",
       "protocols/fuzio",
@@ -6878,6 +6879,7 @@
       "protocols/metacoin-swap",
       "protocols/metacrono",
       "protocols/metadao",
+      "protocols/metadao-treasuries",
       "protocols/metahub-finance",
       "protocols/metaid",
       "protocols/metalend",
@@ -10785,6 +10787,7 @@
       "protocols/xoxno",
       "protocols/xoxno-liquid-staking",
       "protocols/xoxno-nft-marketplace",
+      "protocols/xpanse",
       "protocols/xpress-protocol",
       "protocols/xray-swap",
       "protocols/xrgb",
@@ -11244,6 +11247,7 @@
       "pegged/nectar",
       "pegged/nerite-usnd",
       "pegged/neutrino-usd",
+      "pegged/neutrl-usd",
       "pegged/nexus",
       "pegged/nexus-usd",
       "pegged/noble-dollar",
@@ -11343,6 +11347,7 @@
       "pegged/tren-debt-token",
       "pegged/trueusd",
       "pegged/uaht",
+      "pegged/uncap-usd",
       "pegged/unitas",
       "pegged/united-stables",
       "pegged/uno",
@@ -11413,6 +11418,7 @@
       "pegged/youves-uusd",
       "pegged/yu",
       "pegged/yusd-stablecoin",
+      "pegged/yuzu-usd",
       "pegged/zkusd-dollar",
       "pegged/zoth-zeusd",
       "pegged/zunami-usd",
